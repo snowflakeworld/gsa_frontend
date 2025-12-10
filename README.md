@@ -1,4 +1,4 @@
-# react-typescript-webpack-tailwind-boilerplate
+# gsa project
 
 ```plaintext
 /react-typescript-webpack-tailwind-boilerplate
