@@ -1,8 +1,9 @@
 {
-  "name": "react-typescript-webpack-tailwind-boilerplate",
+  "name": "gsa-frontend",
   "version": "1.0.0",
   "license": "MIT",
   "author": "super.dev.947@gmail.com",
+  "type": "module",
   "scripts": {
     "start": "serve -s build -l 4000",
     "dev": "webpack serve --mode development --open",
@@ -11,14 +12,16 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.4",
-    "@heroicons/react": "^2.2.0",
-    "@material-tailwind/react": "^2.1.10",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.6",
+    "axios": "^1.13.2",
+    "gsap": "^3.14.1",
+    "qrcode.react": "^4.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.1",
-    "sass": "^1.83.0",
-    "tailwindcss": "^3.4.17"
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
@@ -38,8 +41,8 @@
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
     "node-polyfill-webpack-plugin": "^4.0.0",
-    "postcss-loader": "^8.1.1",
     "prettier": "^3.4.2",
+    "sass": "^1.83.0",
     "sass-loader": "^16.0.4",
     "serve": "^14.2.4",
     "style-loader": "^4.0.0",

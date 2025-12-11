@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "gsa-frontend",
+      "script": "npx",
+      "interpreter": "none",
+      "args": "npm start"
+    }
+  ]
+}

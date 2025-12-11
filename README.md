@@ -15,7 +15,6 @@
 ├── package.json
 ├── postcss.config.js
 ├── README.md
-├── tailwind.config.js
 ├── tsconfig.json
 ├── webpack-build.config.js
 └── webpack.config.js
