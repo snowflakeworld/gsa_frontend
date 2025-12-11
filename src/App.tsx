@@ -1,8 +1,7 @@
 import { FC } from 'react'
-import Header from './layout/header'
 
 const App: FC = () => {
-  return <Header />
+  return <h1>GSA Frontend</h1>
 }
 
 export default App

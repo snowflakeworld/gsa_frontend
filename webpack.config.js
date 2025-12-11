@@ -1,10 +1,14 @@
-const path = require('path')
-const Dotenv = require('dotenv-webpack')
-const autoprefixer = require('autoprefixer')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
+import path from 'path'
+import Dotenv from 'dotenv-webpack'
+import autoprefixer from 'autoprefixer'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin'
+import { fileURLToPath } from 'node:url';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
   mode: 'development',
   entry: './src/index.tsx',
   output: {
