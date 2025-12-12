@@ -1,12 +1,25 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.scss'
-import App from './App'
 
-const root = createRoot(document.getElementById('root') as HTMLElement)
+import { StyledEngineProvider } from '@mui/material'
+
+import App from './App'
+import { AppTheme } from './theme/AppTheme'
+
+import './index.scss'
+
+const rootElement = document.getElementById('root')
+if (!rootElement) {
+  throw new Error('Root element not found')
+}
+const root = createRoot(rootElement)
 
 root.render(
   <StrictMode>
-    <App />
+    <StyledEngineProvider injectFirst>
+      <AppTheme>
+        <App />
+      </AppTheme>
+    </StyledEngineProvider>
   </StrictMode>
 )
