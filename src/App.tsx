@@ -1,7 +1,12 @@
 import { FC } from 'react'
+import { AppTheme } from './theme'
 
 const App: FC = () => {
-  return <h1>GSA Frontend</h1>
+  return (
+    <AppTheme>
+      <h1>GSA Frontend</h1>
+    </AppTheme>
+  )
 }
 
 export default App

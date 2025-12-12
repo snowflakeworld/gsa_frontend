@@ -1,18 +1,18 @@
 export default {
-  arrowParens: 'avoid',
+  arrowParens: "avoid",
   bracketSpacing: true,
-  htmlWhitespaceSensitivity: 'css',
+  htmlWhitespaceSensitivity: "css",
   insertPragma: false,
   bracketSameLine: false,
   jsxSingleQuote: true,
   printWidth: 120,
-  proseWrap: 'preserve',
-  quoteProps: 'as-needed',
+  proseWrap: "preserve",
+  quoteProps: "as-needed",
   requirePragma: false,
   semi: false,
   singleQuote: true,
   tabWidth: 2,
-  trailingComma: 'none',
+  trailingComma: "none",
   useTabs: false,
-  plugins: ['prettier-plugin-organize-imports']
+  plugins: ["prettier-plugin-organize-imports"]
 }
