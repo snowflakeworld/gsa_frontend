@@ -13,11 +13,20 @@ export const customizations: Components<Theme> = {
         color: gsaColors.link.light.normal,
         textDecoration: 'none',
         transition: 'all 0.2s ease',
+        '&.footer-link__main': {
+          color: gsaColors.text.primary.light
+        },
+        '&.footer-link__sub': {
+          color: gsaColors.text.normal
+        },
         '&:hover': {
           color: gsaColors.link.light.hover
         },
         ...theme.applyStyles('dark', {
           color: gsaColors.link.dark.normal,
+          '&.footer-link__main': {
+            color: gsaColors.text.primary.dark
+          },
           '&:hover': {
             color: gsaColors.link.dark.hover
           }
@@ -29,8 +38,14 @@ export const customizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         fill: gsaColors.text.primary.light,
+        width: '20px',
+        height: '20px',
+        '&.size--big': {
+          width: '26px',
+          height: '26px',
+        },
         ...theme.applyStyles('dark', {
-          fill: gsaColors.text.primary.dark,
+          fill: gsaColors.text.primary.dark
         })
       })
     }
@@ -71,6 +86,8 @@ export const customizations: Components<Theme> = {
         },
 
         ...theme.applyStyles('dark', {
+          minHeight: '32px',
+          minWidth: '32px',
           borderColor: gsaColors.border.dark,
           backgroundColor: gsaColors.background.button.dark,
           '&:hover': {

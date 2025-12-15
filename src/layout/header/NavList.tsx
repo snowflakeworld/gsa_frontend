@@ -18,9 +18,10 @@ export const NavList = ({ ...props }) => {
       mb={!isScreenSmall ? 0 : 3}
       {...props}
     >
-      {HEADER_NAV_LINKS.map((nav) => (
-        <Link key={nav.title} href={nav.path} color="inherit" textAlign='center'>{nav.title}</Link>
-      ))
+      {
+        HEADER_NAV_LINKS.map((nav) => (
+          <Link key={nav.title} href={nav.path} color="inherit" textAlign='center'>{nav.title}</Link>
+        ))
       }
     </Stack>
   )

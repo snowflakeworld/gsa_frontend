@@ -11,7 +11,7 @@ const ColorModeButton = () => {
   }, [resolvedMode, setMode])
 
   const icon = useMemo(
-    () => (resolvedMode === 'dark' ? <LightModeOutlined /> : <DarkModeOutlined />),
+    () => (resolvedMode === 'dark' ? <LightModeOutlined className="size--big" /> : <DarkModeOutlined className="size--big" />),
     [resolvedMode]
   )
 

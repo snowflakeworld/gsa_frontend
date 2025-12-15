@@ -35,6 +35,10 @@ export const gsaColors = {
     button: {
       dark: '#28282A',
       light: '#F1F1F1'
+    },
+    footer: {
+      dark: '#3A3A3A',
+      light: '#ECECEC'
     }
   },
 
@@ -44,8 +48,8 @@ export const gsaColors = {
   },
 
   backdrop: {
-    dark: 'rgba(25, 25, 27, 0.9)',
-    light: 'rgba(241, 241, 241, 0.9)'
+    dark: 'rgba(25, 25, 27, 0.7)',
+    light: 'rgba(241, 241, 241, 0.7)'
   },
 
   baseShadow: 'hsla(220, 30%, 5%, 0.07) 0px 4px 16px 0px, hsla(220, 25%, 10%, 0.07) 0px 8px 16px -5px',
@@ -56,15 +60,15 @@ export const gsaColors = {
       light: '#1D1D1F'
     },
     secondary: {
-      dark: '#ECECEC',
-      light: '#797979'
+      dark: '#797979',
+      light: '#414141'
     },
     disabled: '#94A3B8',
     accent: {
-      dark: '#FFFFFF',
-      light: '#151606'
+      dark: '#797979',
+      light: '#414141'
     },
-    normal: '#797979'
+    normal: '#797979',
   },
 
   primary: {
@@ -109,10 +113,12 @@ export const colorSchemes = {
       text: {
         primary: gsaColors.text.primary.light,
         secondary: gsaColors.text.secondary.light,
-        disabled: gsaColors.text.disabled
+        disabled: gsaColors.text.disabled,
+        normal: gsaColors.text.normal
       },
       divider: gsaColors.border.light,
-      backdrop: gsaColors.backdrop.light
+      backdrop: gsaColors.backdrop.light,
+      footer: gsaColors.background.footer.light
     }
   },
   dark: {
@@ -129,10 +135,12 @@ export const colorSchemes = {
       text: {
         primary: gsaColors.text.primary.dark,
         secondary: gsaColors.text.secondary.dark,
-        disabled: gsaColors.text.disabled
+        disabled: gsaColors.text.disabled,
+        normal: gsaColors.text.normal
       },
       divider: gsaColors.border.dark,
-      backdrop: gsaColors.backdrop.dark
+      backdrop: gsaColors.backdrop.dark,
+      footer: gsaColors.background.footer.dark
     }
   }
 }

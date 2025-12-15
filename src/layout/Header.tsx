@@ -5,6 +5,7 @@ import { AccountCircleOutlined, BackupOutlined, CloseRounded, MenuRounded } from
 
 import Logo from "@/components/logo";
 import { useDeviceType } from "@/hooks/useDeviceType";
+
 import ColorModeButton from "./header/ColorModeButton";
 import { NavList } from "./header/NavList";
 import { MobileNav } from "./header/MobileNav";
@@ -20,19 +21,25 @@ export const Header = () => {
     <>
       <AppBar color="secondary" elevation={0}>
         <Toolbar sx={{ py: 2, px: { lg: 18.75, md: 2.5 }, gap: 2, justifyContent: 'space-between' }}>
-          <Logo />
+          <Logo place="header" />
 
           {!isScreenSmall && <NavList />}
 
           <Box sx={{ gap: 1, display: 'flex', alignItems: 'center' }}>
             <ColorModeButton />
-            <Button variant="contained" sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2, py: 1.25 }} >
-              <BackupOutlined fontSize="small" />
-              {!isScreenSmall && (<span>Submit</span>)}
-            </Button>
-            <Button variant="contained" sx={{ gap: 0, px: 1.25, py: 1.25 }}>
-              <AccountCircleOutlined fontSize="small" />
-            </Button>
+            {!menuOpened &&
+              (
+                <><Button variant="contained" sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2, py: 1.25 }} >
+                  <BackupOutlined fontSize="small" />
+                  {!isScreenSmall && (<span>Submit</span>)}
+                </Button>
+                  <Button variant="contained" sx={{ gap: 0, px: 1.25, py: 1.25 }}>
+                    <AccountCircleOutlined fontSize="small" />
+                  </Button>
+                </>
+              )
+            }
+
             {
               isScreenSmall &&
               (<Button variant="contained" sx={{ gap: 0, px: 1.25, py: 1.25 }} onClick={() => setMenuOpened(st => !st)}>
@@ -49,7 +56,7 @@ export const Header = () => {
         }
       </AppBar>
       {isScreenSmall && menuOpened && (
-        <Stack width={'100vw'} height={'100vh'} sx={{ backgroundColor: 'backdrop', position: 'fixed', backdropFilter: 'blur(4px)' }} />
+        <Stack width={'100vw'} height={'100vh'} sx={{ backgroundColor: 'backdrop', position: 'fixed', backdropFilter: 'blur(2px)' }} />
       )}
     </>
   );
