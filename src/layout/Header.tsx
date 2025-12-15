@@ -1,9 +1,56 @@
-import Stack from "@mui/material/Stack";
+import { useState } from "react";
+import { AppBar, Box, Stack, Toolbar } from "@mui/material";
+import Button from "@mui/material/Button";
+import { AccountCircleOutlined, BackupOutlined, CloseRounded, MenuRounded } from "@mui/icons-material";
 
-const Header = () => {
+import Logo from "@/components/logo";
+import { useDeviceType } from "@/hooks/useDeviceType";
+import ColorModeButton from "./header/ColorModeButton";
+import { NavList } from "./header/NavList";
+import { MobileNav } from "./header/MobileNav";
+
+export const Header = () => {
+  const [menuOpened, setMenuOpened] = useState<boolean>(false);
+
+  const { isMobile, isTablet } = useDeviceType();
+
+  const isScreenSmall = isMobile || isTablet;
+
   return (
-    <Stack direction='row' alignItems='center' gap={1}></Stack>
+    <>
+      <AppBar color="secondary" elevation={0}>
+        <Toolbar sx={{ py: 2, px: { lg: 18.75, md: 2.5 }, gap: 2, justifyContent: 'space-between' }}>
+          <Logo />
+
+          {!isScreenSmall && <NavList />}
+
+          <Box sx={{ gap: 1, display: 'flex', alignItems: 'center' }}>
+            <ColorModeButton />
+            <Button variant="contained" sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2, py: 1.25 }} >
+              <BackupOutlined fontSize="small" />
+              {!isScreenSmall && (<span>Submit</span>)}
+            </Button>
+            <Button variant="contained" sx={{ gap: 0, px: 1.25, py: 1.25 }}>
+              <AccountCircleOutlined fontSize="small" />
+            </Button>
+            {
+              isScreenSmall &&
+              (<Button variant="contained" sx={{ gap: 0, px: 1.25, py: 1.25 }} onClick={() => setMenuOpened(st => !st)}>
+                {!menuOpened ? <MenuRounded fontSize="small" /> : <CloseRounded fontSize="small" />}
+              </Button>
+              )
+            }
+          </Box>
+        </Toolbar>
+        {isScreenSmall && menuOpened && (
+          <Box>
+            <MobileNav />
+          </Box>)
+        }
+      </AppBar>
+      {isScreenSmall && menuOpened && (
+        <Stack width={'100vw'} height={'100vh'} sx={{ backgroundColor: 'backdrop', position: 'fixed', backdropFilter: 'blur(4px)' }} />
+      )}
+    </>
   );
 }
-
-export default Header;

@@ -1,11 +1,9 @@
 import { FC } from 'react'
-import { AppTheme } from './theme'
+import AppRouter from './routes'
 
 const App: FC = () => {
   return (
-    <AppTheme>
-      <h1>GSA Frontend</h1>
-    </AppTheme>
+    <AppRouter />
   )
 }
 
