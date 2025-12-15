@@ -1,0 +1,208 @@
+import { Components, Theme } from '@mui/material/styles'
+
+import { gsaColors } from './themePrimitives';
+
+export const customizations: Components<Theme> = {
+  MuiLink: {
+    defaultProps: {
+      underline: 'hover'
+    },
+    styleOverrides: {
+      root: ({ theme }) => ({
+        fontSize: '14px',
+        color: gsaColors.link.light.normal,
+        textDecoration: 'none',
+        transition: 'all 0.2s ease',
+        '&:hover': {
+          color: gsaColors.link.light.hover
+        },
+        ...theme.applyStyles('dark', {
+          color: gsaColors.link.dark.normal,
+          '&:hover': {
+            color: gsaColors.link.dark.hover
+          }
+        })
+      })
+    }
+  },
+  MuiSvgIcon: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        fill: gsaColors.text.primary.light,
+        ...theme.applyStyles('dark', {
+          fill: gsaColors.text.primary.dark,
+        })
+      })
+    }
+  },
+  MuiButton: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        textTransform: 'none',
+        fontWeight: 600,
+        fontSize: '0.875rem',
+        lineHeight: '20px',
+        border: `1px solid ${gsaColors.border.light}`,
+        color: gsaColors.text.primary.light,
+        boxShadow: 'none',
+        transition: 'all 0.5s ease',
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+          color: gsaColors.text.primary.light,
+        },
+        ...theme.applyStyles('dark', {
+          border: `1px solid ${gsaColors.border.dark}`,
+          color: gsaColors.text.primary.dark,
+          '&:hover': {
+            color: gsaColors.text.primary.dark,
+          }
+        })
+      }),
+      contained: ({ theme }) => ({
+        borderColor: gsaColors.border.light,
+        backgroundColor: gsaColors.background.button.light,
+        minHeight: '40px',
+        minWidth: '40px',
+
+        '&:hover': {
+          backgroundColor: gsaColors.background.tertiary.light,
+          boxShadow: `0 4px 8px ${gsaColors.baseShadow}`
+        },
+
+        ...theme.applyStyles('dark', {
+          borderColor: gsaColors.border.dark,
+          backgroundColor: gsaColors.background.button.dark,
+          '&:hover': {
+            backgroundColor: gsaColors.background.tertiary.dark,
+          }
+        })
+      }),
+
+      outlined: ({ theme }) => ({
+        borderColor: gsaColors.border.light,
+        color: gsaColors.text.primary.light,
+        '&:hover': {
+          backgroundColor: gsaColors.background.tertiary.light,
+        },
+        ...theme.applyStyles('dark', {
+          borderColor: gsaColors.border.dark,
+          color: gsaColors.text.primary.dark,
+          '&:hover': {
+            backgroundColor: gsaColors.background.tertiary.dark,
+          }
+        })
+      })
+    }
+  },
+
+  MuiCard: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        backgroundColor: gsaColors.background.paper.light,
+        border: `1px solid ${gsaColors.border.light}`,
+        borderRadius: 12,
+        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        ...theme.applyStyles('dark', {
+          backgroundColor: gsaColors.background.paper.dark,
+          border: `1px solid ${gsaColors.border.dark}`
+        })
+      })
+    }
+  },
+
+  MuiPaper: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        backgroundColor: gsaColors.background.paper.light,
+        border: `1px solid ${gsaColors.border.light}`,
+        ...theme.applyStyles('dark', {
+          backgroundColor: gsaColors.background.paper.dark,
+          border: `1px solid ${gsaColors.border.dark}`,
+        })
+      })
+    }
+  },
+
+  MuiAppBar: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        background: gsaColors.background.appBar.light,
+        borderBottom: `1px solid ${gsaColors.border.light}`,
+        borderTop: 'none',
+        borderLeft: 'none',
+        borderRight: 'none',
+        boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        ...theme.applyStyles('dark', {
+          background: gsaColors.background.appBar.dark,
+          borderBottom: `1px solid ${gsaColors.border.dark}`,
+        })
+      })
+    }
+  },
+
+  MuiTextField: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        '& .MuiOutlinedInput-root': {
+          fontFamily: 'Poppins',
+
+          // border: '#39393c',
+          backgroundColor: gsaColors.background.input.light,
+          borderRadius: 8,
+          '& fieldset': {
+            backgroundColor: gsaColors.background.input.light,
+          },
+          '&:hover fieldset': {
+            borderColor: gsaColors.border.light
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: gsaColors.primary
+          }
+        },
+        '& .MuiInputLabel-root': {
+          color: gsaColors.text.accent.light,
+          '&.Mui-focused': {
+            color: gsaColors.primary.light
+          }
+        },
+        '& .MuiOutlinedInput-input': {
+          color: gsaColors.text.primary.light
+        },
+        ...theme.applyStyles('dark', {
+          '& .MuiOutlinedInput-root': {
+            // border: '#39393c',
+            backgroundColor: gsaColors.background.input.dark,
+            '& fieldset': {
+              backgroundColor: gsaColors.background.input.dark,
+            },
+            '&:hover fieldset': {
+              borderColor: gsaColors.border.dark
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: gsaColors.primary
+            }
+          },
+          '& .MuiInputLabel-root': {
+            color: gsaColors.text.accent.dark,
+            '&.Mui-focused': {
+              color: gsaColors.primary.dark
+            }
+          },
+          '& .MuiOutlinedInput-input': {
+            color: gsaColors.text.primary.dark
+          }
+        })
+      })
+    }
+  },
+
+  MuiContainer: {
+    styleOverrides: {
+      root: {
+        maxWidth: '1440px !important',
+        padding: '0 !important'
+      }
+    }
+  }
+};

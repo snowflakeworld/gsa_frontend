@@ -1,11 +1,18 @@
-import { Box } from "@mui/material";
-import Header from "./Header";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import { Suspense } from "react";
+import { CircularProgress } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+    <>
       <Header />
-    </Box>
+      <Suspense fallback={<CircularProgress />}>
+        <Outlet />
+      </Suspense>
+      <Footer />
+    </>
   );
 }
 

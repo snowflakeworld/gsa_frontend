@@ -1,29 +1,39 @@
-import { ReactNode, useMemo } from 'react'
+import { FC, ReactNode, useMemo } from "react";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
+import { colorSchemes, typography } from "./themePrimitives";
+import { customizations } from "./customization";
 
 interface AppThemeProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
-export const AppTheme = (props: AppThemeProps) => {
-  const { children } = props
-  const theme = useMemo(
-    () =>
-      createTheme({
-        cssVariables: {
-          colorSchemeSelector: 'data-mui-color-scheme',
-          cssVarPrefix: 'template'
-        },
-        defaultColorScheme: 'dark'
-      }),
-    []
-  )
+const createAppTheme = () =>
+  createTheme({
+    cssVariables: {
+      colorSchemeSelector: 'data-mui-color-scheme',
+      cssVarPrefix: 'template'
+    },
+    colorSchemes,
+    typography,
+    components: customizations,
+
+    spacing: 8,
+
+    shape: {
+      borderRadius: 8,
+    },
+
+    defaultColorScheme: 'light'
+
+  })
+
+export const AppTheme: FC<AppThemeProps> = (({ children }) => {
+  const theme = useMemo(() => createAppTheme(), []);
 
   return (
-    <ThemeProvider defaultMode='dark' theme={theme} disableTransitionOnChange>
+    <ThemeProvider defaultMode='dark' theme={theme} >
       <CssBaseline />
       {children}
-    </ThemeProvider>
-  )
-}
+    </ThemeProvider>);
+});
