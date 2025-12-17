@@ -1,12 +1,7 @@
 import { ArrowRightAltRounded } from '@mui/icons-material'
 import { Button, Stack, Typography } from '@mui/material'
 
-import { useDeviceType } from '@/hooks/useDeviceType'
-
 export const Details = () => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
 
   return (
     <Stack direction='column' alignItems='flex-start' gap={4}>
@@ -37,7 +32,7 @@ export const Details = () => {
         </Typography>
       </Stack>
 
-      <Button variant='contained' className='button--red' sx={{ gap: 2, px: !isScreenSmall ? 3 : 2, py: 1.25 }}>
+      <Button variant='contained' className='button--red' sx={{ gap: 2, px: { xs: 2, md: 3 }, py: 1.25 }}>
         <Typography variant='button' color='white' sx={{ fontSize: '18px' }}>
           See Detail
         </Typography>

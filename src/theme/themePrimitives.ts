@@ -199,9 +199,9 @@ export const gsaIconColors = {
   secondary: '#FFFFFF',
   tertiary: '#E24744',
   grey: '#797979',
-  logo1: '#0066CC',
-  logo2: '#E24744',
-  logo3: '#0066CC'
+  starRed: '#E24744',
+  starModeDark: '#28282A',
+  starModeLight: '#F1F1F1'
 }
 
 export const gsaShadows = {

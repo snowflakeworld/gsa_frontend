@@ -12,3 +12,18 @@
 ::-webkit-scrollbar-track {
   background: transparent; /* Track color */
 }
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: fit-content;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}

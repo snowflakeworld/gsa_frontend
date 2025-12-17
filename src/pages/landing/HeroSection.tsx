@@ -1,11 +1,13 @@
-import { Box, Container, Stack } from '@mui/material'
+import { Box, Container, Stack, useColorScheme } from '@mui/material'
 
-import { useDeviceType } from '@/hooks/useDeviceType'
 import { HeroInfo, HeroPhoto } from './hero'
+import { AppIcon } from '@/components/common'
+import { useDeviceType } from '@/hooks/useDeviceType'
 
 const HeroSection = () => {
-  const { isMobile, isTablet } = useDeviceType()
+  const { mode } = useColorScheme()
 
+  const { isMobile, isTablet } = useDeviceType()
   const isScreenSmall = isMobile || isTablet
 
   return (
@@ -19,14 +21,24 @@ const HeroSection = () => {
         }}
       />
       <Container
-        sx={{ width: '100%', minHeight: '100vh', px: { xs: '20px', md: '150px' }, py: { xs: '24px', md: '100px' } }}
+        sx={{ width: '100%', px: { md: '20px', lg: '150px' }, py: { md: '24px', lg: '100px' } }}
       >
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} width='100%'>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }} width='100%'>
+          {
+            !isScreenSmall && (
+              <Box>
+                <AppIcon name='starBig' color={mode === 'dark' ? 'starModeDark' : 'starModeLight'} width={90} height={90} viewBoxWidth={67} viewBoxHeight={67} position='absolute' rotate='40deg' top={'70%'} left={'46%'} />
+                <AppIcon name='starSmall' color={mode === 'dark' ? 'starModeDark' : 'starModeLight'} width={24} height={24} viewBoxWidth={18} viewBoxHeight={18} position='absolute' rotate='40deg' top={'82%'} left={'46%'} />
+              </Box>
+            )
+          }
           <Stack
-            direction={!isScreenSmall ? 'row' : 'column-reverse'}
-            gap={!isScreenSmall ? 12.5 : 3}
+            width='100%'
+            direction={{ xs: 'column-reverse', md: 'row' }}
             alignItems='center'
+            gap={{ xs: 3, md: 12.5 }}
             position='relative'
+            py={{ xs: '24px', lg: '0px' }}
           >
             <HeroInfo />
             <HeroPhoto />
