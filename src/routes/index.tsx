@@ -1,20 +1,18 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import MainLayout from '@/layout'
-import { LandingPage } from "@/pages";
+import { LandingPage } from '@/pages'
 
 const routes = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
-    children: [
-      { path: '/', element: <LandingPage /> }
-    ]
+    children: [{ path: '/', element: <LandingPage /> }]
   }
-]);
+])
 
 const AppRouter = () => {
-  return <RouterProvider router={routes} />;
+  return <RouterProvider router={routes} />
 }
 
-export default AppRouter;
+export default AppRouter

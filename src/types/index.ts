@@ -1,2 +1,2 @@
-export * from './LogoProps'
 export * from './FooterLinkProps'
+export * from './LogoProps'

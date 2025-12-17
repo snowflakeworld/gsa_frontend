@@ -1,11 +1,11 @@
-import { FC, ReactNode, useMemo } from "react";
-import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
+import { FC, ReactNode, useMemo } from 'react'
 
-import { colorSchemes, typography } from "./themePrimitives";
-import { customizations } from "./customization";
+import { customizations } from './customization'
+import { colorSchemes, typography } from './themePrimitives'
 
 interface AppThemeProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const createAppTheme = () =>
@@ -21,19 +21,19 @@ const createAppTheme = () =>
     spacing: 8,
 
     shape: {
-      borderRadius: 8,
+      borderRadius: 8
     },
 
     defaultColorScheme: 'light'
-
   })
 
-export const AppTheme: FC<AppThemeProps> = (({ children }) => {
-  const theme = useMemo(() => createAppTheme(), []);
+export const AppTheme: FC<AppThemeProps> = ({ children }) => {
+  const theme = useMemo(() => createAppTheme(), [])
 
   return (
-    <ThemeProvider defaultMode='dark' theme={theme} >
+    <ThemeProvider defaultMode='dark' theme={theme}>
       <CssBaseline />
       {children}
-    </ThemeProvider>);
-});
+    </ThemeProvider>
+  )
+}
