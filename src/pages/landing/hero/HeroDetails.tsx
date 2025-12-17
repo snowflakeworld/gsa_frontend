@@ -1,7 +1,17 @@
+import { FC, memo } from 'react'
+
 import { ArrowRightAltRounded } from '@mui/icons-material'
 import { Button, Stack, Typography } from '@mui/material'
 
-export const Details = () => {
+import { HERO_DETAILS } from '@/constants'
+
+interface HeroDetailsProps {
+  currentIndex: number
+}
+
+const HeroDetailsComponent: FC<HeroDetailsProps> = ({ currentIndex }) => {
+
+  const totalLen = HERO_DETAILS.length
 
   return (
     <Stack direction='column' alignItems='flex-start' gap={4}>
@@ -25,10 +35,10 @@ export const Details = () => {
             lineHeight: { xs: '36px', md: '100%' }
           }}
         >
-          Donruss 90 - Juan Gongaley of Rangers
+          {HERO_DETAILS[currentIndex % totalLen][0]}
         </Typography>
         <Typography sx={{ color: 'text.normal' }}>
-          Batter up-submit Baseball Cards 2020-Present at just $16.99/card.
+          {HERO_DETAILS[currentIndex % totalLen][1]}
         </Typography>
       </Stack>
 
@@ -41,3 +51,5 @@ export const Details = () => {
     </Stack>
   )
 }
+
+export const HeroDetails = memo(HeroDetailsComponent)
