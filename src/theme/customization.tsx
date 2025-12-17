@@ -41,6 +41,9 @@ export const customizations: Components<Theme> = {
         '&.icon--white': {
           fill: gsaColors.text.primary.dark
         },
+        '&.fill-none': {
+          fill: 'none'
+        },
         width: '20px',
         height: '20px',
         '&.size--big': {
@@ -116,6 +119,23 @@ export const customizations: Components<Theme> = {
           color: gsaColors.text.primary.dark,
           '&:hover': {
             backgroundColor: gsaColors.background.tertiary.dark
+          }
+        })
+      }),
+
+      text: ({ theme }) => ({
+        border: 'none',
+        color: gsaColors.text.normal,
+        '&:hover': {
+          backgroundColor: gsaColors.background.tertiary.light,
+          color: gsaColors.text.normal,
+          boxShadow: 'none',
+        },
+        ...theme.applyStyles('dark', {
+          border: 'none',
+          color: gsaColors.text.normal,
+          '&:hover': {
+            backgroundColor: gsaColors.background.tertiary.dark,
           }
         })
       })

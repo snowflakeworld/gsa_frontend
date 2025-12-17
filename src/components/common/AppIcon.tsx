@@ -9,6 +9,7 @@ import SubmitIcon from '&/assets/images/submit.svg'
 import SunIcon from '&/assets/images/sun.svg'
 import StarBig from '&/assets/images/star-big.svg'
 import StarSmall from '&/assets/images/star-small.svg'
+import ChevronDownOutline from '&/assets/images/chevron-down-outline.svg'
 
 export const ICONS_MAP = {
   logo: LogoIcon,
@@ -16,7 +17,8 @@ export const ICONS_MAP = {
   sun: SunIcon,
   moon: MoonIcon,
   starBig: StarBig,
-  starSmall: StarSmall
+  starSmall: StarSmall,
+  chevronDownOutline: ChevronDownOutline
 }
 
 export type IconType = keyof typeof ICONS_MAP
@@ -35,10 +37,11 @@ export interface AppIconProps {
   top?: number | string | undefined
   left?: number | string | undefined
   right?: number | string | undefined
-  bottom?: number | string | undefined
+  bottom?: number | string | undefined,
+  className?: string | undefined
 }
 
-const InitAppIcon: FC<AppIconProps> = ({ name, position = 'initial', width = 'auto', height = 'auto', viewBoxWidth, viewBoxHeight, color = undefined, rotate = 0, top = undefined, left = undefined, right = undefined, bottom = undefined }) => {
+const InitAppIcon: FC<AppIconProps> = ({ name, position = 'initial', width = 'auto', height = 'auto', viewBoxWidth, viewBoxHeight, color = undefined, rotate = 0, top = undefined, left = undefined, right = undefined, bottom = undefined, className = undefined }) => {
   const IconComponent = ICONS_MAP[name]
 
   if (!IconComponent) {
@@ -62,6 +65,7 @@ const InitAppIcon: FC<AppIconProps> = ({ name, position = 'initial', width = 'au
 
   return (
     <SvgIcon
+      className={className}
       component={IconComponent}
       viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
       fontSize='inherit'
