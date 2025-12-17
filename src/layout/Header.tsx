@@ -55,6 +55,7 @@ export const Header = () => {
         <Stack
           width={'100vw'}
           height={'100vh'}
+          zIndex={2}
           sx={{ backgroundColor: 'backdrop', position: 'fixed', backdropFilter: 'blur(2px)' }}
         />
       )}
