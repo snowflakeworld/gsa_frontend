@@ -1,26 +1,32 @@
-import { useCallback, useMemo } from "react";
-import { IconButton, useColorScheme } from "@mui/material";
-import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
+import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material'
+import { IconButton, useColorScheme } from '@mui/material'
+import { useCallback, useMemo } from 'react'
 
 const ColorModeButton = () => {
-  const { mode, systemMode, setMode } = useColorScheme();
-  const resolvedMode = (systemMode || mode) as 'light' | 'dark';
+  const { mode, systemMode, setMode } = useColorScheme()
+  const resolvedMode = (systemMode || mode) as 'light' | 'dark'
 
   const handleClick = useCallback(() => {
     setMode(resolvedMode === 'dark' ? 'light' : 'dark')
   }, [resolvedMode, setMode])
 
   const icon = useMemo(
-    () => (resolvedMode === 'dark' ? <LightModeOutlined className="size--big" /> : <DarkModeOutlined className="size--big" />),
+    () =>
+      resolvedMode === 'dark' ? (
+        <LightModeOutlined className='size--big' />
+      ) : (
+        <DarkModeOutlined className='size--big' />
+      ),
     [resolvedMode]
   )
 
   return (
     <IconButton
       data-screenshot='toggle-mode'
-      size="small"
+      size='small'
       aria-label={`Toggle ${resolvedMode === 'dark' ? 'light' : 'dark'} mode`}
-      onClick={handleClick}>
+      onClick={handleClick}
+    >
       {icon}
     </IconButton>
   )

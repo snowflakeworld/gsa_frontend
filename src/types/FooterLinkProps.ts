@@ -1,9 +1,9 @@
 export interface LinkContent {
-  title: string,
+  title: string
   path: string
 }
 
-export type LinkType = ('home' | 'research' | 'support' | 'more')
+export type LinkType = 'home' | 'research' | 'support' | 'more'
 
 export interface FooterLinkProps {
   type: LinkType

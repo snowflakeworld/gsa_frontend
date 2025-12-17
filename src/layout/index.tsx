@@ -1,9 +1,9 @@
-import { CircularProgress } from "@mui/material";
-import { Outlet } from "react-router-dom";
+import { CircularProgress } from '@mui/material'
+import { Outlet } from 'react-router-dom'
 
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import { Suspense } from "react";
+import { Suspense } from 'react'
+import { Footer } from './Footer'
+import { Header } from './Header'
 
 const Layout = () => {
   return (
@@ -14,7 +14,7 @@ const Layout = () => {
       </Suspense>
       <Footer />
     </>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

@@ -1,6 +1,6 @@
 import { Components, Theme } from '@mui/material/styles'
 
-import { gsaColors } from './themePrimitives';
+import { gsaColors } from './themePrimitives'
 
 export const customizations: Components<Theme> = {
   MuiLink: {
@@ -38,11 +38,14 @@ export const customizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         fill: gsaColors.text.primary.light,
+        '&.icon--white': {
+          fill: gsaColors.text.primary.dark
+        },
         width: '20px',
         height: '20px',
         '&.size--big': {
           width: '26px',
-          height: '26px',
+          height: '26px'
         },
         ...theme.applyStyles('dark', {
           fill: gsaColors.text.primary.dark
@@ -64,13 +67,13 @@ export const customizations: Components<Theme> = {
         '&:hover': {
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-          color: gsaColors.text.primary.light,
+          color: gsaColors.text.primary.light
         },
         ...theme.applyStyles('dark', {
           border: `1px solid ${gsaColors.border.dark}`,
           color: gsaColors.text.primary.dark,
           '&:hover': {
-            color: gsaColors.text.primary.dark,
+            color: gsaColors.text.primary.dark
           }
         })
       }),
@@ -85,13 +88,19 @@ export const customizations: Components<Theme> = {
           boxShadow: `0 4px 8px ${gsaColors.baseShadow}`
         },
 
+        '&.button--red': {
+          backgroundColor: gsaColors.background.red.normal,
+
+          '&:hover': {
+            backgroundColor: gsaColors.background.red.dark
+          }
+        },
+
         ...theme.applyStyles('dark', {
-          minHeight: '32px',
-          minWidth: '32px',
           borderColor: gsaColors.border.dark,
           backgroundColor: gsaColors.background.button.dark,
           '&:hover': {
-            backgroundColor: gsaColors.background.tertiary.dark,
+            backgroundColor: gsaColors.background.tertiary.dark
           }
         })
       }),
@@ -100,13 +109,13 @@ export const customizations: Components<Theme> = {
         borderColor: gsaColors.border.light,
         color: gsaColors.text.primary.light,
         '&:hover': {
-          backgroundColor: gsaColors.background.tertiary.light,
+          backgroundColor: gsaColors.background.tertiary.light
         },
         ...theme.applyStyles('dark', {
           borderColor: gsaColors.border.dark,
           color: gsaColors.text.primary.dark,
           '&:hover': {
-            backgroundColor: gsaColors.background.tertiary.dark,
+            backgroundColor: gsaColors.background.tertiary.dark
           }
         })
       })
@@ -135,7 +144,7 @@ export const customizations: Components<Theme> = {
         border: `1px solid ${gsaColors.border.light}`,
         ...theme.applyStyles('dark', {
           backgroundColor: gsaColors.background.paper.dark,
-          border: `1px solid ${gsaColors.border.dark}`,
+          border: `1px solid ${gsaColors.border.dark}`
         })
       })
     }
@@ -152,7 +161,7 @@ export const customizations: Components<Theme> = {
         boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
         ...theme.applyStyles('dark', {
           background: gsaColors.background.appBar.dark,
-          borderBottom: `1px solid ${gsaColors.border.dark}`,
+          borderBottom: `1px solid ${gsaColors.border.dark}`
         })
       })
     }
@@ -168,7 +177,7 @@ export const customizations: Components<Theme> = {
           backgroundColor: gsaColors.background.input.light,
           borderRadius: 8,
           '& fieldset': {
-            backgroundColor: gsaColors.background.input.light,
+            backgroundColor: gsaColors.background.input.light
           },
           '&:hover fieldset': {
             borderColor: gsaColors.border.light
@@ -191,7 +200,7 @@ export const customizations: Components<Theme> = {
             // border: '#39393c',
             backgroundColor: gsaColors.background.input.dark,
             '& fieldset': {
-              backgroundColor: gsaColors.background.input.dark,
+              backgroundColor: gsaColors.background.input.dark
             },
             '&:hover fieldset': {
               borderColor: gsaColors.border.dark
@@ -217,9 +226,8 @@ export const customizations: Components<Theme> = {
   MuiContainer: {
     styleOverrides: {
       root: {
-        maxWidth: '1440px !important',
-        padding: '0 !important'
+        maxWidth: '1440px !important'
       }
     }
   }
-};
+}

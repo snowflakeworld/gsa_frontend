@@ -17,8 +17,8 @@ export const gsaColors = {
       light: '#FFFFFF'
     },
     paper: {
-      dark: '#262628',
-      light: '#FAFAFA'
+      dark: '#272729',
+      light: '#F1F1F1'
     },
     appBar: {
       dark: '#1D1D1F',
@@ -39,6 +39,11 @@ export const gsaColors = {
     footer: {
       dark: '#3A3A3A',
       light: '#ECECEC'
+    },
+    red: {
+      normal: '#E24744',
+      light: '#f35855',
+      dark: '#bb2a28'
     }
   },
 
@@ -69,6 +74,7 @@ export const gsaColors = {
       light: '#414141'
     },
     normal: '#797979',
+    red: '#E24744'
   },
 
   primary: {
@@ -109,12 +115,17 @@ export const colorSchemes = {
         main: gsaColors.secondary.light,
         contrastText: gsaColors.text.secondary.light
       },
-      background: { default: gsaColors.background.default.light, paper: gsaColors.background.paper.light },
+      background: {
+        default: gsaColors.background.default.light,
+        paper: gsaColors.background.paper.light,
+        red: gsaColors.background.red
+      },
       text: {
         primary: gsaColors.text.primary.light,
         secondary: gsaColors.text.secondary.light,
         disabled: gsaColors.text.disabled,
-        normal: gsaColors.text.normal
+        normal: gsaColors.text.normal,
+        red: gsaColors.text.red
       },
       divider: gsaColors.border.light,
       backdrop: gsaColors.backdrop.light,
@@ -131,12 +142,17 @@ export const colorSchemes = {
         main: gsaColors.secondary.dark,
         contrastText: gsaColors.text.secondary.dark
       },
-      background: { default: gsaColors.background.default.dark, paper: gsaColors.background.paper.dark },
+      background: {
+        default: gsaColors.background.default.dark,
+        paper: gsaColors.background.paper.dark,
+        red: gsaColors.background.red
+      },
       text: {
         primary: gsaColors.text.primary.dark,
         secondary: gsaColors.text.secondary.dark,
         disabled: gsaColors.text.disabled,
-        normal: gsaColors.text.normal
+        normal: gsaColors.text.normal,
+        red: gsaColors.text.red
       },
       divider: gsaColors.border.dark,
       backdrop: gsaColors.backdrop.dark,
@@ -147,8 +163,8 @@ export const colorSchemes = {
 
 export const typography = {
   h1: {
-    fontSize: '5rem',
-    fontWeight: 400
+    fontSize: '50px',
+    fontWeight: 700
   },
   h2: {
     fontSize: '2rem',
@@ -157,9 +173,9 @@ export const typography = {
     letterSpacing: '-0.01em'
   },
   h3: {
-    fontSize: '3rem',
+    fontSize: '20px',
     fontWeight: 600,
-    lineHeight: 1.4
+    lineHeight: '30px'
   },
   h4: {
     fontSize: '1.25rem',
@@ -186,7 +202,7 @@ export const gsaIconColors = {
   logo1: '#0066CC',
   logo2: '#E24744',
   logo3: '#0066CC'
-};
+}
 
 export const gsaShadows = {
   none: 'none',
