@@ -10,6 +10,10 @@ import SunIcon from '&/assets/images/sun.svg'
 import StarBig from '&/assets/images/star-big.svg'
 import StarSmall from '&/assets/images/star-small.svg'
 import ChevronDownOutline from '&/assets/images/chevron-down-outline.svg'
+import Chain from '&/assets/images/chain.svg'
+import Eye from '&/assets/images/eye.svg'
+import TwoStars from '&/assets/images/two-stars.svg'
+import Uv from '&/assets/images/uv.svg'
 
 export const ICONS_MAP = {
   logo: LogoIcon,
@@ -18,10 +22,14 @@ export const ICONS_MAP = {
   moon: MoonIcon,
   starBig: StarBig,
   starSmall: StarSmall,
-  chevronDownOutline: ChevronDownOutline
+  chevronDownOutline: ChevronDownOutline,
+  chain: Chain,
+  eye: Eye,
+  twoStars: TwoStars,
+  uv: Uv
 }
 
-export type IconType = keyof typeof ICONS_MAP
+export type IconType = keyof typeof ICONS_MAP | string
 
 export type IconColor = keyof typeof gsaIconColors
 
@@ -42,7 +50,7 @@ export interface AppIconProps {
 }
 
 const InitAppIcon: FC<AppIconProps> = ({ name, position = 'initial', width = 'auto', height = 'auto', viewBoxWidth, viewBoxHeight, color = undefined, rotate = 0, top = undefined, left = undefined, right = undefined, bottom = undefined, className = undefined }) => {
-  const IconComponent = ICONS_MAP[name]
+  const IconComponent = ICONS_MAP[name as keyof typeof ICONS_MAP]
 
   if (!IconComponent) {
     console.error(`Icon "${name}" not found.`)

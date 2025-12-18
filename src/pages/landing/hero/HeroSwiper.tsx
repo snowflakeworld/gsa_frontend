@@ -20,7 +20,8 @@ interface HeroSwiperProps {
 }
 
 export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) => {
-  const { isDesktop } = useDeviceType()
+  const { isMobile, isTablet, isDesktop } = useDeviceType()
+  const isScreenSmall = isMobile || isTablet
 
   useEffect(() => {
     if (swiperRef.current) {
@@ -66,8 +67,8 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
       </Swiper>
 
       <Box>
-        <AppIcon name='starBig' color='starRed' width={60} height={60} viewBoxWidth={67} viewBoxHeight={67} position='absolute' top={-30} left={25} />
-        <AppIcon name='starSmall' color='starRed' width={20} height={20} viewBoxWidth={18} viewBoxHeight={18} position='absolute' top={16} left={64} />
+        <AppIcon name='starBig' color='customRed' width={!isScreenSmall ? 60 : 40} height={!isScreenSmall ? 60 : 40} viewBoxWidth={67} viewBoxHeight={67} position='absolute' top={!isScreenSmall ? -30 : -20} left={25} />
+        <AppIcon name='starSmall' color='customRed' width={!isScreenSmall ? 20 : 15} height={!isScreenSmall ? 20 : 15} viewBoxWidth={18} viewBoxHeight={18} position='absolute' top={!isScreenSmall ? 16 : 12} left={!isScreenSmall ? 64 : 52} />
       </Box>
     </Stack>
   )

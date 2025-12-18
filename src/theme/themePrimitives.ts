@@ -47,7 +47,12 @@ export const gsaColors = {
     red: {
       normal: '#E24744',
       light: '#f35855',
-      dark: '#bb2a28'
+      dark: '#bb2a28',
+      alpha: 'rgba(226, 71, 68, 0.1)'
+    },
+    blog: {
+      dark: '#272729',
+      light: '#FFFFFF'
     }
   },
 
@@ -129,14 +134,16 @@ export const colorSchemes = {
         default: gsaColors.background.default.light,
         paper: gsaColors.background.paper.light,
         red: gsaColors.background.red,
-        footer: gsaColors.background.footer.light
+        footer: gsaColors.background.footer.light,
+        blog: gsaColors.background.blog.light
       },
       text: {
         primary: gsaColors.text.primary.light,
         secondary: gsaColors.text.secondary.light,
         disabled: gsaColors.text.disabled,
         normal: gsaColors.text.normal,
-        red: gsaColors.text.red
+        red: gsaColors.text.red,
+        nav: gsaColors.link.light
       },
       divider: gsaColors.border.normal.light,
       backdrop: gsaColors.backdrop.light
@@ -156,14 +163,16 @@ export const colorSchemes = {
         default: gsaColors.background.default.dark,
         paper: gsaColors.background.paper.dark,
         red: gsaColors.background.red,
-        footer: gsaColors.background.footer.dark
+        footer: gsaColors.background.footer.dark,
+        blog: gsaColors.background.blog.dark
       },
       text: {
         primary: gsaColors.text.primary.dark,
         secondary: gsaColors.text.secondary.dark,
         disabled: gsaColors.text.disabled,
         normal: gsaColors.text.normal,
-        red: gsaColors.text.red
+        red: gsaColors.text.red,
+        nav: gsaColors.link.dark
       },
       divider: gsaColors.border.normal.dark,
       backdrop: gsaColors.backdrop.dark
@@ -171,11 +180,11 @@ export const colorSchemes = {
   }
 }
 
-const gsaTypography = {
+export const gsaTypography = {
   fontFamily: {
     primary: 'Manrope',
     mono: '"SF Pro Display", Roboto, "Droid Sans Mono"',
-    display: 'Manrope',
+    display: 'Manrope, Roboto',
   },
   fontSize: {
     xs: '0.6875rem',
@@ -211,6 +220,7 @@ const gsaTypography = {
 }
 
 export const typography = {
+  fontFamily: gsaTypography.fontFamily.primary,
   h1: {
     fontFamily: gsaTypography.fontFamily.mono,
     fontSize: '2rem',
@@ -272,6 +282,9 @@ export const typography = {
     fontWeight: 600,
     lineHeight: '24px',
     letterSpacing: 0
+  },
+  button: {
+    textTransform: undefined
   }
 }
 
@@ -280,7 +293,7 @@ export const gsaIconColors = {
   secondary: '#FFFFFF',
   tertiary: '#E24744',
   grey: '#797979',
-  starRed: '#E24744',
+  customRed: '#E24744',
   starModeDark: '#28282A',
   starModeLight: '#F1F1F1'
 }
@@ -302,7 +315,8 @@ export const gsaShadows = {
   glowWarning: 'none',
   premium: '0 4px 8px rgba(0, 0, 0, 0.5)',
   elevated: '0 2px 4px rgba(0, 0, 0, 0.5)',
-  floating: '0 4px 8px rgba(0, 0, 0, 0.5)'
+  floating: '0 4px 8px rgba(0, 0, 0, 0.5)',
+  card: '0 4px 32px rgba(12, 12, 13, 0.06)'
 }
 
 export const modernColors = gsaColors
