@@ -1,11 +1,11 @@
 import { Link, Stack, Typography } from '@mui/material'
-import { FC } from 'react'
+import { FC, memo } from 'react'
 
 import { FOOTER_LINK_MAIN } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { FooterLinkProps, LinkContent, LinkType } from '@/types'
 
-export const LinkListMain: FC<FooterLinkProps> = (props: FooterLinkProps) => {
+const LinkListMainComponent: FC<FooterLinkProps> = (props: FooterLinkProps) => {
   const { isMobile, isTablet } = useDeviceType()
 
   const isScreenSmall = isMobile || isTablet
@@ -28,3 +28,5 @@ export const LinkListMain: FC<FooterLinkProps> = (props: FooterLinkProps) => {
     </Stack>
   )
 }
+
+export const LinkListMain = memo(LinkListMainComponent)

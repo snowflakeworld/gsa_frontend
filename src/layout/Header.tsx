@@ -1,7 +1,7 @@
 import { AccountCircleOutlined, BackupOutlined, CloseRounded, MenuRounded } from '@mui/icons-material'
 import { AppBar, Box, Stack, Toolbar } from '@mui/material'
 import Button from '@mui/material/Button'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 
 import Logo from '@/components/logo'
 import { useDeviceType } from '@/hooks/useDeviceType'
@@ -9,7 +9,7 @@ import ColorModeButton from './header/ColorModeButton'
 import { MobileNav } from './header/MobileNav'
 import { NavList } from './header/NavList'
 
-export const Header = () => {
+const HeaderComponent = () => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false)
 
   const { isMobile, isTablet } = useDeviceType()
@@ -18,7 +18,7 @@ export const Header = () => {
 
   return (
     <>
-      <AppBar elevation={0} sx={{backgroundColor: 'background.header'}}>
+      <AppBar elevation={0} sx={{ backgroundColor: 'background.header' }}>
         <Toolbar sx={{ py: 2, px: { lg: 18.75, md: 2.5 }, gap: 2, justifyContent: 'space-between' }}>
           <Logo place='header' />
 
@@ -62,3 +62,5 @@ export const Header = () => {
     </>
   )
 }
+
+export const Header = memo(HeaderComponent)

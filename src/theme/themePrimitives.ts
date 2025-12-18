@@ -59,11 +59,11 @@ export const gsaColors = {
   border: {
     normal: {
       dark: '#262628',
-      light: '#ECECEC',
+      light: '#ECECEC'
     },
     footer: {
       dark: '#262628',
-      light: '#ECECEC',
+      light: '#ECECEC'
     }
   },
 
@@ -184,7 +184,7 @@ export const gsaTypography = {
   fontFamily: {
     primary: 'Manrope',
     mono: '"SF Pro Display", Roboto, "Droid Sans Mono"',
-    display: 'Manrope, Roboto',
+    display: 'Manrope, Roboto'
   },
   fontSize: {
     xs: '0.6875rem',
@@ -274,7 +274,7 @@ export const typography = {
     fontSize: '1.25rem',
     fontWeight: 600,
     lineHeight: '30px',
-    letterSpacing: 0,
+    letterSpacing: 0
   },
   h6: {
     fontFamily: gsaTypography.fontFamily.primary,

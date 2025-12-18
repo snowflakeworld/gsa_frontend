@@ -1,9 +1,10 @@
-import { Link, Stack, Typography } from '@mui/material'
+import { Link, Stack } from '@mui/material'
 
 import { HEADER_NAV_LINKS } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
+import { memo } from 'react'
 
-export const NavList = ({ ...props }) => {
+const NavListComponent = ({ ...props }) => {
   const { isMobile, isTablet } = useDeviceType()
 
   const isScreenSmall = isMobile || isTablet
@@ -26,3 +27,5 @@ export const NavList = ({ ...props }) => {
     </Stack>
   )
 }
+
+export const NavList = memo(NavListComponent)
