@@ -17,27 +17,19 @@ const HeroDetailsComponent: FC<HeroDetailsProps> = ({ currentIndex }) => {
     <Stack direction='column' alignItems='flex-start' gap={4}>
       <Stack direction='column' gap={1.5}>
         <Typography
-          variant='h3'
+          variant='h6'
           sx={{
-            fontWeight: 600,
             color: 'text.red',
-            fontSize: { xs: '16px', md: '20px' },
+            fontSize: { xs: '1rem', md: '1.25rem' },
             lineHeight: { xs: '24px', md: '30px' }
           }}
         >
           🔥 Collectors Crossovers
         </Typography>
-        <Typography
-          variant='h1'
-          sx={{
-            fontWeight: 700,
-            fontSize: { xs: '32px', md: '50px' },
-            lineHeight: { xs: '36px', md: '100%' }
-          }}
-        >
+        <Typography variant='h1'>
           {HERO_DETAILS[currentIndex % totalLen][0]}
         </Typography>
-        <Typography sx={{ color: 'text.normal' }}>
+        <Typography component='p' sx={{ color: 'text.normal', fontSize: {md: '1.25rem'} }}>
           {HERO_DETAILS[currentIndex % totalLen][1]}
         </Typography>
       </Stack>

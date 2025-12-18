@@ -18,7 +18,7 @@ export const Header = () => {
 
   return (
     <>
-      <AppBar color='secondary' elevation={0}>
+      <AppBar elevation={0} sx={{backgroundColor: 'background.header'}}>
         <Toolbar sx={{ py: 2, px: { lg: 18.75, md: 2.5 }, gap: 2, justifyContent: 'space-between' }}>
           <Logo place='header' />
 
