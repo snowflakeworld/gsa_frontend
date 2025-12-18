@@ -171,97 +171,11 @@ export const colorSchemes = {
   }
 }
 
-export const typography = {
-  h1: {
-    fontSize: '50px',
-    fontWeight: 700
-  },
-  h2: {
-    fontSize: '2rem',
-    fontWeight: 600,
-    lineHeight: 1.3,
-    letterSpacing: '-0.01em'
-  },
-  h3: {
-    fontSize: '20px',
-    fontWeight: 600,
-    lineHeight: '30px'
-  },
-  h4: {
-    fontSize: '1.25rem',
-    fontWeight: 400,
-    lineHeight: 1.4
-  },
-  h5: {
-    fontSize: '1.125rem',
-    fontWeight: 600,
-    lineHeight: 1.4
-  },
-  h6: {
-    fontSize: '1rem',
-    fontWeight: 600,
-    lineHeight: 1.4
-  }
-}
-
-export const gsaIconColors = {
-  prime: '#000000',
-  secondary: '#FFFFFF',
-  tertiary: '#E24744',
-  grey: '#797979',
-  starRed: '#E24744',
-  starModeDark: '#28282A',
-  starModeLight: '#F1F1F1'
-}
-
-export const gsaShadows = {
-  none: 'none',
-  xs: '0 1px 2px rgba(0, 0, 0, 0.5)',
-  sm: '0 2px 4px rgba(0, 0, 0, 0.5)',
-  md: '0 4px 8px rgba(0, 0, 0, 0.5)',
-  medium: '0 4px 8px rgba(0, 0, 0, 0.5)',
-  lg: '0 6px 12px rgba(0, 0, 0, 0.5)',
-  xl: '0 8px 16px rgba(0, 0, 0, 0.5)',
-  '2xl': '0 12px 24px rgba(0, 0, 0, 0.5)',
-  inner: 'inset 0 2px 4px rgba(0, 0, 0, 0.5)',
-  innerLg: 'inset 0 3px 6px rgba(0, 0, 0, 0.5)',
-  glow: 'none',
-  glowSuccess: 'none',
-  glowDanger: 'none',
-  glowWarning: 'none',
-  premium: '0 4px 8px rgba(0, 0, 0, 0.5)',
-  elevated: '0 2px 4px rgba(0, 0, 0, 0.5)',
-  floating: '0 4px 8px rgba(0, 0, 0, 0.5)'
-}
-
-export const gsaSpacing = {
-  xs: '0.25rem',
-  sm: '0.5rem',
-  md: '0.75rem',
-  lg: '1rem',
-  xl: '1.25rem',
-  '2xl': '1.5rem',
-  '3xl': '2rem',
-  '4xl': '3rem',
-  '5xl': '4rem'
-}
-
-export const gsaRadius = {
-  none: '0',
-  xs: '0.125rem',
-  sm: '0.25rem',
-  md: '0.375rem',
-  lg: '1.25rem',
-  xl: '0.625rem',
-  '2xl': '0.75rem',
-  full: '9999px'
-}
-
-export const gsaTypography = {
+const gsaTypography = {
   fontFamily: {
-    primary: 'Manrope, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-    mono: '"SF Pro Display", "Droid Sans Mono", monospace',
-    display: 'Manrope, -apple-system, BlinkMacSystemFont, sans-serif'
+    primary: 'Manrope',
+    mono: '"SF Pro Display", Roboto, "Droid Sans Mono"',
+    display: 'Manrope',
   },
   fontSize: {
     xs: '0.6875rem',
@@ -296,16 +210,102 @@ export const gsaTypography = {
   }
 }
 
-// export const createTradingHover = (_options?: {
-//   borderColor?: string
-//   shadow?: string
-//   transform?: string
-//   scale?: number
-//   glow?: boolean
-// }) => ({})
+export const typography = {
+  h1: {
+    fontFamily: gsaTypography.fontFamily.mono,
+    fontSize: '2rem',
+    fontWeight: 700,
+    lineHeight: '36px',
+    letterSpacing: 0,
+
+    '@media (min-width:900px)': {
+      fontSize: '3.125rem',
+      lineHeight: '100%'
+    }
+  },
+  h2: {
+    fontFamily: gsaTypography.fontFamily.mono,
+    fontSize: '3rem',
+    fontWeight: 700,
+    lineHeight: '56px',
+    letterSpacing: '-1.44px',
+
+    '@media (min-width:900px)': {
+      fontSize: '4.375rem',
+      lineHeight: '80px'
+    }
+  },
+  h3: {
+    fontFamily: gsaTypography.fontFamily.mono,
+    fontSize: '3rem',
+    fontWeight: 700,
+    lineHeight: '56px',
+    letterSpacing: '-1.44px',
+
+    '@media (min-width:900px)': {
+      fontSize: '3.125rem',
+      lineHeight: '100%'
+    }
+  },
+  h4: {
+    fontFamily: gsaTypography.fontFamily.primary,
+    fontSize: '1.5rem',
+    fontWeight: 700,
+    lineHeight: '32px',
+    letterSpacing: 0,
+
+    '@media (min-width:900px)': {
+      fontSize: '2rem',
+      lineHeight: '40px'
+    }
+  },
+  h5: {
+    fontFamily: gsaTypography.fontFamily.primary,
+    fontSize: '1.25rem',
+    fontWeight: 600,
+    lineHeight: '30px',
+    letterSpacing: 0,
+  },
+  h6: {
+    fontFamily: gsaTypography.fontFamily.primary,
+    fontSize: '1rem',
+    fontWeight: 600,
+    lineHeight: '24px',
+    letterSpacing: 0
+  }
+}
+
+export const gsaIconColors = {
+  prime: '#000000',
+  secondary: '#FFFFFF',
+  tertiary: '#E24744',
+  grey: '#797979',
+  starRed: '#E24744',
+  starModeDark: '#28282A',
+  starModeLight: '#F1F1F1'
+}
+
+export const gsaShadows = {
+  none: 'none',
+  xs: '0 1px 2px rgba(0, 0, 0, 0.5)',
+  sm: '0 2px 4px rgba(0, 0, 0, 0.5)',
+  md: '0 4px 8px rgba(0, 0, 0, 0.5)',
+  medium: '0 4px 8px rgba(0, 0, 0, 0.5)',
+  lg: '0 6px 12px rgba(0, 0, 0, 0.5)',
+  xl: '0 8px 16px rgba(0, 0, 0, 0.5)',
+  '2xl': '0 12px 24px rgba(0, 0, 0, 0.5)',
+  inner: 'inset 0 2px 4px rgba(0, 0, 0, 0.5)',
+  innerLg: 'inset 0 3px 6px rgba(0, 0, 0, 0.5)',
+  glow: 'none',
+  glowSuccess: 'none',
+  glowDanger: 'none',
+  glowWarning: 'none',
+  premium: '0 4px 8px rgba(0, 0, 0, 0.5)',
+  elevated: '0 2px 4px rgba(0, 0, 0, 0.5)',
+  floating: '0 4px 8px rgba(0, 0, 0, 0.5)'
+}
 
 export const modernColors = gsaColors
 export const modernShadows = gsaShadows
-export const modernBorderRadius = gsaRadius
 
 // export const createHoverState = createTradingHover

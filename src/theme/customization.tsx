@@ -249,5 +249,13 @@ export const customizations: Components<Theme> = {
         maxWidth: '1440px !important'
       }
     }
+  },
+
+  MuiTypography: {
+    styleOverrides: {
+      root: {
+        fontFamily: 'Manrope'
+      }
+    }
   }
 }

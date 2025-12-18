@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import { Box, Stack } from '@mui/material'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectCoverflow } from 'swiper/modules';
+import { Autoplay, EffectCoverflow } from 'swiper/modules';
 import { Swiper as SwiperType } from 'swiper/types'
 
 import { useDeviceType } from '@/hooks/useDeviceType'
@@ -50,11 +50,11 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
           rotate: 0,
           stretch: 0,
           modifier: 2,
-          slideShadows: false
+          slideShadows: false,
         }}
-        freeMode={true}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
-        modules={[EffectCoverflow]}
+        modules={[EffectCoverflow, Autoplay]}
+        autoplay={{ delay: 2500, waitForTransition: true }}
       >
 
         {HERO_CARDS.map((src, idx) => (
