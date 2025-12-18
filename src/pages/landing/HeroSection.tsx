@@ -54,7 +54,7 @@ const HeroSection = () => {
             <Stack
               direction={{ xs: 'column-reverse', md: 'column' }}
               gap={{ xs: 3, md: 10 }}
-              paddingBottom={{ xs: 0, md: 3.75 }}>
+              paddingBottom={{ xs: 0, md: 13.75 }}>
               <HeroDetails currentIndex={currentIndex} />
               <PaginationBullets total={HERO_CARDS.length} currentIndex={currentIndex} onSelect={handleSelect} theme={mode as 'dark' | 'light'} />
             </Stack>
