@@ -1,7 +1,7 @@
 import { CircularProgress } from '@mui/material'
+import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 
-import { Suspense } from 'react'
 import { Footer } from './Footer'
 import { Header } from './Header'
 

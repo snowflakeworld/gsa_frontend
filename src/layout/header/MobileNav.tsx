@@ -1,7 +1,8 @@
 import { Box, Divider } from '@mui/material'
+import { memo } from 'react'
 import { NavList } from './NavList'
 
-export const MobileNav = () => {
+const MobileNavComponent = () => {
   return (
     <Box>
       <Divider />
@@ -9,3 +10,5 @@ export const MobileNav = () => {
     </Box>
   )
 }
+
+export const MobileNav = memo(MobileNavComponent)
