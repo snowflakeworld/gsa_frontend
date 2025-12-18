@@ -23,7 +23,7 @@ export const PaginationBullets: FC<PaginationBulletsProps> = ({ total, currentIn
             borderRadius: 2,
             cursor: 'pointer',
             transition: 'width 0.3s, background-color 0.3s ease',
-            backgroundColor: i === currentIndex ? gsaIconColors.starRed : (theme === 'dark' ? gsaIconColors.starModeDark : gsaIconColors.starModeLight),
+            backgroundColor: i === currentIndex ? gsaIconColors.customRed : (theme === 'dark' ? gsaIconColors.starModeDark : gsaIconColors.starModeLight),
           }}
         />
       ))}

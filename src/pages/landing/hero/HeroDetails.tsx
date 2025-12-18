@@ -29,7 +29,7 @@ const HeroDetailsComponent: FC<HeroDetailsProps> = ({ currentIndex }) => {
         <Typography variant='h1'>
           {HERO_DETAILS[currentIndex % totalLen][0]}
         </Typography>
-        <Typography component='p' sx={{ color: 'text.normal', fontSize: {md: '1.25rem'} }}>
+        <Typography component='p' sx={{ color: 'text.normal', fontSize: { md: '1.25rem' } }}>
           {HERO_DETAILS[currentIndex % totalLen][1]}
         </Typography>
       </Stack>
