@@ -12,7 +12,7 @@ export const Footer = () => {
   const isScreenSmall = isMobile || isTablet
 
   return (
-    <Box color='footer'>
+    <Box sx={{ backgroundColor: 'background.footer' }}>
       <Stack
         direction={!isScreenSmall ? 'row' : 'column'}
         sx={!isScreenSmall ? { px: 18.75, py: 6.25 } : { px: 2.5, py: 3 }}

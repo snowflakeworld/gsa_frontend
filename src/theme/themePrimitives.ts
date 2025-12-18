@@ -36,9 +36,13 @@ export const gsaColors = {
       dark: '#28282A',
       light: '#F1F1F1'
     },
+    header: {
+      dark: '#1D1D1F',
+      light: '#FFFFFF'
+    },
     footer: {
-      dark: '#3A3A3A',
-      light: '#ECECEC'
+      dark: '#262628',
+      light: '#FAFAFA'
     },
     red: {
       normal: '#E24744',
@@ -48,8 +52,14 @@ export const gsaColors = {
   },
 
   border: {
-    dark: '#262628',
-    light: '#ECECEC'
+    normal: {
+      dark: '#262628',
+      light: '#ECECEC',
+    },
+    footer: {
+      dark: '#262628',
+      light: '#ECECEC',
+    }
   },
 
   backdrop: {
@@ -118,7 +128,8 @@ export const colorSchemes = {
       background: {
         default: gsaColors.background.default.light,
         paper: gsaColors.background.paper.light,
-        red: gsaColors.background.red
+        red: gsaColors.background.red,
+        footer: gsaColors.background.footer.light
       },
       text: {
         primary: gsaColors.text.primary.light,
@@ -127,9 +138,8 @@ export const colorSchemes = {
         normal: gsaColors.text.normal,
         red: gsaColors.text.red
       },
-      divider: gsaColors.border.light,
-      backdrop: gsaColors.backdrop.light,
-      footer: gsaColors.background.footer.light
+      divider: gsaColors.border.normal.light,
+      backdrop: gsaColors.backdrop.light
     }
   },
   dark: {
@@ -145,7 +155,8 @@ export const colorSchemes = {
       background: {
         default: gsaColors.background.default.dark,
         paper: gsaColors.background.paper.dark,
-        red: gsaColors.background.red
+        red: gsaColors.background.red,
+        footer: gsaColors.background.footer.dark
       },
       text: {
         primary: gsaColors.text.primary.dark,
@@ -154,9 +165,8 @@ export const colorSchemes = {
         normal: gsaColors.text.normal,
         red: gsaColors.text.red
       },
-      divider: gsaColors.border.dark,
-      backdrop: gsaColors.backdrop.dark,
-      footer: gsaColors.background.footer.dark
+      divider: gsaColors.border.normal.dark,
+      backdrop: gsaColors.backdrop.dark
     }
   }
 }

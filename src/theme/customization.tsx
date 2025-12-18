@@ -63,7 +63,7 @@ export const customizations: Components<Theme> = {
         fontWeight: 600,
         fontSize: '0.875rem',
         lineHeight: '20px',
-        border: `1px solid ${gsaColors.border.light}`,
+        border: `1px solid ${gsaColors.border.normal.light}`,
         color: gsaColors.text.primary.light,
         boxShadow: 'none',
         transition: 'all 0.5s ease',
@@ -73,7 +73,7 @@ export const customizations: Components<Theme> = {
           color: gsaColors.text.primary.light
         },
         ...theme.applyStyles('dark', {
-          border: `1px solid ${gsaColors.border.dark}`,
+          border: `1px solid ${gsaColors.border.normal.dark}`,
           color: gsaColors.text.primary.dark,
           '&:hover': {
             color: gsaColors.text.primary.dark
@@ -81,7 +81,7 @@ export const customizations: Components<Theme> = {
         })
       }),
       contained: ({ theme }) => ({
-        borderColor: gsaColors.border.light,
+        borderColor: gsaColors.border.normal.light,
         backgroundColor: gsaColors.background.button.light,
         minHeight: '40px',
         minWidth: '40px',
@@ -100,7 +100,7 @@ export const customizations: Components<Theme> = {
         },
 
         ...theme.applyStyles('dark', {
-          borderColor: gsaColors.border.dark,
+          borderColor: gsaColors.border.normal.dark,
           backgroundColor: gsaColors.background.button.dark,
           '&:hover': {
             backgroundColor: gsaColors.background.tertiary.dark
@@ -109,13 +109,13 @@ export const customizations: Components<Theme> = {
       }),
 
       outlined: ({ theme }) => ({
-        borderColor: gsaColors.border.light,
+        borderColor: gsaColors.border.normal.light,
         color: gsaColors.text.primary.light,
         '&:hover': {
           backgroundColor: gsaColors.background.tertiary.light
         },
         ...theme.applyStyles('dark', {
-          borderColor: gsaColors.border.dark,
+          borderColor: gsaColors.border.normal.dark,
           color: gsaColors.text.primary.dark,
           '&:hover': {
             backgroundColor: gsaColors.background.tertiary.dark
@@ -146,12 +146,12 @@ export const customizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         backgroundColor: gsaColors.background.paper.light,
-        border: `1px solid ${gsaColors.border.light}`,
+        border: `1px solid ${gsaColors.border.normal.light}`,
         borderRadius: 12,
         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         ...theme.applyStyles('dark', {
           backgroundColor: gsaColors.background.paper.dark,
-          border: `1px solid ${gsaColors.border.dark}`
+          border: `1px solid ${gsaColors.border.normal.dark}`
         })
       })
     }
@@ -161,10 +161,10 @@ export const customizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         backgroundColor: gsaColors.background.paper.light,
-        border: `1px solid ${gsaColors.border.light}`,
+        border: `1px solid ${gsaColors.border.normal.light}`,
         ...theme.applyStyles('dark', {
           backgroundColor: gsaColors.background.paper.dark,
-          border: `1px solid ${gsaColors.border.dark}`
+          border: `1px solid ${gsaColors.border.normal.dark}`
         })
       })
     }
@@ -174,14 +174,14 @@ export const customizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         background: gsaColors.background.appBar.light,
-        borderBottom: `1px solid ${gsaColors.border.light}`,
+        borderBottom: `1px solid ${gsaColors.border.normal.light}`,
         borderTop: 'none',
         borderLeft: 'none',
         borderRight: 'none',
         boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
         ...theme.applyStyles('dark', {
           background: gsaColors.background.appBar.dark,
-          borderBottom: `1px solid ${gsaColors.border.dark}`
+          borderBottom: `1px solid ${gsaColors.border.normal.dark}`
         })
       })
     }
@@ -200,7 +200,7 @@ export const customizations: Components<Theme> = {
             backgroundColor: gsaColors.background.input.light
           },
           '&:hover fieldset': {
-            borderColor: gsaColors.border.light
+            borderColor: gsaColors.border.normal.light
           },
           '&.Mui-focused fieldset': {
             borderColor: gsaColors.primary
@@ -223,7 +223,7 @@ export const customizations: Components<Theme> = {
               backgroundColor: gsaColors.background.input.dark
             },
             '&:hover fieldset': {
-              borderColor: gsaColors.border.dark
+              borderColor: gsaColors.border.normal.dark
             },
             '&.Mui-focused fieldset': {
               borderColor: gsaColors.primary
