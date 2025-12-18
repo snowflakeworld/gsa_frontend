@@ -1,4 +1,4 @@
-import { Link, Stack } from '@mui/material'
+import { Link, Stack, Typography } from '@mui/material'
 
 import { HEADER_NAV_LINKS } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
@@ -19,7 +19,7 @@ export const NavList = ({ ...props }) => {
       {...props}
     >
       {HEADER_NAV_LINKS.map(nav => (
-        <Link key={nav.title} href={nav.path} color='inherit' textAlign='center'>
+        <Link key={nav.title} href={nav.path} textAlign='center'>
           {nav.title}
         </Link>
       ))}

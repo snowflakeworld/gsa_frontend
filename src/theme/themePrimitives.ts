@@ -136,7 +136,8 @@ export const colorSchemes = {
         secondary: gsaColors.text.secondary.light,
         disabled: gsaColors.text.disabled,
         normal: gsaColors.text.normal,
-        red: gsaColors.text.red
+        red: gsaColors.text.red,
+        nav: gsaColors.link.light
       },
       divider: gsaColors.border.normal.light,
       backdrop: gsaColors.backdrop.light
@@ -163,7 +164,8 @@ export const colorSchemes = {
         secondary: gsaColors.text.secondary.dark,
         disabled: gsaColors.text.disabled,
         normal: gsaColors.text.normal,
-        red: gsaColors.text.red
+        red: gsaColors.text.red,
+        nav: gsaColors.link.dark
       },
       divider: gsaColors.border.normal.dark,
       backdrop: gsaColors.backdrop.dark
@@ -171,11 +173,11 @@ export const colorSchemes = {
   }
 }
 
-const gsaTypography = {
+export const gsaTypography = {
   fontFamily: {
     primary: 'Manrope',
     mono: '"SF Pro Display", Roboto, "Droid Sans Mono"',
-    display: 'Manrope',
+    display: 'Manrope, Roboto',
   },
   fontSize: {
     xs: '0.6875rem',
@@ -211,6 +213,7 @@ const gsaTypography = {
 }
 
 export const typography = {
+  fontFamily: gsaTypography.fontFamily.primary,
   h1: {
     fontFamily: gsaTypography.fontFamily.mono,
     fontSize: '2rem',
