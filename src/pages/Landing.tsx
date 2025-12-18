@@ -1,10 +1,12 @@
 import { Box } from '@mui/material'
 
 import AdditionalFeatureSection from './landing/AdditionalFeatureSection'
+import AuthServiceSection from './landing/AuthServiceSection'
 import FeatureSection from './landing/FeatureSection'
 import HeroSection from './landing/HeroSection'
 import NewsSection from './landing/NewsSection'
-import ServiceSection from './landing/ServiceSection'
+import SpecServiceSection from './landing/SpecServiceSection'
+
 import TrackingSection from './landing/TrackingSection'
 
 export const LandingPage = () => {
@@ -12,7 +14,8 @@ export const LandingPage = () => {
     <Box>
       <HeroSection />
       <FeatureSection />
-      <ServiceSection />
+      <AuthServiceSection />
+      <SpecServiceSection />
       <TrackingSection />
       <AdditionalFeatureSection />
       <NewsSection />

@@ -3,15 +3,15 @@ import { FC, memo } from 'react'
 
 import { gsaIconColors } from '@/theme/themePrimitives'
 
+import Chain from '&/assets/images/chain.svg'
+import ChevronDownOutline from '&/assets/images/chevron-down-outline.svg'
+import Eye from '&/assets/images/eye.svg'
 import LogoIcon from '&/assets/images/logo.svg'
 import MoonIcon from '&/assets/images/moon.svg'
-import SubmitIcon from '&/assets/images/submit.svg'
-import SunIcon from '&/assets/images/sun.svg'
 import StarBig from '&/assets/images/star-big.svg'
 import StarSmall from '&/assets/images/star-small.svg'
-import ChevronDownOutline from '&/assets/images/chevron-down-outline.svg'
-import Chain from '&/assets/images/chain.svg'
-import Eye from '&/assets/images/eye.svg'
+import SubmitIcon from '&/assets/images/submit.svg'
+import SunIcon from '&/assets/images/sun.svg'
 import TwoStars from '&/assets/images/two-stars.svg'
 import Uv from '&/assets/images/uv.svg'
 
@@ -45,11 +45,25 @@ export interface AppIconProps {
   top?: number | string | undefined
   left?: number | string | undefined
   right?: number | string | undefined
-  bottom?: number | string | undefined,
+  bottom?: number | string | undefined
   className?: string | undefined
 }
 
-const InitAppIcon: FC<AppIconProps> = ({ name, position = 'initial', width = 'auto', height = 'auto', viewBoxWidth, viewBoxHeight, color = undefined, rotate = 0, top = undefined, left = undefined, right = undefined, bottom = undefined, className = undefined }) => {
+const InitAppIcon: FC<AppIconProps> = ({
+  name,
+  position = 'initial',
+  width = 'auto',
+  height = 'auto',
+  viewBoxWidth,
+  viewBoxHeight,
+  color = undefined,
+  rotate = 0,
+  top = undefined,
+  left = undefined,
+  right = undefined,
+  bottom = undefined,
+  className = undefined
+}) => {
   const IconComponent = ICONS_MAP[name as keyof typeof ICONS_MAP]
 
   if (!IconComponent) {
@@ -61,14 +75,10 @@ const InitAppIcon: FC<AppIconProps> = ({ name, position = 'initial', width = 'au
   let posParams = {}
 
   if (position === 'absolute') {
-    if (top !== undefined)
-      posParams = { ...posParams, ...{ top: top } }
-    if (left !== undefined)
-      posParams = { ...posParams, ...{ left: left } }
-    if (right !== undefined)
-      posParams = { ...posParams, ...{ right: right } }
-    if (bottom !== undefined)
-      posParams = { ...posParams, ...{ bottom: bottom } }
+    posParams = top ? { ...posParams, ...{ top: top } } : posParams
+    posParams = left ? { ...posParams, ...{ left: left } } : posParams
+    posParams = right ? { ...posParams, ...{ right: right } } : posParams
+    posParams = bottom ? { ...posParams, ...{ bottom: bottom } } : posParams
   }
 
   return (

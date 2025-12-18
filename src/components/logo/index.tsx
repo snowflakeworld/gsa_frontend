@@ -15,8 +15,8 @@ const Logo: FC<LogoProps> = ({ place }) => {
     <Link href='/' aria-label='Home-page' textAlign={place === 'footer' && isScreenSmall ? 'center' : 'initial'}>
       <StyledImage
         src='/assets/images/logo.svg'
-        alt='Logo Image'
         height={place === 'header' ? 20 : isScreenSmall ? 40 : 50}
+        alt='Logo Image'
       />
     </Link>
   )

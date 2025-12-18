@@ -129,13 +129,13 @@ export const customizations: Components<Theme> = {
         '&:hover': {
           backgroundColor: gsaColors.background.tertiary.light,
           color: gsaColors.text.normal,
-          boxShadow: 'none',
+          boxShadow: 'none'
         },
         ...theme.applyStyles('dark', {
           border: 'none',
           color: gsaColors.text.normal,
           '&:hover': {
-            backgroundColor: gsaColors.background.tertiary.dark,
+            backgroundColor: gsaColors.background.tertiary.dark
           }
         })
       })

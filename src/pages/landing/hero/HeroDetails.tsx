@@ -10,7 +10,6 @@ interface HeroDetailsProps {
 }
 
 const HeroDetailsComponent: FC<HeroDetailsProps> = ({ currentIndex }) => {
-
   const totalLen = HERO_DETAILS.length
 
   return (
@@ -26,9 +25,7 @@ const HeroDetailsComponent: FC<HeroDetailsProps> = ({ currentIndex }) => {
         >
           🔥 Collectors Crossovers
         </Typography>
-        <Typography variant='h1'>
-          {HERO_DETAILS[currentIndex % totalLen][0]}
-        </Typography>
+        <Typography variant='h1'>{HERO_DETAILS[currentIndex % totalLen][0]}</Typography>
         <Typography component='p' sx={{ color: 'text.normal', fontSize: { md: '1.25rem' } }}>
           {HERO_DETAILS[currentIndex % totalLen][1]}
         </Typography>

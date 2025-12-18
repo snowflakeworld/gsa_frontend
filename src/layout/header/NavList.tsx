@@ -1,4 +1,4 @@
-import { Link, Stack, Typography } from '@mui/material'
+import { Link, Stack } from '@mui/material'
 
 import { HEADER_NAV_LINKS } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
