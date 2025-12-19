@@ -1,19 +1,19 @@
 import { Button, Typography } from '@mui/material'
 
-import { AppIcon } from '@/components/common'
+import { CustomIcon } from '@/components'
 
 export const ScrollButton = () => {
   const handleClick = () => {
     window.scrollTo({
-      top: window.scrollY + 1000,
+      top: window.scrollY + 3000,
       left: 0,
       behavior: 'smooth'
     })
   }
 
   return (
-    <Button variant='text' sx={{ gap: 1, position: 'absolute', left: -1, bottom: 0 }} onClick={handleClick}>
-      <AppIcon
+    <Button variant='text' sx={{ gap: 1, position: 'absolute', left: -8, bottom: -30 }} onClick={handleClick}>
+      <CustomIcon
         name='chevronDownOutline'
         className='fill-none'
         width={16}

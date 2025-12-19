@@ -1,10 +1,10 @@
-import { Box, Stack } from '@mui/material'
+import { Box, Stack, useColorScheme } from '@mui/material'
 import { FC, useEffect } from 'react'
 import { Autoplay, EffectCoverflow } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Swiper as SwiperType } from 'swiper/types'
 
-import { AppIcon, StyledImage } from '@/components/common'
+import { CustomIcon, StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks/useDeviceType'
 
 import { HERO_CARDS } from '@/constants'
@@ -20,7 +20,9 @@ interface HeroSwiperProps {
 }
 
 export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) => {
+  const { mode } = useColorScheme()
   const { isMobile, isTablet, isDesktop } = useDeviceType()
+
   const isScreenSmall = isMobile || isTablet
 
   useEffect(() => {
@@ -35,9 +37,9 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
     <Stack
       alignItems='center'
       justifyContent='center'
-      maxWidth={isDesktop ? '500px' : '400px'}
+      maxWidth={isDesktop ? 500 : 400}
       position='relative'
-      sx={{ backgroundColor: 'background.paper', borderRadius: '24px', aspectRatio: '5 / 6' }}
+      sx={{ backgroundColor: 'background.paper', borderRadius: 3, aspectRatio: '5 / 6' }}
     >
       <Swiper
         effect={'coverflow'}
@@ -60,8 +62,8 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
           <SwiperSlide key={idx}>
             <StyledImage
               src={`/assets/images/cards/${src}`}
-              width={isDesktop ? '320px' : '230px'}
-              height={isDesktop ? '450px' : '315px'}
+              width={isDesktop ? 320 : 230}
+              height={isDesktop ? 450 : 315}
               alt='Hero Card Image'
               loading='lazy'
             />
@@ -70,7 +72,7 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
       </Swiper>
 
       <Box>
-        <AppIcon
+        <CustomIcon
           name='starBig'
           color='customRed'
           width={!isScreenSmall ? 60 : 40}
@@ -81,7 +83,7 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
           top={!isScreenSmall ? -30 : -20}
           left={25}
         />
-        <AppIcon
+        <CustomIcon
           name='starSmall'
           color='customRed'
           width={!isScreenSmall ? 20 : 15}
@@ -93,6 +95,35 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
           left={!isScreenSmall ? 64 : 52}
         />
       </Box>
+
+      {!isScreenSmall && (
+        <Box>
+          <CustomIcon
+            name='starBig'
+            color={mode === 'dark' ? 'starModeDark' : 'starModeLight'}
+            width={90}
+            height={90}
+            viewBoxWidth={67}
+            viewBoxHeight={67}
+            position='absolute'
+            rotate='50deg'
+            top={400}
+            left={-55}
+          />
+          <CustomIcon
+            name='starSmall'
+            color={mode === 'dark' ? 'starModeDark' : 'starModeLight'}
+            width={24}
+            height={24}
+            viewBoxWidth={18}
+            viewBoxHeight={18}
+            position='absolute'
+            rotate='50deg'
+            top={470}
+            left={-55}
+          />
+        </Box>
+      )}
     </Stack>
   )
 }

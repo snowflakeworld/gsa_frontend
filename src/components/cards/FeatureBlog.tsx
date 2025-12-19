@@ -1,21 +1,21 @@
 import { Card, CardContent, Grid, Stack, Typography, useColorScheme } from '@mui/material'
 import { FC, memo } from 'react'
 
-import { AppIcon, IconType } from '@/components/common'
+import { CustomIcon, IconType } from '@/components'
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { gsaColors, gsaShadows } from '@/theme'
 
-interface BlogProps {
+interface FeatureBlogProps {
   icon: IconType
   title: string
   content: string
 }
 
-const BlogComponent: FC<BlogProps> = ({ icon, title, content }) => {
+const FeatureBlogComponent: FC<FeatureBlogProps> = ({ icon, title, content }) => {
   const { isMobile, isTablet } = useDeviceType()
-  const isScreenSmall = isMobile || isTablet
-
   const { mode, systemMode } = useColorScheme()
+
+  const isScreenSmall = isMobile || isTablet
   const resolvedMode = (systemMode || mode) as 'light' | 'dark'
 
   return (
@@ -25,7 +25,7 @@ const BlogComponent: FC<BlogProps> = ({ icon, title, content }) => {
           height: { xs: 'auto', md: '100%' },
           borderRadius: 2.25,
           padding: 5,
-          border: `1px solid ${resolvedMode === 'dark' ? '#00000000' : gsaColors.border.normal.light}`,
+          border: `1px solid ${resolvedMode === 'dark' ? 'transparent' : gsaColors.border.normal.light}`,
           backgroundColor: 'background.blog',
           boxShadow: `${gsaShadows.card}`
         }}
@@ -49,11 +49,11 @@ const BlogComponent: FC<BlogProps> = ({ icon, title, content }) => {
                 justifyContent='center'
                 alignItems='center'
               >
-                <AppIcon
+                <CustomIcon
                   name={icon}
                   className='fill-none'
-                  width={24}
-                  height={24}
+                  width={36}
+                  height={36}
                   viewBoxWidth={36}
                   viewBoxHeight={36}
                 />
@@ -63,8 +63,8 @@ const BlogComponent: FC<BlogProps> = ({ icon, title, content }) => {
                 textAlign={!isScreenSmall ? 'initial' : 'center'}
                 sx={{
                   fontSize: { xs: '1.5rem', md: '1.75rem' },
-                  lineHeight: { xs: '32px', md: '36px' },
-                  letterSpacing: '-1px'
+                  lineHeight: { xs: '2rem', md: '2.25rem' },
+                  letterSpacing: -0.125
                 }}
               >
                 {title}
@@ -80,4 +80,4 @@ const BlogComponent: FC<BlogProps> = ({ icon, title, content }) => {
   )
 }
 
-export const Blog = memo(BlogComponent)
+export const FeatureBlog = memo(FeatureBlogComponent)

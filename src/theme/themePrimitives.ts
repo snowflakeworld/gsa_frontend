@@ -1,3 +1,5 @@
+import '@qpokychuk/sf-pro-display/index.css';
+
 export const gsaColors = {
   background: {
     primary: {
@@ -225,7 +227,7 @@ export const typography = {
     fontFamily: gsaTypography.fontFamily.mono,
     fontSize: '2rem',
     fontWeight: 700,
-    lineHeight: '36px',
+    lineHeight: '2.25rem',
     letterSpacing: 0,
 
     '@media (min-width:900px)': {
@@ -237,19 +239,19 @@ export const typography = {
     fontFamily: gsaTypography.fontFamily.mono,
     fontSize: '3rem',
     fontWeight: 700,
-    lineHeight: '56px',
+    lineHeight: '3.5rem',
     letterSpacing: '-1.44px',
 
     '@media (min-width:900px)': {
       fontSize: '4.375rem',
-      lineHeight: '80px'
+      lineHeight: '5rem'
     }
   },
   h3: {
     fontFamily: gsaTypography.fontFamily.mono,
     fontSize: '3rem',
     fontWeight: 700,
-    lineHeight: '56px',
+    lineHeight: '3.5rem',
     letterSpacing: '-1.44px',
 
     '@media (min-width:900px)': {
@@ -261,26 +263,26 @@ export const typography = {
     fontFamily: gsaTypography.fontFamily.primary,
     fontSize: '1.5rem',
     fontWeight: 700,
-    lineHeight: '32px',
+    lineHeight: '2rem',
     letterSpacing: 0,
 
     '@media (min-width:900px)': {
       fontSize: '2rem',
-      lineHeight: '40px'
+      lineHeight: '2.5rem'
     }
   },
   h5: {
     fontFamily: gsaTypography.fontFamily.primary,
     fontSize: '1.25rem',
     fontWeight: 600,
-    lineHeight: '30px',
+    lineHeight: '1.875rem',
     letterSpacing: 0
   },
   h6: {
     fontFamily: gsaTypography.fontFamily.primary,
     fontSize: '1rem',
     fontWeight: 600,
-    lineHeight: '24px',
+    lineHeight: '1.5rem',
     letterSpacing: 0
   },
   button: {

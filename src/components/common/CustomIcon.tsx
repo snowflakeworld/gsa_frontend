@@ -33,7 +33,7 @@ export type IconType = keyof typeof ICONS_MAP | string
 
 export type IconColor = keyof typeof gsaIconColors
 
-export interface AppIconProps {
+export interface CustomIconProps {
   name: IconType
   position?: string
   width?: number | string
@@ -49,7 +49,7 @@ export interface AppIconProps {
   className?: string | undefined
 }
 
-const InitAppIcon: FC<AppIconProps> = ({
+const CustomIconComponent: FC<CustomIconProps> = ({
   name,
   position = 'initial',
   width = 'auto',
@@ -103,4 +103,4 @@ const InitAppIcon: FC<AppIconProps> = ({
   )
 }
 
-export const AppIcon = memo(InitAppIcon)
+export const CustomIcon = memo(CustomIconComponent)

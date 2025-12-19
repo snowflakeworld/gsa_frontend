@@ -2,9 +2,9 @@ import { FC, memo } from 'react'
 
 import { Link } from '@mui/material'
 
+import { StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { LogoProps } from '@/types'
-import { StyledImage } from '../common/StyledImage'
 
 const LogoComponent: FC<LogoProps> = ({ place }) => {
   const { isMobile, isTablet } = useDeviceType()
@@ -22,6 +22,4 @@ const LogoComponent: FC<LogoProps> = ({ place }) => {
   )
 }
 
-const Logo = memo(LogoComponent)
-
-export default Logo
+export const Logo = memo(LogoComponent)
