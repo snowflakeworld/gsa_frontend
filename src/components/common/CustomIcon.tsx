@@ -3,17 +3,17 @@ import { FC, memo } from 'react'
 
 import { gsaIconColors } from '@/theme/themePrimitives'
 
-import Chain from '&/assets/images/chain.svg'
-import ChevronDownOutline from '&/assets/images/chevron-down-outline.svg'
-import Eye from '&/assets/images/eye.svg'
+import Chain from '&/assets/images/icons/chain.svg'
+import ChevronDownOutline from '&/assets/images/icons/chevron-down-outline.svg'
+import Eye from '&/assets/images/icons/eye.svg'
 import LogoIcon from '&/assets/images/logo.svg'
-import MoonIcon from '&/assets/images/moon.svg'
-import StarBig from '&/assets/images/star-big.svg'
-import StarSmall from '&/assets/images/star-small.svg'
-import SubmitIcon from '&/assets/images/submit.svg'
-import SunIcon from '&/assets/images/sun.svg'
-import TwoStars from '&/assets/images/two-stars.svg'
-import Uv from '&/assets/images/uv.svg'
+import MoonIcon from '&/assets/images/icons/moon.svg'
+import StarBig from '&/assets/images/icons/star-big.svg'
+import StarSmall from '&/assets/images/icons/star-small.svg'
+import SubmitIcon from '&/assets/images/icons/submit.svg'
+import SunIcon from '&/assets/images/icons/sun.svg'
+import TwoStars from '&/assets/images/icons/two-stars.svg'
+import Uv from '&/assets/images/icons/uv.svg'
 
 export const ICONS_MAP = {
   logo: LogoIcon,
