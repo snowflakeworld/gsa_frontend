@@ -2,7 +2,7 @@ import { Box, Container, Link, Stack, Typography } from '@mui/material'
 
 import { FOOTER_LINK_SUB, FOOTER_LINK_TYPES } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
-import { Logo } from '@/layout/logo/Logo'
+import { Logo } from '@/layout/Logo'
 import { LinkContent, LinkType } from '@/types'
 import { LinkListMain } from './footer/LinkListMain'
 

@@ -4,7 +4,7 @@ import Button from '@mui/material/Button'
 import { memo, useState } from 'react'
 
 import { useDeviceType } from '@/hooks/useDeviceType'
-import { Logo } from '@/layout/logo/Logo'
+import { Logo } from '@/layout/Logo'
 import ColorModeButton from './header/ColorModeButton'
 import { MobileNav } from './header/MobileNav'
 import { NavList } from './header/NavList'
