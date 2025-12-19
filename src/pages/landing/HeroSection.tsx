@@ -2,7 +2,6 @@ import { Box, Container, Stack, useColorScheme } from '@mui/material'
 import { useRef, useState } from 'react'
 import { Swiper as SwiperType } from 'swiper/types'
 
-import { AppIcon } from '@/components/common'
 import { HERO_CARDS } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { HeroDetails, HeroSwiper, PaginationBullets, ScrollButton } from './hero'
@@ -22,59 +21,30 @@ const HeroSection = () => {
   }
 
   return (
-    <Box position='relative' sx={{ width: '100%', minHeight: '100vh', paddingTop: '80px' }}>
+    <Box position='relative' sx={{ width: '100%', minHeight: '100vh', paddingTop: 10 }}>
       <Box
         component='img'
         src='/assets/images/decorator.svg'
         sx={{
           position: 'absolute',
-          width: { xs: 350, md: 550 }
+          width: 'clamp(21.875rem, 15.2729rem + 28.169vw, 40.625rem)'
         }}
       />
-      <Container sx={{ width: '100%', px: { md: '20px', lg: '150px' }, py: { md: '24px', lg: '100px' } }}>
-        <Box
-          sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}
-          width='100%'
-        >
-          {!isScreenSmall && (
-            <Box>
-              <AppIcon
-                name='starBig'
-                color={mode === 'dark' ? 'starModeDark' : 'starModeLight'}
-                width={90}
-                height={90}
-                viewBoxWidth={67}
-                viewBoxHeight={67}
-                position='absolute'
-                rotate='40deg'
-                top={'70%'}
-                left={'50%'}
-              />
-              <AppIcon
-                name='starSmall'
-                color={mode === 'dark' ? 'starModeDark' : 'starModeLight'}
-                width={24}
-                height={24}
-                viewBoxWidth={18}
-                viewBoxHeight={18}
-                position='absolute'
-                rotate='40deg'
-                top={'82%'}
-                left={'50%'}
-              />
-            </Box>
-          )}
+      <Container>
+        <Stack>
           <Stack
             width='100%'
             direction={{ xs: 'column-reverse', md: 'row' }}
             alignItems='center'
+            justifyContent='center'
             gap={{ xs: 2, md: 12.5 }}
-            position='relative'
-            py={{ xs: '24px', lg: '0px' }}
+            py={{ xs: 3, lg: 0 }}
           >
             <Stack
+              maxWidth={550}
               direction={{ xs: 'column-reverse', md: 'column' }}
               gap={{ xs: 3, md: 10 }}
+              position='relative'
               paddingBottom={{ xs: 0, md: 13.75 }}
             >
               <HeroDetails currentIndex={currentIndex} />
@@ -84,12 +54,12 @@ const HeroSection = () => {
                 onSelect={handleSelect}
                 theme={mode as 'dark' | 'light'}
               />
+
+              {!isScreenSmall && <ScrollButton />}
             </Stack>
             <HeroSwiper swiperRef={swiperRef} onSlideChange={setCurrentIndex} />
           </Stack>
-
-          {!isScreenSmall && <ScrollButton />}
-        </Box>
+        </Stack>
       </Container>
     </Box>
   )

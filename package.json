@@ -18,6 +18,7 @@
     "@mui/icons-material": "^7.3.6",
     "@mui/lab": "^7.0.1-beta.20",
     "@mui/material": "^7.3.6",
+    "@qpokychuk/sf-pro-display": "^1.0.2",
     "@reduxjs/toolkit": "^2.11.1",
     "axios": "^1.13.2",
     "gsap": "^3.14.1",

@@ -1,10 +1,10 @@
 import { AccountCircleOutlined, BackupOutlined, CloseRounded, MenuRounded } from '@mui/icons-material'
-import { AppBar, Box, Stack, Toolbar } from '@mui/material'
+import { AppBar, Box, Container, Stack, Toolbar } from '@mui/material'
 import Button from '@mui/material/Button'
 import { memo, useState } from 'react'
 
-import Logo from '@/components/logo'
 import { useDeviceType } from '@/hooks/useDeviceType'
+import { Logo } from '@/layout/logo/Logo'
 import ColorModeButton from './header/ColorModeButton'
 import { MobileNav } from './header/MobileNav'
 import { NavList } from './header/NavList'
@@ -19,37 +19,39 @@ const HeaderComponent = () => {
   return (
     <>
       <AppBar elevation={0} sx={{ backgroundColor: 'background.header' }}>
-        <Toolbar sx={{ py: 2, px: { lg: 18.75, md: 2.5 }, gap: 2, justifyContent: 'space-between' }}>
-          <Logo place='header' />
+        <Container className='py-none' disableGutters>
+          <Toolbar sx={{ px: { xs: 2.5, lg: 18.75 }, py: 2, gap: 2, justifyContent: 'space-between' }} disableGutters>
+            <Logo place='header' />
 
-          {!isScreenSmall && <NavList />}
+            {!isScreenSmall && <NavList />}
 
-          <Box sx={{ gap: 1, display: 'flex', alignItems: 'center' }}>
-            <ColorModeButton />
-            {!menuOpened && (
-              <>
-                <Button variant='contained' sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2, py: 1.25 }}>
-                  <BackupOutlined fontSize='small' />
-                  {!isScreenSmall && <span>Submit</span>}
+            <Box sx={{ gap: 1, display: 'flex', alignItems: 'center' }}>
+              <ColorModeButton />
+              {!menuOpened && (
+                <>
+                  <Button variant='contained' sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2, py: 1.25 }}>
+                    <BackupOutlined fontSize='small' />
+                    {!isScreenSmall && <span>Submit</span>}
+                  </Button>
+                  <Button variant='contained' sx={{ gap: 0, px: 1.25, py: 1.25 }}>
+                    <AccountCircleOutlined fontSize='small' />
+                  </Button>
+                </>
+              )}
+
+              {isScreenSmall && (
+                <Button variant='contained' sx={{ gap: 0, p: 1.25 }} onClick={() => setMenuOpened(st => !st)}>
+                  {!menuOpened ? <MenuRounded fontSize='small' /> : <CloseRounded fontSize='small' />}
                 </Button>
-                <Button variant='contained' sx={{ gap: 0, px: 1.25, py: 1.25 }}>
-                  <AccountCircleOutlined fontSize='small' />
-                </Button>
-              </>
-            )}
-
-            {isScreenSmall && (
-              <Button variant='contained' sx={{ gap: 0, px: 1.25, py: 1.25 }} onClick={() => setMenuOpened(st => !st)}>
-                {!menuOpened ? <MenuRounded fontSize='small' /> : <CloseRounded fontSize='small' />}
-              </Button>
-            )}
-          </Box>
-        </Toolbar>
-        {isScreenSmall && menuOpened && (
-          <Box>
-            <MobileNav />
-          </Box>
-        )}
+              )}
+            </Box>
+          </Toolbar>
+          {isScreenSmall && menuOpened && (
+            <Box>
+              <MobileNav />
+            </Box>
+          )}
+        </Container>
       </AppBar>
       {isScreenSmall && menuOpened && (
         <Stack

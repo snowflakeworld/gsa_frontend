@@ -20,7 +20,7 @@ const HeroDetailsComponent: FC<HeroDetailsProps> = ({ currentIndex }) => {
           sx={{
             color: 'text.red',
             fontSize: { xs: '1rem', md: '1.25rem' },
-            lineHeight: { xs: '24px', md: '30px' }
+            lineHeight: { xs: '1.5rem', md: '1.875rem' }
           }}
         >
           🔥 Collectors Crossovers
@@ -32,7 +32,7 @@ const HeroDetailsComponent: FC<HeroDetailsProps> = ({ currentIndex }) => {
       </Stack>
 
       <Button variant='contained' className='button--red' sx={{ gap: 2, px: { xs: 2, md: 3 }, py: 1.25 }}>
-        <Typography variant='button' color='white' sx={{ fontSize: '18px' }}>
+        <Typography variant='button' color='white' sx={{ fontSize: '1.125rem' }}>
           See Detail
         </Typography>
         <ArrowRightAltRounded className='icon--white size--big' fontSize='small' fill='white' />

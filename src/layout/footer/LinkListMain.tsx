@@ -14,7 +14,7 @@ const LinkListMainComponent: FC<FooterLinkProps> = (props: FooterLinkProps) => {
 
   return (
     <Stack gap={!isScreenSmall ? 3 : 2} direction='column' textAlign={!isScreenSmall ? 'inherit' : 'center'}>
-      <Typography color='textNormal' width='100%' sx={{ fontSize: '14px' }}>
+      <Typography color='textNormal' width='100%' sx={{ fontSize: '0.875rem' }}>
         {type.replace(/\b\w/g, char => char.toUpperCase())}
       </Typography>
 

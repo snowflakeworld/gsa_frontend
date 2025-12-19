@@ -12,7 +12,7 @@ interface PaginationBulletsProps {
 
 export const PaginationBullets: FC<PaginationBulletsProps> = ({ total, currentIndex, onSelect, theme }) => {
   return (
-    <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'initial' }, mt: 2, gap: '5px' }}>
+    <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'initial' }, mt: 2, gap: 0.625 }}>
       {Array.from({ length: total }).map((_, i) => (
         <Box
           key={i}

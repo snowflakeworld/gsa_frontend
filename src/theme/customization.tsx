@@ -9,7 +9,7 @@ export const customizations: Components<Theme> = {
     },
     styleOverrides: {
       root: ({ theme }) => ({
-        fontSize: '14px',
+        fontSize: '0.875rem',
         color: gsaColors.link.light.normal,
         textDecoration: 'none',
         transition: 'all 0.2s ease',
@@ -44,11 +44,11 @@ export const customizations: Components<Theme> = {
         '&.fill-none': {
           fill: 'none'
         },
-        width: '20px',
-        height: '20px',
+        width: '1.25rem',
+        height: '1.25rem',
         '&.size--big': {
-          width: '26px',
-          height: '26px'
+          width: '1.625rem',
+          height: '1.625rem'
         },
         ...theme.applyStyles('dark', {
           fill: gsaColors.text.primary.dark
@@ -62,7 +62,7 @@ export const customizations: Components<Theme> = {
         textTransform: 'none',
         fontWeight: 600,
         fontSize: '0.875rem',
-        lineHeight: '20px',
+        lineHeight: '1.25rem',
         border: `1px solid ${gsaColors.border.normal.light}`,
         color: gsaColors.text.primary.light,
         boxShadow: 'none',
@@ -83,8 +83,8 @@ export const customizations: Components<Theme> = {
       contained: ({ theme }) => ({
         borderColor: gsaColors.border.normal.light,
         backgroundColor: gsaColors.background.button.light,
-        minHeight: '40px',
-        minWidth: '40px',
+        minHeight: '2.5rem',
+        minWidth: '2.5rem',
 
         '&:hover': {
           backgroundColor: gsaColors.background.tertiary.light,
@@ -127,16 +127,13 @@ export const customizations: Components<Theme> = {
         border: 'none',
         color: gsaColors.text.normal,
         '&:hover': {
-          backgroundColor: gsaColors.background.tertiary.light,
           color: gsaColors.text.normal,
           boxShadow: 'none'
         },
         ...theme.applyStyles('dark', {
           border: 'none',
           color: gsaColors.text.normal,
-          '&:hover': {
-            backgroundColor: gsaColors.background.tertiary.dark
-          }
+          '&:hover': {}
         })
       })
     }
@@ -245,9 +242,25 @@ export const customizations: Components<Theme> = {
 
   MuiContainer: {
     styleOverrides: {
-      root: {
-        maxWidth: '1440px !important'
-      }
+      root: ({ theme }) => ({
+        paddingTop: '6.25rem',
+        paddingBottom: '6.25rem',
+        '&.py-none': {
+          paddingTop: 0,
+          paddingBottom: 0
+        },
+        [theme.breakpoints.down('md')]: {
+          paddingTop: '1.5rem',
+          paddingBottom: '1.5rem',
+          '&.py-none': {
+            paddingTop: 0,
+            paddingBottom: 0
+          }
+        },
+        [theme.breakpoints.up('lg')]: {
+          maxWidth: '1440px'
+        }
+      })
     }
   }
 }
