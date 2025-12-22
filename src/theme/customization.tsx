@@ -92,6 +92,7 @@ export const customizations: Components<Theme> = {
         },
 
         '&.button--red': {
+          color: 'white',
           backgroundColor: gsaColors.background.red.normal,
 
           '&:hover': {
@@ -241,6 +242,9 @@ export const customizations: Components<Theme> = {
   },
 
   MuiContainer: {
+    defaultProps: {
+      disableGutters: true
+    },
     styleOverrides: {
       root: ({ theme }) => ({
         paddingTop: '6.25rem',

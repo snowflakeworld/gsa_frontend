@@ -5,7 +5,7 @@ import { memo, useState } from 'react'
 
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { Logo } from '@/layout/Logo'
-import ColorModeButton from './header/ColorModeButton'
+import { ColorModeButton } from './header/ColorModeButton'
 import { MobileNav } from './header/MobileNav'
 import { NavList } from './header/NavList'
 
@@ -19,7 +19,7 @@ const HeaderComponent = () => {
   return (
     <>
       <AppBar elevation={0} sx={{ backgroundColor: 'background.header' }}>
-        <Container className='py-none' disableGutters>
+        <Container className='py-none'>
           <Toolbar sx={{ px: { xs: 2.5, lg: 18.75 }, py: 2, gap: 2, justifyContent: 'space-between' }} disableGutters>
             <Logo place='header' />
 
