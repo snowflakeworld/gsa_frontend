@@ -31,11 +31,8 @@ const HeroDetailsComponent: FC<HeroDetailsProps> = ({ currentIndex }) => {
         </Typography>
       </Stack>
 
-      <Button variant='contained' className='button--red' sx={{ gap: 2, px: { xs: 2, md: 3 }, py: 1.25 }}>
-        <Typography variant='button' color='white' sx={{ fontSize: '1.125rem' }}>
-          See Detail
-        </Typography>
-        <ArrowRightAltRounded className='icon--white size--big' fontSize='small' fill='white' />
+      <Button sx={{ gap: 2 }} endIcon={<ArrowRightAltRounded />} variant='contained' className='button--red'>
+        See Detail
       </Button>
     </Stack>
   )

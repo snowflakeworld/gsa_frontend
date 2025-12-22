@@ -13,7 +13,7 @@ export const Footer = () => {
 
   return (
     <Box sx={{ backgroundColor: 'background.footer' }}>
-      <Container className='py-none' sx={{ px: { xs: 2.5, lg: 18.75 } }} disableGutters>
+      <Container className='py-none' sx={{ px: { xs: 2.5, lg: 18.75 } }}>
         <Stack
           direction={!isScreenSmall ? 'row' : 'column'}
           sx={{ py: { xs: 2.5, lg: 6.25 } }}
