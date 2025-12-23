@@ -1,8 +1,8 @@
 import { FC, memo } from 'react'
 
-import { ArrowRightAltRounded } from '@mui/icons-material'
 import { Button, Stack, Typography } from '@mui/material'
 
+import { CustomIcon } from '@/components'
 import { HERO_DETAILS } from '@/constants'
 
 interface HeroDetailsProps {
@@ -32,9 +32,18 @@ const HeroDetailsComponent: FC<HeroDetailsProps> = ({ currentIndex }) => {
       </Stack>
 
       <Button
-        sx={{ gap: 2 }}
-        endIcon={<ArrowRightAltRounded sx={{ fill: 'white' }} />}
         variant='contained'
+        sx={{ gap: 2, px: 3 }}
+        endIcon={
+          <CustomIcon
+            name='detail'
+            color='secondary'
+            width={'1.5rem'}
+            height={'auto'}
+            viewBoxWidth={23.5}
+            viewBoxHeight={13}
+          />
+        }
         className='button--red'
       >
         See Detail

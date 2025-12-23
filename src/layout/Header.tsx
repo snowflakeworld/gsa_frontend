@@ -67,7 +67,7 @@ const HeaderComponent = () => {
               )}
 
               {isScreenSmall && (
-                <Button variant='contained' sx={{ gap: 0, p: 1.25 }} onClick={() => setMenuOpened(st => !st)} >
+                <Button variant='contained' onClick={() => setMenuOpened(st => !st)} >
                   {!menuOpened ? <MenuRounded fontSize='small' /> : <CloseRounded fontSize='small' />}
                 </Button>
               )}

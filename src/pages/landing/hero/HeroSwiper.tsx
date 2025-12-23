@@ -75,8 +75,8 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
         <CustomIcon
           name='starBig'
           color='customRed'
-          width={!isScreenSmall ? 60 : 40}
-          height={!isScreenSmall ? 60 : 40}
+          width={!isScreenSmall ? '3.75rem' : '2.5rem'}
+          height={!isScreenSmall ? '3.75rem' : '2.5rem'}
           viewBoxWidth={67}
           viewBoxHeight={67}
           position='absolute'
@@ -86,8 +86,8 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
         <CustomIcon
           name='starSmall'
           color='customRed'
-          width={!isScreenSmall ? 20 : 15}
-          height={!isScreenSmall ? 20 : 15}
+          width={!isScreenSmall ? '1.25rem' : '1rem'}
+          height={!isScreenSmall ? '1.25rem' : '1rem'}
           viewBoxWidth={18}
           viewBoxHeight={18}
           position='absolute'
@@ -101,8 +101,8 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
           <CustomIcon
             name='starBig'
             color={mode === 'dark' ? 'starModeDark' : 'starModeLight'}
-            width={90}
-            height={90}
+            width={'6rem'}
+            height={'6rem'}
             viewBoxWidth={67}
             viewBoxHeight={67}
             position='absolute'
@@ -113,8 +113,8 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
           <CustomIcon
             name='starSmall'
             color={mode === 'dark' ? 'starModeDark' : 'starModeLight'}
-            width={24}
-            height={24}
+            width={'1.5rem'}
+            height={'1.5rem'}
             viewBoxWidth={18}
             viewBoxHeight={18}
             position='absolute'

@@ -43,8 +43,6 @@ export const customizations: Components<Theme> = {
   MuiSvgIcon: {
     styleOverrides: {
       root: ({ theme }) => ({
-        width: '1rem',
-        height: '1rem',
         fill: gsaColors.text.primary.light,
         '&.nav-icon-header': {
           fill: gsaColors.link.light.normal

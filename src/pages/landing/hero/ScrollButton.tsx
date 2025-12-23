@@ -12,15 +12,21 @@ export const ScrollButton = () => {
   }
 
   return (
-    <Button variant='text' sx={{ gap: 1, position: 'absolute', left: -8, bottom: -30 }} onClick={handleClick}>
-      <CustomIcon
-        name='chevronDownOutline'
-        className='fill-none'
-        width={16}
-        height={16}
-        viewBoxWidth={16}
-        viewBoxHeight={16}
-      />
+    <Button
+      variant='text'
+      sx={{ gap: 1, position: 'absolute', left: -16, bottom: -30, px: 1 }}
+      onClick={handleClick}
+      startIcon={
+        <CustomIcon
+          name='chevronDownOutline'
+          width={16}
+          height={16}
+          viewBoxWidth={16}
+          viewBoxHeight={16}
+          className='fill-none'
+        />
+      }
+    >
       <Typography component='span'>Scroll down</Typography>
     </Button>
   )
