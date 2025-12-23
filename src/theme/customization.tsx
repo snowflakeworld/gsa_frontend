@@ -1,6 +1,7 @@
 import { Components, Theme } from '@mui/material/styles'
 
 import { gsaColors } from './themePrimitives'
+import { Widgets } from '@mui/icons-material'
 
 export const customizations: Components<Theme> = {
   MuiLink: {
@@ -37,18 +38,14 @@ export const customizations: Components<Theme> = {
   MuiSvgIcon: {
     styleOverrides: {
       root: ({ theme }) => ({
+        width: '1rem',
+        height: '1rem',
         fill: gsaColors.text.primary.light,
         '&.icon--white': {
           fill: gsaColors.text.primary.dark
         },
         '&.fill-none': {
           fill: 'none'
-        },
-        width: '1.25rem',
-        height: '1.25rem',
-        '&.size--big': {
-          width: '1.625rem',
-          height: '1.625rem'
         },
         ...theme.applyStyles('dark', {
           fill: gsaColors.text.primary.dark
@@ -67,6 +64,7 @@ export const customizations: Components<Theme> = {
         color: gsaColors.text.primary.light,
         boxShadow: 'none',
         transition: 'all 0.5s ease',
+        padding: 1.25,
         '&:hover': {
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
@@ -136,7 +134,17 @@ export const customizations: Components<Theme> = {
           color: gsaColors.text.normal,
           '&:hover': {}
         })
-      })
+      }),
+
+      endIcon: {
+        marginLeft: 0,
+        marginRight: 0
+      },
+
+      startIcon: {
+        marginRight: 0,
+        marginLeft: 0
+      }
     }
   },
 
@@ -249,6 +257,8 @@ export const customizations: Components<Theme> = {
       root: ({ theme }) => ({
         paddingTop: '6.25rem',
         paddingBottom: '6.25rem',
+        paddingLeft: '1.5rem',
+        paddingRight: '1.5rem',
         '&.py-none': {
           paddingTop: 0,
           paddingBottom: 0
@@ -256,6 +266,8 @@ export const customizations: Components<Theme> = {
         [theme.breakpoints.down('md')]: {
           paddingTop: '1.5rem',
           paddingBottom: '1.5rem',
+          paddingLeft: '1rem',
+          paddingRight: '1rem',
           '&.py-none': {
             paddingTop: 0,
             paddingBottom: 0

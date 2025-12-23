@@ -1,8 +1,9 @@
-import { AccountCircleOutlined, BackupOutlined, CloseRounded, MenuRounded } from '@mui/icons-material'
-import { AppBar, Box, Container, Stack, Toolbar } from '@mui/material'
+import { AccountCircleOutlined, CloseRounded, MenuRounded } from '@mui/icons-material'
+import { AppBar, Box, Container, Stack, Toolbar, useColorScheme } from '@mui/material'
 import Button from '@mui/material/Button'
 import { memo, useState } from 'react'
 
+import { CustomIcon } from '@/components'
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { Logo } from '@/layout/Logo'
 import { ColorModeButton } from './header/ColorModeButton'
@@ -11,16 +12,17 @@ import { NavList } from './header/NavList'
 
 const HeaderComponent = () => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false)
-
+  const { mode, systemMode } = useColorScheme()
   const { isMobile, isTablet } = useDeviceType()
 
   const isScreenSmall = isMobile || isTablet
+  const resolvedMode = (systemMode || mode) as 'light' | 'dark'
 
   return (
     <>
       <AppBar elevation={0} sx={{ backgroundColor: 'background.header' }}>
-        <Container className='py-none'>
-          <Toolbar sx={{ px: { xs: 2.5, lg: 18.75 }, py: 2, gap: 2, justifyContent: 'space-between' }} disableGutters>
+        <Container className='py-none' sx={{ px: { xs: 2.5, lg: 18.75 } }}>
+          <Toolbar sx={{ py: 2, gap: 2, justifyContent: 'space-between' }} disableGutters>
             <Logo place='header' />
 
             {!isScreenSmall && <NavList />}
@@ -29,13 +31,21 @@ const HeaderComponent = () => {
               <ColorModeButton />
               {!menuOpened && (
                 <>
-                  <Button variant='contained' sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2, py: 1.25 }}>
-                    <BackupOutlined fontSize='small' />
+                  <Button
+                    variant='contained'
+                    startIcon={
+                      <CustomIcon
+                        name='submit'
+                        color={resolvedMode === 'dark' ? 'secondary' : 'prime'}
+                        viewBoxWidth={14}
+                        viewBoxHeight={14}
+                      />
+                    }
+                    sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2 }}
+                  >
                     {!isScreenSmall && <span>Submit</span>}
                   </Button>
-                  <Button variant='contained' sx={{ gap: 0, px: 1.25, py: 1.25 }}>
-                    <AccountCircleOutlined fontSize='small' />
-                  </Button>
+                  <Button variant='contained' startIcon={<AccountCircleOutlined fontSize='medium' />} />
                 </>
               )}
 

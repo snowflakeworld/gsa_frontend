@@ -13,9 +13,9 @@ export const ColorModeButton = () => {
   const icon = useMemo(
     () =>
       resolvedMode === 'dark' ? (
-        <LightModeOutlined className='size--big' />
+        <LightModeOutlined sx={{ fontSize: '1.5rem' }} />
       ) : (
-        <DarkModeOutlined className='size--big' />
+        <DarkModeOutlined sx={{ fontSize: '1.5rem' }} />
       ),
     [resolvedMode]
   )

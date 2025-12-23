@@ -12,10 +12,10 @@ const LogoComponent: FC<LogoProps> = ({ place }) => {
   const isScreenSmall = isMobile || isTablet
 
   return (
-    <Link href='/' aria-label='Home-page' textAlign={place === 'footer' && isScreenSmall ? 'center' : 'initial'}>
+    <Link href='/' aria-label='Home-page' textAlign={place === 'footer' && isScreenSmall ? 'center' : 'initial'} display='flex' alignItems='center'>
       <StyledImage
         src='/assets/images/logo.svg'
-        height={place === 'header' ? 20 : isScreenSmall ? 40 : 50}
+        height={place === 'header' ? 24 : isScreenSmall ? 40 : 50}
         alt='Logo Image'
       />
     </Link>
