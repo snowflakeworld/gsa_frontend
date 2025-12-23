@@ -32,3 +32,24 @@ export const FEATURE_CONTENTS = [
       'Each card comes with a tamper-proof, digital certificate stored on the blockchain, ensuring the authenticity and grading history of the card is secure and verifiable.'
   }
 ]
+
+export const SERVICE_CONTENTS = [
+  {
+    title: 'Submit Trading Cards',
+    button: 'Start Now',
+    img: '9b9afe92e36181d9cef38bbae49a29123679846e.png',
+    rotate: '-15deg'
+  },
+  {
+    title: 'Submit Autographs',
+    button: 'Start Now',
+    img: '38b70f5f12b6d3e4ffb6c336069cef80c5859d95.png',
+    rotate: '0deg'
+  },
+  {
+    title: 'Join Collectors Club',
+    button: 'Unlock Exclusives',
+    img: 'a3fedbee9ae2ccd92d6619b3e7ead0387639f5e8.png',
+    rotate: '15deg'
+  }
+]

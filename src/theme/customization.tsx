@@ -287,5 +287,16 @@ export const customizations: Components<Theme> = {
         }
       })
     }
+  },
+  MuiTypography: {
+    styleOverrides: {
+      subtitle2: ({ theme }) => ({
+        color: gsaColors.text.subtitle2.light,
+
+        ...theme.applyStyles('dark', {
+          color: gsaColors.text.subtitle2.dark
+        })
+      })
+    }
   }
 }

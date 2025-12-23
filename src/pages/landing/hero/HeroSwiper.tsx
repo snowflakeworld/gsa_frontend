@@ -42,6 +42,7 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
       sx={{ backgroundColor: 'background.paper', borderRadius: 3, aspectRatio: '5 / 6' }}
     >
       <Swiper
+        className='hero-swiper'
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
@@ -61,6 +62,7 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
         {HERO_CARDS.map((src, idx) => (
           <SwiperSlide key={idx}>
             <StyledImage
+              className='hero-slider-img'
               src={`/assets/images/cards/${src}`}
               width={isDesktop ? 320 : 230}
               height={isDesktop ? 450 : 315}

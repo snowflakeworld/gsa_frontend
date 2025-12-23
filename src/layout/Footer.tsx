@@ -21,7 +21,7 @@ export const Footer = () => {
           gap={2}
         >
           <Stack direction='column' gap={3} width={!isScreenSmall ? 352 : '100%'}>
-            <Logo place='footer' />
+            <Logo place='footer'/>
             <Typography
               color='textSecondary'
               width='100%'
