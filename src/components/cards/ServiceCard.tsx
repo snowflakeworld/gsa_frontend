@@ -39,8 +39,8 @@ const ServiceCardComponent: FC<ServiceCardProps> = ({ title, button, img, rotate
       <CardMedia sx={{ rotate: rotate, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 2 }}>
         <StyledImage
           src={`/assets/images/cards/${img}`}
-          width={!isScreenSmall ? 234 : 160}
-          height={!isScreenSmall ? 329 : 226}
+          width={!isScreenSmall ? 210 : 140}
+          height={!isScreenSmall ? 297 : 198}
           alt='Service Card Image'
           loading='lazy'
           borderRadius='0.75rem'
