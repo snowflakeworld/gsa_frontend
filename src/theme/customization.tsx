@@ -1,7 +1,6 @@
 import { Components, Theme } from '@mui/material/styles'
 
 import { gsaColors } from './themePrimitives'
-import { Widgets } from '@mui/icons-material'
 
 export const customizations: Components<Theme> = {
   MuiLink: {
@@ -21,7 +20,10 @@ export const customizations: Components<Theme> = {
           color: gsaColors.text.normal
         },
         '&:hover': {
-          color: gsaColors.link.light.hover
+          color: gsaColors.link.light.hover,
+          '& .nav-icon-header': {
+            fill: gsaColors.link.light.hover
+          }
         },
         ...theme.applyStyles('dark', {
           color: gsaColors.link.dark.normal,
@@ -29,7 +31,10 @@ export const customizations: Components<Theme> = {
             color: gsaColors.text.primary.dark
           },
           '&:hover': {
-            color: gsaColors.link.dark.hover
+            color: gsaColors.link.dark.hover,
+            '& .nav-icon-header': {
+              fill: gsaColors.link.light.hover
+            }
           }
         })
       })
@@ -41,6 +46,9 @@ export const customizations: Components<Theme> = {
         width: '1rem',
         height: '1rem',
         fill: gsaColors.text.primary.light,
+        '&.nav-icon-header': {
+          fill: gsaColors.link.light.normal
+        },
         '&.icon--white': {
           fill: gsaColors.text.primary.dark
         },
@@ -48,7 +56,10 @@ export const customizations: Components<Theme> = {
           fill: 'none'
         },
         ...theme.applyStyles('dark', {
-          fill: gsaColors.text.primary.dark
+          fill: gsaColors.text.primary.dark,
+          '&.nav-icon-header': {
+            fill: gsaColors.link.dark.normal
+          }
         })
       })
     }
