@@ -1,6 +1,8 @@
 export const HEADER_NAV_LINKS = [
-  { title: 'SERVICES & PRICES', path: '/service' },
-  { title: 'POP & CERT VERIFICATION', path: '/search' },
-  { title: 'CARD GRADING SCALE', path: '/scale' },
-  { title: 'SHOP', path: '/shop' }
+  { title: 'Services&Prices', path: '/service' },
+  { title: 'Research', path: '/research', menu: true },
+  { title: 'Values', path: '/values' },
+  { title: 'Set Registry', path: '/set-registry' },
+  { title: 'Support', path: '/support', menu: true },
+  { title: 'More', path: '/more', menu: true }
 ]

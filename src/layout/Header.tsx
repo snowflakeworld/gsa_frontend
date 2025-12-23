@@ -1,4 +1,4 @@
-import { AccountCircleOutlined, CloseRounded, MenuRounded } from '@mui/icons-material'
+import { CloseRounded, MenuRounded } from '@mui/icons-material'
 import { AppBar, Box, Container, Stack, Toolbar, useColorScheme } from '@mui/material'
 import Button from '@mui/material/Button'
 import { memo, useState } from 'react'
@@ -22,10 +22,17 @@ const HeaderComponent = () => {
     <>
       <AppBar elevation={0} sx={{ backgroundColor: 'background.header' }}>
         <Container className='py-none' sx={{ px: { xs: 2.5, lg: 18.75 } }}>
-          <Toolbar sx={{ py: 2, gap: 2, justifyContent: 'space-between' }} disableGutters>
+          <Toolbar
+            sx={{ py: 2, gap: 6.25, justifyContent: !isScreenSmall ? 'flex-start' : 'space-between' }}
+            disableGutters
+          >
             <Logo place='header' />
 
-            {!isScreenSmall && <NavList />}
+            {!isScreenSmall && (
+              <Box flexGrow={1}>
+                <NavList />
+              </Box>
+            )}
 
             <Box sx={{ gap: 1, display: 'flex', alignItems: 'center' }}>
               <ColorModeButton />
@@ -45,12 +52,22 @@ const HeaderComponent = () => {
                   >
                     {!isScreenSmall && <span>Submit</span>}
                   </Button>
-                  <Button variant='contained' startIcon={<AccountCircleOutlined fontSize='medium' />} />
+                  <Button
+                    variant='contained'
+                    startIcon={
+                      <CustomIcon
+                        name='personCircle'
+                        color={resolvedMode === 'dark' ? 'secondary' : 'prime'}
+                        viewBoxWidth={16.5}
+                        viewBoxHeight={16.5}
+                      />
+                    }
+                  />
                 </>
               )}
 
               {isScreenSmall && (
-                <Button variant='contained' sx={{ gap: 0, p: 1.25 }} onClick={() => setMenuOpened(st => !st)}>
+                <Button variant='contained' sx={{ gap: 0, p: 1.25 }} onClick={() => setMenuOpened(st => !st)} >
                   {!menuOpened ? <MenuRounded fontSize='small' /> : <CloseRounded fontSize='small' />}
                 </Button>
               )}
