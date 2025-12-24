@@ -16,8 +16,10 @@ import StarSmall from '&/assets/images/icons/star-small.svg'
 import Submit from '&/assets/images/icons/submit.svg'
 import SunIcon from '&/assets/images/icons/sun.svg'
 import TwoStars from '&/assets/images/icons/two-stars.svg'
+import VerifiedIcon from '&/assets/images/icons/verified.svg'
 import Uv from '&/assets/images/icons/uv.svg'
 import LogoIcon from '&/assets/images/logo.svg'
+import SMarkIcon from '&/assets/images/smark.svg'
 
 export const ICONS_MAP = {
   logo: LogoIcon,
@@ -34,7 +36,9 @@ export const ICONS_MAP = {
   detail: Detail,
   menu: Menu,
   personCircle: PersonCircle,
-  submit: Submit
+  submit: Submit,
+  smark: SMarkIcon,
+  verified: VerifiedIcon
 }
 
 export type IconType = keyof typeof ICONS_MAP | string

@@ -1,5 +1,6 @@
 import AdditionalFeatureSection from './landing/AdditionalFeatureSection'
 import AuthServiceSection from './landing/AuthServiceSection'
+import CertSection from './landing/CertSection'
 import FeatureSection from './landing/FeatureSection'
 import HeroSection from './landing/HeroSection'
 import NewsSection from './landing/NewsSection'
@@ -14,6 +15,7 @@ export const LandingPage = () => {
       <FeatureSection />
       <AuthServiceSection />
       <SpecServiceSection />
+      <CertSection />
       <TrackingSection />
       <AdditionalFeatureSection />
       <NewsSection />

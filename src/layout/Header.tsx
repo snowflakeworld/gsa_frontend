@@ -49,6 +49,7 @@ const HeaderComponent = () => {
                       />
                     }
                     sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2 }}
+                    className='button--small'
                   >
                     {!isScreenSmall && <span>Submit</span>}
                   </Button>
@@ -62,12 +63,13 @@ const HeaderComponent = () => {
                         viewBoxHeight={16.5}
                       />
                     }
+                    className='button--small'
                   />
                 </>
               )}
 
               {isScreenSmall && (
-                <Button variant='contained' onClick={() => setMenuOpened(st => !st)} >
+                <Button variant='contained' onClick={() => setMenuOpened(st => !st)} className='button--small'>
                   {!menuOpened ? <MenuRounded fontSize='small' /> : <CloseRounded fontSize='small' />}
                 </Button>
               )}

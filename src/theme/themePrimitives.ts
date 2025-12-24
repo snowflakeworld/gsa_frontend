@@ -83,7 +83,7 @@ export const gsaColors = {
     },
     secondary: {
       dark: '#797979',
-      light: '#414141'
+      light: '#1D1D1F'
     },
     disabled: '#94A3B8',
     accent: {
@@ -122,7 +122,11 @@ export const gsaColors = {
       normal: '#414141',
       hover: '#E24744'
     }
-  }
+  },
+
+  input: {
+    white: '#FAFAFA'
+  },
 }
 
 export const colorSchemes = {
@@ -137,11 +141,12 @@ export const colorSchemes = {
         contrastText: gsaColors.text.secondary.light
       },
       background: {
-        default: gsaColors.background.default.light,
         paper: gsaColors.background.paper.light,
-        red: gsaColors.background.red,
+        default: gsaColors.background.default.light,
+        red: gsaColors.background.red.normal,
         footer: gsaColors.background.footer.light,
-        card: gsaColors.background.card.light
+        card: gsaColors.background.card.light,
+        deep: gsaColors.background.header.dark
       },
       text: {
         primary: gsaColors.text.primary.light,
@@ -149,10 +154,14 @@ export const colorSchemes = {
         disabled: gsaColors.text.disabled,
         normal: gsaColors.text.normal,
         red: gsaColors.text.red,
-        nav: gsaColors.link.light
+        nav: gsaColors.link.light,
+        black: gsaColors.text.primary.light
       },
       divider: gsaColors.border.normal.light,
-      backdrop: gsaColors.backdrop.light
+      backdrop: gsaColors.backdrop.light,
+      input: {
+        white: gsaColors.input.white
+      }
     }
   },
   dark: {
@@ -168,9 +177,10 @@ export const colorSchemes = {
       background: {
         default: gsaColors.background.default.dark,
         paper: gsaColors.background.paper.dark,
-        red: gsaColors.background.red,
+        red: gsaColors.background.red.normal,
         footer: gsaColors.background.footer.dark,
-        card: gsaColors.background.card.dark
+        card: gsaColors.background.card.dark,
+        deep: gsaColors.background.header.light
       },
       text: {
         primary: gsaColors.text.primary.dark,
@@ -178,10 +188,14 @@ export const colorSchemes = {
         disabled: gsaColors.text.disabled,
         normal: gsaColors.text.normal,
         red: gsaColors.text.red,
-        nav: gsaColors.link.dark
+        nav: gsaColors.link.dark,
+        black: gsaColors.text.primary.light
       },
       divider: gsaColors.border.normal.dark,
-      backdrop: gsaColors.backdrop.dark
+      backdrop: gsaColors.backdrop.dark,
+      input: {
+        white: gsaColors.input.white
+      }
     }
   }
 }
@@ -298,6 +312,18 @@ export const typography = {
     fontWeight: 500,
     lineHeight: '1.75rem',
     letterSpacing: 0
+  },
+  subtitle1: {
+    fontFamily: gsaTypography.fontFamily.mono,
+    fontSize: '1.5rem',
+    fontWeight: 700,
+    lineHeight: '2rem',
+    letterSpacing: 0,
+
+    '@media (min-width:900px)': {
+      fontSize: '2rem',
+      lineHeight: '2.5rem'
+    }
   },
   subtitle2: {
     fontFamily: gsaTypography.fontFamily.primary,
