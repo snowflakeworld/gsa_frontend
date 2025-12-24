@@ -1,6 +1,6 @@
 import { Components, Theme } from '@mui/material/styles'
 
-import { gsaColors } from './themePrimitives'
+import { gsaColors, gsaTypography } from './themePrimitives'
 
 export const customizations: Components<Theme> = {
   MuiLink: {
@@ -90,7 +90,7 @@ export const customizations: Components<Theme> = {
       contained: ({ theme }) => ({
         borderColor: gsaColors.border.normal.light,
         backgroundColor: gsaColors.background.button.light,
-        minHeight: '2.5rem',
+        minHeight: '3rem',
         minWidth: '2.5rem',
 
         '&:hover': {
@@ -105,6 +105,17 @@ export const customizations: Components<Theme> = {
           '&:hover': {
             backgroundColor: gsaColors.background.red.dark
           }
+        },
+        '&.button--black': {
+          color: 'white',
+          backgroundColor: gsaColors.background.appBar.dark,
+
+          '&:hover': {
+            backgroundColor: gsaColors.background.tertiary.dark
+          }
+        },
+        '&.button--small': {
+          minHeight: '2.5rem'
         },
 
         ...theme.applyStyles('dark', {
@@ -164,19 +175,6 @@ export const customizations: Components<Theme> = {
         border: `1px solid ${gsaColors.border.normal.light}`,
         borderRadius: 12,
         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        ...theme.applyStyles('dark', {
-          backgroundColor: gsaColors.background.paper.dark,
-          border: `1px solid ${gsaColors.border.normal.dark}`
-        })
-      })
-    }
-  },
-
-  MuiPaper: {
-    styleOverrides: {
-      root: ({ theme }) => ({
-        backgroundColor: gsaColors.background.paper.light,
-        border: `1px solid ${gsaColors.border.normal.light}`,
         ...theme.applyStyles('dark', {
           backgroundColor: gsaColors.background.paper.dark,
           border: `1px solid ${gsaColors.border.normal.dark}`
@@ -295,6 +293,23 @@ export const customizations: Components<Theme> = {
 
         ...theme.applyStyles('dark', {
           color: gsaColors.text.subtitle2.dark
+        })
+      })
+    }
+  },
+  MuiInputBase: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        minHeight: '3rem',
+        fontFamily: gsaTypography.fontFamily.primary,
+        fontSize: '0.875rem',
+        fontWeight: 400,
+        lineHeight: '1.25rem',
+        letterSpacing: 0,
+        color: gsaColors.text.primary.light,
+
+        ...theme.applyStyles('dark', {
+          color: gsaColors.text.primary.dark
         })
       })
     }
