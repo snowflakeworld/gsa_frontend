@@ -23,7 +23,8 @@ const ServiceCardComponent: FC<ServiceCardProps> = ({ title, button, img, rotate
         border: 'divider',
         backgroundColor: 'background.card',
         boxShadow: `${gsaShadows.card}`,
-        maxHeight: !isScreenSmall ? 485 : 350
+        maxHeight: !isScreenSmall ? 455 : 330,
+        mb: 3
       }}
     >
       <CardContent

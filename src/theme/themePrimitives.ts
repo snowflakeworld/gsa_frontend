@@ -341,7 +341,7 @@ export const gsaShadows = {
   premium: '0 4px 8px rgba(0, 0, 0, 0.5)',
   elevated: '0 2px 4px rgba(0, 0, 0, 0.5)',
   floating: '0 4px 8px rgba(0, 0, 0, 0.5)',
-  card: '0 4px 32px rgba(12, 12, 13, 0.06)'
+  card: '0 4px 16px rgba(12, 12, 13, 0.06)'
 }
 
 export const modernColors = gsaColors

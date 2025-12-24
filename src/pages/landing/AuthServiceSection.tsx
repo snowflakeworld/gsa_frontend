@@ -37,7 +37,7 @@ const AuthServiceSection = () => {
           >
             {SERVICE_CONTENTS.map((val, idx: number) => (
               <SwiperSlide key={idx}>
-                <Box sx={{ width: !isScreenSmall ? 320 : 280 }}>
+                <Box sx={{ width: !isScreenSmall ? 320 : 260 }}>
                   <ServiceCard {...val} />
                 </Box>
               </SwiperSlide>
