@@ -26,7 +26,7 @@ const FeatureBlogComponent: FC<FeatureBlogProps> = ({ icon, title, content }) =>
           borderRadius: 2.25,
           padding: 5,
           border: `1px solid ${resolvedMode === 'dark' ? 'transparent' : gsaColors.border.normal.light}`,
-          backgroundColor: 'background.blog',
+          backgroundColor: 'background.card',
           boxShadow: `${gsaShadows.card}`
         }}
       >
@@ -70,7 +70,7 @@ const FeatureBlogComponent: FC<FeatureBlogProps> = ({ icon, title, content }) =>
                 {title}
               </Typography>
             </Stack>
-            <Typography component='p' color='text.normal'>
+            <Typography variant='caption' color='text.normal'>
               {content}
             </Typography>
           </Stack>

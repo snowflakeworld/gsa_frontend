@@ -1,4 +1,4 @@
-import '@qpokychuk/sf-pro-display/index.css';
+import '@qpokychuk/sf-pro-display/index.css'
 
 export const gsaColors = {
   background: {
@@ -52,7 +52,7 @@ export const gsaColors = {
       dark: '#bb2a28',
       alpha: 'rgba(226, 71, 68, 0.1)'
     },
-    blog: {
+    card: {
       dark: '#272729',
       light: '#FFFFFF'
     }
@@ -91,6 +91,10 @@ export const gsaColors = {
       light: '#414141'
     },
     normal: '#797979',
+    subtitle2: {
+      light: '#797979',
+      dark: '#ECECEC'
+    },
     red: '#E24744'
   },
 
@@ -137,7 +141,7 @@ export const colorSchemes = {
         paper: gsaColors.background.paper.light,
         red: gsaColors.background.red,
         footer: gsaColors.background.footer.light,
-        blog: gsaColors.background.blog.light
+        card: gsaColors.background.card.light
       },
       text: {
         primary: gsaColors.text.primary.light,
@@ -166,7 +170,7 @@ export const colorSchemes = {
         paper: gsaColors.background.paper.dark,
         red: gsaColors.background.red,
         footer: gsaColors.background.footer.dark,
-        blog: gsaColors.background.blog.dark
+        card: gsaColors.background.card.dark
       },
       text: {
         primary: gsaColors.text.primary.dark,
@@ -287,6 +291,25 @@ export const typography = {
   },
   button: {
     textTransform: undefined
+  },
+  caption: {
+    fontFamily: gsaTypography.fontFamily.primary,
+    fontSize: '1rem',
+    fontWeight: 500,
+    lineHeight: '1.75rem',
+    letterSpacing: 0
+  },
+  subtitle2: {
+    fontFamily: gsaTypography.fontFamily.primary,
+    fontSize: '1rem',
+    fontWeight: 600,
+    lineHeight: '1.5rem',
+    letterSpacing: 0,
+
+    '@media (min-width:900px)': {
+      fontSize: '1.25rem',
+      lineHeight: '2rem'
+    }
   }
 }
 
@@ -318,7 +341,7 @@ export const gsaShadows = {
   premium: '0 4px 8px rgba(0, 0, 0, 0.5)',
   elevated: '0 2px 4px rgba(0, 0, 0, 0.5)',
   floating: '0 4px 8px rgba(0, 0, 0, 0.5)',
-  card: '0 4px 32px rgba(12, 12, 13, 0.06)'
+  card: '0 4px 16px rgba(12, 12, 13, 0.06)'
 }
 
 export const modernColors = gsaColors

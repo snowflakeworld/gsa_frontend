@@ -94,10 +94,10 @@ const CustomIconComponent: FC<CustomIconProps> = ({
       className={className}
       component={IconComponent}
       viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
-      width={width}
-      height={height}
       sx={{
         ...{
+          width: { width },
+          height: { height },
           position: position,
           rotate: rotate,
           '& path': {
