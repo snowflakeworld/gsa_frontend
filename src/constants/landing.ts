@@ -53,3 +53,20 @@ export const SERVICE_CONTENTS = [
     rotate: '15deg'
   }
 ]
+
+export const SPECIAL_SERVICES = [
+  {
+    title: 'Sports Cards and Pokémon / TCG Grading',
+    content:
+      'Expert graders familiar with the nuances and specifics of each category, ensuring your prized collectibles are graded with an understanding of their unique features',
+    img: '66f0f8ede5d9c525fff5ad66e30573fb8414eb15.png',
+    gradient: 'linear-gradient(to right, #3CAADD, #8CD6F9, #3CAADD)'
+  },
+  {
+    title: 'Comic Books and Magazines Grading',
+    content:
+      'Specialized grading tailored to the comic book and magazine market, taking into account factors such as page quality, spine condition, and color vibrancy',
+    img: '7835178260b5938e2cd0ce26e87be2a2539b5a42.png',
+    gradient: 'linear-gradient(to right, #704E5D, #A78594, #704E5D)'
+  }
+]
