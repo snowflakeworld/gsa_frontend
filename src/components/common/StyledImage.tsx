@@ -7,11 +7,13 @@ interface StyledImageProps {
   border?: string | 'none'
 }
 
-export const StyledImage = styled('img')<StyledImageProps>(({ width, height, borderRadius = 0, border = 'none' }) => ({...{
-  width: width ? width : 'auto',
-  height: height ? height : 'auto',
-  margin: 'auto',
-  border: border,
-  borderRadius: borderRadius,
-  objectFit: 'cover'
-}}))
+export const StyledImage = styled('img')<StyledImageProps>(({ width, height, borderRadius = 0, border = 'none' }) => ({
+  ...{
+    width: width ? width : 'auto',
+    height: height ? height : 'auto',
+    margin: 'auto',
+    border: border,
+    borderRadius: borderRadius,
+    objectFit: 'cover'
+  }
+}))

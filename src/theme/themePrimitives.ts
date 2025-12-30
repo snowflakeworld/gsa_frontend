@@ -126,7 +126,7 @@ export const gsaColors = {
 
   input: {
     white: '#FAFAFA'
-  },
+  }
 }
 
 export const colorSchemes = {
@@ -372,5 +372,3 @@ export const gsaShadows = {
 
 export const modernColors = gsaColors
 export const modernShadows = gsaShadows
-
-// export const createHoverState = createTradingHover
