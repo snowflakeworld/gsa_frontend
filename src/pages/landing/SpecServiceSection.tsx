@@ -1,9 +1,9 @@
 import { Container, Grid, Stack, Typography } from '@mui/material'
 
-import { SpecialServiceCard } from '@/components/cards/SpecialServiceCard'
 import { RedChip } from '@/components/common/RedChip'
 import { LANDING_FEATURE_GRID_MAX_WIDTH, SPECIAL_SERVICES } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
+import { SpecialServiceCard } from './special-service'
 
 const SpecServiceSection = () => {
   const { isMobile, isTablet } = useDeviceType()

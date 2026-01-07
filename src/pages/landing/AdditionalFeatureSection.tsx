@@ -1,6 +1,6 @@
 import { ADDITIONAL_FEATURES, LANDING_FEATURE_GRID_MAX_WIDTH } from '@/constants'
 import { Container, Grid } from '@mui/material'
-import { AdditionalCard } from './additional/AdditionalCard'
+import { AdditionalCard } from './additional'
 
 const AdditionalFeatureSection = () => {
   return (
