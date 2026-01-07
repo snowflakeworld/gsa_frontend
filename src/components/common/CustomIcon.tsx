@@ -20,6 +20,9 @@ import Uv from '&/assets/images/icons/uv.svg'
 import VerifiedIcon from '&/assets/images/icons/verified.svg'
 import LogoIcon from '&/assets/images/logo.svg'
 import SMarkIcon from '&/assets/images/smark.svg'
+import BulkSubmission from '&/assets/images/icons/bulk-submission.svg'
+import DetailGrading from '&/assets/images/icons/detail-grading.svg'
+import SecurePackaging from '&/assets/images/icons/secure-packaging.svg'
 
 export const ICONS_MAP = {
   logo: LogoIcon,
@@ -38,7 +41,10 @@ export const ICONS_MAP = {
   personCircle: PersonCircle,
   submit: Submit,
   smark: SMarkIcon,
-  verified: VerifiedIcon
+  verified: VerifiedIcon,
+  bulkSubmission: BulkSubmission,
+  detailGrading: DetailGrading,
+  securePackaging: SecurePackaging
 }
 
 export type IconType = keyof typeof ICONS_MAP | string
