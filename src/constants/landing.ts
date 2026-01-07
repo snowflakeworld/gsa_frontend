@@ -125,3 +125,35 @@ export const TRACKING_VALUES = [
     ]
   }
 ]
+
+export const ADDITIONAL_FEATURES = [
+  {
+    icon: 'bulkSubmission',
+    title: 'Bulk Submission Discounts',
+    content: 'Get increasing discounts for large bulk submissions. 5% off for 50+ cards and 10% off for 100+ cards',
+    iconWidth: '3rem',
+    iconHeight: '3rem',
+    viewportWidth: 58.35,
+    viewportHeight: 47.3
+  },
+  {
+    icon: 'detailGrading',
+    title: 'Detailed Grading Reports',
+    content:
+      'Every card submission includes a digital report with detailed description on why the item received its grade',
+    iconWidth: '2.5rem',
+    iconHeight: '2.5rem',
+    viewportWidth: 42,
+    viewportHeight: 46.34
+  },
+  {
+    icon: 'securePackaging',
+    title: 'Secure Packaging and Insurance',
+    content:
+      'Industry-leading packaging standards to ensure safe return shipping, with an insurance option for high-value cards.',
+    iconWidth: '2.5rem',
+    iconHeight: '2.5rem',
+    viewportWidth: 42,
+    viewportHeight: 46.34
+  }
+]
