@@ -15,15 +15,17 @@ const LogoComponent: FC<LogoProps> = ({ place }) => {
     <Link
       href='/'
       aria-label='Home-page'
-      textAlign={place === 'footer' && isScreenSmall ? 'center' : 'initial'}
+      textAlign={place === 'footer' && isScreenSmall ? 'center' : 'left'}
       display='flex'
       alignItems='center'
-      justifyContent={place === 'footer' && isScreenSmall ? 'center' : 'initial'}
+      justifyContent={place === 'footer' && isScreenSmall ? 'center' : 'left'}
     >
       <StyledImage
         src='/assets/images/logo.svg'
         height={place === 'header' ? 24 : isScreenSmall ? 40 : 50}
         alt='Logo Image'
+        loading='lazy'
+        margin='0'
       />
     </Link>
   )

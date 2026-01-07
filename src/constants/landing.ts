@@ -70,3 +70,58 @@ export const SPECIAL_SERVICES = [
     gradient: 'linear-gradient(to right, #704E5D, #A78594, #704E5D)'
   }
 ]
+
+export const TRACKING_VALUES = [
+  {
+    title: 'PSA Price Guide',
+    description: 'The numbers behind the grade.',
+    content: '2003 Pokemon Skyridge Charized - Holo #146',
+    img: 'tracking-1.png',
+    itemDisplayMode: 'horizontal',
+    items: [
+      {
+        content: '$4,000',
+        status: 'PSA 8'
+      },
+      {
+        content: '$5,500',
+        status: 'PSA 9'
+      },
+      {
+        content: '$18,000+',
+        status: 'PSA 10',
+        highlight: true
+      }
+    ]
+  },
+  {
+    title: 'Auction Prices Realized',
+    description: 'The final bids are in.',
+    content: '1989 Upper Deck Ken Griffey jr. #1 PSA 120',
+    img: 'tracking-2.png',
+    itemDisplayMode: 'horizontal',
+    items: [
+      {
+        content: '12,245',
+        status: 'Sales'
+      },
+      {
+        content: '$2,393',
+        status: 'Last Sold'
+      }
+    ]
+  },
+  {
+    title: 'Card Ladder',
+    description: 'Market trends by the millions.',
+    content: '1986 Fleer Michael Jordan #57',
+    img: 'tracking-3.png',
+    itemDisplayMode: 'vertical',
+    items: [
+      {
+        content: '$18,000.00',
+        status: 'Jan 19, 2024'
+      }
+    ]
+  }
+]
