@@ -1,9 +1,9 @@
 import { Box, Container, Stack, Typography } from '@mui/material'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { ServiceCard } from '@/components'
 import { LANDING_FEATURE_GRID_MAX_WIDTH, SERVICE_CONTENTS } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
+import { ServiceCard } from './service'
 
 const AuthServiceSection = () => {
   const { isMobile, isTablet } = useDeviceType()

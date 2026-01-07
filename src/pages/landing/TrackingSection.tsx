@@ -1,7 +1,7 @@
 import { LANDING_FEATURE_GRID_MAX_WIDTH, TRACKING_VALUES } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { Box, Container, Stack, Typography } from '@mui/material'
-import { TrackingCard } from './tracking/TrackingCard'
+import { TrackingCard } from './tracking'
 
 const TrackingSection = () => {
   const { isMobile, isTablet } = useDeviceType()

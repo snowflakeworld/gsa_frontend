@@ -2,7 +2,7 @@ import { useDeviceType } from '@/hooks/useDeviceType'
 import { gsaShadows } from '@/theme'
 import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import { FC, memo } from 'react'
-import { StyledImage } from '../common'
+import { StyledImage } from '../../../components/common'
 
 interface ServiceCardProps {
   title: string

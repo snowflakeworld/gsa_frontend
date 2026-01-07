@@ -1,8 +1,8 @@
+import { StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { gsaShadows } from '@/theme'
 import { Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material'
 import { FC, memo } from 'react'
-import { StyledImage } from '../common'
 
 interface SpecialServiceCardProps {
   title: string
