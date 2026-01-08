@@ -3,7 +3,17 @@ import { FC, memo } from 'react'
 
 import { FOOTER_LINK_MAIN } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
-import { FooterLinkProps, LinkContent, LinkType } from '@/types'
+
+export interface LinkContent {
+  title: string
+  path: string
+}
+
+export type LinkType = 'home' | 'research' | 'support' | 'more'
+
+export interface FooterLinkProps {
+  type: 'home' | 'research' | 'support' | 'more'
+}
 
 const LinkListMainComponent: FC<FooterLinkProps> = (props: FooterLinkProps) => {
   const { isMobile, isTablet } = useDeviceType()

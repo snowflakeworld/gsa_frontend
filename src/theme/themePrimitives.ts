@@ -55,6 +55,10 @@ export const gsaColors = {
     card: {
       dark: '#272729',
       light: '#FFFFFF'
+    },
+    overlay: {
+      dark: '#19191B',
+      light: '#F1F1F1'
     }
   },
 
@@ -66,6 +70,16 @@ export const gsaColors = {
     footer: {
       dark: '#262628',
       light: '#ECECEC'
+    },
+    input: {
+      normal: {
+        dark: '#3A3A3A',
+        light: '#D3D3D3'
+      },
+      focus: {
+        dark: '#494949',
+        light: '#adadad'
+      }
     }
   },
 
@@ -126,6 +140,11 @@ export const gsaColors = {
 
   input: {
     white: '#FAFAFA'
+  },
+
+  caption: {
+    dark: '#ECECEC',
+    light: '#797979'
   }
 }
 
@@ -146,7 +165,8 @@ export const colorSchemes = {
         red: gsaColors.background.red.normal,
         footer: gsaColors.background.footer.light,
         card: gsaColors.background.card.light,
-        deep: gsaColors.background.header.dark
+        deep: gsaColors.background.header.dark,
+        overlay: gsaColors.background.overlay.light
       },
       text: {
         primary: gsaColors.text.primary.light,
@@ -155,7 +175,8 @@ export const colorSchemes = {
         normal: gsaColors.text.normal,
         red: gsaColors.text.red,
         nav: gsaColors.link.light,
-        black: gsaColors.text.primary.light
+        black: gsaColors.text.primary.light,
+        caption: gsaColors.caption.light
       },
       divider: gsaColors.border.normal.light,
       backdrop: gsaColors.backdrop.light,
@@ -180,7 +201,8 @@ export const colorSchemes = {
         red: gsaColors.background.red.normal,
         footer: gsaColors.background.footer.dark,
         card: gsaColors.background.card.dark,
-        deep: gsaColors.background.header.light
+        deep: gsaColors.background.header.light,
+        overlay: gsaColors.background.overlay.dark
       },
       text: {
         primary: gsaColors.text.primary.dark,
@@ -189,7 +211,8 @@ export const colorSchemes = {
         normal: gsaColors.text.normal,
         red: gsaColors.text.red,
         nav: gsaColors.link.dark,
-        black: gsaColors.text.primary.light
+        black: gsaColors.text.primary.light,
+        caption: gsaColors.caption.dark
       },
       divider: gsaColors.border.normal.dark,
       backdrop: gsaColors.backdrop.dark,
