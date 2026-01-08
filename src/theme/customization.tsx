@@ -260,6 +260,9 @@ export const customizations: Components<Theme> = {
             color: gsaColors.text.normal,
             '&.Mui-focused': {
               color: gsaColors.text.normal
+            },
+            '&.Mui-error': {
+              color: gsaColors.text.red
             }
           },
           '& .MuiOutlinedInput-input': {
@@ -272,6 +275,9 @@ export const customizations: Components<Theme> = {
           },
           '& .MuiFilledInput-root.Mui-focused': {
             borderColor: gsaColors.border.input.focus.dark
+          },
+          '& .MuiFilledInput-root.Mui-error': {
+            color: gsaColors.text.red
           }
         })
       })
