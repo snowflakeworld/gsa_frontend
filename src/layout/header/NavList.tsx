@@ -24,7 +24,7 @@ const NavListComponent = ({ ...props }) => {
         <Link
           key={nav.title}
           href={nav.path}
-          sx={{ display: 'flex', textAlign: 'center', gap: '2px', alignItems: 'center' }}
+          sx={{ display: 'flex', textAlign: 'center', gap: '2px', alignItems: 'center', justifyContent: 'center' }}
         >
           <span>{nav.title}</span>
           {nav.menu && (

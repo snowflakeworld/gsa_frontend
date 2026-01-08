@@ -1,6 +1,4 @@
-import { LinkType } from '@/types'
-
-export const FOOTER_LINK_TYPES: LinkType[] = ['home', 'research', 'support', 'more']
+export const FOOTER_LINK_TYPES = ['home', 'research', 'support', 'more']
 
 export const FOOTER_LINK_MAIN = {
   home: [

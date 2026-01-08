@@ -1,24 +1,30 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import MainLayout from '@/layout'
-import { DashboardLayout } from '@/layout/Dashboard'
-import { LandingPage } from '@/pages'
+import { store } from '@/store'
+import { Provider } from 'react-redux'
+import { MainRoutes } from './Main'
 
 const routes = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
-    children: [{ path: '/', element: <LandingPage /> }]
-  },
-  {
-    path: '/',
-    element: <DashboardLayout />,
-    children: [{ path: '/', element: <LandingPage /> }]
+    children: [...MainRoutes]
   }
+
+  // {
+  //   path: '/',
+  //   element: <DashboardLayout />,
+  //   children: [{ path: '/', element: <LandingPage /> }]
+  // }
 ])
 
 const AppRouter = () => {
-  return <RouterProvider router={routes} />
+  return (
+    <Provider store={store}>
+      <RouterProvider router={routes} />
+    </Provider>
+  )
 }
 
 export default AppRouter

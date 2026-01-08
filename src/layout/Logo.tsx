@@ -4,7 +4,9 @@ import { Link } from '@mui/material'
 
 import { StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks/useDeviceType'
-import { LogoProps } from '@/types'
+interface LogoProps {
+  place: string
+}
 
 const LogoComponent: FC<LogoProps> = ({ place }) => {
   const { isMobile, isTablet } = useDeviceType()
@@ -22,7 +24,7 @@ const LogoComponent: FC<LogoProps> = ({ place }) => {
     >
       <StyledImage
         src='/assets/images/logo.svg'
-        height={place === 'header' ? 24 : isScreenSmall ? 40 : 50}
+        height={place === 'header' ? 24 : isScreenSmall || place !== 'footer' ? 40 : 50}
         alt='Logo Image'
         loading='lazy'
         margin='0'

@@ -4,8 +4,11 @@ import Button from '@mui/material/Button'
 import { memo, useState } from 'react'
 
 import { CustomIcon } from '@/components'
+import { routers } from '@/configs'
 import { useDeviceType } from '@/hooks/useDeviceType'
+import { useIsLoggedIn } from '@/hooks/useIsLoggedIn'
 import { Logo } from '@/layout/Logo'
+import { useNavigate } from 'react-router-dom'
 import { ColorModeButton } from './header/ColorModeButton'
 import { MobileNav } from './header/MobileNav'
 import { NavList } from './header/NavList'
@@ -14,9 +17,17 @@ const HeaderComponent = () => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false)
   const { mode, systemMode } = useColorScheme()
   const { isMobile, isTablet } = useDeviceType()
+  const navigate = useNavigate()
+  const isLoggedIn = useIsLoggedIn()
 
   const isScreenSmall = isMobile || isTablet
   const resolvedMode = (systemMode || mode) as 'light' | 'dark'
+
+  const handleLogin = () => {
+    if (!isLoggedIn) {
+      navigate(routers.SignIn)
+    }
+  }
 
   return (
     <>
@@ -64,6 +75,7 @@ const HeaderComponent = () => {
                       />
                     }
                     className='button--small'
+                    onClick={() => handleLogin()}
                   />
                 </>
               )}

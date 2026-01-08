@@ -204,7 +204,7 @@ export const customizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         '& .MuiOutlinedInput-root': {
-          fontFamily: 'Poppins',
+          fontFamily: 'Manrope',
 
           // border: '#39393c',
           backgroundColor: gsaColors.background.input.light,
@@ -220,13 +220,27 @@ export const customizations: Components<Theme> = {
           }
         },
         '& .MuiInputLabel-root': {
-          color: gsaColors.text.accent.light,
+          color: gsaColors.text.normal,
           '&.Mui-focused': {
-            color: gsaColors.primary.light
+            color: gsaColors.text.normal
+          },
+          '&.Mui-error': {
+            color: gsaColors.text.red
           }
         },
         '& .MuiOutlinedInput-input': {
           color: gsaColors.text.primary.light
+        },
+        '& .MuiFilledInput-root': {
+          border: `1px solid ${gsaColors.border.input.normal.light}`,
+          borderRadius: '8px',
+          backgroundColor: gsaColors.background.input.light
+        },
+        '& .MuiFilledInput-root.Mui-focused': {
+          borderColor: gsaColors.border.input.focus.light
+        },
+        '& .MuiFilledInput-root.Mui-error': {
+          color: gsaColors.text.red
         },
         ...theme.applyStyles('dark', {
           '& .MuiOutlinedInput-root': {
@@ -243,13 +257,36 @@ export const customizations: Components<Theme> = {
             }
           },
           '& .MuiInputLabel-root': {
-            color: gsaColors.text.accent.dark,
+            color: gsaColors.text.normal,
             '&.Mui-focused': {
-              color: gsaColors.primary.dark
+              color: gsaColors.text.normal
             }
           },
           '& .MuiOutlinedInput-input': {
             color: gsaColors.text.primary.dark
+          },
+          '& .MuiFilledInput-root': {
+            border: `1px solid ${gsaColors.border.input.normal.dark}`,
+            borderRadius: '8px',
+            backgroundColor: gsaColors.background.input.dark
+          },
+          '& .MuiFilledInput-root.Mui-focused': {
+            borderColor: gsaColors.border.input.focus.dark
+          }
+        })
+      })
+    }
+  },
+
+  MuiFormLabel: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        '& .MuiInputLabel-root.Mui-focused': {
+          color: gsaColors.text.normal
+        },
+        ...theme.applyStyles('dark', {
+          '& .MuiInputLabel-root.Mui-focused': {
+            color: gsaColors.text.normal
           }
         })
       })

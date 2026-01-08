@@ -3,8 +3,7 @@ import { Box, Container, Link, Stack, Typography } from '@mui/material'
 import { FOOTER_LINK_SUB, FOOTER_LINK_TYPES } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { Logo } from '@/layout/Logo'
-import { LinkContent, LinkType } from '@/types'
-import { LinkListMain } from './footer/LinkListMain'
+import { LinkContent, LinkListMain, LinkType } from './footer/LinkListMain'
 
 export const Footer = () => {
   const { isMobile, isTablet } = useDeviceType()
@@ -31,8 +30,8 @@ export const Footer = () => {
               Grading Specialists Authority (GSA) & GSA/DNA are divisions of Collectors Holdings, Inc.
             </Typography>
           </Stack>
-          {FOOTER_LINK_TYPES.map((type: LinkType, idx: number) => (
-            <LinkListMain key={idx} type={type} />
+          {FOOTER_LINK_TYPES.map((type, idx) => (
+            <LinkListMain key={idx} type={type as LinkType} />
           ))}
         </Stack>
         <Stack
