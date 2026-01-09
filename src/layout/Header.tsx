@@ -29,6 +29,10 @@ const HeaderComponent = () => {
     }
   }
 
+  const handleSubmit = () => {
+    navigate(routers.Submission)
+  }
+
   return (
     <>
       <AppBar elevation={0} sx={{ backgroundColor: 'background.header' }}>
@@ -61,6 +65,7 @@ const HeaderComponent = () => {
                     }
                     sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2 }}
                     className='button--small'
+                    onClick={() => handleSubmit()}
                   >
                     {!isScreenSmall && <span>Submit</span>}
                   </Button>

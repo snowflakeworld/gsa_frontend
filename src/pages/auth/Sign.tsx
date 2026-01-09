@@ -1,9 +1,12 @@
+import { routers } from '@/configs'
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { Logo } from '@/layout/Logo'
+import { dispatch, login } from '@/store'
 import { Email } from '@/types'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Box, Button, Card, Container, FormControl, Stack, TextField, Typography } from '@mui/material'
 import { Controller, useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 
 const defaultValues = {
@@ -14,7 +17,17 @@ const schema = yup.object().shape({
   email: yup.string().required('form.email-required').email('form.email-invalid')
 })
 
-const onSubmit = async (data: Email) => {}
+const onSubmit = async (data: Email) => {
+  const navigate = useNavigate()
+
+  dispatch(
+    login({
+      user: { _id: '123123', email: data.email, username: '123123', createdAt: '123123', updatedAt: '123123' },
+      token: '123123123'
+    })
+  )
+  navigate(routers.Home)
+}
 
 export const Sign = () => {
   const { isMobile } = useDeviceType()

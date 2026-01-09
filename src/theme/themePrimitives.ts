@@ -59,6 +59,10 @@ export const gsaColors = {
     overlay: {
       dark: '#19191B',
       light: '#F1F1F1'
+    },
+    profile: {
+      dark: '#19191B',
+      light: '#FBFBFB'
     }
   },
 
@@ -145,6 +149,62 @@ export const gsaColors = {
   caption: {
     dark: '#ECECEC',
     light: '#797979'
+  },
+
+  chip: {
+    background: {
+      dark: {
+        primary: '#19191B',
+        secondary: 'transparent'
+      },
+      light: {
+        primary: 'transparent',
+        secondary: 'transparent'
+      }
+    },
+    border: {
+      dark: {
+        primary: '#262628',
+        secondary: '#797979',
+        tertiary: '#E24744'
+      },
+      light: {
+        primary: '#F1F1F1',
+        secondary: '#1D1D1F',
+        tertiary: '#E24744'
+      }
+    },
+    text: {
+      dark: {
+        primary: '#797979',
+        secondary: '#FFFFFF',
+        tertiary: '#E24744'
+      },
+      light: {
+        primary: '#797979',
+        secondary: '#1D1D1F',
+        tertiary: '#E24744'
+      }
+    },
+    avatar: {
+      background: {
+        dark: {
+          primary: '#1D1D1F',
+          secondary: '#F1F1F1',
+          tertiary: '#E24744'
+        },
+        light: {
+          primary: '#F1F1F1',
+          secondary: '#F1F1F1',
+          tertiary: '#E24744'
+        }
+      },
+      text: {
+        primary: '#797979',
+        secondary: '#1D1D1F',
+        tertiary: '#FFFFFF'
+      }
+    }
   }
 }
 
@@ -163,10 +223,12 @@ export const colorSchemes = {
         paper: gsaColors.background.paper.light,
         default: gsaColors.background.default.light,
         red: gsaColors.background.red.normal,
+        header: gsaColors.background.header.light,
         footer: gsaColors.background.footer.light,
         card: gsaColors.background.card.light,
         deep: gsaColors.background.header.dark,
-        overlay: gsaColors.background.overlay.light
+        overlay: gsaColors.background.overlay.light,
+        profile: gsaColors.background.profile.light
       },
       text: {
         primary: gsaColors.text.primary.light,
@@ -182,6 +244,34 @@ export const colorSchemes = {
       backdrop: gsaColors.backdrop.light,
       input: {
         white: gsaColors.input.white
+      },
+      chip: {
+        background: {
+          primary: gsaColors.chip.background.light.primary,
+          secondary: gsaColors.chip.background.light.secondary
+        },
+        border: {
+          primary: gsaColors.chip.border.light.primary,
+          secondary: gsaColors.chip.border.light.secondary,
+          tertiary: gsaColors.chip.border.light.tertiary
+        },
+        text: {
+          primary: gsaColors.chip.text.light.primary,
+          secondary: gsaColors.chip.text.light.secondary,
+          tertiary: gsaColors.chip.text.light.tertiary
+        },
+        avatar: {
+          background: {
+            primary: gsaColors.chip.avatar.background.light.primary,
+            secondary: gsaColors.chip.avatar.background.light.secondary,
+            tertiary: gsaColors.chip.avatar.background.light.tertiary
+          },
+          text: {
+            primary: gsaColors.chip.avatar.text.primary,
+            secondary: gsaColors.chip.avatar.text.secondary,
+            tertiary: gsaColors.chip.avatar.text.tertiary
+          }
+        }
       }
     }
   },
@@ -199,10 +289,12 @@ export const colorSchemes = {
         default: gsaColors.background.default.dark,
         paper: gsaColors.background.paper.dark,
         red: gsaColors.background.red.normal,
+        header: gsaColors.background.header.dark,
         footer: gsaColors.background.footer.dark,
         card: gsaColors.background.card.dark,
         deep: gsaColors.background.header.light,
-        overlay: gsaColors.background.overlay.dark
+        overlay: gsaColors.background.overlay.dark,
+        profile: gsaColors.background.profile.dark
       },
       text: {
         primary: gsaColors.text.primary.dark,
@@ -218,6 +310,34 @@ export const colorSchemes = {
       backdrop: gsaColors.backdrop.dark,
       input: {
         white: gsaColors.input.white
+      },
+      chip: {
+        background: {
+          primary: gsaColors.chip.background.dark.primary,
+          secondary: gsaColors.chip.background.dark.secondary
+        },
+        border: {
+          primary: gsaColors.chip.border.dark.primary,
+          secondary: gsaColors.chip.border.dark.secondary,
+          tertiary: gsaColors.chip.border.dark.tertiary
+        },
+        text: {
+          primary: gsaColors.chip.text.dark.primary,
+          secondary: gsaColors.chip.text.dark.secondary,
+          tertiary: gsaColors.chip.text.dark.tertiary
+        },
+        avatar: {
+          background: {
+            primary: gsaColors.chip.avatar.background.dark.primary,
+            secondary: gsaColors.chip.avatar.background.dark.secondary,
+            tertiary: gsaColors.chip.avatar.background.dark.tertiary
+          },
+          text: {
+            primary: gsaColors.chip.avatar.text.primary,
+            secondary: gsaColors.chip.avatar.text.secondary,
+            tertiary: gsaColors.chip.avatar.text.tertiary
+          }
+        }
       }
     }
   }

@@ -1,4 +1,4 @@
-import { CircularProgress } from '@mui/material'
+import { Box, CircularProgress } from '@mui/material'
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Footer } from './Footer'
@@ -9,9 +9,11 @@ export const DashboardLayout = () => {
     <>
       <Header />
       <Suspense fallback={<CircularProgress />}>
-        <Outlet />
+        <Box bgcolor='background.profile'>
+          <Outlet />
+        </Box>
       </Suspense>
-      <Footer />
+      <Footer isLandingPage={false} />
     </>
   )
 }
