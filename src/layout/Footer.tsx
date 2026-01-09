@@ -3,37 +3,44 @@ import { Box, Container, Link, Stack, Typography } from '@mui/material'
 import { FOOTER_LINK_SUB, FOOTER_LINK_TYPES } from '@/constants'
 import { useDeviceType } from '@/hooks/useDeviceType'
 import { Logo } from '@/layout/Logo'
+import { FC } from 'react'
 import { LinkContent, LinkListMain, LinkType } from './footer/LinkListMain'
 
-export const Footer = () => {
+interface FooterProps {
+  isLandingPage?: boolean
+}
+
+export const Footer: FC<FooterProps> = ({ isLandingPage = true }) => {
   const { isMobile, isTablet } = useDeviceType()
 
   const isScreenSmall = isMobile || isTablet
 
   return (
-    <Box sx={{ backgroundColor: 'background.footer' }}>
+    <Box sx={{ backgroundColor: isLandingPage ? 'background.footer' : 'background.header' }}>
       <Container className='py-none' sx={{ px: { xs: 2.5, lg: 18.75 } }}>
-        <Stack
-          direction={!isScreenSmall ? 'row' : 'column'}
-          sx={{ py: { xs: 2.5, lg: 6.25 } }}
-          justifyContent='space-between'
-          gap={2}
-        >
-          <Stack direction='column' gap={3} width={!isScreenSmall ? 352 : '100%'}>
-            <Logo place='footer' />
-            <Typography
-              color='textSecondary'
-              width='100%'
-              sx={{ fontSize: '0.875rem' }}
-              textAlign={!isScreenSmall ? 'inherit' : 'center'}
-            >
-              Grading Specialists Authority (GSA) & GSA/DNA are divisions of Collectors Holdings, Inc.
-            </Typography>
+        {isLandingPage && (
+          <Stack
+            direction={!isScreenSmall ? 'row' : 'column'}
+            sx={{ py: { xs: 2.5, lg: 6.25 } }}
+            justifyContent='space-between'
+            gap={2}
+          >
+            <Stack direction='column' gap={3} width={!isScreenSmall ? 352 : '100%'}>
+              <Logo place='footer' />
+              <Typography
+                color='textSecondary'
+                width='100%'
+                sx={{ fontSize: '0.875rem' }}
+                textAlign={!isScreenSmall ? 'inherit' : 'center'}
+              >
+                Grading Specialists Authority (GSA) & GSA/DNA are divisions of Collectors Holdings, Inc.
+              </Typography>
+            </Stack>
+            {FOOTER_LINK_TYPES.map((type, idx) => (
+              <LinkListMain key={idx} type={type as LinkType} />
+            ))}
           </Stack>
-          {FOOTER_LINK_TYPES.map((type, idx) => (
-            <LinkListMain key={idx} type={type as LinkType} />
-          ))}
-        </Stack>
+        )}
         <Stack
           direction={!isScreenSmall ? 'row' : 'column-reverse'}
           sx={{ py: 2 }}

@@ -191,7 +191,10 @@ export const customizations: Components<Theme> = {
         borderTop: 'none',
         borderLeft: 'none',
         borderRight: 'none',
-        boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+
+        // boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+
+        boxShadow: 'none',
         ...theme.applyStyles('dark', {
           background: gsaColors.background.appBar.dark,
           borderBottom: `1px solid ${gsaColors.border.normal.dark}`
