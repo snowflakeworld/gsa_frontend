@@ -1,6 +1,6 @@
 export const routers = {
   Home: '/',
-  SignIn: '/signin',
+  SignIn: '/sign',
 
   Submission: '/submission',
   CreateSubmission: '/submission/create'
