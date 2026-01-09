@@ -1,6 +1,5 @@
 import { routers } from '@/configs'
 import { Logo } from '@/layout/Logo'
-import { dispatch, login } from '@/store'
 import { Email } from '@/types'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Close } from '@mui/icons-material'
@@ -34,12 +33,12 @@ export const SignIn = () => {
   }
 
   const onSubmit = async (data: Email) => {
-    dispatch(
-      login({
-        user: { _id: '123123', email: data.email, username: '123123', createdAt: '123123', updatedAt: '123123' },
-        token: '123123123'
-      })
-    )
+    // dispatch(
+    //   login({
+    //     user: { _id: '123123', email: data.email, username: '123123', createdAt: '123123', updatedAt: '123123' },
+    //     token: '123123123'
+    //   })
+    // )
     setStep(1)
   }
 
@@ -73,6 +72,7 @@ export const SignIn = () => {
           render={({ field, fieldState: { error } }) => (
             <TextField
               variant='filled'
+              type='email'
               autoComplete='email'
               label='Email'
               size='medium'

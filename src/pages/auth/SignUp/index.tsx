@@ -1,7 +1,7 @@
 import { routers } from '@/configs'
 import { Logo } from '@/layout/Logo'
 import { dispatch, login } from '@/store'
-import { Email } from '@/types'
+import { CreateInfo } from '@/types'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Close } from '@mui/icons-material'
 import { Button, FormControl, IconButton, Stack, TextField, Typography } from '@mui/material'
@@ -10,35 +10,56 @@ import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 
 const defaultValues = {
-  email: ''
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: '',
+  confirmPassword: ''
 }
 
 const schema = yup.object().shape({
-  email: yup.string().required('form.email-required').email('form.email-invalid')
+  firstName: yup
+    .string()
+    .required('form.firstName-required')
+    .matches(/^[a-zA-Z0-9._-]{3,20}$/, 'form.firstName-invalid'),
+  lastName: yup
+    .string()
+    .required('form.lastName-required')
+    .matches(/^[a-zA-Z0-9._-]{3,20}$/, 'form.lastName-invalid'),
+  email: yup.string().required('form.email-required').email('form.email-invalid'),
+  password: yup
+    .string()
+    .required('form.password-required')
+    .min(8, 'form.password-least')
+    .matches(/[A-Z]/, 'form.password-uppercase')
+    .matches(/[0-9]/, 'form.password-number')
+    .matches(/[!@#$%^&*]/, 'form.password-special'),
+  confirmPassword: yup
+    .string()
+    .required('form.confirmPassword-required')
+    .oneOf([yup.ref('password')], 'form.confirmPassword-unmatched')
 })
-
-const onSubmit = async (data: Email) => {
-  const navigate = useNavigate()
-
-  dispatch(
-    login({
-      user: { _id: '123123', email: data.email, username: '123123', createdAt: '123123', updatedAt: '123123' },
-      token: '123123123'
-    })
-  )
-  navigate(routers.Home)
-}
 
 export const SignUp = () => {
   const navigate = useNavigate()
 
-  const { control, handleSubmit } = useForm<Email>({
+  const { control, handleSubmit } = useForm<CreateInfo>({
     defaultValues,
     mode: 'onChange',
     resolver: yupResolver(schema)
   })
 
   const handleClose = () => {
+    navigate(routers.Home)
+  }
+
+  const onSubmit = async (data: CreateInfo) => {
+    dispatch(
+      login({
+        user: { _id: '123123', email: data.email, username: '123123', createdAt: '123123', updatedAt: '123123' },
+        token: '123123123'
+      })
+    )
     navigate(routers.Home)
   }
 
@@ -65,6 +86,42 @@ export const SignUp = () => {
           <Close />
         </IconButton>
       </Stack>
+      <Stack flexDirection='row' gap={1.5}>
+        <FormControl sx={{ flexGrow: 1 }}>
+          <Controller
+            name='firstName'
+            control={control}
+            render={({ field, fieldState: { error } }) => (
+              <TextField
+                variant='filled'
+                autoComplete='firstName'
+                label='First Name'
+                size='medium'
+                slotProps={{ input: { disableUnderline: true } }}
+                error={Boolean(error)}
+                {...field}
+              />
+            )}
+          />
+        </FormControl>
+        <FormControl sx={{ flexGrow: 1 }}>
+          <Controller
+            name='lastName'
+            control={control}
+            render={({ field, fieldState: { error } }) => (
+              <TextField
+                variant='filled'
+                autoComplete='lastName'
+                label='Last Name'
+                size='medium'
+                slotProps={{ input: { disableUnderline: true } }}
+                error={Boolean(error)}
+                {...field}
+              />
+            )}
+          />
+        </FormControl>
+      </Stack>
       <FormControl>
         <Controller
           name='email'
@@ -72,6 +129,7 @@ export const SignUp = () => {
           render={({ field, fieldState: { error } }) => (
             <TextField
               variant='filled'
+              type='email'
               autoComplete='email'
               label='Email'
               size='medium'
@@ -82,8 +140,44 @@ export const SignUp = () => {
           )}
         />
       </FormControl>
+      <FormControl>
+        <Controller
+          name='password'
+          control={control}
+          render={({ field, fieldState: { error } }) => (
+            <TextField
+              variant='filled'
+              type='password'
+              autoComplete='current-password'
+              label='Password'
+              size='medium'
+              slotProps={{ input: { disableUnderline: true } }}
+              error={Boolean(error)}
+              {...field}
+            />
+          )}
+        />
+      </FormControl>
+      <FormControl>
+        <Controller
+          name='confirmPassword'
+          control={control}
+          render={({ field, fieldState: { error } }) => (
+            <TextField
+              variant='filled'
+              type='password'
+              autoComplete='current-password'
+              label='Confirm Password'
+              size='medium'
+              slotProps={{ input: { disableUnderline: true } }}
+              error={Boolean(error)}
+              {...field}
+            />
+          )}
+        />
+      </FormControl>
       <Button type='submit' variant='contained' sx={{ width: '100%', gap: 2, px: 3 }} className='button--red'>
-        Continue
+        Sign Up
       </Button>
     </Stack>
   )
