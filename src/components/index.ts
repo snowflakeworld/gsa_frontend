@@ -1,2 +1,2 @@
-export * from './buttons'
-export * from './common'
+export * from './Buttons'
+export * from './Common'

@@ -171,13 +171,13 @@ export const customizations: Components<Theme> = {
   MuiCard: {
     styleOverrides: {
       root: ({ theme }) => ({
-        backgroundColor: gsaColors.background.paper.light,
-        border: `1px solid ${gsaColors.border.normal.light}`,
+        // backgroundColor: gsaColors.background.paper.light,
+        // border: `1px solid ${gsaColors.border.normal.light}`,
         borderRadius: 12,
         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         ...theme.applyStyles('dark', {
-          backgroundColor: gsaColors.background.paper.dark,
-          border: `1px solid ${gsaColors.border.normal.dark}`
+          // backgroundColor: gsaColors.background.paper.dark
+          // border: `1px solid ${gsaColors.border.normal.dark}`
         })
       })
     }
@@ -360,4 +360,18 @@ export const customizations: Components<Theme> = {
       })
     }
   }
+
+  // MuiRadio: {
+  //   styleOverrides: {
+  //     root: ({ theme }) => ({
+  //       color: gsaColors.radio.normal.light,
+  //       '& .Mui-checked': {
+  //         color: gsaColors.radio.checked
+  //       },
+  //       ...theme.applyStyles('dark', {
+  //         color: gsaColors.radio.normal.dark
+  //       })
+  //     })
+  //   }
+  // }
 }

@@ -2,7 +2,7 @@ import { Link, Stack, Typography } from '@mui/material'
 import { FC, memo } from 'react'
 
 import { FOOTER_LINK_MAIN } from '@/constants'
-import { useDeviceType } from '@/hooks/useDeviceType'
+import { useDeviceType } from '@/hooks'
 
 export interface LinkContent {
   title: string
