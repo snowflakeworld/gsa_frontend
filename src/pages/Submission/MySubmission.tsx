@@ -6,7 +6,7 @@ import { Progress, Recent } from '@/views/Submission'
 import { Button, Container, Stack, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
-export const SubmissionPage = () => {
+export const MySubmissionPage = () => {
   const navigate = useNavigate()
   const { isMobile, isTablet } = useDeviceType()
 

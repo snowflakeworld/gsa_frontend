@@ -14,7 +14,7 @@ export const StepBar = () => {
 
   return (
     <>
-      <Stack bgcolor='background.header' borderBottom='1px solid' borderColor='divider'>
+      <Stack bgcolor='background.header' borderBottom='1px solid' borderColor='divider' position='sticky'>
         <Container sx={{ py: { xs: 2, md: 2.5 } }}>
           <Stack
             flexDirection={!isScreenSmall ? 'row' : 'column'}
