@@ -239,6 +239,10 @@ export const customizations: Components<Theme> = {
 
   MuiFormControlLabel: {
     styleOverrides: {
+      root: {
+        marginLeft: 0,
+        marginRight: 0
+      },
       label: {
         fontSize: '0.625rem'
       }

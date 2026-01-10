@@ -1,4 +1,4 @@
-import { EmptyPaper } from '@/components'
+import { NoDataPaper } from '@/components'
 import { MyRecentItem } from '@/components/Submission'
 import { MY_RECENT_SUBMISSION } from '@/constants'
 import { List, Stack, Typography } from '@mui/material'
@@ -16,7 +16,7 @@ export const Recent = () => {
           Submissions that you recently completed
         </Typography>
       </Stack>
-      {!recentCount && <EmptyPaper type='item'>You have no recent submissions</EmptyPaper>}
+      {!recentCount && <NoDataPaper type='item'>You have no recent submissions</NoDataPaper>}
       {recentCount && (
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           {MY_RECENT_SUBMISSION.map((item, index) => (

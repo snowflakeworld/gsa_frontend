@@ -1,9 +1,9 @@
-import { SearchBox } from '@/components'
+import { NoDataView, SearchBox } from '@/components'
 import { AddItem, StepButtonGroup } from '@/components/Submission'
 import { ADD_ITEMS } from '@/constants'
 import { ActiveStepContext } from '@/pages'
 import { gsaColors } from '@/theme'
-import { Card, List, Stack, Typography } from '@mui/material'
+import { Card, Checkbox, FormControlLabel, List, Stack, Typography } from '@mui/material'
 import { useContext } from 'react'
 
 export const AddItems = () => {
@@ -80,11 +80,19 @@ export const AddItems = () => {
             </Stack>
           </Stack>
         </Card>
+
+        <NoDataView type='item' size='small'>No item added</NoDataView>
+
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, py: 0 }}>
           {ADD_ITEMS.map((item, index) => (
             <AddItem key={index} {...item} />
           ))}
         </List>
+
+        <FormControlLabel
+          control={<Checkbox size='small' name='encapsulate-all' />}
+          label='Encapsulate all if altered'
+        />
       </Stack>
       <StepButtonGroup onBack={handlePrev} onNext={handleNext} />
     </Stack>
