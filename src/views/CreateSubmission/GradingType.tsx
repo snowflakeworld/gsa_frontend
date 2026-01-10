@@ -1,5 +1,5 @@
-import { GradingTypeItem } from '@/components/Submission/GradingTypeItem'
-import { GRADING_TYPES } from '@/constants/createSubmission'
+import { GradingTypeItem } from '@/components/Submission'
+import { GRADING_TYPES } from '@/constants'
 import { SingleChoiceSelectProvider } from '@/hooks/useSingleChoiceSelect'
 import { Stack, Typography } from '@mui/material'
 

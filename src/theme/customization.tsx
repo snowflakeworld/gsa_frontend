@@ -106,6 +106,15 @@ export const customizations: Components<Theme> = {
             backgroundColor: gsaColors.background.red.dark
           }
         },
+        '&.button-alpha--red': {
+          color: gsaColors.text.red,
+          backgroundColor: gsaColors.background.red.alpha,
+          borderColor: gsaColors.border.red,
+
+          '&:hover': {
+            backgroundColor: gsaColors.background.red.alphaMedium
+          }
+        },
         '&.button--black': {
           color: 'white',
           backgroundColor: gsaColors.background.appBar.dark,

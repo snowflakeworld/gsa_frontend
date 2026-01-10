@@ -55,6 +55,7 @@ export const gsaColors = {
     },
     card: {
       dark: '#272729',
+      dark1: '#262628',
       light: '#FFFFFF'
     },
     overlay: {
@@ -89,6 +90,10 @@ export const gsaColors = {
     card: {
       dark: '#262628',
       light: '#C7C7C7'
+    },
+    paper: {
+      dark: '#262628',
+      light: '#D6D6D6'
     },
     red: '#E24744'
   },
@@ -245,6 +250,7 @@ export const colorSchemes = {
         header: gsaColors.background.header.light,
         footer: gsaColors.background.footer.light,
         card: gsaColors.background.card.light,
+        cardItem: gsaColors.background.card.light,
         deep: gsaColors.background.header.dark,
         overlay: gsaColors.background.overlay.light,
         profile: gsaColors.background.profile.light
@@ -294,7 +300,8 @@ export const colorSchemes = {
       },
       border: {
         card: gsaColors.border.card.light,
-        red: gsaColors.border.red
+        red: gsaColors.border.red,
+        paper: gsaColors.border.paper.light
       },
       radio: {
         light: gsaColors.radio.normal.light
@@ -318,6 +325,7 @@ export const colorSchemes = {
         header: gsaColors.background.header.dark,
         footer: gsaColors.background.footer.dark,
         card: gsaColors.background.card.dark,
+        cardItem: gsaColors.background.card.dark1,
         deep: gsaColors.background.header.light,
         overlay: gsaColors.background.overlay.dark,
         profile: gsaColors.background.profile.dark
@@ -367,7 +375,8 @@ export const colorSchemes = {
       },
       border: {
         card: gsaColors.border.card.dark,
-        red: gsaColors.border.red
+        red: gsaColors.border.red,
+        paper: gsaColors.border.paper.dark
       },
       radio: {
         light: gsaColors.radio.normal.dark

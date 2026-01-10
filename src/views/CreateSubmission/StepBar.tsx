@@ -1,6 +1,5 @@
-import { StepChip } from '@/components/Submission/StepChip'
-import { LANDING_FEATURE_GRID_MAX_WIDTH } from '@/constants'
-import { STEPS } from '@/constants/createSubmission'
+import { StepChip } from '@/components/Submission'
+import { LANDING_FEATURE_GRID_MAX_WIDTH, STEPS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { ActiveStepContext } from '@/pages'
 import { gsaColors } from '@/theme'

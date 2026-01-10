@@ -1,6 +1,6 @@
 import { Container, Grid, Stack, Typography } from '@mui/material'
 
-import { RedChip } from '@/components/Common/RedChip'
+import { RedChip } from '@/components/Common'
 import { LANDING_FEATURE_GRID_MAX_WIDTH, SPECIAL_SERVICES } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { SpecialServiceCard } from './SpecialService'
