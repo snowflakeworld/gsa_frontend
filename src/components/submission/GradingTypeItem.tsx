@@ -2,8 +2,7 @@ import { useSingChoiceSelectContext } from '@/hooks/useSingleChoiceSelect'
 import { gsaColors, gsaShadows } from '@/theme'
 import { Card, Stack, Typography, useColorScheme } from '@mui/material'
 import { FC } from 'react'
-import { CustomIcon, IconColorType } from '../Common'
-import { BpRadio } from '../Common/BpRadio'
+import { BpRadio, CustomIcon, IconColorType } from '../Common'
 
 export interface GradingTypeItemPros {
   index: number

@@ -3,12 +3,21 @@ import { FC, memo } from 'react'
 
 import { gsaIconColors } from '@/theme/themePrimitives'
 
+import EmptyItemDark from '&/assets/images/empty-item-dark.svg'
+import EmptyItemLight from '&/assets/images/empty-item-light.svg'
+import EmptyOrderDark from '&/assets/images/empty-order-dark.svg'
+import EmptyOrderLight from '&/assets/images/empty-order-light.svg'
+import EmptyProgressDark from '&/assets/images/empty-progress-dark.svg'
+import EmptyProgressLight from '&/assets/images/empty-progress-light.svg'
+import Add from '&/assets/images/icons/add.svg'
 import BulkSubmission from '&/assets/images/icons/bulk-submission.svg'
 import Chain from '&/assets/images/icons/chain.svg'
 import ChevronDownOutline from '&/assets/images/icons/chevron-down-outline.svg'
 import Close from '&/assets/images/icons/close.svg'
+import Delete from '&/assets/images/icons/delete.svg'
 import DetailGrading from '&/assets/images/icons/detail-grading.svg'
 import Detail from '&/assets/images/icons/detail.svg'
+import Edit from '&/assets/images/icons/edit.svg'
 import Eye from '&/assets/images/icons/eye.svg'
 import Menu from '&/assets/images/icons/menu.svg'
 import MoonIcon from '&/assets/images/icons/moon.svg'
@@ -29,30 +38,39 @@ import LogoIcon from '&/assets/images/logo.svg'
 import SMarkIcon from '&/assets/images/smark.svg'
 
 export const ICONS_MAP = {
-  logo: LogoIcon,
-  sun: SunIcon,
-  moon: MoonIcon,
-  starBig: StarBig,
-  starSmall: StarSmall,
+  add: Add,
+  bulkSubmission: BulkSubmission,
   chevronDownOutline: ChevronDownOutline,
   chain: Chain,
-  eye: Eye,
-  twoStars: TwoStars,
-  uv: Uv,
   close: Close,
+  delete: Delete,
   detail: Detail,
-  menu: Menu,
-  personCircle: PersonCircle,
-  submit: Submit,
-  smark: SMarkIcon,
-  verified: VerifiedIcon,
-  bulkSubmission: BulkSubmission,
   detailGrading: DetailGrading,
+  edit: Edit,
+  emptyItemDark: EmptyItemDark,
+  emptyItemLight: EmptyItemLight,
+  emptyOrderDark: EmptyOrderDark,
+  emptyOrderLight: EmptyOrderLight,
+  emptyProgressDark: EmptyProgressDark,
+  emptyProgressLight: EmptyProgressLight,
+  eye: Eye,
+  logo: LogoIcon,
+  menu: Menu,
+  moon: MoonIcon,
+  personCircle: PersonCircle,
   securePackaging: SecurePackaging,
-  submissionGradingTopps: SubmissionGradingTopps,
+  smark: SMarkIcon,
+  starBig: StarBig,
+  starSmall: StarSmall,
+  submissionGradingComic: SubmissionGradingComic,
   submissionGradingStandard: SubmissionGradingStandard,
   submissionGradingTcg: SubmissionGradingTcg,
-  submissionGradingComic: SubmissionGradingComic
+  submissionGradingTopps: SubmissionGradingTopps,
+  submit: Submit,
+  sun: SunIcon,
+  twoStars: TwoStars,
+  uv: Uv,
+  verified: VerifiedIcon
 }
 
 export type IconType = keyof typeof ICONS_MAP | string
