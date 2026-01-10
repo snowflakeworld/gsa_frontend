@@ -1,7 +1,7 @@
 import { Box, Container, Link, Stack, Typography } from '@mui/material'
 
 import { FOOTER_LINK_SUB, FOOTER_LINK_TYPES } from '@/constants'
-import { useDeviceType } from '@/hooks/useDeviceType'
+import { useDeviceType } from '@/hooks'
 import { Logo } from '@/layout/Logo'
 import { FC } from 'react'
 import { LinkContent, LinkListMain, LinkType } from './footer/LinkListMain'

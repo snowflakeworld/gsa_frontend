@@ -50,7 +50,8 @@ export const gsaColors = {
       normal: '#E24744',
       light: '#f35855',
       dark: '#bb2a28',
-      alpha: 'rgba(226, 71, 68, 0.1)'
+      alpha: 'rgba(226, 71, 68, 0.1)',
+      alphaMedium: 'rgba(226, 71, 68, 0.2)'
     },
     card: {
       dark: '#272729',
@@ -84,7 +85,24 @@ export const gsaColors = {
         dark: '#494949',
         light: '#adadad'
       }
-    }
+    },
+    card: {
+      dark: '#262628',
+      light: '#C7C7C7'
+    },
+    red: '#E24744'
+  },
+
+  radio: {
+    normal: {
+      dark: '#262628',
+      light: '#F1F1F1'
+    },
+    disabled: {
+      dark: 'rgba(23, 23, 23, 0.5)',
+      light: 'rgba(218, 218, 218, 0.5)'
+    },
+    checked: '#E24744'
   },
 
   backdrop: {
@@ -172,7 +190,8 @@ export const gsaColors = {
         primary: '#F1F1F1',
         secondary: '#1D1D1F',
         tertiary: '#E24744'
-      }
+      },
+      red: '#E24744'
     },
     text: {
       dark: {
@@ -272,6 +291,13 @@ export const colorSchemes = {
             tertiary: gsaColors.chip.avatar.text.tertiary
           }
         }
+      },
+      border: {
+        card: gsaColors.border.card.light,
+        red: gsaColors.border.red
+      },
+      radio: {
+        light: gsaColors.radio.normal.light
       }
     }
   },
@@ -338,6 +364,13 @@ export const colorSchemes = {
             tertiary: gsaColors.chip.avatar.text.tertiary
           }
         }
+      },
+      border: {
+        card: gsaColors.border.card.dark,
+        red: gsaColors.border.red
+      },
+      radio: {
+        light: gsaColors.radio.normal.dark
       }
     }
   }
@@ -489,27 +522,28 @@ export const gsaIconColors = {
   grey: '#797979',
   customRed: '#E24744',
   starModeDark: '#28282A',
-  starModeLight: '#F1F1F1'
+  starModeLight: '#F1F1F1',
+  dark: '#1D1D1F'
 }
 
 export const gsaShadows = {
   none: 'none',
-  xs: '0 1px 2px rgba(0, 0, 0, 0.5)',
-  sm: '0 2px 4px rgba(0, 0, 0, 0.5)',
-  md: '0 4px 8px rgba(0, 0, 0, 0.5)',
-  medium: '0 4px 8px rgba(0, 0, 0, 0.5)',
-  lg: '0 6px 12px rgba(0, 0, 0, 0.5)',
-  xl: '0 8px 16px rgba(0, 0, 0, 0.5)',
-  '2xl': '0 12px 24px rgba(0, 0, 0, 0.5)',
-  inner: 'inset 0 2px 4px rgba(0, 0, 0, 0.5)',
-  innerLg: 'inset 0 3px 6px rgba(0, 0, 0, 0.5)',
+  xs: '0 1px 2px rgba(12, 12, 13, 0.06)',
+  sm: '0 2px 4px rgba(12, 12, 13, 0.06)',
+  md: '0 4px 8px rgba(12, 12, 13, 0.06)',
+  medium: '0 4px 8px rgba(12, 12, 13, 0.06)',
+  lg: '0 6px 12px rgba(12, 12, 13, 0.06)',
+  xl: '0 8px 16px rgba(12, 12, 13, 0.06)',
+  '2xl': '0 12px 24px rgba(12, 12, 13, 0.06)',
+  inner: 'inset 0 2px 4px rgba(12, 12, 13, 0.06)',
+  innerLg: 'inset 0 3px 6px rgba(12, 12, 13, 0.06)',
   glow: 'none',
   glowSuccess: 'none',
   glowDanger: 'none',
   glowWarning: 'none',
-  premium: '0 4px 8px rgba(0, 0, 0, 0.5)',
-  elevated: '0 2px 4px rgba(0, 0, 0, 0.5)',
-  floating: '0 4px 8px rgba(0, 0, 0, 0.5)',
+  premium: '0 4px 8px rgba(12, 12, 13, 0.06)',
+  elevated: '0 2px 4px rgba(12, 12, 13, 0.06)',
+  floating: '0 4px 8px rgba(12, 12, 13, 0.06)',
   card: '0 4px 16px rgba(12, 12, 13, 0.06)'
 }
 

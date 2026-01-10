@@ -1,4 +1,4 @@
-import { useDeviceType } from '@/hooks/useDeviceType'
+import { useDeviceType } from '@/hooks'
 import { Box, Card, Container, Stack } from '@mui/material'
 import { createContext, useState } from 'react'
 import { SignIn } from './SignIn'

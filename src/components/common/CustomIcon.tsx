@@ -3,16 +3,23 @@ import { FC, memo } from 'react'
 
 import { gsaIconColors } from '@/theme/themePrimitives'
 
+import BulkSubmission from '&/assets/images/icons/bulk-submission.svg'
 import Chain from '&/assets/images/icons/chain.svg'
 import ChevronDownOutline from '&/assets/images/icons/chevron-down-outline.svg'
 import Close from '&/assets/images/icons/close.svg'
+import DetailGrading from '&/assets/images/icons/detail-grading.svg'
 import Detail from '&/assets/images/icons/detail.svg'
 import Eye from '&/assets/images/icons/eye.svg'
 import Menu from '&/assets/images/icons/menu.svg'
 import MoonIcon from '&/assets/images/icons/moon.svg'
 import PersonCircle from '&/assets/images/icons/person-circle.svg'
+import SecurePackaging from '&/assets/images/icons/secure-packaging.svg'
 import StarBig from '&/assets/images/icons/star-big.svg'
 import StarSmall from '&/assets/images/icons/star-small.svg'
+import SubmissionGradingComic from '&/assets/images/icons/submission-grading-comic.svg'
+import SubmissionGradingStandard from '&/assets/images/icons/submission-grading-standard.svg'
+import SubmissionGradingTcg from '&/assets/images/icons/submission-grading-tcg.svg'
+import SubmissionGradingTopps from '&/assets/images/icons/submission-grading-topps.svg'
 import Submit from '&/assets/images/icons/submit.svg'
 import SunIcon from '&/assets/images/icons/sun.svg'
 import TwoStars from '&/assets/images/icons/two-stars.svg'
@@ -20,9 +27,6 @@ import Uv from '&/assets/images/icons/uv.svg'
 import VerifiedIcon from '&/assets/images/icons/verified.svg'
 import LogoIcon from '&/assets/images/logo.svg'
 import SMarkIcon from '&/assets/images/smark.svg'
-import BulkSubmission from '&/assets/images/icons/bulk-submission.svg'
-import DetailGrading from '&/assets/images/icons/detail-grading.svg'
-import SecurePackaging from '&/assets/images/icons/secure-packaging.svg'
 
 export const ICONS_MAP = {
   logo: LogoIcon,
@@ -44,12 +48,18 @@ export const ICONS_MAP = {
   verified: VerifiedIcon,
   bulkSubmission: BulkSubmission,
   detailGrading: DetailGrading,
-  securePackaging: SecurePackaging
+  securePackaging: SecurePackaging,
+  submissionGradingTopps: SubmissionGradingTopps,
+  submissionGradingStandard: SubmissionGradingStandard,
+  submissionGradingTcg: SubmissionGradingTcg,
+  submissionGradingComic: SubmissionGradingComic
 }
 
 export type IconType = keyof typeof ICONS_MAP | string
 
 export type IconColor = keyof typeof gsaIconColors
+
+export type IconColorType = 'fill' | 'stroke'
 
 export interface CustomIconProps {
   name: IconType
@@ -65,6 +75,7 @@ export interface CustomIconProps {
   right?: number | string | undefined
   bottom?: number | string | undefined
   className?: string | undefined
+  colorMode?: IconColorType | undefined
 }
 
 const CustomIconComponent: FC<CustomIconProps> = ({
@@ -75,6 +86,7 @@ const CustomIconComponent: FC<CustomIconProps> = ({
   viewBoxWidth = '14',
   viewBoxHeight = '14',
   color = undefined,
+  colorMode = 'fill',
   rotate = 0,
   top = undefined,
   left = undefined,
@@ -111,7 +123,9 @@ const CustomIconComponent: FC<CustomIconProps> = ({
           position: position,
           rotate: rotate,
           '& path': {
-            fill: color && gsaIconColors[color]
+            ...(colorMode === 'stroke'
+              ? { stroke: color && gsaIconColors[color], fill: 'none' }
+              : { fill: color && gsaIconColors[color] })
           }
         },
         ...posParams

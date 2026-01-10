@@ -1,4 +1,4 @@
-import { useDeviceType } from '@/hooks/useDeviceType'
+import { useDeviceType } from '@/hooks'
 import { Avatar, Chip } from '@mui/material'
 import { FC, memo } from 'react'
 
@@ -44,7 +44,7 @@ const StepChipComponent: FC<StepChipProps> = ({ idx, title, status = 'initial' }
       break
   }
 
-  return isScreenSmall && status !== 'completed' ? (
+  return isScreenSmall && status !== 'active' ? (
     <Chip
       avatar={<Avatar>{idx + 1}</Avatar>}
       variant='filled'

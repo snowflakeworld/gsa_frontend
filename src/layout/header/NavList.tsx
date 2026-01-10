@@ -3,7 +3,7 @@ import { Link, Stack } from '@mui/material'
 import { memo } from 'react'
 
 import { HEADER_NAV_LINKS } from '@/constants'
-import { useDeviceType } from '@/hooks/useDeviceType'
+import { useDeviceType } from '@/hooks'
 
 const NavListComponent = ({ ...props }) => {
   const { isMobile, isTablet } = useDeviceType()

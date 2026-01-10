@@ -10,7 +10,7 @@ type RootState = ReturnType<typeof reducers>
 const persistConfig = {
   key: STORE_KEY,
   storage,
-  whitelist: ['auth']
+  whitelist: ['auth', 'submission']
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)
@@ -33,3 +33,4 @@ export const useDispatch = () => useAppDispatch<AppDispatch>()
 export const useSelector: TypedUseSelectorHook<RootState> = useAppSelector
 
 export * from './reducers/auth'
+export * from './reducers/submission'
