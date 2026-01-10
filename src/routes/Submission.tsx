@@ -1,7 +1,7 @@
 import { routers } from '@/configs'
-import { CreateSubmissionPage, SubmissionPage } from '@/pages'
+import { CreateSubmissionPage, MySubmissionPage } from '@/pages'
 
 export const SubmissionRoutes = [
-  { path: routers.Submission, element: <SubmissionPage /> },
+  { path: routers.Submission, element: <MySubmissionPage /> },
   { path: routers.CreateSubmission, element: <CreateSubmissionPage /> }
 ]

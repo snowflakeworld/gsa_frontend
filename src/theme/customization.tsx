@@ -43,7 +43,6 @@ export const customizations: Components<Theme> = {
   MuiSvgIcon: {
     styleOverrides: {
       root: ({ theme }) => ({
-        fill: gsaColors.text.primary.light,
         '&.nav-icon-header': {
           fill: gsaColors.link.light.normal
         },
@@ -54,7 +53,6 @@ export const customizations: Components<Theme> = {
           fill: 'none'
         },
         ...theme.applyStyles('dark', {
-          fill: gsaColors.text.primary.dark,
           '&.nav-icon-header': {
             fill: gsaColors.link.dark.normal
           }
@@ -115,9 +113,21 @@ export const customizations: Components<Theme> = {
             backgroundColor: gsaColors.background.red.alphaMedium
           }
         },
+        '&.button-disabled--red': {
+          color: gsaColors.text.whiteAlpha,
+          backgroundColor: gsaColors.background.red.alphaHalf
+        },
         '&.button--black': {
           color: 'white',
           backgroundColor: gsaColors.background.appBar.dark,
+
+          '&:hover': {
+            backgroundColor: gsaColors.background.tertiary.dark
+          }
+        },
+        '&.button--blacklight': {
+          color: 'white',
+          backgroundColor: gsaColors.background.button.dark,
 
           '&:hover': {
             backgroundColor: gsaColors.background.tertiary.dark
@@ -212,11 +222,36 @@ export const customizations: Components<Theme> = {
     }
   },
 
+  MuiCheckbox: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        color: gsaColors.text.normal,
+        padding: '4px',
+        '&.Mui-checked': {
+          color: gsaColors.text.red // Global checked color
+        },
+        ...theme.applyStyles('dark', {
+          color: gsaColors.text.accent.dark
+        })
+      })
+    }
+  },
+
+  MuiFormControlLabel: {
+    styleOverrides: {
+      label: {
+        fontSize: '0.625rem'
+      }
+    }
+  },
+
   MuiTextField: {
     styleOverrides: {
       root: ({ theme }) => ({
         '& .MuiOutlinedInput-root': {
           fontFamily: 'Manrope',
+          paddingTop: 0,
+          paddingBottom: 0,
 
           // border: '#39393c',
           backgroundColor: gsaColors.background.input.light,

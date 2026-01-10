@@ -1,4 +1,4 @@
-import { useSingChoiceSelectContext } from '@/hooks/useSingleChoiceSelect'
+import { useSingChoiceSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
 import { Card, Stack, Typography, useColorScheme } from '@mui/material'
 import { FC } from 'react'
@@ -12,6 +12,7 @@ export interface GradingTypeItemPros {
   viewBoxWidth: number
   viewBoxHeight: number
   colorMode: string
+  onSelect: () => void
 }
 
 export const GradingTypeItem: FC<GradingTypeItemPros> = ({
@@ -21,7 +22,8 @@ export const GradingTypeItem: FC<GradingTypeItemPros> = ({
   icon,
   viewBoxWidth,
   viewBoxHeight,
-  colorMode
+  colorMode,
+  onSelect
 }) => {
   const { mode } = useColorScheme()
   const { curIdx, selectIdx } = useSingChoiceSelectContext()
@@ -30,6 +32,7 @@ export const GradingTypeItem: FC<GradingTypeItemPros> = ({
 
   const handleSelect = () => {
     selectIdx(index)
+    onSelect()
   }
 
   return (

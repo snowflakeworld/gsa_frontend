@@ -36,7 +36,8 @@ export const gsaColors = {
     },
     button: {
       dark: '#28282A',
-      light: '#F1F1F1'
+      light: '#F1F1F1',
+      lightBlack: '#1D1D1F'
     },
     header: {
       dark: '#1D1D1F',
@@ -51,7 +52,8 @@ export const gsaColors = {
       light: '#f35855',
       dark: '#bb2a28',
       alpha: 'rgba(226, 71, 68, 0.1)',
-      alphaMedium: 'rgba(226, 71, 68, 0.2)'
+      alphaMedium: 'rgba(226, 71, 68, 0.2)',
+      alphaHalf: 'rgba(226, 71, 68, 0.5)'
     },
     card: {
       dark: '#272729',
@@ -136,7 +138,9 @@ export const gsaColors = {
       light: '#797979',
       dark: '#ECECEC'
     },
-    red: '#E24744'
+    red: '#E24744',
+    redAlpha: 'rgba(226, 71, 68, 0.5)',
+    whiteAlpha: 'rgba(255, 255, 255, 0.5)'
   },
 
   primary: {
@@ -253,7 +257,8 @@ export const colorSchemes = {
         cardItem: gsaColors.background.card.light,
         deep: gsaColors.background.header.dark,
         overlay: gsaColors.background.overlay.light,
-        profile: gsaColors.background.profile.light
+        profile: gsaColors.background.profile.light,
+        secondary: gsaColors.secondary.light
       },
       text: {
         primary: gsaColors.text.primary.light,
@@ -305,6 +310,11 @@ export const colorSchemes = {
       },
       radio: {
         light: gsaColors.radio.normal.light
+      },
+      table: {
+        header: {
+          background: gsaColors.background.tableHeader.light
+        }
       }
     }
   },
@@ -328,7 +338,8 @@ export const colorSchemes = {
         cardItem: gsaColors.background.card.dark1,
         deep: gsaColors.background.header.light,
         overlay: gsaColors.background.overlay.dark,
-        profile: gsaColors.background.profile.dark
+        profile: gsaColors.background.profile.dark,
+        secondary: gsaColors.secondary.dark
       },
       text: {
         primary: gsaColors.text.primary.dark,
@@ -380,6 +391,11 @@ export const colorSchemes = {
       },
       radio: {
         light: gsaColors.radio.normal.dark
+      },
+      table: {
+        header: {
+          background: gsaColors.background.tableHeader.dark
+        }
       }
     }
   }

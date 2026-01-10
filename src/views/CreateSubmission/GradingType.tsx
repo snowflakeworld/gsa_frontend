@@ -1,9 +1,22 @@
-import { GradingTypeItem } from '@/components/Submission'
+import { GradingTypeItem, StepButtonGroup } from '@/components/Submission'
 import { GRADING_TYPES } from '@/constants'
 import { SingleChoiceSelectProvider } from '@/hooks/useSingleChoiceSelect'
+import { ActiveStepContext } from '@/pages'
 import { Stack, Typography } from '@mui/material'
+import { useContext, useState } from 'react'
 
 export const GradingType = () => {
+  const [itemSelected, setItemSelected] = useState(false)
+  const { activeStep, setActiveStep } = useContext(ActiveStepContext)!
+
+  const handleNext = () => {
+    setActiveStep(activeStep + 1)
+  }
+
+  const handleItemSelect = () => {
+    setItemSelected(true)
+  }
+
   return (
     <Stack gap={3}>
       <Stack gap={0.5}>
@@ -15,10 +28,11 @@ export const GradingType = () => {
       <SingleChoiceSelectProvider>
         <Stack gap={1}>
           {GRADING_TYPES.map((type, index) => (
-            <GradingTypeItem key={type.title} index={index} {...type} />
+            <GradingTypeItem key={type.title} index={index} onSelect={handleItemSelect} {...type} />
           ))}
         </Stack>
       </SingleChoiceSelectProvider>
+      <StepButtonGroup backVisible={false} nextEnabled={itemSelected} onNext={handleNext} />
     </Stack>
   )
 }
