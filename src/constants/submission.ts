@@ -26,9 +26,9 @@ export const SUMMARY_STATISTICS = [
   { label: 'Handling Charge', value: '$0.00' }
 ]
 
-export const ADD_ITEM_TYPES = ['Raw Card Grading']
+export const ADD_ITEM_TYPES = ['Raw Card Grading', 'Special Card Grading']
 
 export const ADD_ITEMS = [
-  {img: 'cards/9b9afe92e36181d9cef38bbae49a29123679846e.png', name: '1952 Topps 275 Pat Mullin'},
-  {img: 'cards/image-11.png', name: '1952 Topps 275 Pat Mullin'},
+  { img: 'cards/9b9afe92e36181d9cef38bbae49a29123679846e.png', name: '1952 Topps 275 Pat Mullin' },
+  { img: 'cards/image-11.png', name: '1952 Topps 275 Pat Mullin' }
 ]

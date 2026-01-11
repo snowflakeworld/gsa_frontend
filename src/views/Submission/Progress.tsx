@@ -1,4 +1,4 @@
-import { EmptyPaper } from '@/components'
+import { NoDataPaper } from '@/components'
 import { MyProgressItem } from '@/components/Submission'
 import { MY_PROGRESS_SUBMISSION } from '@/constants'
 import { List, Stack, Typography } from '@mui/material'
@@ -16,7 +16,7 @@ export const Progress = () => {
           Submissions that are incomplete
         </Typography>
       </Stack>
-      {!progressCount && <EmptyPaper type='progress'>You have no in-progress submissions</EmptyPaper>}
+      {!progressCount && <NoDataPaper type='progress'>You have no in-progress submissions</NoDataPaper>}
       {progressCount && (
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           {MY_PROGRESS_SUBMISSION.map((item, index) => (

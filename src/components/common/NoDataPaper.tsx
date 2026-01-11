@@ -3,14 +3,16 @@ import { Paper, Stack, Typography, useColorScheme } from '@mui/material'
 import { FC, ReactNode } from 'react'
 import { StyledImage } from './StyledImage'
 
-type EmptyType = 'item' | 'progress' | 'order'
+type NoDataType = 'item' | 'progress' | 'order'
+type NoDataSize = 'small' | 'medium' | 'large'
 
-interface EmptyPaperProps {
-  type: EmptyType
+interface NoDataPaperProps {
+  type: NoDataType
+  size?: NoDataSize
   children: ReactNode
 }
 
-export const EmptyPaper: FC<EmptyPaperProps> = ({ type, children }) => {
+export const NoDataPaper: FC<NoDataPaperProps> = ({ type, size = 'medium', children }) => {
   const { mode } = useColorScheme()
   const { isMobile, isTablet } = useDeviceType()
 

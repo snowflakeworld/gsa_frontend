@@ -1,6 +1,6 @@
 import { LANDING_FEATURE_GRID_MAX_WIDTH, STEPS } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { dispatch, select } from '@/store'
+import { dispatch, updateGrading } from '@/store'
 import { Container, Stack, Typography } from '@mui/material'
 import { createContext, FC, useEffect, useState } from 'react'
 import {
@@ -44,11 +44,11 @@ const ActiveStepComponent: FC<ActiveStepComponentProps> = ({ step }) => {
 }
 
 export const CreateSubmissionPage = () => {
-  const [activeStep, setActiveStep] = useState<number>(1)
+  const [activeStep, setActiveStep] = useState<number>(2)
   const { isMobile, isTablet } = useDeviceType()
   useEffect(() => {
     return () => {
-      dispatch(select({ idx: -1 }))
+      dispatch(updateGrading({ gradingIdx: -1 }))
     }
   }, [])
 

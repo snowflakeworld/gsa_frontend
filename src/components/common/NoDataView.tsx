@@ -3,14 +3,16 @@ import { Stack, Typography, useColorScheme } from '@mui/material'
 import { FC, ReactNode } from 'react'
 import { StyledImage } from './StyledImage'
 
-type EmptyType = 'item' | 'progress' | 'order'
+type NoDataType = 'item' | 'progress' | 'order'
+type NoDataSize = 'small' | 'medium' | 'large'
 
-interface EmptyViewProps {
-  type: EmptyType
+interface NoDataViewProps {
+  type: NoDataType
+  size?: NoDataSize
   children: ReactNode
 }
 
-export const EmptyView: FC<EmptyViewProps> = ({ type, children }) => {
+export const NoDataView: FC<NoDataViewProps> = ({ type, size = 'medium', children }) => {
   const { mode } = useColorScheme()
   const { isMobile, isTablet } = useDeviceType()
 
@@ -30,12 +32,25 @@ export const EmptyView: FC<EmptyViewProps> = ({ type, children }) => {
       break
   }
 
+  let imgSize = undefined
+  switch (size) {
+    case 'small':
+      imgSize = '3.125rem'
+      break
+    case 'medium':
+      imgSize = '5rem'
+      break
+    case 'large':
+      imgSize = '6.875rem'
+      break
+  }
+
   return (
     <Stack sx={{ py: 3 }} gap={2} alignItems='center' justifyContent='center'>
       <StyledImage
         src={`/assets/images/${imgName}`}
         width='auto'
-        height={!isScreenSmall ? '5rem' : '3.125rem'}
+        height={!isScreenSmall ? imgSize : '3.125rem'}
         alt='Empty Image'
         loading='lazy'
       />
