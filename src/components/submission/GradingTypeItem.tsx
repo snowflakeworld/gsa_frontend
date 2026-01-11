@@ -1,4 +1,4 @@
-import { useSingChoiceSelectContext } from '@/hooks'
+import { useGradingTypeSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
 import { Card, Stack, Typography, useColorScheme } from '@mui/material'
 import { FC } from 'react'
@@ -26,9 +26,9 @@ export const GradingTypeItem: FC<GradingTypeItemPros> = ({
   onSelect
 }) => {
   const { mode } = useColorScheme()
-  const { curIdx, selectIdx } = useSingChoiceSelectContext()
+  const { gradingIdx, selectIdx } = useGradingTypeSelectContext()
 
-  const isSelected = curIdx === index
+  const isSelected = gradingIdx === index
 
   const handleSelect = () => {
     selectIdx(index)
@@ -85,7 +85,7 @@ export const GradingTypeItem: FC<GradingTypeItemPros> = ({
             {content}
           </Typography>
         </Stack>
-        <BpRadio checked={index === curIdx ? true : false} onClick={handleSelect} />
+        <BpRadio checked={index === gradingIdx ? true : false} onClick={handleSelect} />
       </Stack>
     </Card>
   )

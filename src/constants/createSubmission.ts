@@ -34,3 +34,67 @@ export const GRADING_TYPES = [
     colorMode: 'fill'
   }
 ]
+
+export const SERVICE_LEVELS = [
+  {
+    title: 'Economy',
+    comment: 'Ideal for  Casual collectors or large sets who prefer low-cost grading options.',
+    minCards: '25 cards',
+    turnaround: '30 Business',
+    price: '$5'
+  },
+  {
+    title: 'Standard',
+    comment: 'Ideal for Bulk submitters and collectors who want reliable grading at an affordable price.',
+    minCards: '10 cards',
+    turnaround: '5-10 Business',
+    price: '$10'
+  },
+  {
+    title: 'Express',
+    comment: 'Ideal for High-value cards, time-sensitive grading, or those who want quick results.',
+    minCards: '25 cards',
+    turnaround: '1 Business',
+    price: '$39.99'
+  }
+]
+
+export const MEMBERSHIPS = [
+  {
+    type: 'Bronze',
+    policy: 'Free',
+    items: [
+      'Get <b>1</b> point for every $10 spent on grading*',
+      'Get <b>5%</b> Discounts on bulk submissions (over 50 cards)',
+      'Free submission tracking.'
+    ],
+    isFree: true
+  },
+  {
+    type: 'Silver',
+    policy: '99',
+    items: [
+      'Get <b>1.5</b> point for every $10 spent on grading*',
+      'Get <b>10%</b> Discounts on bulk submissions (over 50 cards)',
+      'Free submission tracking.',
+      'Free Express grading upgrade (once a year)',
+      'Priority customer service',
+      'Early access to new grading technology or features'
+    ],
+    isFree: false
+  },
+  {
+    type: 'Gold',
+    policy: '199',
+    items: [
+      'Get 2 point for every $10 spent on grading*',
+      'Get <b>15%</b> Discounts on bulk submissions (over 50 cards)',
+      'Free submission tracking.',
+      'Free 2 Express grading upgrade (once a year)',
+      'Priority customer service',
+      'Priority access to new grading technologies and beta testing',
+      'Free digital population report for any submitted set'
+    ],
+    isFree: false
+  }
+]

@@ -149,8 +149,19 @@ export const customizations: Components<Theme> = {
       outlined: ({ theme }) => ({
         borderColor: gsaColors.border.normal.light,
         color: gsaColors.text.primary.light,
+        '&.button--red': {
+          color: gsaColors.text.red,
+          borderColor: gsaColors.background.red.normal,
+
+          '&:hover': {
+            backgroundColor: gsaColors.background.red.alphaMedium
+          }
+        },
         '&:hover': {
           backgroundColor: gsaColors.background.tertiary.light
+        },
+        '&.button--small': {
+          minHeight: '2.5rem'
         },
         ...theme.applyStyles('dark', {
           borderColor: gsaColors.border.normal.dark,

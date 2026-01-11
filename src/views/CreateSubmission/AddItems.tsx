@@ -81,7 +81,9 @@ export const AddItems = () => {
           </Stack>
         </Card>
 
-        <NoDataView type='item' size='small'>No item added</NoDataView>
+        <NoDataView type='item' size='small'>
+          No item added
+        </NoDataView>
 
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, py: 0 }}>
           {ADD_ITEMS.map((item, index) => (
