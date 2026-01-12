@@ -125,6 +125,13 @@ export const customizations: Components<Theme> = {
             backgroundColor: gsaColors.background.tertiary.dark
           }
         },
+        '&.button--primary': {
+          backgroundColor: gsaColors.background.button.white,
+
+          '&:hover': {
+            backgroundColor: gsaColors.background.tertiary.light
+          }
+        },
         '&.button--blacklight': {
           color: 'white',
           backgroundColor: gsaColors.background.button.dark,
@@ -146,6 +153,13 @@ export const customizations: Components<Theme> = {
           backgroundColor: gsaColors.background.button.dark,
           '&:hover': {
             backgroundColor: gsaColors.background.tertiary.dark
+          },
+          '&.button--primary': {
+            backgroundColor: gsaColors.background.button.dark,
+
+            '&:hover': {
+              backgroundColor: gsaColors.background.tertiary.dark
+            }
           }
         })
       }),
