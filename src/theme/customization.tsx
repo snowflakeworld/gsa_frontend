@@ -426,6 +426,20 @@ export const customizations: Components<Theme> = {
         })
       })
     }
+  },
+  MuiListItemButton: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        color: gsaColors.text.normal,
+        '&.Mui-selected': {
+          color: gsaColors.text.red,
+          backgroundColor: gsaColors.background.red.alpha,
+          '&:hover': {
+            backgroundColor: gsaColors.background.red.alpha
+          }
+        }
+      })
+    }
   }
 
   // MuiRadio: {

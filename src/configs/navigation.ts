@@ -3,5 +3,15 @@ export const routers = {
   SignIn: '/sign',
 
   Submission: '/submission',
-  CreateSubmission: '/submission/create'
+  CreateSubmission: '/submission/create',
+
+  Account: {
+    Home: '/account',
+    Security: '/account/security',
+    Address: '/account/address',
+    Billing: '/account/billing',
+    Membership: '/account/membership',
+    Submission: '/account/submission',
+    TrackOrders: '/account/trackOrders'
+  }
 }

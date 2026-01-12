@@ -1,4 +1,4 @@
-import { Box, Container, Link, Stack, Typography } from '@mui/material'
+import { Box, Container, Divider, Link, Stack, Typography } from '@mui/material'
 
 import { FOOTER_LINK_SUB, FOOTER_LINK_TYPES } from '@/constants'
 import { useDeviceType } from '@/hooks'
@@ -16,7 +16,8 @@ export const Footer: FC<FooterProps> = ({ isLandingPage = true }) => {
   const isScreenSmall = isMobile || isTablet
 
   return (
-    <Box sx={{ backgroundColor: isLandingPage ? 'background.footer' : 'background.header' }}>
+    <Box sx={{ backgroundColor: isLandingPage ? 'background.footer' : 'background.header', zIndex: 2 }}>
+      {isLandingPage ? <></> : <Divider />}
       <Container className='py-none' sx={{ px: { xs: 2.5, lg: 18.75 } }}>
         {isLandingPage && (
           <Stack
