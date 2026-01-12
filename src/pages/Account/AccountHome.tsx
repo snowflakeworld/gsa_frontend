@@ -1,8 +1,11 @@
-import { CustomIcon, StyledImage } from '@/components'
+import { StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks'
+import { CheckOutlined, DriveFileRenameOutlineOutlined } from '@mui/icons-material'
 import { Button, InputAdornment, InputBase, Paper, Stack, Typography } from '@mui/material'
+import { useState } from 'react'
 
 export const AccountHomePage = () => {
+  const [editMode, setEditMode] = useState(false)
   const { isMobile, isTablet } = useDeviceType()
 
   const isScreenSmall = isMobile || isTablet
@@ -167,16 +170,29 @@ export const AccountHomePage = () => {
             </Stack>
           </Stack>
         </Stack>
-        <Stack flexDirection='row' justifyContent='flex-end'>
+        <Stack flexDirection='row' justifyContent={editMode ? 'space-between' : 'flex-end'}>
+          {editMode ? (
+            <Button
+              variant='contained'
+              sx={{ gap: 1, width: 'auto', px: 4 }}
+              className='button--primary button--small'
+              onClick={() => setEditMode(false)}
+            >
+              Back
+            </Button>
+          ) : (
+            <></>
+          )}
           <Button
             variant='contained'
             sx={{ gap: 1, width: 'auto', px: 2 }}
             startIcon={
-              <CustomIcon name='edit' color='secondary' width={12} height={12} viewBoxWidth={10} viewBoxHeight={12} />
+              editMode ? <CheckOutlined fontSize='small' /> : <DriveFileRenameOutlineOutlined fontSize='small' />
             }
             className='button--red button--small'
+            onClick={() => setEditMode(state => !state)}
           >
-            Edit
+            {editMode ? 'Save changes' : 'Edit'}
           </Button>
         </Stack>
       </Stack>
