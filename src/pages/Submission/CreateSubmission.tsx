@@ -44,7 +44,7 @@ const ActiveStepComponent: FC<ActiveStepComponentProps> = ({ step }) => {
 }
 
 export const CreateSubmissionPage = () => {
-  const [activeStep, setActiveStep] = useState<number>(4)
+  const [activeStep, setActiveStep] = useState<number>(0)
   const { isMobile, isTablet } = useDeviceType()
   useEffect(() => {
     return () => {
@@ -64,10 +64,11 @@ export const CreateSubmissionPage = () => {
             gap={!isScreenSmall ? 4 : 3}
             maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH}
             m='auto'
-            alignItems='flex-start'
           >
-            <Stack flexGrow={1} gap={!isScreenSmall ? 4 : 3}>
-              <Typography variant='h4'>Create Submission</Typography>
+            <Stack flexGrow={1} gap={!isScreenSmall && activeStep === STEPS.length - 1 ? 4 : 3}>
+              <Typography variant='h4' textAlign={activeStep === STEPS.length - 1 ? 'center' : 'left'}>
+                {activeStep !== STEPS.length - 1 ? 'Create Submission' : 'Review Order'}
+              </Typography>
               <ActiveStepComponent step={activeStep} />
             </Stack>
             {activeStep === STEPS.length - 1 ? <></> : <Summary />}

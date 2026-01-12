@@ -20,7 +20,9 @@ export const gsaColors = {
     },
     paper: {
       dark: '#272729',
-      light: '#F1F1F1'
+      light: '#F1F1F1',
+      dark1: '#1D1D1F',
+      light1: '#FFFFFF'
     },
     appBar: {
       dark: '#1D1D1F',
@@ -263,7 +265,8 @@ export const colorSchemes = {
         overlay: gsaColors.background.overlay.light,
         profile: gsaColors.background.profile.light,
         secondary: gsaColors.secondary.light,
-        dialog: gsaColors.background.dialog.light
+        dialog: gsaColors.background.dialog.light,
+        paperSummary: gsaColors.background.paper.light1
       },
       text: {
         primary: gsaColors.text.primary.light,
@@ -345,7 +348,8 @@ export const colorSchemes = {
         overlay: gsaColors.background.overlay.dark,
         profile: gsaColors.background.profile.dark,
         secondary: gsaColors.secondary.dark,
-        dialog: gsaColors.background.dialog.dark
+        dialog: gsaColors.background.dialog.dark,
+        paperSummary: gsaColors.background.paper.dark1
       },
       text: {
         primary: gsaColors.text.primary.dark,
