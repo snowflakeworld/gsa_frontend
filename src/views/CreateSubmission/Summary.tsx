@@ -95,7 +95,7 @@ export const Summary = () => {
 
           <Divider />
 
-          <SummaryItem label='Estimated Total' value='$219.97' />
+          <SummaryItem label='Estimated Total' value='$219.97' size='big' />
         </Stack>
       </Paper>
       <SummaryDescription />

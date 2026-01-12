@@ -136,6 +136,10 @@ export const customizations: Components<Theme> = {
         '&.button--small': {
           minHeight: '2.5rem'
         },
+        '&.button--tiny': {
+          minWidth: '2rem',
+          minHeight: '2rem'
+        },
 
         ...theme.applyStyles('dark', {
           borderColor: gsaColors.border.normal.dark,
@@ -162,6 +166,10 @@ export const customizations: Components<Theme> = {
         },
         '&.button--small': {
           minHeight: '2.5rem'
+        },
+        '&.button--tiny': {
+          minWidth: '2rem',
+          minHeight: '2rem'
         },
         ...theme.applyStyles('dark', {
           borderColor: gsaColors.border.normal.dark,

@@ -117,3 +117,52 @@ export const SHIPPING_PAYMENTS = [
   { name: 'SGC Shipping & Handling', allowInput: false },
   { name: 'Fedex Ground (oversized)', allowInput: true }
 ]
+
+export const SUMMARY_BASE_INFO = [
+  { label: 'Grading type', value: 'Standard Card Grading' },
+  { label: 'Card amount', value: '2' },
+  { label: 'Total decl. value', value: '$120.00' },
+  { label: 'Grading service level', value: 'Standard' },
+  { label: 'Grading fee', value: '$65.00' }
+]
+
+export const SUMMARY_SHIPPING_BILLING = [
+  { label: 'Address', value: 'Boiulevard Street 273, CA' },
+  { label: 'Method', value: 'USPS Priority Mail (oversized)' },
+  { label: 'Payment account', value: 'SGC Shipping & Handling' }
+]
+
+export const SUMMARY_STATISTICS = [
+  { label: 'Subtotal', value: '$120.00' },
+  { label: 'Grading fee', value: '$65.00' },
+  { label: 'Insured Return Shipping', value: '$19.99' },
+  { label: 'Handling Charge', value: '$0.00' }
+]
+
+export const ADD_ITEM_TYPES = ['Raw Card Grading', 'Special Card Grading']
+
+export const ADD_ITEMS = [
+  { img: 'cards/9b9afe92e36181d9cef38bbae49a29123679846e.png', name: '1952 Topps 275 Pat Mullin' },
+  { img: 'cards/image-11.png', name: '1952 Topps 275 Pat Mullin' }
+]
+
+export const REVIEW_ITEMS = [
+  {
+    img: 'cards/9b9afe92e36181d9cef38bbae49a29123679846e.png',
+    name: '1952 Topps 275 Pat Mullin',
+    encapsulate: true,
+    oversized: true,
+    authentic: true,
+    cardService: 'Raw Card Grading',
+    declValue: '$34.99'
+  },
+  {
+    img: 'cards/image-11.png',
+    name: '1952 Topps 275 Pat Mullin',
+    encapsulate: true,
+    oversized: true,
+    authentic: false,
+    cardService: 'Raw Card Grading',
+    declValue: '$34.99'
+  }
+]

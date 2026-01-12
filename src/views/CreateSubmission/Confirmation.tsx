@@ -1,21 +1,37 @@
 import { StepButtonGroup } from '@/components/Submission'
+import { routers } from '@/configs'
+import { useDeviceType } from '@/hooks'
 import { ActiveStepContext } from '@/pages'
-import { Stack, Typography } from '@mui/material'
+import { Stack } from '@mui/material'
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Checkout, GradingDetails, ReviewOrders, ShippingBilling } from './ConfirmationView'
 
 export const Confirmation = () => {
+  const { isMobile, isTablet } = useDeviceType()
   const { activeStep, setActiveStep } = useContext(ActiveStepContext)!
+  const navigate = useNavigate()
+
+  const isScreenSmall = isMobile || isTablet
 
   const handlePrev = () => {
     setActiveStep(activeStep - 1)
   }
 
   const handleNext = () => {
+    navigate(routers.Submission)
   }
 
   return (
-    <Stack>
-      <Typography variant='h5'>Review Order</Typography>
+    <Stack gap={3} width='100%'>
+      <Stack flexDirection={!isScreenSmall ? 'row' : 'column'} gap={!isScreenSmall ? 3 : 2} width='100%'>
+        <ReviewOrders />
+        <Stack gap={2}>
+          <GradingDetails />
+          <ShippingBilling />
+          <Checkout />
+        </Stack>
+      </Stack>
       <StepButtonGroup onBack={handlePrev} nextTitle='Confirm Order' onNext={handleNext} />
     </Stack>
   )

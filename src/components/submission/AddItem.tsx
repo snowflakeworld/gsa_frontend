@@ -60,7 +60,7 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
                 height='2.5rem'
                 alt='Item Image'
                 loading='lazy'
-                borderRadius={0.5}
+                borderRadius='4px'
               />
               <Typography variant='caption' fontWeight={600} fontSize='0.875rem' lineHeight='1.25rem' flexGrow={42}>
                 {name}
