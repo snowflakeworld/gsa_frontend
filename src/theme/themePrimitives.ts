@@ -67,6 +67,10 @@ export const gsaColors = {
     profile: {
       dark: '#19191B',
       light: '#FBFBFB'
+    },
+    dialog: {
+      dark: '#1D1D1F',
+      light: '#FFFFFF'
     }
   },
 
@@ -258,7 +262,8 @@ export const colorSchemes = {
         deep: gsaColors.background.header.dark,
         overlay: gsaColors.background.overlay.light,
         profile: gsaColors.background.profile.light,
-        secondary: gsaColors.secondary.light
+        secondary: gsaColors.secondary.light,
+        dialog: gsaColors.background.dialog.light
       },
       text: {
         primary: gsaColors.text.primary.light,
@@ -339,7 +344,8 @@ export const colorSchemes = {
         deep: gsaColors.background.header.light,
         overlay: gsaColors.background.overlay.dark,
         profile: gsaColors.background.profile.dark,
-        secondary: gsaColors.secondary.dark
+        secondary: gsaColors.secondary.dark,
+        dialog: gsaColors.background.dialog.dark
       },
       text: {
         primary: gsaColors.text.primary.dark,
