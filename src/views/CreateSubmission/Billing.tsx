@@ -47,7 +47,7 @@ export const Billing = () => {
             height={!isScreenSmall ? '1.875rem' : 'auto'}
             alt='Method Image'
             loading='lazy'
-            margin='none'
+            margin='0'
             extra={{ position: 'absolute', right: '0.75rem', top: '50%', transform: 'translateY(-50%)' }}
           />
         </Box>

@@ -30,7 +30,7 @@ export const AccountHomePage = () => {
               height='7.5rem'
               alt='Avatar Image'
               loading='lazy'
-              margin='none'
+              margin='0'
               borderRadius='8px'
             />
           </Stack>
