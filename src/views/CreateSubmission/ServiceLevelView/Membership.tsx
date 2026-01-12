@@ -1,4 +1,4 @@
-import { MembershipItem } from '@/components/Submission/MembershipItem'
+import { MembershipItem } from '@/components/Submission'
 import { MEMBERSHIPS } from '@/constants'
 import { List, Stack, Typography } from '@mui/material'
 import parse from 'html-react-parser'

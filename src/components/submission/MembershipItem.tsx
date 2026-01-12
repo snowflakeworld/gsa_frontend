@@ -1,5 +1,4 @@
-import { useDeviceType } from '@/hooks'
-import { useMembershipSelectContext } from '@/hooks/useMembershipSelect'
+import { useDeviceType, useMembershipSelectContext } from '@/hooks'
 import { gsaColors } from '@/theme'
 import { Button, Card, List, Stack, Typography, useColorScheme } from '@mui/material'
 import { FC } from 'react'

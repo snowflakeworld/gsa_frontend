@@ -1,5 +1,4 @@
-import { HorizontalItem } from '@/components/Submission/ServiceLevelItem'
-import { VerticalItem } from '@/components/Submission/ServiceLevelItem/VerticalItem'
+import { HorizontalItem, VerticalItem } from '@/components/Submission'
 import { SERVICE_LEVELS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { Card, List, Stack, Typography } from '@mui/material'

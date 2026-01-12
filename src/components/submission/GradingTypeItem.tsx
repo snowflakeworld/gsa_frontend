@@ -4,7 +4,7 @@ import { Card, Stack, Typography, useColorScheme } from '@mui/material'
 import { FC } from 'react'
 import { BpRadio, CustomIcon, IconColorType } from '../Common'
 
-export interface GradingTypeItemPros {
+interface GradingTypeItemProps {
   index: number
   title: string
   content: string
@@ -15,7 +15,7 @@ export interface GradingTypeItemPros {
   onSelect: () => void
 }
 
-export const GradingTypeItem: FC<GradingTypeItemPros> = ({
+export const GradingTypeItem: FC<GradingTypeItemProps> = ({
   index,
   title,
   content,
