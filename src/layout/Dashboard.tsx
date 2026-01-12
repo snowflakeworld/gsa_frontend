@@ -1,15 +1,15 @@
 import { Box, CircularProgress } from '@mui/material'
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
+import { Header } from './DefaultHeader'
 import { Footer } from './Footer'
-import { Header } from './Header'
 
 export const DashboardLayout = () => {
   return (
     <>
       <Header />
       <Suspense fallback={<CircularProgress />}>
-        <Box bgcolor='background.profile'>
+        <Box sx={{ backgroundColor: 'background.profile' }}>
           <Outlet />
         </Box>
       </Suspense>

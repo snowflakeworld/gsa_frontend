@@ -39,7 +39,8 @@ export const gsaColors = {
     button: {
       dark: '#28282A',
       light: '#F1F1F1',
-      lightBlack: '#1D1D1F'
+      lightBlack: '#1D1D1F',
+      white: '#FFFFFF'
     },
     header: {
       dark: '#1D1D1F',

@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import MainLayout from '@/layout'
+import { AccountLayout, MainLayout } from '@/layout'
 import { DashboardLayout } from '@/layout/Dashboard'
 import { store } from '@/store'
 import { Provider } from 'react-redux'
+import { AccountRoutes } from './Account'
 import { MainRoutes } from './Main'
 import PrivateRoute from './PrivateRoute'
 import { SubmissionRoutes } from './Submission'
@@ -22,6 +23,15 @@ const routes = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [...SubmissionRoutes]
+  },
+  {
+    path: '/',
+    element: (
+      <PrivateRoute>
+        <AccountLayout />
+      </PrivateRoute>
+    ),
+    children: [...AccountRoutes]
   }
 ])
 

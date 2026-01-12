@@ -5,7 +5,7 @@ import { memo, useState } from 'react'
 
 import { CustomIcon } from '@/components'
 import { routers } from '@/configs'
-import { useDeviceType, useIsLoggedIn, useLogout } from '@/hooks'
+import { useDeviceType, useIsLoggedIn } from '@/hooks'
 import { Logo } from '@/layout/Logo'
 import { useNavigate } from 'react-router-dom'
 import { ColorModeButton } from './header/ColorModeButton'
@@ -23,12 +23,10 @@ const HeaderComponent = () => {
   const resolvedMode = (systemMode || mode) as 'light' | 'dark'
 
   const handleLogin = () => {
-    const logout = useLogout()
-
     if (!isLoggedIn) {
       navigate(routers.SignIn)
     } else {
-      logout()
+      navigate(routers.Account.Home)
     }
   }
 

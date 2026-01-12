@@ -1,20 +1,7 @@
-import { CircularProgress } from '@mui/material'
-import { Suspense } from 'react'
-import { Outlet } from 'react-router-dom'
-
-import { Footer } from './Footer'
-import { Header } from './Header'
-
-const Layout = () => {
-  return (
-    <>
-      <Header />
-      <Suspense fallback={<CircularProgress />}>
-        <Outlet />
-      </Suspense>
-      <Footer />
-    </>
-  )
-}
-
-export default Layout
+export * from './Account'
+export * from './AccountHeader'
+export * from './Dashboard'
+export * from './DefaultHeader'
+export * from './Footer'
+export * from './Logo'
+export * from './Main'
