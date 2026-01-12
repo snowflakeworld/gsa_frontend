@@ -44,7 +44,7 @@ const ActiveStepComponent: FC<ActiveStepComponentProps> = ({ step }) => {
 }
 
 export const CreateSubmissionPage = () => {
-  const [activeStep, setActiveStep] = useState<number>(2)
+  const [activeStep, setActiveStep] = useState<number>(3)
   const { isMobile, isTablet } = useDeviceType()
   useEffect(() => {
     return () => {

@@ -98,3 +98,22 @@ export const MEMBERSHIPS = [
     isFree: false
   }
 ]
+
+export const SHIPPING_ADDRESSES = [
+  {
+    address: 'Boiulevard Street 273, CA',
+    city: 'California, California, 093823, United States',
+    contact: '+1 0921 3812'
+  },
+  { address: 'Street  geroge 23T', city: 'California, Sacramentto, 093823, United States', contact: '+1 0921 3812' }
+]
+
+export const SHIPPING_METHODS = [
+  { icon: 'payments/usps.png', name: 'USPS Priority Mail (oversized)', price: '$19.99' },
+  { icon: 'payments/fedex.png', name: 'Fedex Ground (oversized)', price: '$30' }
+]
+
+export const SHIPPING_PAYMENTS = [
+  { name: 'SGC Shipping & Handling', allowInput: false },
+  { name: 'Fedex Ground (oversized)', allowInput: true }
+]

@@ -1,7 +1,5 @@
 import { StepButtonGroup } from '@/components/Submission'
-import { useDeviceType } from '@/hooks'
-import { MembershipSelectProvider } from '@/hooks/useMembershipSelect'
-import { ServiceLevelSelectProvider } from '@/hooks/useServiceLevelSelect'
+import { MembershipSelectProvider, ServiceLevelSelectProvider, useDeviceType } from '@/hooks'
 import { ActiveStepContext } from '@/pages'
 import { Stack } from '@mui/material'
 import { useContext } from 'react'

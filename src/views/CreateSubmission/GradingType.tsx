@@ -1,6 +1,6 @@
 import { GradingTypeItem, StepButtonGroup } from '@/components/Submission'
 import { GRADING_TYPES } from '@/constants'
-import { GradingTypeSelectProvider } from '@/hooks/useGradingTypeSelect'
+import { GradingTypeSelectProvider } from '@/hooks'
 import { ActiveStepContext } from '@/pages'
 import { Stack, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
