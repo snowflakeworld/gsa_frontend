@@ -44,7 +44,7 @@ export const MyProgressItem: FC<MyProgressItemProps> = ({ count, date, level }) 
           </Stack>
         </Stack>
         <Stack flexDirection='row' gap={1.25}>
-          <Button variant='contained' className='button--small'>
+          <Button variant='contained' className='button--tiny'>
             <CustomIcon
               name='edit'
               colorMode='fill'
@@ -55,7 +55,7 @@ export const MyProgressItem: FC<MyProgressItemProps> = ({ count, date, level }) 
               color={mode === 'dark' ? 'secondary' : 'prime'}
             />
           </Button>
-          <Button variant='contained' className='button-alpha--red button--small'>
+          <Button variant='contained' className='button-alpha--red button--tiny'>
             <CustomIcon
               name='delete'
               colorMode='stroke'
