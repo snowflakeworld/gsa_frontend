@@ -1,7 +1,7 @@
-import { StyledImage } from '@/components'
+import { NormalTextInput, StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks'
 import { CheckOutlined, DriveFileRenameOutlineOutlined } from '@mui/icons-material'
-import { Button, InputAdornment, InputBase, Paper, Stack, Typography } from '@mui/material'
+import { Button, InputAdornment, Stack, Typography } from '@mui/material'
 import { useState } from 'react'
 
 export const AccountHomePage = () => {
@@ -36,136 +36,25 @@ export const AccountHomePage = () => {
           </Stack>
           <Stack flexDirection={!isScreenSmall ? 'row' : 'column'} gap={!isScreenSmall ? 5 : 0}>
             <Stack flex={1}>
-              <Stack gap={1.5} py={1.5}>
-                <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
-                  Customer number
-                </Typography>
-                <Paper
-                  component='form'
-                  sx={{
-                    height: '2.5rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    backgroundColor: 'transparent',
-                    boxShadow: 'none',
-                    borderRadius: 1,
-                    border: '1px solid',
-                    borderColor: 'divider'
-                  }}
-                >
-                  <InputBase
-                    sx={{ width: '100%', px: 2.5, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
-                    placeholder='Customer number'
-                    value='12345678'
-                  />
-                </Paper>
-              </Stack>
-              <Stack gap={1.5} py={1.5} flex={1}>
-                <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
-                  Name
-                </Typography>
-                <Paper
-                  component='form'
-                  sx={{
-                    height: '2.5rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    backgroundColor: 'transparent',
-                    boxShadow: 'none',
-                    borderRadius: 1,
-                    border: '1px solid',
-                    borderColor: 'divider'
-                  }}
-                >
-                  <InputBase
-                    sx={{ width: '100%', px: 2.5, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
-                    placeholder='Name'
-                    value='irvan Wibowo'
-                  />
-                </Paper>
-              </Stack>
+              <NormalTextInput label='Customer number' placeHolder='Customer number' defaultValue='12345678' />
+              <NormalTextInput label='Name' placeHolder='Name' defaultValue='irvan Wibowo' flex={1} />
             </Stack>
             <Stack flex={1}>
-              <Stack gap={1.5} py={1.5}>
-                <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
-                  Email
-                </Typography>
-                <Paper
-                  component='form'
-                  sx={{
-                    height: '2.5rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    backgroundColor: 'transparent',
-                    boxShadow: 'none',
-                    borderRadius: 1,
-                    border: '1px solid',
-                    borderColor: 'divider'
-                  }}
-                >
-                  <InputBase
-                    sx={{ width: '100%', px: 2.5, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
-                    placeholder='Email'
-                    value='irvanwibowo@gmail.com'
-                  />
-                </Paper>
-              </Stack>
+              <NormalTextInput label='Email' placeHolder='Email' type='email' defaultValue='irvanwibowo@gmail.com' />
               <Stack flexDirection='row' gap={1.25}>
-                <Stack gap={1.5} py={1.5} flex={1}>
-                  <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
-                    Phone number
-                  </Typography>
-                  <Paper
-                    component='form'
-                    sx={{
-                      height: '2.5rem',
-                      display: 'flex',
-                      alignItems: 'center',
-                      backgroundColor: 'transparent',
-                      boxShadow: 'none',
-                      borderRadius: 1,
-                      border: '1px solid',
-                      borderColor: 'divider'
-                    }}
-                  >
-                    <InputBase
-                      sx={{ width: '100%', px: 2.5, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
-                      placeholder='Phone'
-                      startAdornment={
-                        <InputAdornment position='start'>
-                          <Typography variant='caption' fontSize='1rem' color='text.primary'>
-                            +1
-                          </Typography>
-                        </InputAdornment>
-                      }
-                      value='769345180'
-                    />
-                  </Paper>
-                </Stack>
-                <Stack gap={1.5} py={1.5} width={!isScreenSmall ? '10rem' : '6.25rem'}>
-                  <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
-                    Country
-                  </Typography>
-                  <Paper
-                    component='form'
-                    sx={{
-                      height: '2.5rem',
-                      display: 'flex',
-                      alignItems: 'center',
-                      backgroundColor: 'transparent',
-                      boxShadow: 'none',
-                      borderRadius: 1,
-                      border: '1px solid',
-                      borderColor: 'divider'
-                    }}
-                  >
-                    <InputBase
-                      sx={{ width: '100%', px: 2.5, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
-                      placeholder='Country'
-                      value='USA'
-                    />
-                  </Paper>
-                </Stack>
+                <NormalTextInput label='Phone number' placeHolder='Phone' defaultValue='769345180' flex={1}>
+                  <InputAdornment position='start'>
+                    <Typography variant='caption' fontSize='1rem' color='text.primary'>
+                      +1
+                    </Typography>
+                  </InputAdornment>
+                </NormalTextInput>
+                <NormalTextInput
+                  label='Country'
+                  placeHolder='Country'
+                  defaultValue='USA'
+                  width={!isScreenSmall ? '10rem' : '6.25rem'}
+                />
               </Stack>
             </Stack>
           </Stack>

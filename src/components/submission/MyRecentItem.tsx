@@ -43,7 +43,7 @@ export const MyRecentItem: FC<MyRecentItemProps> = ({ count, date, level }) => {
             </Typography>
           </Stack>
         </Stack>
-        <Button variant='contained' className='button--small'>
+        <Button variant='contained' className='button--tiny'>
           <CustomIcon
             name='eye'
             colorMode='stroke'
