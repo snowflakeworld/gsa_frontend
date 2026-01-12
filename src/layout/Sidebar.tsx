@@ -48,6 +48,7 @@ export const Sidebar: FC<SidebarProps> = ({ width = 320 }) => {
   const [curIdx, setCurIdx] = useState(0)
   const navigate = useNavigate()
   const { isMobile, isTablet } = useDeviceType()
+  const logout = useLogout()
 
   const isScreenSmall = isMobile || isTablet
 
@@ -57,7 +58,7 @@ export const Sidebar: FC<SidebarProps> = ({ width = 320 }) => {
   }
 
   const handleLogout = () => {
-    useLogout()
+    logout()
     navigate(routers.Home)
   }
 

@@ -4,6 +4,7 @@ import {
   AccountBillingPage,
   AccountHomePage,
   AccountMembershipPage,
+  AccountOrderDetailPage,
   AccountSecurityPage,
   AccountSubmissionPage,
   AccountTrackOrdersPage
@@ -16,5 +17,6 @@ export const AccountRoutes = [
   { path: routers.Account.Billing, element: <AccountBillingPage /> },
   { path: routers.Account.Membership, element: <AccountMembershipPage /> },
   { path: routers.Account.Submission, element: <AccountSubmissionPage /> },
-  { path: routers.Account.TrackOrders, element: <AccountTrackOrdersPage /> }
+  { path: routers.Account.TrackOrders, element: <AccountTrackOrdersPage /> },
+  { path: routers.Account.OrderDetail, element: <AccountOrderDetailPage /> }
 ]

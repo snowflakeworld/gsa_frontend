@@ -3,8 +3,14 @@ import { ReviewItem } from '@/components/Submission/ReviewItem'
 import { REVIEW_ITEMS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { Button, Divider, List, Paper, Stack, Typography, useColorScheme } from '@mui/material'
+import { FC } from 'react'
 
-export const ReviewOrders = () => {
+interface ReviewOrdersProps {
+  headerFlex?: number
+  itemFlex?: number
+}
+
+export const ReviewOrders: FC<ReviewOrdersProps> = ({ headerFlex = 366, itemFlex = 329 }) => {
   const { mode } = useColorScheme()
   const { isMobile, isTablet } = useDeviceType()
 
@@ -45,13 +51,49 @@ export const ReviewOrders = () => {
           {!isScreenSmall ? (
             <Stack>
               <Stack flexDirection='row' gap={1}>
-                <Typography variant='caption' flex={366} fontSize='0.75rem' color='text.normal'>
+                <Typography
+                  variant='caption'
+                  flex={headerFlex}
+                  fontSize='0.75rem'
+                  color='text.normal'
+                  sx={{
+                    WebkitLineClamp: 1,
+                    textOverflow: 'ellipsis',
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden'
+                  }}
+                >
                   Items
                 </Typography>
-                <Typography variant='caption' flex={140} fontSize='0.75rem' color='text.normal'>
+                <Typography
+                  variant='caption'
+                  flex={140}
+                  fontSize='0.75rem'
+                  color='text.normal'
+                  sx={{
+                    WebkitLineClamp: 1,
+                    textOverflow: 'ellipsis',
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden'
+                  }}
+                >
                   Card Service
                 </Typography>
-                <Typography variant='caption' flex={62} fontSize='0.75rem' color='text.normal'>
+                <Typography
+                  variant='caption'
+                  flex={62}
+                  fontSize='0.75rem'
+                  color='text.normal'
+                  sx={{
+                    WebkitLineClamp: 1,
+                    textOverflow: 'ellipsis',
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden'
+                  }}
+                >
                   Decl. Value
                 </Typography>
               </Stack>
@@ -62,7 +104,7 @@ export const ReviewOrders = () => {
           )}
           <List sx={{ display: 'flex', flexDirection: 'column', py: 0 }}>
             {REVIEW_ITEMS.map((item, index) => (
-              <ReviewItem key={index} index={index} {...item} />
+              <ReviewItem key={index} index={index} {...item} itemFlex={itemFlex} />
             ))}
           </List>
         </Stack>

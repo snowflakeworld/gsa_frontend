@@ -12,6 +12,7 @@ export const routers = {
     Billing: '/account/billing',
     Membership: '/account/membership',
     Submission: '/account/submission',
-    TrackOrders: '/account/trackOrders'
+    TrackOrders: '/account/trackOrders',
+    OrderDetail: '/account/trackOrders/:orderId'
   }
 }

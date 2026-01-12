@@ -3,8 +3,13 @@ import { SummaryItem } from '@/components/Submission'
 import { SUMMARY_BASE_INFO } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { Button, List, Paper, Stack, Typography, useColorScheme } from '@mui/material'
+import { FC } from 'react'
 
-export const GradingDetails = () => {
+interface GradingDetailsProps {
+  canEdit?: boolean
+}
+
+export const GradingDetails: FC<GradingDetailsProps> = ({ canEdit = true }) => {
   const { mode } = useColorScheme()
   const { isMobile, isTablet } = useDeviceType()
 
@@ -28,17 +33,19 @@ export const GradingDetails = () => {
           <Typography variant='h6' flexGrow={1}>
             Grading Details
           </Typography>
-          <Button variant='contained' className='button--tiny' sx={{ width: '2rem' }}>
-            <CustomIcon
-              name='edit'
-              colorMode='fill'
-              width={12}
-              height={12}
-              viewBoxWidth={10}
-              viewBoxHeight={12}
-              color={mode === 'dark' ? 'secondary' : 'prime'}
-            />
-          </Button>
+          {canEdit && (
+            <Button variant='contained' className='button--tiny' sx={{ width: '2rem' }}>
+              <CustomIcon
+                name='edit'
+                colorMode='fill'
+                width={12}
+                height={12}
+                viewBoxWidth={10}
+                viewBoxHeight={12}
+                color={mode === 'dark' ? 'secondary' : 'prime'}
+              />
+            </Button>
+          )}
         </Stack>
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, py: 0 }}>
           {SUMMARY_BASE_INFO.map((item, index) => (

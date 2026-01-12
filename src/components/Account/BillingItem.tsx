@@ -9,9 +9,17 @@ interface BillingItemProps {
   name: string
   cardNumber: string
   isMain: boolean
+  showMainSelect?: boolean
 }
 
-export const BillingItem: FC<BillingItemProps> = ({ img, imgWidth, name, cardNumber, isMain }) => {
+export const BillingItem: FC<BillingItemProps> = ({
+  img,
+  imgWidth,
+  name,
+  cardNumber,
+  isMain,
+  showMainSelect = false
+}) => {
   const { mode } = useColorScheme()
 
   return (
@@ -45,8 +53,12 @@ export const BillingItem: FC<BillingItemProps> = ({ img, imgWidth, name, cardNum
         </Stack>
         <Stack flexDirection='row' gap={1.25} alignItems='center'>
           {isMain ? (
-            <RedChip size='small'>Main Address</RedChip>
-          ) : (
+            showMainSelect ? (
+              <RedChip size='small'>Main Address</RedChip>
+            ) : (
+              <></>
+            )
+          ) : showMainSelect ? (
             <Typography
               variant='caption'
               fontWeight={400}
@@ -61,6 +73,8 @@ export const BillingItem: FC<BillingItemProps> = ({ img, imgWidth, name, cardNum
             >
               Set as main address
             </Typography>
+          ) : (
+            <></>
           )}
           <Button variant='contained' className='button--tiny'>
             <CustomIcon
