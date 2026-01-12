@@ -35,7 +35,8 @@ export const AccountMembershipPage = () => {
             <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
               Payment methods
             </Typography>
-            <BillingItem {...BILLING_ITEMS[0]} />
+
+            <BillingItem {...BILLING_ITEMS[0]} flex={1} />
           </Stack>
         </Stack>
         <Stack flexDirection='row' justifyContent='space-between' paddingTop={1}>

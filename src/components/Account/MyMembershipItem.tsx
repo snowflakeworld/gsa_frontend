@@ -49,14 +49,14 @@ export const MyMembershipItem: FC<MyMembershipItemProps> = ({ title, status, dur
             viewBoxHeight={18.5}
           />
         </Stack>
-        <Stack flex={1}>
+        <Stack flex={1} gap={1.5}>
           <Stack gap={1.5} flexDirection='row'>
             <Typography variant='h6' fontSize='1rem' lineHeight='1.25rem'>
               {title}
             </Typography>
             <RedChip size='small'>Free</RedChip>
           </Stack>
-          <Stack gap={1.5}>
+          <Stack gap={1}>
             <SummaryItem label='Duration' value='2 Month' size='small'/>
             <SummaryItem label='Next Payment' value='9 January 2024' size='small' />
             <SummaryItem label='Plan Start' value='9 November 2024' size='small' />

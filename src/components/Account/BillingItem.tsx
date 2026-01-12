@@ -10,6 +10,7 @@ interface BillingItemProps {
   cardNumber: string
   isMain: boolean
   showMainSelect?: boolean
+  flex?: number
 }
 
 export const BillingItem: FC<BillingItemProps> = ({
@@ -18,7 +19,8 @@ export const BillingItem: FC<BillingItemProps> = ({
   name,
   cardNumber,
   isMain,
-  showMainSelect = false
+  showMainSelect = false,
+  flex = 0
 }) => {
   const { mode } = useColorScheme()
 
@@ -31,10 +33,11 @@ export const BillingItem: FC<BillingItemProps> = ({
         backgroundColor: 'background.cardItem',
         boxShadow: `${gsaShadows.card}`,
         px: 2,
-        py: 1.5
+        py: 1.5,
+        flex: flex
       }}
     >
-      <Stack flexDirection='row' gap={0.25} alignItems='center'>
+      <Stack flexDirection='row' gap={0.25} minHeight={flex != 0 ? '5rem' : 'auto'}>
         <Stack flexGrow={1} gap={0.25}>
           <StyledImage
             src={`/assets/images/${img}`}

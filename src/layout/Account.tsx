@@ -53,7 +53,39 @@ export const AccountLayout = () => {
           <Sidebar width={DRAWER_WIDTH} />
         </Box>
       ) : (
-        <></>
+        drawerOpen && (
+          <>
+            <Box
+              sx={{
+                width: '100vw',
+                height: '100vh',
+                top: 0,
+                left: 0,
+                backgroundColor: 'backdrop',
+                position: 'fixed',
+                backdropFilter: 'blur(2px)',
+                zIndex: 1199
+              }}
+              onClick={() => closeDrawer()}
+            />
+            <Box
+              component='nav'
+              sx={{
+                width: DRAWER_WIDTH,
+                height: '100%',
+                position: 'fixed',
+                top: '0px',
+                left: 'calc(100vw - 320px)',
+                backgroundColor: 'background.header',
+                borderLeft: '1px solid',
+                borderColor: 'divider',
+                zIndex: 1200
+              }}
+            >
+              <Sidebar width={DRAWER_WIDTH} closeDrawer={closeDrawer} />
+            </Box>
+          </>
+        )
       )}
     </Box>
   )
