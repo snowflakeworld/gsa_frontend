@@ -33,7 +33,7 @@ export const Shipping = () => {
           </ShippingPaymentSelectProvider>
         </ShippingMethodSelectProvider>
       </ShippingAddressSelectProvider>
-      <StepButtonGroup onBack={handlePrev} onNext={handleNext} />
+      <StepButtonGroup onBack={handlePrev} onNext={handleNext} nextTitle='Proceed to Checkout'/>
     </Stack>
   )
 }

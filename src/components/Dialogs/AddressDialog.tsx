@@ -135,7 +135,6 @@ export const AddressDialog: FC<DialogProps> = ({ open, onClose, onSave }) => {
         </IconButton>
         <DialogContent sx={{ p: 0 }}>
           <Stack spacing={1}>
-            {/* Country: use TextField with select so label notch isn't cut */}
             <TextField
               select
               label='Country'
