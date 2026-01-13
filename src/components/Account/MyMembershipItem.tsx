@@ -45,8 +45,8 @@ export const MyMembershipItem: FC<MyMembershipItemProps> = ({ title, status, dur
             color='secondary'
             width={!isScreenSmall ? '2.625rem' : '2rem'}
             height={!isScreenSmall ? '3.625rem' : '2.25rem'}
-            viewBoxWidth={18}
-            viewBoxHeight={18.5}
+            viewBoxWidth={14.67}
+            viewBoxHeight={20.7}
           />
         </Stack>
         <Stack flex={1} gap={1.5}>
@@ -54,12 +54,12 @@ export const MyMembershipItem: FC<MyMembershipItemProps> = ({ title, status, dur
             <Typography variant='h6' fontSize='1rem' lineHeight='1.25rem'>
               {title}
             </Typography>
-            <RedChip size='small'>Free</RedChip>
+            <RedChip size='small'>{status}</RedChip>
           </Stack>
           <Stack gap={1}>
-            <SummaryItem label='Duration' value='2 Month' size='small'/>
-            <SummaryItem label='Next Payment' value='9 January 2024' size='small' />
-            <SummaryItem label='Plan Start' value='9 November 2024' size='small' />
+            <SummaryItem label='Duration' value={duration} size='small' />
+            <SummaryItem label='Next Payment' value={nextPayment} size='small' />
+            <SummaryItem label='Plan Start' value={planStart} size='small' />
           </Stack>
         </Stack>
       </Stack>
