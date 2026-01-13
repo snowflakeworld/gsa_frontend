@@ -17,6 +17,7 @@ import { SidebarHeader } from './sidebar/SidebarHeader'
 
 interface SidebarProps {
   width?: number | string
+  closeDrawer?: () => void
 }
 
 const MENU_ITEMS = [
@@ -44,10 +45,11 @@ const MENU_ITEMS = [
   }
 ]
 
-export const Sidebar: FC<SidebarProps> = ({ width = 320 }) => {
+export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined }) => {
   const [curIdx, setCurIdx] = useState(0)
   const navigate = useNavigate()
   const { isMobile, isTablet } = useDeviceType()
+  const logout = useLogout()
 
   const isScreenSmall = isMobile || isTablet
 
@@ -57,11 +59,13 @@ export const Sidebar: FC<SidebarProps> = ({ width = 320 }) => {
   }
 
   const handleLogout = () => {
-    useLogout()
+    logout()
     navigate(routers.Home)
   }
 
-  const handleClose = () => {}
+  const handleClose = () => {
+    if (closeDrawer) closeDrawer()
+  }
 
   return (
     <Stack sx={{ width: width && '100%', px: !isScreenSmall ? 5 : 2.5, py: !isScreenSmall ? 6.25 : 2.5 }} gap={1.5}>

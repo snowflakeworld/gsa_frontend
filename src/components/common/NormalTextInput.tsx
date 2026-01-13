@@ -10,6 +10,7 @@ interface NormalTextInputProps {
   flex?: number
   width?: string
   children?: ReactNode | undefined
+  listener?: (_: string) => void
 }
 
 export const NormalTextInput: FC<NormalTextInputProps> = ({
@@ -20,12 +21,16 @@ export const NormalTextInput: FC<NormalTextInputProps> = ({
   defaultValue = '',
   flex = 0,
   width = undefined,
-  children = undefined
+  children = undefined,
+  listener = undefined
 }) => {
   const [value, setValue] = useState(defaultValue)
 
   const handleChange = (val: string) => {
-    if (editable) setValue(val)
+    if (editable) {
+      setValue(val)
+      if (listener) listener(val)
+    }
   }
 
   return (

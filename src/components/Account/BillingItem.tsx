@@ -9,9 +9,19 @@ interface BillingItemProps {
   name: string
   cardNumber: string
   isMain: boolean
+  showMainSelect?: boolean
+  flex?: number
 }
 
-export const BillingItem: FC<BillingItemProps> = ({ img, imgWidth, name, cardNumber, isMain }) => {
+export const BillingItem: FC<BillingItemProps> = ({
+  img,
+  imgWidth,
+  name,
+  cardNumber,
+  isMain,
+  showMainSelect = false,
+  flex = 0
+}) => {
   const { mode } = useColorScheme()
 
   return (
@@ -23,10 +33,11 @@ export const BillingItem: FC<BillingItemProps> = ({ img, imgWidth, name, cardNum
         backgroundColor: 'background.cardItem',
         boxShadow: `${gsaShadows.card}`,
         px: 2,
-        py: 1.5
+        py: 1.5,
+        flex: flex
       }}
     >
-      <Stack flexDirection='row' gap={0.25} alignItems='center'>
+      <Stack flexDirection='row' gap={0.25} minHeight={flex != 0 ? '5rem' : 'auto'}>
         <Stack flexGrow={1} gap={0.25}>
           <StyledImage
             src={`/assets/images/${img}`}
@@ -45,8 +56,12 @@ export const BillingItem: FC<BillingItemProps> = ({ img, imgWidth, name, cardNum
         </Stack>
         <Stack flexDirection='row' gap={1.25} alignItems='center'>
           {isMain ? (
-            <RedChip size='small'>Main Address</RedChip>
-          ) : (
+            showMainSelect ? (
+              <RedChip size='small'>Main Address</RedChip>
+            ) : (
+              <></>
+            )
+          ) : showMainSelect ? (
             <Typography
               variant='caption'
               fontWeight={400}
@@ -61,6 +76,8 @@ export const BillingItem: FC<BillingItemProps> = ({ img, imgWidth, name, cardNum
             >
               Set as main address
             </Typography>
+          ) : (
+            <></>
           )}
           <Button variant='contained' className='button--tiny'>
             <CustomIcon

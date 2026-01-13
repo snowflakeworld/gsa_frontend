@@ -13,6 +13,7 @@ interface ReviewItemProps {
   authentic: boolean
   cardService: string
   declValue: string
+  itemFlex?: number
 }
 
 export const ReviewItem: FC<ReviewItemProps> = ({
@@ -23,7 +24,8 @@ export const ReviewItem: FC<ReviewItemProps> = ({
   oversized,
   authentic,
   cardService,
-  declValue
+  declValue,
+  itemFlex = 329
 }) => {
   const { isMobile, isTablet } = useDeviceType()
 
@@ -53,25 +55,64 @@ export const ReviewItem: FC<ReviewItemProps> = ({
           gap={1}
           flex={1}
         >
-          <Stack flex={329}>
-            <Typography variant='h6' fontWeight={600} fontSize='0.875rem' lineHeight='1.25rem'>
+          <Stack flex={itemFlex}>
+            <Typography
+              variant='h6'
+              fontWeight={600}
+              fontSize='0.875rem'
+              lineHeight='1.25rem'
+              sx={{
+                WebkitLineClamp: 1,
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden'
+              }}
+            >
               {name}
             </Typography>
-            <List sx={{ display: 'flex', flexDirection: 'row', gap: 0.8, py: 0 }}>
-              {statusList.map((item, index) => (
-                <StatusItem key={index} index={index} value={item} />
-              ))}
+            <List sx={{ display: 'flex', flexDirection: 'row', gap: 0.8, py: 0, flex: 1 }}>
+              {statusList
+                .filter((_, index) => index < 2)
+                .map((item, index) => (
+                  <StatusItem key={index} index={index} value={item} />
+                ))}
             </List>
           </Stack>
           <Stack flex={140} flexDirection='row' justifyContent='space-between' alignItems='center'>
             {!isScreenSmall ? (
               <></>
             ) : (
-              <Typography variant='caption' fontWeight={500} fontSize='0.625rem' lineHeight='100%' color='text.normal'>
+              <Typography
+                variant='caption'
+                fontWeight={500}
+                fontSize='0.625rem'
+                lineHeight='100%'
+                color='text.normal'
+                sx={{
+                  WebkitLineClamp: 1,
+                  textOverflow: 'ellipsis',
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden'
+                }}
+              >
                 Card Service
               </Typography>
             )}
-            <Typography variant='h6' fontWeight={600} fontSize='0.75rem' lineHeight='1.25rem'>
+            <Typography
+              variant='h6'
+              fontWeight={600}
+              fontSize='0.75rem'
+              lineHeight='1.25rem'
+              sx={{
+                WebkitLineClamp: 1,
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden'
+              }}
+            >
               {cardService}
             </Typography>
           </Stack>
@@ -83,7 +124,19 @@ export const ReviewItem: FC<ReviewItemProps> = ({
                 Decl. Value
               </Typography>
             )}
-            <Typography variant='h6' fontWeight={600} fontSize='0.75rem' lineHeight='1.25rem'>
+            <Typography
+              variant='h6'
+              fontWeight={600}
+              fontSize='0.75rem'
+              lineHeight='1.25rem'
+              sx={{
+                WebkitLineClamp: 1,
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden'
+              }}
+            >
               {declValue}
             </Typography>
           </Stack>
