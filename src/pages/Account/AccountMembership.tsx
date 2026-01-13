@@ -18,7 +18,11 @@ export const AccountMembershipPage = () => {
         </Typography>
       </Stack>
       <Stack gap={3}>
-        <Stack flexDirection={!isScreenSmall ? 'row' : 'column'} gap={3}>
+        <Stack
+          flexDirection={!isScreenSmall ? 'row' : 'column'}
+          gap={3}
+          alignItems={!isScreenSmall ? 'center' : 'normal'}
+        >
           <Stack flex={560} gap={1.5}>
             <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
               Membership information
@@ -36,7 +40,12 @@ export const AccountMembershipPage = () => {
               Payment methods
             </Typography>
 
-            <BillingItem {...BILLING_ITEMS[0]} flex={1} />
+            <BillingItem
+              {...BILLING_ITEMS[0]}
+              flex={1}
+              showMainSelect={false}
+              minHeight={!isScreenSmall ? '8.125rem' : '0'}
+            />
           </Stack>
         </Stack>
         <Stack flexDirection='row' justifyContent='space-between' paddingTop={1}>
