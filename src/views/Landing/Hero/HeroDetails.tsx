@@ -13,8 +13,8 @@ const HeroDetailsComponent: FC<HeroDetailsProps> = ({ currentIndex }) => {
   const totalLen = HERO_DETAILS.length
 
   return (
-    <Stack direction='column' alignItems='flex-start' gap={4}>
-      <Stack direction='column' gap={1.5}>
+    <Stack alignItems='flex-start' gap={4}>
+      <Stack gap={1.5}>
         <Typography
           variant='h6'
           sx={{

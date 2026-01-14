@@ -44,7 +44,7 @@ export const NoDataPaper: FC<NoDataPaperProps> = ({ type, size = 'medium', child
         border: '1px solid',
         borderColor: 'border.paper',
         boxShadow: 'none',
-        padding: 3
+        p: 3
       }}
     >
       <Stack margin='auto' gap={3} justifyContent='center' alignItems='center'>

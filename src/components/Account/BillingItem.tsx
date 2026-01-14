@@ -34,10 +34,10 @@ export const BillingItem: FC<BillingItemProps> = ({
         border: '1px solid',
         borderColor: 'divider',
         backgroundColor: 'background.cardItem',
-        boxShadow: `${gsaShadows.card}`,
+        boxShadow: gsaShadows.card,
         px: 2,
         py: 1.5,
-        flex: flex,
+        flex,
         minHeight: minHeight !== '0' ? minHeight : 'auto'
       }}
     >

@@ -3,8 +3,8 @@ import { LANDING_FEATURE_GRID_MAX_WIDTH, STEPS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { ActiveStepContext } from '@/pages'
 import { gsaColors } from '@/theme'
-import { Button, Container, Divider, Stack, Typography } from '@mui/material'
-import React, { useContext } from 'react'
+import { Box, Button, Container, Divider, Stack, Typography } from '@mui/material'
+import { useContext } from 'react'
 
 export const StepBar = () => {
   const { isMobile, isTablet } = useDeviceType()
@@ -25,24 +25,22 @@ export const StepBar = () => {
             m='auto'
           >
             <Stack width={!isScreenSmall ? 700 : '100%'} flexDirection='row' alignItems='center'>
-              {STEPS.map((value, index) => {
-                return (
-                  <React.Fragment key={index}>
-                    <StepChip
-                      idx={index}
-                      title={value}
-                      status={index === activeStep ? 'active' : index < activeStep ? 'completed' : 'initial'}
+              {STEPS.map((value, index) => (
+                <Box key={index}>
+                  <StepChip
+                    idx={index}
+                    title={value}
+                    status={index === activeStep ? 'active' : index < activeStep ? 'completed' : 'initial'}
+                  />
+                  {index < STEPS.length - 1 && (
+                    <Divider
+                      variant='fullWidth'
+                      orientation='horizontal'
+                      sx={{ flexGrow: 1, borderColor: index < activeStep ? gsaColors.chip.border.red : 'divider' }}
                     />
-                    {index < STEPS.length - 1 && (
-                      <Divider
-                        variant='fullWidth'
-                        orientation='horizontal'
-                        sx={{ flexGrow: 1, borderColor: index < activeStep ? gsaColors.chip.border.red : 'divider' }}
-                      />
-                    )}
-                  </React.Fragment>
-                )
-              })}
+                  )}
+                </Box>
+              ))}
             </Stack>
 
             <Stack flexDirection='row' gap={2} alignItems='center'>

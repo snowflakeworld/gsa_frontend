@@ -50,7 +50,7 @@ export const MethodItem: FC<MethodItemProps> = ({ index, icon, name, price }) =>
             loading='lazy'
             margin='none'
           />
-          <BpRadio checked={isSelected ? true : false} onClick={handleSelect} />
+          <BpRadio checked={isSelected} onClick={handleSelect} />
         </Stack>
         <Stack flexDirection={!isScreenSmall ? 'row' : 'column'} gap={0.5}>
           <Typography

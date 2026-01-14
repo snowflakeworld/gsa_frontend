@@ -1,5 +1,3 @@
-import '@qpokychuk/sf-pro-display/index.css'
-
 export const gsaColors = {
   background: {
     primary: {
