@@ -29,7 +29,14 @@ export const NormalPasswordInput: FC<NormalPasswordInputProps> = ({
   }
 
   return (
-    <Stack gap={1.5} py={1.5} {...(flex ? { flex: flex } : {})} {...(width ? { width: width } : {})}>
+    <Stack
+      gap={1.5}
+      py={1.5}
+      sx={{
+        ...(flex && { flex }),
+        ...(width && { width })
+      }}
+    >
       <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
         {label}
       </Typography>

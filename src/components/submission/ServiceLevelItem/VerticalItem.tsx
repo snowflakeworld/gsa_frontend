@@ -42,7 +42,7 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
       onClick={handleSelect}
     >
       <Stack flexDirection='row' alignItems='center' gap={1}>
-        <BpRadio checked={index === serviceLevelIdx ? true : false} onClick={handleSelect} />
+        <BpRadio checked={index === serviceLevelIdx} onClick={handleSelect} />
         <Stack gap={1.5}>
           <Stack flexDirection='row' gap={1}>
             <Typography

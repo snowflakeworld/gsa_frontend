@@ -16,11 +16,7 @@ export const SearchBox: FC<SearchBoxProps> = ({ placeHolder, handleSubmit }) => 
   }
 
   return (
-    <Paper
-      component='form'
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', backgroundColor: 'background.cardItem' }}
-      onSubmit={handleSubmit ? undefined : undefined}
-    >
+    <Paper sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', backgroundColor: 'background.cardItem' }}>
       <IconButton
         type='button'
         sx={{ p: '10px', cursor: 'default', color: gsaColors.text.normal }}
