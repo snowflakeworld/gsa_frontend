@@ -15,7 +15,7 @@ export const AccountHomePage = () => {
       <Stack gap={!isScreenSmall ? 1.5 : 1}>
         <Typography variant='h4'>My Account</Typography>
         <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
-          Personailze your account
+          Personalize your account
         </Typography>
       </Stack>
       <Stack gap={1}>

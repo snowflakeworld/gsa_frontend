@@ -66,7 +66,7 @@ const HeaderComponent = () => {
                     }
                     sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2 }}
                     className='button--small'
-                    onClick={() => handleSubmit()}
+                    onClick={handleSubmit}
                   >
                     {!isScreenSmall && <span>Submit</span>}
                   </Button>

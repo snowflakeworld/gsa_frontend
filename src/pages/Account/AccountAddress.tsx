@@ -1,10 +1,11 @@
+import { type FC, useState } from 'react'
+
 import { useDeviceType } from '@/hooks'
 import { AddressEdit, AddressList } from '@/views/Account'
 import { AddOutlined, CheckOutlined } from '@mui/icons-material'
 import { Button, Stack, Typography } from '@mui/material'
-import { useState } from 'react'
 
-export const AccountAddressPage = () => {
+export const AccountAddressPage: FC = () => {
   const [editMode, setEditMode] = useState(false)
   const { isMobile, isTablet } = useDeviceType()
 
