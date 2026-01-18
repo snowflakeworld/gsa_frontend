@@ -2,11 +2,11 @@ import { gsaIconColors } from '@/theme'
 import { Done } from '@mui/icons-material'
 import { Stack, Typography } from '@mui/material'
 import parse from 'html-react-parser'
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 
 interface MemberShipBonusItemProps {
   isSelected: boolean
-  children: ReactNode
+  children: string
 }
 
 export const MembershipBonusItem: FC<MemberShipBonusItemProps> = ({ isSelected, children }) => {
@@ -20,7 +20,7 @@ export const MembershipBonusItem: FC<MemberShipBonusItemProps> = ({ isSelected, 
         lineHeight='1rem'
         {...(isSelected ? { color: 'text.red' } : {})}
       >
-        {parse(children as string)}
+        {parse(children)}
       </Typography>
     </Stack>
   )

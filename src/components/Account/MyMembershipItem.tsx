@@ -14,9 +14,7 @@ interface MyMembershipItemProps {
 }
 
 export const MyMembershipItem: FC<MyMembershipItemProps> = ({ title, status, duration, nextPayment, planStart }) => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Card
@@ -32,8 +30,8 @@ export const MyMembershipItem: FC<MyMembershipItemProps> = ({ title, status, dur
       <Stack gap={2} flexDirection='row'>
         <Stack
           sx={{
-            width: !isScreenSmall ? '6rem' : '4rem',
-            height: !isScreenSmall ? '6rem' : '4rem',
+            width: isLargeScreen ? '6rem' : '4rem',
+            height: isLargeScreen ? '6rem' : '4rem',
             borderRadius: 1.5,
             backgroundColor: gsaColors.background.red.normal
           }}
@@ -43,8 +41,8 @@ export const MyMembershipItem: FC<MyMembershipItemProps> = ({ title, status, dur
           <CustomIcon
             name='submissionGradingStandard'
             color='secondary'
-            width={!isScreenSmall ? '2.625rem' : '2rem'}
-            height={!isScreenSmall ? '3.625rem' : '2.25rem'}
+            width={isLargeScreen ? '2.625rem' : '2rem'}
+            height={isLargeScreen ? '3.625rem' : '2.25rem'}
             viewBoxWidth={14.67}
             viewBoxHeight={20.7}
           />

@@ -16,11 +16,10 @@ interface AccountHeaderProps {
 
 const HeaderComponent: FC<AccountHeaderProps> = ({ onMobileMenuClick }) => {
   const { mode, systemMode } = useColorScheme()
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen, isSmallScreen } = useDeviceType()
   const navigate = useNavigate()
   const isLoggedIn = useIsLoggedIn()
 
-  const isScreenSmall = isMobile || isTablet
   const resolvedMode = (systemMode || mode) as 'light' | 'dark'
 
   const handleLogin = () => {
@@ -40,12 +39,12 @@ const HeaderComponent: FC<AccountHeaderProps> = ({ onMobileMenuClick }) => {
       <AppBar elevation={0} sx={{ backgroundColor: 'background.header', zIndex: 2 }}>
         <Container className='py-none' sx={{ px: { xs: 2.5, lg: 18.75 } }}>
           <Toolbar
-            sx={{ py: 2, gap: 6.25, justifyContent: !isScreenSmall ? 'flex-start' : 'space-between' }}
+            sx={{ py: 2, gap: 6.25, justifyContent: isLargeScreen ? 'flex-start' : 'space-between' }}
             disableGutters
           >
             <Logo place='header' />
 
-            {!isScreenSmall && (
+            {isLargeScreen && (
               <Box flexGrow={1}>
                 <NavList />
               </Box>
@@ -63,11 +62,11 @@ const HeaderComponent: FC<AccountHeaderProps> = ({ onMobileMenuClick }) => {
                     viewBoxHeight={14}
                   />
                 }
-                sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2 }}
+                sx={{ gap: 1, px: isLargeScreen ? 2 : 1.25 }}
                 className='button--small'
                 onClick={() => handleSubmit()}
               >
-                {!isScreenSmall && <span>Submit</span>}
+                {isLargeScreen && <span>Submit</span>}
               </Button>
               <Button
                 variant='contained'
@@ -83,7 +82,7 @@ const HeaderComponent: FC<AccountHeaderProps> = ({ onMobileMenuClick }) => {
                 onClick={() => handleLogin()}
               />
 
-              {isScreenSmall && (
+              {isSmallScreen && (
                 <Button variant='contained' onClick={onMobileMenuClick} className='button--small'>
                   <MenuRounded fontSize='small' />
                 </Button>

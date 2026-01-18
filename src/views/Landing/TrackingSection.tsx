@@ -4,13 +4,11 @@ import { Box, Container, Stack, Typography } from '@mui/material'
 import { TrackingCard } from './Tracking'
 
 const TrackingSection = () => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Box position='relative'>
-      {!isScreenSmall && (
+      {isLargeScreen && (
         <Box
           component='img'
           src='/assets/images/decorator1.svg'
@@ -26,7 +24,7 @@ const TrackingSection = () => {
         <Stack gap={6.25} maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH} m='auto' direction={{ xs: 'column', md: 'row' }}>
           <Stack gap={1.5} maxWidth='25rem'>
             <Typography variant='h2'>Tracking Value</Typography>
-            <Typography variant='subtitle2' lineHeight={!isScreenSmall ? '2rem' : '1.75rem'}>
+            <Typography variant='subtitle2' lineHeight={isLargeScreen ? '2rem' : '1.75rem'}>
               Hobby love is won with each closing auction and final offer. Enlist free real-time pricing data to time
               the market and curate in-the-moment.
             </Typography>

@@ -14,9 +14,7 @@ interface NoDataPaperProps {
 
 export const NoDataPaper: FC<NoDataPaperProps> = ({ type, size = 'medium', children }) => {
   const { mode } = useColorScheme()
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   let imgName = undefined
 
@@ -39,7 +37,7 @@ export const NoDataPaper: FC<NoDataPaperProps> = ({ type, size = 'medium', child
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: !isScreenSmall ? '31.25rem' : '13.65rem',
+        minHeight: isLargeScreen ? '31.25rem' : '13.65rem',
         backgroundColor: 'transparent',
         border: '1px solid',
         borderColor: 'border.paper',
@@ -51,7 +49,7 @@ export const NoDataPaper: FC<NoDataPaperProps> = ({ type, size = 'medium', child
         <StyledImage
           src={`/assets/images/${imgName}`}
           width='auto'
-          height={!isScreenSmall ? '5rem' : '3.125rem'}
+          height={isLargeScreen ? '5rem' : '3.125rem'}
           alt='Empty Image'
           loading='lazy'
         />

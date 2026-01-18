@@ -12,10 +12,9 @@ interface FeatureBlogProps {
 }
 
 const FeatureBlogComponent: FC<FeatureBlogProps> = ({ icon, title, content }) => {
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen } = useDeviceType()
   const { mode, systemMode } = useColorScheme()
 
-  const isScreenSmall = isMobile || isTablet
   const resolvedMode = (systemMode || mode) as 'light' | 'dark'
 
   return (
@@ -38,7 +37,7 @@ const FeatureBlogComponent: FC<FeatureBlogProps> = ({ icon, title, content }) =>
           }}
         >
           <Stack gap={4}>
-            <Stack direction={isScreenSmall ? 'column' : 'row'} alignItems={'center'} gap={2}>
+            <Stack direction={isLargeScreen ? 'row' : 'column'} alignItems={'center'} gap={2}>
               <Stack
                 sx={{
                   borderRadius: 1,
@@ -60,7 +59,7 @@ const FeatureBlogComponent: FC<FeatureBlogProps> = ({ icon, title, content }) =>
               </Stack>
               <Typography
                 variant='h4'
-                textAlign={!isScreenSmall ? 'initial' : 'center'}
+                textAlign={isLargeScreen ? 'initial' : 'center'}
                 sx={{
                   fontSize: { xs: '1.5rem', md: '1.75rem' },
                   lineHeight: { xs: '2rem', md: '2.25rem' },

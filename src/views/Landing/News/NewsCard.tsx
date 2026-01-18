@@ -11,14 +11,12 @@ interface NewsCardProps {
 }
 
 const NewsCardComponent: FC<NewsCardProps> = ({ title, date, img }) => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Card
       sx={{
-        minHeight: !isScreenSmall ? '35rem' : '20rem',
+        minHeight: isLargeScreen ? '35rem' : '20rem',
         borderRadius: 2,
         border: '1px solid',
         borderColor: 'divider',
@@ -30,8 +28,8 @@ const NewsCardComponent: FC<NewsCardProps> = ({ title, date, img }) => {
       <Stack gap={{ xs: 2, md: 3 }} alignItems='center'>
         <StyledImage
           src={`/assets/images/cards/${img}`}
-          width={!isScreenSmall ? '29.75rem' : '18.75rem'}
-          height={!isScreenSmall ? '25rem' : '13.75rem'}
+          width={isLargeScreen ? '29.75rem' : '18.75rem'}
+          height={isLargeScreen ? '25rem' : '13.75rem'}
           alt='Tracking Card Image'
           loading='lazy'
           borderRadius='1rem'

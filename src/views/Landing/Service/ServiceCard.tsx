@@ -12,9 +12,7 @@ interface ServiceCardProps {
 }
 
 const ServiceCardComponent: FC<ServiceCardProps> = ({ title, button, img, rotate }) => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Card
@@ -24,14 +22,14 @@ const ServiceCardComponent: FC<ServiceCardProps> = ({ title, button, img, rotate
         borderColor: 'divider',
         backgroundColor: 'background.card',
         boxShadow: `${gsaShadows.card}`,
-        maxHeight: !isScreenSmall ? 455 : 330,
+        maxHeight: isLargeScreen ? 455 : 330,
         mb: 3
       }}
     >
       <CardContent
-        sx={{ display: 'flex', flexDirection: 'column', gap: !isScreenSmall ? 3 : 2, padding: !isScreenSmall ? 4 : 3 }}
+        sx={{ display: 'flex', flexDirection: 'column', gap: isLargeScreen ? 3 : 2, padding: isLargeScreen ? 4 : 3 }}
       >
-        <Typography variant='h4' textAlign='center' alignContent='center' minHeight={!isScreenSmall ? 80 : 64}>
+        <Typography variant='h4' textAlign='center' alignContent='center' minHeight={isLargeScreen ? 80 : 64}>
           {title}
         </Typography>
         <Button variant='contained' sx={{ width: '100%', gap: 2, px: 3 }} className='button--red'>
@@ -41,8 +39,8 @@ const ServiceCardComponent: FC<ServiceCardProps> = ({ title, button, img, rotate
       <CardMedia sx={{ rotate: rotate, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 2 }}>
         <StyledImage
           src={`/assets/images/cards/${img}`}
-          width={!isScreenSmall ? 210 : 140}
-          height={!isScreenSmall ? 297 : 198}
+          width={isLargeScreen ? 210 : 140}
+          height={isLargeScreen ? 297 : 198}
           alt='Service Card Image'
           loading='lazy'
           borderRadius='0.75rem'

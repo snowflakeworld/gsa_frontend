@@ -7,13 +7,11 @@ import { Button, Stack, Typography } from '@mui/material'
 
 export const AccountAddressPage: FC = () => {
   const [editMode, setEditMode] = useState(false)
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
-    <Stack gap={!isScreenSmall ? 4 : 2}>
-      <Stack gap={!isScreenSmall ? 1.5 : 1}>
+    <Stack gap={isLargeScreen ? 4 : 2}>
+      <Stack gap={isLargeScreen ? 1.5 : 1}>
         <Typography variant='h4'>Address</Typography>
         <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
           Set your address for delivery

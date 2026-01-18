@@ -26,7 +26,7 @@ export const Sign = () => {
         <Stack width='100%' height='100%'>
           <Card
             sx={{
-              minWidth: !isMobile ? '31.25rem' : '100%',
+              minWidth: isMobile ? '100%' : '31.25rem',
               borderRadius: 3,
               border: 'none',
               backgroundColor: 'background.card',

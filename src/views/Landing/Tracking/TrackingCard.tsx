@@ -21,9 +21,7 @@ interface TrackingCardProps {
 }
 
 const TrackingCardComponent: FC<TrackingCardProps> = ({ title, description, content, img, itemDisplayMode, items }) => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Card
@@ -33,10 +31,10 @@ const TrackingCardComponent: FC<TrackingCardProps> = ({ title, description, cont
         borderColor: 'divider',
         backgroundColor: 'background.card',
         boxShadow: `${gsaShadows.card}`,
-        padding: !isScreenSmall ? 4 : 3
+        padding: isLargeScreen ? 4 : 3
       }}
     >
-      {!isScreenSmall ? (
+      {isLargeScreen ? (
         <Stack flexDirection='row' gap={3}>
           <Stack gap={3}>
             <Stack gap={3} flexGrow={1}>

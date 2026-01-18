@@ -15,11 +15,10 @@ import { NavList } from './header/NavList'
 const HeaderComponent = () => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false)
   const { mode, systemMode } = useColorScheme()
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen } = useDeviceType()
   const navigate = useNavigate()
   const isLoggedIn = useIsLoggedIn()
 
-  const isScreenSmall = isMobile || isTablet
   const resolvedMode = (systemMode || mode) as 'light' | 'dark'
 
   const handleLogin = () => {
@@ -39,12 +38,12 @@ const HeaderComponent = () => {
       <AppBar elevation={0} sx={{ backgroundColor: 'background.header' }}>
         <Container className='py-none' sx={{ px: { xs: 2.5, lg: 18.75 } }}>
           <Toolbar
-            sx={{ py: 2, gap: 6.25, justifyContent: !isScreenSmall ? 'flex-start' : 'space-between' }}
+            sx={{ py: 2, gap: 6.25, justifyContent: isLargeScreen ? 'flex-start' : 'space-between' }}
             disableGutters
           >
             <Logo place='header' />
 
-            {!isScreenSmall && (
+            {isLargeScreen && (
               <Box flexGrow={1}>
                 <NavList />
               </Box>
@@ -68,7 +67,7 @@ const HeaderComponent = () => {
                     className='button--small'
                     onClick={handleSubmit}
                   >
-                    {!isScreenSmall && <span>Submit</span>}
+                    {isLargeScreen && <span>Submit</span>}
                   </Button>
                   <Button
                     variant='contained'

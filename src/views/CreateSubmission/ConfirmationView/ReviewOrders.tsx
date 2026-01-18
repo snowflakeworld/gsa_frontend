@@ -12,9 +12,7 @@ interface ReviewOrdersProps {
 
 export const ReviewOrders: FC<ReviewOrdersProps> = ({ headerFlex = 366, itemFlex = 329 }) => {
   const { mode } = useColorScheme()
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   const itemCount = REVIEW_ITEMS.length
 
@@ -30,7 +28,7 @@ export const ReviewOrders: FC<ReviewOrdersProps> = ({ headerFlex = 366, itemFlex
         padding: 2
       }}
     >
-      <Stack gap={!isScreenSmall ? 2 : 1}>
+      <Stack gap={isLargeScreen ? 2 : 1}>
         <Stack flexDirection='row' alignItems='center'>
           <Typography variant='h6' flexGrow={1}>
             {`Items (${itemCount})`}
@@ -48,7 +46,7 @@ export const ReviewOrders: FC<ReviewOrdersProps> = ({ headerFlex = 366, itemFlex
           </Button>
         </Stack>
         <Stack>
-          {!isScreenSmall ? (
+          {isLargeScreen ? (
             <Stack>
               <Stack flexDirection='row' gap={1}>
                 <Typography

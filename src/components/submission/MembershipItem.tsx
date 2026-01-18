@@ -14,10 +14,9 @@ interface MembershipItemPros {
 
 export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, items, isFree }) => {
   const { mode } = useColorScheme()
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen } = useDeviceType()
   const { membershipIdx, selectIdx } = useMembershipSelectContext()
 
-  const isScreenSmall = isMobile || isTablet
   const isSelected = membershipIdx === index
 
   const handleSelect = () => {
@@ -71,7 +70,7 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
           </Stack>
         </Stack>
 
-        <Stack gap={1.5} flexDirection={!isScreenSmall ? 'row' : 'column'}>
+        <Stack gap={1.5} flexDirection={isLargeScreen ? 'row' : 'column'}>
           <List sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, py: 0 }}>
             {items
               .filter((_, index) => index < leftItemListCount)
@@ -101,7 +100,7 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
           sx={{
             height: 40,
             gap: 2,
-            px: !isScreenSmall ? 2 : 3
+            px: isLargeScreen ? 2 : 3
           }}
           className={isSelected ? 'button--red button--small' : 'button--small'}
           onClick={handleSelect}

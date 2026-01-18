@@ -21,9 +21,7 @@ interface HeroSwiperProps {
 
 export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) => {
   const { mode } = useColorScheme()
-  const { isMobile, isTablet, isDesktop } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen, isDesktop } = useDeviceType()
 
   useEffect(() => {
     if (swiperRef.current) {
@@ -77,28 +75,28 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
         <CustomIcon
           name='starBig'
           color='customRed'
-          width={!isScreenSmall ? '3.75rem' : '2.5rem'}
-          height={!isScreenSmall ? '3.75rem' : '2.5rem'}
+          width={isLargeScreen ? '3.75rem' : '2.5rem'}
+          height={isLargeScreen ? '3.75rem' : '2.5rem'}
           viewBoxWidth={67}
           viewBoxHeight={67}
           position='absolute'
-          top={!isScreenSmall ? -30 : -20}
+          top={isLargeScreen ? -30 : -20}
           left={25}
         />
         <CustomIcon
           name='starSmall'
           color='customRed'
-          width={!isScreenSmall ? '1.25rem' : '1rem'}
-          height={!isScreenSmall ? '1.25rem' : '1rem'}
+          width={isLargeScreen ? '1.25rem' : '1rem'}
+          height={isLargeScreen ? '1.25rem' : '1rem'}
           viewBoxWidth={18}
           viewBoxHeight={18}
           position='absolute'
-          top={!isScreenSmall ? 16 : 12}
-          left={!isScreenSmall ? 64 : 52}
+          top={isLargeScreen ? 16 : 12}
+          left={isLargeScreen ? 64 : 52}
         />
       </Box>
 
-      {!isScreenSmall && (
+      {isLargeScreen && (
         <Box>
           <CustomIcon
             name='starBig'

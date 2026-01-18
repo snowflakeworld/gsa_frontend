@@ -9,22 +9,20 @@ interface LogoProps {
 }
 
 const LogoComponent: FC<LogoProps> = ({ place }) => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isSmallScreen } = useDeviceType()
 
   return (
     <Link
       href='/'
       aria-label='Home-page'
-      textAlign={place === 'footer' && isScreenSmall ? 'center' : 'left'}
+      textAlign={place === 'footer' && isSmallScreen ? 'center' : 'left'}
       display='flex'
       alignItems='center'
-      justifyContent={place === 'footer' && isScreenSmall ? 'center' : 'left'}
+      justifyContent={place === 'footer' && isSmallScreen ? 'center' : 'left'}
     >
       <StyledImage
         src='/assets/images/logo.svg'
-        height={place === 'header' ? 24 : isScreenSmall || place !== 'footer' ? 40 : 50}
+        height={place === 'header' ? 24 : isSmallScreen || place !== 'footer' ? 40 : 50}
         alt='Logo Image'
         loading='lazy'
         margin='0'

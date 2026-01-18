@@ -12,9 +12,7 @@ interface SpecialServiceCardProps {
 }
 
 const SpecialServiceCardComponent: FC<SpecialServiceCardProps> = ({ title, content, img, gradient }) => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Grid size={{ xs: 12, md: 6 }}>
@@ -35,7 +33,7 @@ const SpecialServiceCardComponent: FC<SpecialServiceCardProps> = ({ title, conte
             alignItems: 'center',
             paddingTop: 5,
             backgroundImage: gradient,
-            maxHeight: !isScreenSmall ? 368 : 328,
+            maxHeight: isLargeScreen ? 368 : 328,
             zIndex: 0,
             overflow: 'hidden'
           }}
@@ -54,15 +52,15 @@ const SpecialServiceCardComponent: FC<SpecialServiceCardProps> = ({ title, conte
             display: 'flex',
             flexDirection: 'column',
             gap: 3,
-            padding: !isScreenSmall ? 4 : 3,
+            padding: isLargeScreen ? 4 : 3,
             backgroundColor: 'background.card',
             zIndex: 1
           }}
         >
-          <Typography variant='h4' alignContent='center' minHeight={!isScreenSmall ? 80 : 64}>
+          <Typography variant='h4' alignContent='center' minHeight={isLargeScreen ? 80 : 64}>
             {title}
           </Typography>
-          <Typography variant='caption' color='text.normal' lineHeight={!isScreenSmall ? '2rem' : '1.75rem'}>
+          <Typography variant='caption' color='text.normal' lineHeight={isLargeScreen ? '2rem' : '1.75rem'}>
             {content}
           </Typography>
           <Button variant='contained' sx={{ width: '100%', gap: 2, px: 3 }} className='button--red'>

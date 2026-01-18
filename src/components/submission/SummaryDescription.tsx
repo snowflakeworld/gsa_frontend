@@ -4,15 +4,13 @@ import { InfoOutlineRounded } from '@mui/icons-material'
 import { Paper, Stack, Typography } from '@mui/material'
 
 export const SummaryDescription = () => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Paper
       sx={{
-        width: !isScreenSmall ? 400 : '100%',
-        maxWidth: !isScreenSmall ? 400 : '100%',
+        width: isLargeScreen ? 400 : '100%',
+        maxWidth: isLargeScreen ? 400 : '100%',
         display: 'block',
         border: '1px solid',
         borderColor: 'divider',

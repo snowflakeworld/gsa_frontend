@@ -16,14 +16,12 @@ export interface FooterLinkProps {
 }
 
 const LinkListMainComponent: FC<FooterLinkProps> = (props: FooterLinkProps) => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   const type: LinkType = props.type
 
   return (
-    <Stack gap={!isScreenSmall ? 3 : 2} direction='column' textAlign={!isScreenSmall ? 'inherit' : 'center'}>
+    <Stack gap={isLargeScreen ? 3 : 2} direction='column' textAlign={isLargeScreen ? 'inherit' : 'center'}>
       <Typography color='textNormal' width='100%' sx={{ fontSize: '0.875rem' }}>
         {type.replace(/\b\w/g, char => char.toUpperCase())}
       </Typography>

@@ -9,9 +9,7 @@ import { useContext } from 'react'
 
 export const Billing = () => {
   const { activeStep, setActiveStep } = useContext(ActiveStepContext)!
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   const handlePrev = () => {
     setActiveStep(activeStep - 1)
@@ -43,8 +41,8 @@ export const Billing = () => {
           />
           <StyledImage
             src={`/assets/images/payments/paymodes.png`}
-            width={!isScreenSmall ? 'auto' : '4.5rem'}
-            height={!isScreenSmall ? '1.875rem' : 'auto'}
+            width={isLargeScreen ? 'auto' : '4.5rem'}
+            height={isLargeScreen ? '1.875rem' : 'auto'}
             alt='Method Image'
             loading='lazy'
             margin='0'

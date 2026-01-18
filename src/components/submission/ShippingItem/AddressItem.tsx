@@ -14,10 +14,9 @@ interface AddressItemProps {
 
 export const AddressItem: FC<AddressItemProps> = ({ index, address, city, contact }) => {
   const { shippingAddressIdx, selectIdx } = useShippingAddressSelectContext()
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen } = useDeviceType()
 
   const isSelected = shippingAddressIdx === index
-  const isScreenSmall = isMobile || isTablet
 
   const handleSelect = () => {
     selectIdx(index)
@@ -52,7 +51,7 @@ export const AddressItem: FC<AddressItemProps> = ({ index, address, city, contac
           >
             {address}
           </Typography>
-          <Stack flexDirection={!isScreenSmall ? 'row' : 'column'} gap={1} alignItems='center'>
+          <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={1} alignItems='center'>
             <Typography
               variant='caption'
               fontWeight={400}
@@ -62,10 +61,10 @@ export const AddressItem: FC<AddressItemProps> = ({ index, address, city, contac
             >
               {city}
             </Typography>
-            <Stack flexDirection='row' gap={1} alignItems={!isScreenSmall ? 'center' : ''}>
+            <Stack flexDirection='row' gap={1} alignItems={isLargeScreen ? 'center' : ''}>
               <Circle
                 sx={{
-                  marginLeft: !isScreenSmall ? 0 : 1,
+                  marginLeft: isLargeScreen ? 0 : 1,
                   fontSize: '0.3rem',
                   color: isSelected ? 'text.red' : 'text.normal'
                 }}

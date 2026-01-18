@@ -6,6 +6,8 @@ export const useDeviceType = () => {
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md')) // 600px - 900px
   const isDesktop = useMediaQuery(theme.breakpoints.up('md')) // Above 900px
   const isLarge = useMediaQuery(theme.breakpoints.up('lg')) // Above 1200px
+  const isSmallScreen = isMobile || isTablet
+  const isLargeScreen = isDesktop || isLarge
 
-  return { isMobile, isTablet, isDesktop, isLarge }
+  return { isMobile, isTablet, isDesktop, isLarge, isSmallScreen, isLargeScreen }
 }
