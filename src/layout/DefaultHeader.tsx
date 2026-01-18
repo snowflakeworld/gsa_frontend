@@ -15,7 +15,7 @@ import { NavList } from './header/NavList'
 const HeaderComponent = () => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false)
   const { mode, systemMode } = useColorScheme()
-  const { isLargeScreen } = useDeviceType()
+  const { isLargeScreen, isSmallScreen } = useDeviceType()
   const navigate = useNavigate()
   const isLoggedIn = useIsLoggedIn()
 
@@ -63,7 +63,7 @@ const HeaderComponent = () => {
                         viewBoxHeight={14}
                       />
                     }
-                    sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2 }}
+                    sx={{ gap: 1, px: isSmallScreen ? 1.25 : 2 }}
                     className='button--small'
                     onClick={handleSubmit}
                   >
@@ -85,21 +85,21 @@ const HeaderComponent = () => {
                 </>
               )}
 
-              {isScreenSmall && (
+              {isSmallScreen && (
                 <Button variant='contained' onClick={() => setMenuOpened(st => !st)} className='button--small'>
                   {!menuOpened ? <MenuRounded fontSize='small' /> : <CloseRounded fontSize='small' />}
                 </Button>
               )}
             </Box>
           </Toolbar>
-          {isScreenSmall && menuOpened && (
+          {isSmallScreen && menuOpened && (
             <Box>
               <MobileNav />
             </Box>
           )}
         </Container>
       </AppBar>
-      {isScreenSmall && menuOpened && (
+      {isSmallScreen && menuOpened && (
         <Stack
           width={'100vw'}
           height={'100vh'}
