@@ -3,9 +3,9 @@ import { useDeviceType } from '@/hooks'
 import { Box, CircularProgress } from '@mui/material'
 import { Suspense, useState } from 'react'
 import { Outlet } from 'react-router-dom'
-import { AccountHeader } from './AccountHeader'
-import { Footer } from './Footer'
-import { Sidebar } from './Sidebar'
+import { Footer } from '../Footer'
+import { AccountHeader } from '../Header'
+import { Sidebar } from '../Sidebar'
 
 const DRAWER_WIDTH = 320
 

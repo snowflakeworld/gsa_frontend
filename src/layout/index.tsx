@@ -1,7 +1,0 @@
-export * from './Account'
-export * from './AccountHeader'
-export * from './Dashboard'
-export * from './DefaultHeader'
-export * from './Footer'
-export * from './Logo'
-export * from './Main'

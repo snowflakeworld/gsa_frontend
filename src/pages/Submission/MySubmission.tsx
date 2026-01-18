@@ -1,5 +1,5 @@
 import { CustomIcon } from '@/components'
-import { routers } from '@/configs/navigation'
+import { ROUTERS } from '@/configs/navigation'
 import { LANDING_FEATURE_GRID_MAX_WIDTH } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { Progress, Recent } from '@/views/Submission'
@@ -11,7 +11,7 @@ export const MySubmissionPage = () => {
   const { isLargeScreen } = useDeviceType()
 
   const handleCreate = () => {
-    navigate(routers.CreateSubmission)
+    navigate(ROUTERS.CreateSubmission)
   }
 
   return (

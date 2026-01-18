@@ -1,5 +1,5 @@
-import { routers } from '@/configs'
-import { Logo } from '@/layout/Logo'
+import { Logo } from '@/components/Common/Logo'
+import { ROUTERS } from '@/configs'
 import { dispatch, login } from '@/store'
 import { CreateInfo } from '@/types'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -50,7 +50,7 @@ export const SignUp = () => {
   })
 
   const handleClose = () => {
-    navigate(routers.Home)
+    navigate(ROUTERS.Home)
   }
 
   const onSubmit = async (data: CreateInfo) => {
@@ -60,7 +60,7 @@ export const SignUp = () => {
         token: '123123123'
       })
     )
-    navigate(routers.Home)
+    navigate(ROUTERS.Home)
   }
 
   return (

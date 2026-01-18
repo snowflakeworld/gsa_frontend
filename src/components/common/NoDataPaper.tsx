@@ -1,6 +1,8 @@
-import { useDeviceType } from '@/hooks'
+import { type FC, ReactNode } from 'react'
+
 import { Paper, Stack, Typography, useColorScheme } from '@mui/material'
-import { FC, ReactNode } from 'react'
+
+import { useDeviceType } from '@/hooks'
 import { StyledImage } from './StyledImage'
 
 type NoDataType = 'item' | 'progress' | 'order'

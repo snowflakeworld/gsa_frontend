@@ -1,7 +1,9 @@
-import { gsaColors } from '@/theme'
+import { type FC, ChangeEvent, useState } from 'react'
+
 import { CloseOutlined, SearchRounded } from '@mui/icons-material'
 import { IconButton, InputBase, Paper } from '@mui/material'
-import { ChangeEvent, FC, useState } from 'react'
+
+import { gsaColors } from '@/theme'
 
 interface SearchBoxProps {
   placeHolder: string

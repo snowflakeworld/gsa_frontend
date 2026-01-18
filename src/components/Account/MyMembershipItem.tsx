@@ -1,7 +1,9 @@
+import { FC } from 'react'
+
+import { Card, Stack, Typography } from '@mui/material'
+
 import { useDeviceType } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
-import { Card, Stack, Typography } from '@mui/material'
-import { FC } from 'react'
 import { CustomIcon, RedChip } from '../Common'
 import { SummaryItem } from '../Submission'
 

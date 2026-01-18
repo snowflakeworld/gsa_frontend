@@ -1,6 +1,8 @@
-import { gsaColors } from '@/theme'
+import { type FC, ReactNode } from 'react'
+
 import { Stack, Typography } from '@mui/material'
-import { FC, ReactNode } from 'react'
+
+import { gsaColors } from '@/theme'
 
 type RedChipSizeType = 'small' | 'medium'
 

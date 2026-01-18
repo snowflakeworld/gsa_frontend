@@ -1,10 +1,10 @@
 import { Box, Container, Divider, Link, Stack, Typography } from '@mui/material'
 
+import { Logo } from '@/components/Common/Logo'
 import { FOOTER_LINK_SUB, FOOTER_LINK_TYPES } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { Logo } from '@/layout/Logo'
 import { FC } from 'react'
-import { LinkContent, LinkListMain, LinkType } from './footer/LinkListMain'
+import { LinkContent, LinkListMain, LinkType } from './LinkListMain'
 
 interface FooterProps {
   isLandingPage?: boolean

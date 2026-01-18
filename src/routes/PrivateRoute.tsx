@@ -1,7 +1,7 @@
 import { FC, ReactNode, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { routers } from '@/configs'
+import { ROUTERS } from '@/configs'
 import { useIsLoggedIn } from '@/hooks'
 
 interface PrivateRouteProps {
@@ -14,7 +14,7 @@ const PrivateRoute: FC<PrivateRouteProps> = ({ children }) => {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate(routers.SignIn)
+      navigate(ROUTERS.SignIn)
     }
   }, [isLoggedIn, navigate])
 

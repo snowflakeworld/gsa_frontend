@@ -1,6 +1,8 @@
-import { gsaColors, gsaShadows } from '@/theme'
-import { Button, Card, Stack, Typography, useColorScheme } from '@mui/material'
 import { FC } from 'react'
+
+import { Button, Card, Stack, Typography, useColorScheme } from '@mui/material'
+
+import { gsaColors, gsaShadows } from '@/theme'
 import { CustomIcon, RedChip, StyledImage } from '../Common'
 
 interface BillingItemProps {

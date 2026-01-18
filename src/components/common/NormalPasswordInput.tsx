@@ -1,6 +1,7 @@
+import { type FC, useState } from 'react'
+
 import { VisibilityOffOutlined, VisibilityOutlined } from '@mui/icons-material'
 import { IconButton, InputAdornment, InputBase, Paper, Stack, Typography } from '@mui/material'
-import { FC, useState } from 'react'
 
 interface NormalPasswordInputProps {
   label: string

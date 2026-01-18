@@ -3,12 +3,12 @@ import { AppBar, Box, Container, Toolbar, useColorScheme } from '@mui/material'
 import Button from '@mui/material/Button'
 import { FC, memo } from 'react'
 
-import { CustomIcon } from '@/components'
-import { routers } from '@/configs'
+import { ColorModeButton, CustomIcon } from '@/components'
+import { Logo } from '@/components/Common/Logo'
+import { ROUTERS } from '@/configs'
 import { useDeviceType, useIsLoggedIn } from '@/hooks'
-import { Logo } from '@/layout/Logo'
 import { useNavigate } from 'react-router-dom'
-import { ColorModeButton, NavList } from './header'
+import { NavList } from './NavList'
 
 interface AccountHeaderProps {
   onMobileMenuClick: () => void
@@ -24,14 +24,14 @@ const HeaderComponent: FC<AccountHeaderProps> = ({ onMobileMenuClick }) => {
 
   const handleLogin = () => {
     if (!isLoggedIn) {
-      navigate(routers.SignIn)
+      navigate(ROUTERS.SignIn)
     } else {
-      navigate(routers.Account.Home)
+      navigate(ROUTERS.Account.Home)
     }
   }
 
   const handleSubmit = () => {
-    navigate(routers.Submission)
+    navigate(ROUTERS.Submission)
   }
 
   return (

@@ -1,6 +1,8 @@
-import { gsaColors } from '@/theme'
-import { Radio, RadioProps, styled } from '@mui/material'
 import { FC } from 'react'
+
+import { Radio, RadioProps, styled } from '@mui/material'
+
+import { gsaColors } from '@/theme'
 
 const BpIcon = styled('span')(({ theme }) => ({
   borderRadius: '50%',

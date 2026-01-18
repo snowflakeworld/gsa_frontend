@@ -1,1 +1,1 @@
-export * from './LinkListMain'
+export * from './Footer'

@@ -1,5 +1,5 @@
 import { CustomIcon } from '@/components'
-import { routers } from '@/configs'
+import { ROUTERS } from '@/configs'
 import { useDeviceType } from '@/hooks'
 import { Progress, Recent } from '@/views/Submission'
 import { Button, Stack, Typography } from '@mui/material'
@@ -10,7 +10,7 @@ export const AccountSubmissionPage = () => {
   const { isLargeScreen } = useDeviceType()
 
   const handleCreate = () => {
-    navigate(routers.CreateSubmission)
+    navigate(ROUTERS.CreateSubmission)
   }
 
   return (

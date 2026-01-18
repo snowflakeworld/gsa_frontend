@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { AccountLayout, MainLayout } from '@/layout'
-import { DashboardLayout } from '@/layout/Dashboard'
+import { DashboardLayout } from '@/layout/Content/Dashboard'
 import { store } from '@/store'
 import { Provider } from 'react-redux'
 import { AccountRoutes } from './Account'

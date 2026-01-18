@@ -3,19 +3,18 @@ import { AppBar, Box, Container, Stack, Toolbar, useColorScheme } from '@mui/mat
 import Button from '@mui/material/Button'
 import { memo, useState } from 'react'
 
-import { CustomIcon } from '@/components'
-import { routers } from '@/configs'
+import { ColorModeButton, CustomIcon } from '@/components'
+import { Logo } from '@/components/Common/Logo'
+import { ROUTERS } from '@/configs'
 import { useDeviceType, useIsLoggedIn } from '@/hooks'
-import { Logo } from '@/layout/Logo'
 import { useNavigate } from 'react-router-dom'
-import { ColorModeButton } from './header/ColorModeButton'
-import { MobileNav } from './header/MobileNav'
-import { NavList } from './header/NavList'
+import { MobileNav } from './MobileNav'
+import { NavList } from './NavList'
 
 const HeaderComponent = () => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false)
   const { mode, systemMode } = useColorScheme()
-  const { isLargeScreen } = useDeviceType()
+  const { isLargeScreen, isSmallScreen } = useDeviceType()
   const navigate = useNavigate()
   const isLoggedIn = useIsLoggedIn()
 
@@ -23,14 +22,14 @@ const HeaderComponent = () => {
 
   const handleLogin = () => {
     if (!isLoggedIn) {
-      navigate(routers.SignIn)
+      navigate(ROUTERS.SignIn)
     } else {
-      navigate(routers.Account.Home)
+      navigate(ROUTERS.Account.Home)
     }
   }
 
   const handleSubmit = () => {
-    navigate(routers.Submission)
+    navigate(ROUTERS.Submission)
   }
 
   return (
@@ -63,7 +62,7 @@ const HeaderComponent = () => {
                         viewBoxHeight={14}
                       />
                     }
-                    sx={{ gap: 1, px: isScreenSmall ? 1.25 : 2 }}
+                    sx={{ gap: 1, px: isSmallScreen ? 1.25 : 2 }}
                     className='button--small'
                     onClick={handleSubmit}
                   >
@@ -85,21 +84,21 @@ const HeaderComponent = () => {
                 </>
               )}
 
-              {isScreenSmall && (
+              {isSmallScreen && (
                 <Button variant='contained' onClick={() => setMenuOpened(st => !st)} className='button--small'>
                   {!menuOpened ? <MenuRounded fontSize='small' /> : <CloseRounded fontSize='small' />}
                 </Button>
               )}
             </Box>
           </Toolbar>
-          {isScreenSmall && menuOpened && (
+          {isSmallScreen && menuOpened && (
             <Box>
               <MobileNav />
             </Box>
           )}
         </Container>
       </AppBar>
-      {isScreenSmall && menuOpened && (
+      {isSmallScreen && menuOpened && (
         <Stack
           width={'100vw'}
           height={'100vh'}
