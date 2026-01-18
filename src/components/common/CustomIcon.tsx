@@ -1,5 +1,6 @@
-import { SvgIcon } from '@mui/material'
 import { FC, memo } from 'react'
+
+import { SvgIcon } from '@mui/material'
 
 import { gsaIconColors } from '@/theme/themePrimitives'
 

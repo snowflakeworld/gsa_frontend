@@ -1,9 +1,10 @@
-import { FC, memo } from 'react'
+import { type FC, memo } from 'react'
 
 import { Link } from '@mui/material'
 
 import { StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks'
+
 interface LogoProps {
   place: string
 }

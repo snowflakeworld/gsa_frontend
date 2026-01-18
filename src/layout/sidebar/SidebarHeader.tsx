@@ -1,7 +1,7 @@
 import { Close } from '@mui/icons-material'
 import { IconButton, Stack } from '@mui/material'
 import { FC } from 'react'
-import { Logo } from '../Logo'
+import { Logo } from '../../components/Common/Logo'
 
 interface SidebarHeaderPros {
   onClose: () => void

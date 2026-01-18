@@ -3,14 +3,13 @@ import { AppBar, Box, Container, Stack, Toolbar, useColorScheme } from '@mui/mat
 import Button from '@mui/material/Button'
 import { memo, useState } from 'react'
 
-import { CustomIcon } from '@/components'
+import { ColorModeButton, CustomIcon } from '@/components'
+import { Logo } from '@/components/Common/Logo'
 import { ROUTERS } from '@/configs'
 import { useDeviceType, useIsLoggedIn } from '@/hooks'
-import { Logo } from '@/layout/Logo'
 import { useNavigate } from 'react-router-dom'
-import { ColorModeButton } from './header/ColorModeButton'
-import { MobileNav } from './header/MobileNav'
-import { NavList } from './header/NavList'
+import { MobileNav } from './MobileNav'
+import { NavList } from './NavList'
 
 const HeaderComponent = () => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false)

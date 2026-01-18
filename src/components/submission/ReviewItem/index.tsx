@@ -1,6 +1,7 @@
+import { type FC } from 'react'
+
 import { useDeviceType } from '@/hooks'
 import { Divider, List, Stack, Typography } from '@mui/material'
-import { FC } from 'react'
 import { StyledImage } from '../../Common'
 import { StatusItem } from './StatusItem'
 

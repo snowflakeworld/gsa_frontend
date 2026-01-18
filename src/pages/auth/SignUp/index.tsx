@@ -1,5 +1,5 @@
+import { Logo } from '@/components/Common/Logo'
 import { ROUTERS } from '@/configs'
-import { Logo } from '@/layout/Logo'
 import { dispatch, login } from '@/store'
 import { CreateInfo } from '@/types'
 import { yupResolver } from '@hookform/resolvers/yup'

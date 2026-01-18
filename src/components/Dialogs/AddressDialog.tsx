@@ -1,5 +1,5 @@
-import { COUNTRIES, STATES } from '@/constants'
-import { useDeviceType } from '@/hooks'
+import { type FC, useState } from 'react'
+
 import { Close } from '@mui/icons-material'
 import {
   Box,
@@ -16,7 +16,9 @@ import {
   TextField,
   useColorScheme
 } from '@mui/material'
-import { FC, useState } from 'react'
+
+import { COUNTRIES, STATES } from '@/constants'
+import { useDeviceType } from '@/hooks'
 
 export interface AddressData {
   country: string

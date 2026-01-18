@@ -1,5 +1,6 @@
+import { type FC, ReactNode, useState } from 'react'
+
 import { InputBase, Paper, Stack, Typography } from '@mui/material'
-import { FC, ReactNode, useState } from 'react'
 
 interface NormalTextInputProps {
   label: string

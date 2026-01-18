@@ -13,7 +13,7 @@ import {
 import { Divider, List, ListItemButton, ListItemText, Stack } from '@mui/material'
 import { FC, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { SidebarHeader } from './sidebar/SidebarHeader'
+import { SidebarHeader } from './SidebarHeader'
 
 interface SidebarProps {
   width?: number | string

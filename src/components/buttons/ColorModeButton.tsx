@@ -1,6 +1,7 @@
+import { useCallback, useMemo } from 'react'
+
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material'
 import { IconButton, useColorScheme } from '@mui/material'
-import { useCallback, useMemo } from 'react'
 
 export const ColorModeButton = () => {
   const { mode, systemMode, setMode } = useColorScheme()

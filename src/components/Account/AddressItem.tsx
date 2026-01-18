@@ -1,7 +1,9 @@
-import { gsaColors, gsaShadows } from '@/theme'
+import { FC } from 'react'
+
 import { Circle } from '@mui/icons-material'
 import { Button, Card, Stack, Typography, useColorScheme } from '@mui/material'
-import { FC } from 'react'
+
+import { gsaColors, gsaShadows } from '@/theme'
 import { CustomIcon, RedChip } from '../Common'
 
 interface AddressItemProps {
