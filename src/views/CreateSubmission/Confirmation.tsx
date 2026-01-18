@@ -1,5 +1,5 @@
 import { StepButtonGroup } from '@/components/Submission'
-import { routers } from '@/configs'
+import { ROUTERS } from '@/configs'
 import { useDeviceType } from '@/hooks'
 import { ActiveStepContext } from '@/pages'
 import { Stack } from '@mui/material'
@@ -17,7 +17,7 @@ export const Confirmation = () => {
   }
 
   const handleNext = () => {
-    navigate(routers.Submission)
+    navigate(ROUTERS.Submission)
   }
 
   return (

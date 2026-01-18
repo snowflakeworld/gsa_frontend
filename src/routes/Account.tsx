@@ -1,4 +1,4 @@
-import { routers } from '@/configs'
+import { ROUTERS } from '@/configs'
 import {
   AccountAddressPage,
   AccountBillingPage,
@@ -11,12 +11,12 @@ import {
 } from '@/pages/Account'
 
 export const AccountRoutes = [
-  { path: routers.Account.Home, element: <AccountHomePage /> },
-  { path: routers.Account.Security, element: <AccountSecurityPage /> },
-  { path: routers.Account.Address, element: <AccountAddressPage /> },
-  { path: routers.Account.Billing, element: <AccountBillingPage /> },
-  { path: routers.Account.Membership, element: <AccountMembershipPage /> },
-  { path: routers.Account.Submission, element: <AccountSubmissionPage /> },
-  { path: routers.Account.TrackOrders, element: <AccountTrackOrdersPage /> },
-  { path: routers.Account.OrderDetail, element: <AccountOrderDetailPage /> }
+  { path: ROUTERS.Account.Home, element: <AccountHomePage /> },
+  { path: ROUTERS.Account.Security, element: <AccountSecurityPage /> },
+  { path: ROUTERS.Account.Address, element: <AccountAddressPage /> },
+  { path: ROUTERS.Account.Billing, element: <AccountBillingPage /> },
+  { path: ROUTERS.Account.Membership, element: <AccountMembershipPage /> },
+  { path: ROUTERS.Account.Submission, element: <AccountSubmissionPage /> },
+  { path: ROUTERS.Account.TrackOrders, element: <AccountTrackOrdersPage /> },
+  { path: ROUTERS.Account.OrderDetail, element: <AccountOrderDetailPage /> }
 ]

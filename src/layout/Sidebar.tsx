@@ -1,4 +1,4 @@
-import { routers } from '@/configs'
+import { ROUTERS } from '@/configs'
 import { useDeviceType, useLogout } from '@/hooks'
 import {
   AccountCircleOutlined,
@@ -21,27 +21,27 @@ interface SidebarProps {
 }
 
 const MENU_ITEMS = [
-  { id: 'account', label: 'My Account', icon: <AccountCircleOutlined fontSize='small' />, path: routers.Account.Home },
-  { id: 'security', label: 'Security', icon: <LockOutline fontSize='small' />, path: routers.Account.Security },
-  { id: 'address', label: 'Address', icon: <LocationOnOutlined fontSize='small' />, path: routers.Account.Address },
-  { id: 'billing', label: 'Billing', icon: <PaymentOutlined fontSize='small' />, path: routers.Account.Billing },
+  { id: 'account', label: 'My Account', icon: <AccountCircleOutlined fontSize='small' />, path: ROUTERS.Account.Home },
+  { id: 'security', label: 'Security', icon: <LockOutline fontSize='small' />, path: ROUTERS.Account.Security },
+  { id: 'address', label: 'Address', icon: <LocationOnOutlined fontSize='small' />, path: ROUTERS.Account.Address },
+  { id: 'billing', label: 'Billing', icon: <PaymentOutlined fontSize='small' />, path: ROUTERS.Account.Billing },
   {
     id: 'membership',
     label: 'Membership',
     icon: <CardMembershipOutlined fontSize='small' />,
-    path: routers.Account.Membership
+    path: ROUTERS.Account.Membership
   },
   {
     id: 'submission',
     label: 'My Submission',
     icon: <DescriptionOutlined fontSize='small' />,
-    path: routers.Account.Submission
+    path: ROUTERS.Account.Submission
   },
   {
     id: 'track',
     label: 'Track Orders',
     icon: <LocalShippingOutlined fontSize='small' />,
-    path: routers.Account.TrackOrders
+    path: ROUTERS.Account.TrackOrders
   }
 ]
 
@@ -58,7 +58,7 @@ export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined
 
   const handleLogout = () => {
     logout()
-    navigate(routers.Home)
+    navigate(ROUTERS.Home)
   }
 
   const handleClose = () => {

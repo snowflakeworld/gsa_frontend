@@ -4,7 +4,7 @@ import Button from '@mui/material/Button'
 import { memo, useState } from 'react'
 
 import { CustomIcon } from '@/components'
-import { routers } from '@/configs'
+import { ROUTERS } from '@/configs'
 import { useDeviceType, useIsLoggedIn } from '@/hooks'
 import { Logo } from '@/layout/Logo'
 import { useNavigate } from 'react-router-dom'
@@ -23,14 +23,14 @@ const HeaderComponent = () => {
 
   const handleLogin = () => {
     if (!isLoggedIn) {
-      navigate(routers.SignIn)
+      navigate(ROUTERS.SignIn)
     } else {
-      navigate(routers.Account.Home)
+      navigate(ROUTERS.Account.Home)
     }
   }
 
   const handleSubmit = () => {
-    navigate(routers.Submission)
+    navigate(ROUTERS.Submission)
   }
 
   return (

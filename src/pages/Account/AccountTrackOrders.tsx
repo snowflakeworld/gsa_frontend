@@ -1,5 +1,5 @@
 import { NormalTextInput } from '@/components'
-import { routers } from '@/configs'
+import { ROUTERS } from '@/configs'
 import { useDeviceType } from '@/hooks'
 import { Button, Stack, Typography } from '@mui/material'
 import { useState } from 'react'
@@ -11,7 +11,7 @@ export const AccountTrackOrdersPage = () => {
   const navigate = useNavigate()
 
   const onViewDetail = (inputNumber: string) => {
-    navigate(routers.Account.OrderDetail.replace(':orderId', inputNumber))
+    navigate(ROUTERS.Account.OrderDetail.replace(':orderId', inputNumber))
   }
   const onInputChange = (val: string) => {
     setInputNumber(val)

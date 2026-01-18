@@ -1,4 +1,4 @@
-import { routers } from '@/configs'
+import { ROUTERS } from '@/configs'
 import { Logo } from '@/layout/Logo'
 import { dispatch, login } from '@/store'
 import { CreateInfo } from '@/types'
@@ -50,7 +50,7 @@ export const SignUp = () => {
   })
 
   const handleClose = () => {
-    navigate(routers.Home)
+    navigate(ROUTERS.Home)
   }
 
   const onSubmit = async (data: CreateInfo) => {
@@ -60,7 +60,7 @@ export const SignUp = () => {
         token: '123123123'
       })
     )
-    navigate(routers.Home)
+    navigate(ROUTERS.Home)
   }
 
   return (

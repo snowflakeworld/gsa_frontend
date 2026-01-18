@@ -1,4 +1,4 @@
-import { routers } from '@/configs'
+import { ROUTERS } from '@/configs'
 import { Logo } from '@/layout/Logo'
 import { Email } from '@/types'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -29,7 +29,7 @@ export const SignIn = () => {
   })
 
   const handleClose = () => {
-    navigate(routers.Home)
+    navigate(ROUTERS.Home)
   }
 
   const onSubmit = async (data: Email) => {
