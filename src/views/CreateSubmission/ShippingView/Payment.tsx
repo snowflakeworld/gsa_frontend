@@ -1,6 +1,7 @@
+import { List, Stack, Typography } from '@mui/material'
+
 import { PaymentItem } from '@/components/Submission/ShippingItem'
 import { SHIPPING_PAYMENTS } from '@/constants'
-import { List, Stack, Typography } from '@mui/material'
 
 export const Payment = () => {
   return (

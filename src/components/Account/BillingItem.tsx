@@ -44,7 +44,7 @@ export const BillingItem: FC<BillingItemProps> = ({
       }}
     >
       <Stack width='100%' my='auto'>
-        <Stack flexDirection='row' gap={0.25} alignItems='center' sx={{ my: 'auto' }}>
+        <Stack direction='row' gap={0.25} alignItems='center' sx={{ my: 'auto' }}>
           <Stack flexGrow={1} gap={0.25}>
             <StyledImage
               src={`/assets/images/${img}`}
@@ -61,7 +61,7 @@ export const BillingItem: FC<BillingItemProps> = ({
               {cardNumber}
             </Typography>
           </Stack>
-          <Stack flexDirection='row' gap={1.25} alignItems='center'>
+          <Stack direction='row' gap={1.25} alignItems='center'>
             {isMain ? (
               showMainSelect ? (
                 <RedChip size='small'>Main Address</RedChip>

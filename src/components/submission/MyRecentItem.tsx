@@ -1,6 +1,8 @@
-import { gsaShadows } from '@/theme'
+import { type FC } from 'react'
+
 import { Button, Card, Stack, Typography, useColorScheme } from '@mui/material'
-import { FC } from 'react'
+
+import { gsaShadows } from '@/theme'
 import { CustomIcon } from '../Common'
 
 interface MyRecentItemProps {
@@ -23,10 +25,10 @@ export const MyRecentItem: FC<MyRecentItemProps> = ({ count, date, level }) => {
         padding: 2
       }}
     >
-      <Stack flexDirection='row' gap={2} alignItems='center'>
+      <Stack direction='row' gap={2} alignItems='center'>
         <Stack flexGrow={1} gap={0.5}>
           <Typography variant='h6' fontSize='0.875rem' lineHeight='1.25rem'>{`${count} Items`}</Typography>
-          <Stack flexDirection='row' gap={0.5}>
+          <Stack direction='row' gap={0.5}>
             <Typography component='span' fontSize='0.75rem' fontWeight={400} lineHeight='100%' color='text.normal'>
               Date created:
             </Typography>
@@ -34,7 +36,7 @@ export const MyRecentItem: FC<MyRecentItemProps> = ({ count, date, level }) => {
               {date}
             </Typography>
           </Stack>
-          <Stack flexDirection='row' gap={0.5}>
+          <Stack direction='row' gap={0.5}>
             <Typography component='span' fontSize='0.75rem' fontWeight={400} lineHeight='100%' color='text.normal'>
               Service Level:
             </Typography>

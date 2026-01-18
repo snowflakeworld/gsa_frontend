@@ -4,18 +4,18 @@ import { FC, memo } from 'react'
 import { FOOTER_LINK_MAIN } from '@/constants'
 import { useDeviceType } from '@/hooks'
 
+export type LinkType = 'home' | 'research' | 'support' | 'more'
+
 export interface LinkContent {
   title: string
   path: string
 }
 
-export type LinkType = 'home' | 'research' | 'support' | 'more'
-
-export interface FooterLinkProps {
-  type: 'home' | 'research' | 'support' | 'more'
+interface FooterLinkProps {
+  type: LinkType
 }
 
-const LinkListMainComponent: FC<FooterLinkProps> = (props: FooterLinkProps) => {
+export const LinkListMain: FC<FooterLinkProps> = memo((props: FooterLinkProps) => {
   const { isLargeScreen } = useDeviceType()
 
   const type: LinkType = props.type
@@ -35,6 +35,4 @@ const LinkListMainComponent: FC<FooterLinkProps> = (props: FooterLinkProps) => {
       </Stack>
     </Stack>
   )
-}
-
-export const LinkListMain = memo(LinkListMainComponent)
+})

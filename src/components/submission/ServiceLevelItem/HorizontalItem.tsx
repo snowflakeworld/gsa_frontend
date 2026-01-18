@@ -1,8 +1,10 @@
-import { useServiceLevelSelectContext } from '@/hooks/useServiceLevelSelect'
-import { gsaColors, gsaShadows } from '@/theme'
+import { type FC } from 'react'
+
 import { Card, Stack, Typography } from '@mui/material'
-import { FC } from 'react'
-import { BpRadio } from '../../Common'
+
+import { BpRadio } from '@/components/Common'
+import { useServiceLevelSelectContext } from '@/hooks'
+import { gsaColors, gsaShadows } from '@/theme'
 
 interface ServiceLevelItemPros {
   index: number
@@ -41,7 +43,7 @@ export const HorizontalItem: FC<ServiceLevelItemPros> = ({ index, title, comment
       }}
       onClick={handleSelect}
     >
-      <Stack flexDirection='row' alignItems='center' gap={1}>
+      <Stack direction='row' alignItems='center' gap={1}>
         <BpRadio checked={index === serviceLevelIdx ? true : false} onClick={handleSelect} />
         <Stack gap={0.25} flex={258}>
           <Typography

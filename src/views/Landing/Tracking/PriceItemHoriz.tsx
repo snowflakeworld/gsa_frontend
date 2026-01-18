@@ -15,7 +15,7 @@ const PriceItemHorizComponent: FC<ItemProps> = ({ content, status, highlight = f
       px={2}
       py={0.5}
       borderRadius={125}
-      flexDirection={'row'}
+      direction={'row'}
       alignItems='center'
     >
       <Typography

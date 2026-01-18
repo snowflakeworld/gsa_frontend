@@ -1,9 +1,11 @@
+import { useState } from 'react'
+
+import { AddOutlined, CheckOutlined } from '@mui/icons-material'
+import { Button, Grid, Stack, Typography } from '@mui/material'
+
 import { BillingItem } from '@/components/Account'
 import { BILLING_ITEMS } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { AddOutlined, CheckOutlined } from '@mui/icons-material'
-import { Button, Grid, Stack, Typography } from '@mui/material'
-import { useState } from 'react'
 
 export const AccountBillingPage = () => {
   const [editMode, setEditMode] = useState(false)
@@ -25,7 +27,7 @@ export const AccountBillingPage = () => {
             </Grid>
           ))}
         </Grid>
-        <Stack flexDirection='row' justifyContent={editMode ? 'space-between' : 'flex-end'} paddingTop={1}>
+        <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'} paddingTop={1}>
           {editMode ? (
             <Button
               variant='contained'

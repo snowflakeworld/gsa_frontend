@@ -22,7 +22,7 @@ export const Confirmation = () => {
 
   return (
     <Stack gap={3} width='100%'>
-      <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 3 : 2} width='100%'>
+      <Stack direction={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 3 : 2} width='100%'>
         <ReviewOrders />
         <Stack gap={2}>
           <GradingDetails />

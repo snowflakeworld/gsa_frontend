@@ -1,5 +1,5 @@
 export * from './account'
-export * from './coutries'
+export * from './countries'
 export * from './createSubmission'
 export * from './footer'
 export * from './header'

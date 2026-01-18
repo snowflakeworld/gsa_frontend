@@ -1,8 +1,10 @@
-import { NormalPasswordInput, NormalTextInput } from '@/components'
-import { useDeviceType } from '@/hooks'
+import { useState } from 'react'
+
 import { CheckOutlined, DriveFileRenameOutlineOutlined } from '@mui/icons-material'
 import { Button, Stack, Typography } from '@mui/material'
-import { useState } from 'react'
+
+import { NormalPasswordInput, NormalTextInput } from '@/components'
+import { useDeviceType } from '@/hooks'
 
 export const AccountSecurityPage = () => {
   const { isLargeScreen } = useDeviceType()
@@ -17,7 +19,7 @@ export const AccountSecurityPage = () => {
         </Typography>
       </Stack>
       <Stack gap={1}>
-        <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 5 : 0}>
+        <Stack direction={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 5 : 0}>
           <NormalTextInput
             label='Password'
             placeHolder='Password'
@@ -29,14 +31,14 @@ export const AccountSecurityPage = () => {
           <Stack flex={1} visibility='hidden'></Stack>
         </Stack>
         {editMode ? (
-          <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 5 : 0}>
+          <Stack direction={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 5 : 0}>
             <NormalPasswordInput label='New Password' placeHolder='Password' defaultValue={'1231231'} flex={1} />
             <NormalPasswordInput label='Confirm Password' placeHolder='Confirm' defaultValue={'1231231'} flex={1} />
           </Stack>
         ) : (
           <></>
         )}
-        <Stack flexDirection='row' justifyContent={editMode ? 'space-between' : 'flex-end'}>
+        <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'}>
           {editMode ? (
             <Button
               variant='contained'

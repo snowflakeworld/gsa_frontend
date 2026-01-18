@@ -1,10 +1,12 @@
-import { useDeviceType } from '@/hooks'
-import { Box, Card, Container, Stack } from '@mui/material'
 import { createContext, useState } from 'react'
+
+import { Box, Card, Container, Stack } from '@mui/material'
+
+import { useDeviceType } from '@/hooks'
 import { SignIn } from './SignIn'
 import { SignUp } from './SignUp'
 
-export interface StepContextProps {
+interface StepContextProps {
   step: number
   setStep: (_: number) => void
 }
@@ -36,8 +38,7 @@ export const Sign = () => {
             }}
           >
             <StepContext.Provider value={{ step, setStep }}>
-              {step === 0 && <SignIn />}
-              {step === 1 && <SignUp />}
+              {step === 0 ? <SignIn /> : <SignUp />}
             </StepContext.Provider>
           </Card>
         </Stack>

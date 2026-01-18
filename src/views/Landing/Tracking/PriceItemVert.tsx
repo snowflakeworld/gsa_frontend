@@ -15,7 +15,7 @@ const PriceItemVertComponent: FC<ItemProps> = ({ content, status, highlight = fa
       px={2}
       py={3}
       borderRadius={2}
-      flexDirection={'column'}
+      direction={'column'}
       alignItems='center'
     >
       <Typography

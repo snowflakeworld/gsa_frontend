@@ -23,7 +23,7 @@ const CertSection = () => {
             backgroundColor: mode === 'dark' ? 'background.red' : 'background.deep'
           }}
         >
-          <Stack flexDirection={isLargeScreen ? 'row' : 'column'} alignItems='center' gap={isLargeScreen ? 3 : 2}>
+          <Stack direction={isLargeScreen ? 'row' : 'column'} alignItems='center' gap={isLargeScreen ? 3 : 2}>
             <CustomIcon
               name='smark'
               color={mode === 'dark' ? 'secondary' : 'customRed'}
@@ -32,7 +32,7 @@ const CertSection = () => {
               viewBoxWidth={56}
               viewBoxHeight={66}
             />
-            <Stack flexDirection='column' gap={0.5} flexGrow={1}>
+            <Stack direction='column' gap={0.5} flexGrow={1}>
               <Typography variant='subtitle1' color='white' textAlign={isLargeScreen ? 'inherit' : 'center'}>
                 Cert Verification
               </Typography>

@@ -1,8 +1,10 @@
+import { type FC } from 'react'
+
+import { Card, InputBase, Paper, Stack, Typography } from '@mui/material'
+
 import { BpRadio } from '@/components/Common'
 import { useDeviceType, useShippingPaymentSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
-import { Card, InputBase, Paper, Stack, Typography } from '@mui/material'
-import { FC } from 'react'
 
 interface PaymentItemProps {
   index: number
@@ -40,9 +42,9 @@ export const PaymentItem: FC<PaymentItemProps> = ({ index, name, allowInput }) =
       }}
       onClick={handleSelect}
     >
-      <Stack flexDirection='row' alignItems='center' gap={2}>
+      <Stack direction='row' alignItems='center' gap={2}>
         <Stack
-          flexDirection={isLargeScreen ? 'row' : 'column'}
+          direction={isLargeScreen ? 'row' : 'column'}
           flex={1}
           gap={isLargeScreen ? 2 : 1}
           alignItems={isLargeScreen ? 'center' : 'flex-start'}

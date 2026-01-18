@@ -1,5 +1,6 @@
+import { type FC } from 'react'
+
 import { Button, Stack } from '@mui/material'
-import { FC } from 'react'
 
 interface StepButtonGroupProps {
   backTitle?: string
@@ -23,7 +24,7 @@ export const StepButtonGroup: FC<StepButtonGroupProps> = ({
   onNext
 }) => {
   return (
-    <Stack flexDirection='row' justifyContent='space-between'>
+    <Stack direction='row' justifyContent='space-between'>
       <Button
         variant='contained'
         sx={{

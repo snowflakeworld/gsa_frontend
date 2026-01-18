@@ -1,8 +1,10 @@
+import { type FC } from 'react'
+
+import { Card, Stack, Typography } from '@mui/material'
+
 import { BpRadio, StyledImage } from '@/components/Common'
 import { useDeviceType, useShippingMethodSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
-import { Card, Stack, Typography } from '@mui/material'
-import { FC } from 'react'
 
 interface MethodItemProps {
   index: number
@@ -40,7 +42,7 @@ export const MethodItem: FC<MethodItemProps> = ({ index, icon, name, price }) =>
       onClick={handleSelect}
     >
       <Stack gap={2}>
-        <Stack flexDirection='row' justifyContent='space-between' alignItems='flex-start'>
+        <Stack direction='row' justifyContent='space-between' alignItems='flex-start'>
           <StyledImage
             src={`/assets/images/${icon}`}
             width='auto'
@@ -51,7 +53,7 @@ export const MethodItem: FC<MethodItemProps> = ({ index, icon, name, price }) =>
           />
           <BpRadio checked={isSelected} onClick={handleSelect} />
         </Stack>
-        <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={0.5}>
+        <Stack direction={isLargeScreen ? 'row' : 'column'} gap={0.5}>
           <Typography
             flexGrow={1}
             variant='h6'

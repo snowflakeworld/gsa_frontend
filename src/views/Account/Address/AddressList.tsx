@@ -1,7 +1,8 @@
+import { Grid } from '@mui/material'
+
 import { AddressItem } from '@/components/Account'
 import { DELIVERY_ADDRESSES } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { Grid } from '@mui/material'
 
 export const AddressList = () => {
   const { isLargeScreen } = useDeviceType()

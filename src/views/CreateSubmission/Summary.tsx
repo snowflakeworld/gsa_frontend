@@ -1,9 +1,10 @@
+import { Button, Divider, InputBase, List, Paper, Stack, Typography, useColorScheme } from '@mui/material'
+
 import { NoDataView } from '@/components'
 import { SummaryDescription, SummaryItem } from '@/components/Submission'
 import { SUMMARY_BASE_INFO, SUMMARY_SHIPPING_BILLING, SUMMARY_STATISTICS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { gsaColors } from '@/theme'
-import { Button, Divider, InputBase, List, Paper, Stack, Typography, useColorScheme } from '@mui/material'
 
 const inputStyle = {
   dark: {
@@ -55,7 +56,7 @@ export const Summary = () => {
 
           <Divider />
 
-          <Stack flexDirection='row' gap={1} alignItems='center'>
+          <Stack direction='row' gap={1} alignItems='center'>
             <InputBase
               id='input-promotion-code'
               placeholder='Add Promotion Code'

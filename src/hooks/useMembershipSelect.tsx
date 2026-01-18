@@ -1,5 +1,6 @@
-import { dispatch, updateMembership, useSelector } from '@/store'
 import { createContext, FC, ReactNode, useContext } from 'react'
+
+import { dispatch, updateMembership, useSelector } from '@/store'
 
 export const useMembershipSelect = () => {
   const { membershipIdx } = useSelector(state => state.submission)

@@ -1,8 +1,10 @@
-import { ACCOUNT_CONTENT_MAX_WIDTH } from '@/constants'
-import { useDeviceType } from '@/hooks'
-import { Box, CircularProgress } from '@mui/material'
 import { Suspense, useState } from 'react'
 import { Outlet } from 'react-router-dom'
+
+import { Box, CircularProgress } from '@mui/material'
+
+import { ACCOUNT_CONTENT_MAX_WIDTH } from '@/constants'
+import { useDeviceType } from '@/hooks'
 import { Footer } from '../Footer'
 import { AccountHeader } from '../Header'
 import { Sidebar } from '../Sidebar'

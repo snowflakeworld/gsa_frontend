@@ -1,9 +1,10 @@
 import { type FC, useState } from 'react'
 
-import { useDeviceType } from '@/hooks'
-import { AddressEdit, AddressList } from '@/views/Account'
 import { AddOutlined, CheckOutlined } from '@mui/icons-material'
 import { Button, Stack, Typography } from '@mui/material'
+
+import { useDeviceType } from '@/hooks'
+import { AddressEdit, AddressList } from '@/views/Account'
 
 export const AccountAddressPage: FC = () => {
   const [editMode, setEditMode] = useState(false)
@@ -19,7 +20,7 @@ export const AccountAddressPage: FC = () => {
       </Stack>
       <Stack gap={1}>
         {editMode ? <AddressEdit /> : <AddressList />}
-        <Stack flexDirection='row' justifyContent={editMode ? 'space-between' : 'flex-end'} paddingTop={1}>
+        <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'} paddingTop={1}>
           {editMode ? (
             <Button
               variant='contained'

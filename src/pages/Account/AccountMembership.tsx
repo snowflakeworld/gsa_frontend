@@ -1,8 +1,9 @@
+import { DriveFileRenameOutlineOutlined } from '@mui/icons-material'
+import { Button, Stack, Typography } from '@mui/material'
+
 import { BillingItem, MyMembershipItem } from '@/components/Account'
 import { BILLING_ITEMS } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { DriveFileRenameOutlineOutlined } from '@mui/icons-material'
-import { Button, Stack, Typography } from '@mui/material'
 
 export const AccountMembershipPage = () => {
   const { isLargeScreen } = useDeviceType()
@@ -17,7 +18,7 @@ export const AccountMembershipPage = () => {
       </Stack>
       <Stack gap={3}>
         <Stack
-          flexDirection={isLargeScreen ? 'row' : 'column'}
+          direction={isLargeScreen ? 'row' : 'column'}
           gap={3}
           alignItems={isLargeScreen ? 'center' : 'normal'}
         >
@@ -46,7 +47,7 @@ export const AccountMembershipPage = () => {
             />
           </Stack>
         </Stack>
-        <Stack flexDirection='row' justifyContent='space-between' paddingTop={1}>
+        <Stack direction='row' justifyContent='space-between' paddingTop={1}>
           <Button variant='contained' sx={{ gap: 1, width: 'auto', px: 4 }} className='button--primary button--small'>
             Back
           </Button>

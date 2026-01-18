@@ -7,7 +7,7 @@ const NewsSection = () => {
   return (
     <Container>
       <Stack gap={6.25} maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH} m='auto'>
-        <Stack flexDirection='row' gap={6.25} alignItems='flex-end' justifyContent='space-between'>
+        <Stack direction='row' gap={6.25} alignItems='flex-end' justifyContent='space-between'>
           <Stack gap={1}>
             <Typography variant='h2'>News</Typography>
             <Typography variant='subtitle2' lineHeight={{ xs: '1.75rem', md: '2rem' }}>

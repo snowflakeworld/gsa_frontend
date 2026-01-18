@@ -1,5 +1,5 @@
-import { ADD_ITEM_TYPES } from '@/constants'
-import { useDeviceType } from '@/hooks'
+import { type FC, useState } from 'react'
+
 import {
   Button,
   Card,
@@ -15,8 +15,10 @@ import {
   Stack,
   Typography
 } from '@mui/material'
-import { FC, useState } from 'react'
-import { CustomIcon, StyledImage } from '../Common'
+
+import { CustomIcon, StyledImage } from '@/components/Common'
+import { ADD_ITEM_TYPES } from '@/constants'
+import { useDeviceType } from '@/hooks'
 
 interface AddItemProps {
   img: string
@@ -88,7 +90,7 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
                 ))}
               </Select>
             </FormControl>
-            <Stack flexDirection='row' gap={1} flex={22} alignItems='center'>
+            <Stack direction='row' gap={1} flex={22} alignItems='center'>
               <Paper
                 component='form'
                 sx={{
@@ -134,7 +136,7 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
           </Stack>
         </Card>
         <Stack gap={isLargeScreen ? 3 : 2} px={1.5} py={1}>
-          <Stack flexDirection='row' alignItems={isLargeScreen ? 'center' : 'flex-start'} gap={isLargeScreen ? 3 : 2}>
+          <Stack direction='row' alignItems={isLargeScreen ? 'center' : 'flex-start'} gap={isLargeScreen ? 3 : 2}>
             <Typography
               variant='caption'
               fontSize='0.625rem'
@@ -144,7 +146,7 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
             >
               Adv. Options:
             </Typography>
-            <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 2 : 0.5}>
+            <Stack direction={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 2 : 0.5}>
               <FormControlLabel
                 control={<Checkbox size='small' name='encapsulate' />}
                 label='Encapsulate all if altered'

@@ -1,6 +1,7 @@
+import { List, Stack, Typography } from '@mui/material'
+
 import { MethodItem } from '@/components/Submission/ShippingItem'
 import { SHIPPING_METHODS } from '@/constants'
-import { List, Stack, Typography } from '@mui/material'
 
 export const Method = () => {
   return (

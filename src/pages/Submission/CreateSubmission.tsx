@@ -1,8 +1,11 @@
+import { createContext, FC, useEffect, useState } from 'react'
+
+import { Container, Stack, Typography } from '@mui/material'
+
 import { LANDING_FEATURE_GRID_MAX_WIDTH, STEPS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { dispatch, updateGrading } from '@/store'
-import { Container, Stack, Typography } from '@mui/material'
-import { createContext, FC, useEffect, useState } from 'react'
+
 import {
   AddItems,
   Billing,
@@ -12,7 +15,7 @@ import {
   Shipping,
   StepBar,
   Summary
-} from '../../views/CreateSubmission'
+} from '@/views/CreateSubmission'
 
 export interface ActiveStepContextProps {
   activeStep: number
@@ -58,7 +61,7 @@ export const CreateSubmissionPage = () => {
         <StepBar />
         <Container sx={{ py: { xs: 3, md: 3 } }}>
           <Stack
-            flexDirection={isLargeScreen ? 'row' : 'column'}
+            direction={isLargeScreen ? 'row' : 'column'}
             gap={isLargeScreen ? 4 : 3}
             maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH}
             m='auto'

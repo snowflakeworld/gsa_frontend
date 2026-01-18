@@ -1,7 +1,8 @@
+import { Card, List, Stack, Typography } from '@mui/material'
+
 import { HorizontalItem, VerticalItem } from '@/components/Submission'
 import { SERVICE_LEVELS } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { Card, List, Stack, Typography } from '@mui/material'
 
 export const SelectLevel = () => {
   const { isLargeScreen } = useDeviceType()
@@ -29,7 +30,7 @@ export const SelectLevel = () => {
             }}
           >
             <Stack gap={1} sx={{ paddingLeft: 3, paddingRight: 1 }}>
-              <Stack flexDirection='row'>
+              <Stack direction='row'>
                 <Typography variant='caption' fontSize='0.75rem' lineHeight='100%' color='text.normal' flex={278}>
                   Service Level
                 </Typography>
