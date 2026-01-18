@@ -1,9 +1,11 @@
+import { type FC } from 'react'
+
+import { Circle } from '@mui/icons-material'
+import { Card, Stack, Typography } from '@mui/material'
+
 import { BpRadio } from '@/components/Common'
 import { useDeviceType, useShippingAddressSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
-import { Circle } from '@mui/icons-material'
-import { Card, Stack, Typography } from '@mui/material'
-import { FC } from 'react'
 
 interface AddressItemProps {
   index: number
@@ -41,7 +43,7 @@ export const AddressItem: FC<AddressItemProps> = ({ index, address, city, contac
       }}
       onClick={handleSelect}
     >
-      <Stack flexDirection='row' alignItems='center' gap={1}>
+      <Stack direction='row' alignItems='center' gap={1}>
         <Stack gap={0.25} flexGrow={1}>
           <Typography
             variant='h6'
@@ -51,7 +53,7 @@ export const AddressItem: FC<AddressItemProps> = ({ index, address, city, contac
           >
             {address}
           </Typography>
-          <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={1} alignItems='center'>
+          <Stack direction={isLargeScreen ? 'row' : 'column'} gap={1} alignItems='center'>
             <Typography
               variant='caption'
               fontWeight={400}
@@ -61,7 +63,7 @@ export const AddressItem: FC<AddressItemProps> = ({ index, address, city, contac
             >
               {city}
             </Typography>
-            <Stack flexDirection='row' gap={1} alignItems={isLargeScreen ? 'center' : ''}>
+            <Stack direction='row' gap={1} alignItems={isLargeScreen ? 'center' : ''}>
               <Circle
                 sx={{
                   marginLeft: isLargeScreen ? 0 : 1,

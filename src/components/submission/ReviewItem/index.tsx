@@ -38,7 +38,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
   return (
     <Stack>
       {index ? <Divider /> : <></>}
-      <Stack flexDirection='row' gap={1} py={1} alignItems='center'>
+      <Stack direction='row' gap={1} py={1} alignItems='center'>
         <StyledImage
           src={`/assets/images/${img}`}
           width='1.875rem'
@@ -49,7 +49,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
           margin='0'
         />
         <Stack
-          flexDirection={isLargeScreen ? 'row' : 'column'}
+          direction={isLargeScreen ? 'row' : 'column'}
           alignItems={isLargeScreen ? 'center' : 'normal'}
           gap={1}
           flex={1}
@@ -78,7 +78,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
                 ))}
             </List>
           </Stack>
-          <Stack flex={140} flexDirection='row' justifyContent='space-between' alignItems='center'>
+          <Stack flex={140} direction='row' justifyContent='space-between' alignItems='center'>
             {isLargeScreen ? (
               <></>
             ) : (
@@ -115,7 +115,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
               {cardService}
             </Typography>
           </Stack>
-          <Stack flex={62} flexDirection='row' justifyContent='space-between' alignItems='center'>
+          <Stack flex={62} direction='row' justifyContent='space-between' alignItems='center'>
             {isLargeScreen ? (
               <></>
             ) : (

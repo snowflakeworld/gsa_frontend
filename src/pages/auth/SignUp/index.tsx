@@ -1,13 +1,16 @@
-import { Logo } from '@/components/Common/Logo'
+import { Controller, useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+
+import { Close } from '@mui/icons-material'
+import { Button, FormControl, IconButton, Stack, TextField, Typography } from '@mui/material'
+
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+
+import { Logo } from '@/components/Common'
 import { ROUTERS } from '@/configs'
 import { dispatch, login } from '@/store'
 import { CreateInfo } from '@/types'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { Close } from '@mui/icons-material'
-import { Button, FormControl, IconButton, Stack, TextField, Typography } from '@mui/material'
-import { Controller, useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
-import * as yup from 'yup'
 
 const defaultValues = {
   firstName: '',
@@ -86,7 +89,7 @@ export const SignUp = () => {
           <Close />
         </IconButton>
       </Stack>
-      <Stack flexDirection='row' gap={1.5}>
+      <Stack direction='row' gap={1.5}>
         <FormControl sx={{ flexGrow: 1 }}>
           <Controller
             name='firstName'

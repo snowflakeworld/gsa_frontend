@@ -1,13 +1,16 @@
-import { Logo } from '@/components/Common/Logo'
-import { ROUTERS } from '@/configs'
-import { Email } from '@/types'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { Close } from '@mui/icons-material'
-import { Button, FormControl, IconButton, Stack, TextField, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+
+import { Close } from '@mui/icons-material'
+import { Button, FormControl, IconButton, Stack, TextField, Typography } from '@mui/material'
+
+import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+
+import { Logo } from '@/components/Common'
+import { ROUTERS } from '@/configs'
+import { Email } from '@/types'
 import { StepContext } from '..'
 
 const defaultValues = {

@@ -3,8 +3,8 @@ import { LANDING_FEATURE_GRID_MAX_WIDTH, STEPS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { ActiveStepContext } from '@/pages'
 import { gsaColors } from '@/theme'
-import { Box, Button, Container, Divider, Stack, Typography } from '@mui/material'
-import { useContext } from 'react'
+import { Button, Container, Divider, Stack, Typography } from '@mui/material'
+import React, { useContext } from 'react'
 
 export const StepBar = () => {
   const { isLargeScreen } = useDeviceType()
@@ -15,16 +15,16 @@ export const StepBar = () => {
       <Stack bgcolor='background.header' borderBottom='1px solid' borderColor='divider' position='sticky'>
         <Container sx={{ py: { xs: 2, md: 2.5 } }}>
           <Stack
-            flexDirection={isLargeScreen ? 'row' : 'column'}
+            direction={isLargeScreen ? 'row' : 'column'}
             justifyContent='space-between'
             gap={2}
             alignItems='center'
             maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH}
             m='auto'
           >
-            <Stack width={isLargeScreen ? 700 : '100%'} flexDirection='row' alignItems='center'>
+            <Stack width={isLargeScreen ? 700 : '100%'} direction='row' alignItems='center'>
               {STEPS.map((value, index) => (
-                <Box key={index}>
+                <React.Fragment key={value}>
                   <StepChip
                     idx={index}
                     title={value}
@@ -37,11 +37,11 @@ export const StepBar = () => {
                       sx={{ flexGrow: 1, borderColor: index < activeStep ? gsaColors.chip.border.red : 'divider' }}
                     />
                   )}
-                </Box>
+                </React.Fragment>
               ))}
             </Stack>
 
-            <Stack flexDirection='row' gap={2} alignItems='center'>
+            <Stack direction='row' gap={2} alignItems='center'>
               {isLargeScreen && (
                 <Typography variant='body2' color='text.normal'>
                   Auto-saved

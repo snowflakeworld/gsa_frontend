@@ -1,7 +1,9 @@
+import { type FC } from 'react'
+
+import { Button, Card, List, Stack, Typography, useColorScheme } from '@mui/material'
+
 import { useDeviceType, useMembershipSelectContext } from '@/hooks'
 import { gsaColors } from '@/theme'
-import { Button, Card, List, Stack, Typography, useColorScheme } from '@mui/material'
-import { FC } from 'react'
 import { MembershipBonusItem } from './MembershipBonusItem'
 
 interface MembershipItemPros {
@@ -43,11 +45,11 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
       onClick={handleSelect}
     >
       <Stack gap={4}>
-        <Stack flexDirection='row' alignItems='flex-end' justifyContent='space-between'>
+        <Stack direction='row' alignItems='flex-end' justifyContent='space-between'>
           <Typography variant='h5' fontSize='1.5rem' lineHeight='2rem' {...(isSelected ? { color: 'text.red' } : {})}>
             {type}
           </Typography>
-          <Stack flexDirection='row'>
+          <Stack direction='row'>
             {!isNaN(Number(policy)) ? (
               <Typography variant='h6' {...(isSelected ? { color: 'text.red' } : {})} alignContent='flex-start'>
                 $
@@ -70,7 +72,7 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
           </Stack>
         </Stack>
 
-        <Stack gap={1.5} flexDirection={isLargeScreen ? 'row' : 'column'}>
+        <Stack gap={1.5} direction={isLargeScreen ? 'row' : 'column'}>
           <List sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, py: 0 }}>
             {items
               .filter((_, index) => index < leftItemListCount)

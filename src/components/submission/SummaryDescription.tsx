@@ -1,7 +1,8 @@
-import { useDeviceType } from '@/hooks'
-import { gsaColors } from '@/theme'
 import { InfoOutlineRounded } from '@mui/icons-material'
 import { Paper, Stack, Typography } from '@mui/material'
+
+import { useDeviceType } from '@/hooks'
+import { gsaColors } from '@/theme'
 
 export const SummaryDescription = () => {
   const { isLargeScreen } = useDeviceType()
@@ -19,7 +20,7 @@ export const SummaryDescription = () => {
         padding: 1
       }}
     >
-      <Stack flexDirection='row' padding={1} gap={1}>
+      <Stack direction='row' padding={1} gap={1}>
         <InfoOutlineRounded fontSize='small' sx={{ color: 'text.normal' }} />
         <Stack gap={0.5}>
           <Typography variant='h6' fontSize='0.875rem' lineHeight='1.25rem' color='text.normal'>

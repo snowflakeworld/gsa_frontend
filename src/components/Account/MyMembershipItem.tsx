@@ -29,7 +29,7 @@ export const MyMembershipItem: FC<MyMembershipItemProps> = ({ title, status, dur
         padding: 2
       }}
     >
-      <Stack gap={2} flexDirection='row'>
+      <Stack gap={2} direction='row'>
         <Stack
           sx={{
             width: isLargeScreen ? '6rem' : '4rem',
@@ -50,7 +50,7 @@ export const MyMembershipItem: FC<MyMembershipItemProps> = ({ title, status, dur
           />
         </Stack>
         <Stack flex={1} gap={1.5}>
-          <Stack gap={1.5} flexDirection='row'>
+          <Stack gap={1.5} direction='row'>
             <Typography variant='h6' fontSize='1rem' lineHeight='1.25rem'>
               {title}
             </Typography>

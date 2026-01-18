@@ -1,5 +1,6 @@
+import { type FC } from 'react'
+
 import { Stack, Typography } from '@mui/material'
-import { FC } from 'react'
 
 type SIZE = 'small' | 'medium' | 'big'
 
@@ -31,7 +32,7 @@ export const SummaryItem: FC<SummaryItemProps> = ({ label, value, size = 'medium
   }
 
   return (
-    <Stack flexDirection='row' gap={0.5} justifyContent='space-between' alignItems='center'>
+    <Stack direction='row' gap={0.5} justifyContent='space-between' alignItems='center'>
       <Typography variant='caption' fontWeight={600} fontSize={fontSize} lineHeight={lineHeight} color='text.normal'>
         {label}
       </Typography>

@@ -1,9 +1,11 @@
+import { type FC } from 'react'
+
+import { Button, Divider, List, Paper, Stack, Typography, useColorScheme } from '@mui/material'
+
 import { CustomIcon } from '@/components'
 import { ReviewItem } from '@/components/Submission/ReviewItem'
 import { REVIEW_ITEMS } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { Button, Divider, List, Paper, Stack, Typography, useColorScheme } from '@mui/material'
-import { FC } from 'react'
 
 interface ReviewOrdersProps {
   headerFlex?: number
@@ -29,7 +31,7 @@ export const ReviewOrders: FC<ReviewOrdersProps> = ({ headerFlex = 366, itemFlex
       }}
     >
       <Stack gap={isLargeScreen ? 2 : 1}>
-        <Stack flexDirection='row' alignItems='center'>
+        <Stack direction='row' alignItems='center'>
           <Typography variant='h6' flexGrow={1}>
             {`Items (${itemCount})`}
           </Typography>
@@ -48,7 +50,7 @@ export const ReviewOrders: FC<ReviewOrdersProps> = ({ headerFlex = 366, itemFlex
         <Stack>
           {isLargeScreen ? (
             <Stack>
-              <Stack flexDirection='row' gap={1}>
+              <Stack direction='row' gap={1}>
                 <Typography
                   variant='caption'
                   flex={headerFlex}

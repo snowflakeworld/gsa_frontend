@@ -1,6 +1,7 @@
+import { memo } from 'react'
+
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Link, Stack } from '@mui/material'
-import { memo } from 'react'
 
 import { HEADER_NAV_LINKS } from '@/constants'
 import { useDeviceType } from '@/hooks'

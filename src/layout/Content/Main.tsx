@@ -1,13 +1,15 @@
-import { CircularProgress } from '@mui/material'
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
+
+import { CircularProgress } from '@mui/material'
+
 import { Footer } from '../Footer'
-import { Header } from '../Header/MainHeader'
+import { MainHeader } from '../Header'
 
 export const MainLayout = () => {
   return (
     <>
-      <Header />
+      <MainHeader />
       <Suspense fallback={<CircularProgress />}>
         <Outlet />
       </Suspense>

@@ -1,8 +1,10 @@
+import { type FC } from 'react'
+
+import { Card, Stack, Typography } from '@mui/material'
+
+import { BpRadio } from '@/components/Common'
 import { useServiceLevelSelectContext } from '@/hooks/useServiceLevelSelect'
 import { gsaColors, gsaShadows } from '@/theme'
-import { Card, Stack, Typography } from '@mui/material'
-import { FC } from 'react'
-import { BpRadio } from '../../Common'
 
 interface ServiceLevelItemPros {
   index: number
@@ -41,10 +43,10 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
       }}
       onClick={handleSelect}
     >
-      <Stack flexDirection='row' alignItems='center' gap={1}>
+      <Stack direction='row' alignItems='center' gap={1}>
         <BpRadio checked={index === serviceLevelIdx} onClick={handleSelect} />
         <Stack gap={1.5}>
-          <Stack flexDirection='row' gap={1}>
+          <Stack direction='row' gap={1}>
             <Typography
               minWidth='4.5rem'
               variant='caption'
@@ -64,7 +66,7 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
               {title}
             </Typography>
           </Stack>
-          <Stack flexDirection='row' gap={1}>
+          <Stack direction='row' gap={1}>
             <Typography
               minWidth='4.5rem'
               variant='caption'
@@ -84,7 +86,7 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
               {minCards}
             </Typography>
           </Stack>
-          <Stack flexDirection='row' gap={1}>
+          <Stack direction='row' gap={1}>
             <Typography
               minWidth='4.5rem'
               variant='caption'
@@ -104,7 +106,7 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
               {turnaround}
             </Typography>
           </Stack>
-          <Stack flexDirection='row' gap={1}>
+          <Stack direction='row' gap={1}>
             <Typography
               minWidth='4.5rem'
               variant='caption'
@@ -124,7 +126,7 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
               {price}
             </Typography>
           </Stack>
-          <Stack flexDirection='row' gap={1}>
+          <Stack direction='row' gap={1}>
             <Typography
               minWidth='4.5rem'
               variant='caption'

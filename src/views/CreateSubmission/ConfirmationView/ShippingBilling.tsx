@@ -1,9 +1,11 @@
+import { type FC } from 'react'
+
+import { Button, List, Paper, Stack, Typography, useColorScheme } from '@mui/material'
+
 import { CustomIcon } from '@/components'
 import { SummaryItem } from '@/components/Submission'
 import { SUMMARY_SHIPPING_BILLING } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { Button, List, Paper, Stack, Typography, useColorScheme } from '@mui/material'
-import { FC } from 'react'
 
 interface ShippingBillingProps {
   canEdit?: boolean
@@ -27,7 +29,7 @@ export const ShippingBilling: FC<ShippingBillingProps> = ({ canEdit = true }) =>
       }}
     >
       <Stack gap={1}>
-        <Stack flexDirection='row' alignItems='center'>
+        <Stack direction='row' alignItems='center'>
           <Typography variant='h6' flexGrow={1}>
             Shipping & Billing
           </Typography>

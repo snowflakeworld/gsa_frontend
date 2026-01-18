@@ -28,7 +28,7 @@ export const AddressItem: FC<AddressItemProps> = ({ address, city, contact, isMa
         py: 1.5
       }}
     >
-      <Stack flexDirection='row' gap={2} alignItems='center'>
+      <Stack direction='row' gap={2} alignItems='center'>
         <Stack flexGrow={1} gap={0.5}>
           <Typography
             variant='h6'
@@ -60,7 +60,7 @@ export const AddressItem: FC<AddressItemProps> = ({ address, city, contact, isMa
           >
             {city}
           </Typography>
-          <Stack flexDirection='row' gap={0.5} alignItems='center'>
+          <Stack direction='row' gap={0.5} alignItems='center'>
             <Circle
               sx={{
                 mx: 0.5,
@@ -104,7 +104,7 @@ export const AddressItem: FC<AddressItemProps> = ({ address, city, contact, isMa
             </Typography>
           )}
         </Stack>
-        <Stack flexDirection='row' gap={1.25}>
+        <Stack direction='row' gap={1.25}>
           <Button variant='contained' className='button--tiny'>
             <CustomIcon
               name='edit'

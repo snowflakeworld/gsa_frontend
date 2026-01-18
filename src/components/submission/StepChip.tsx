@@ -1,6 +1,8 @@
-import { useDeviceType } from '@/hooks'
+import { type FC, memo } from 'react'
+
 import { Avatar, Chip } from '@mui/material'
-import { FC, memo } from 'react'
+
+import { useDeviceType } from '@/hooks'
 
 type StepType = 'initial' | 'active' | 'completed'
 

@@ -1,5 +1,6 @@
-import { ROUTERS } from '@/configs'
-import { useDeviceType, useLogout } from '@/hooks'
+import { type FC, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import {
   AccountCircleOutlined,
   CardMembershipOutlined,
@@ -11,8 +12,9 @@ import {
   PaymentOutlined
 } from '@mui/icons-material'
 import { Divider, List, ListItemButton, ListItemText, Stack } from '@mui/material'
-import { FC, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+
+import { ROUTERS } from '@/configs'
+import { useDeviceType, useLogout } from '@/hooks'
 import { SidebarHeader } from './SidebarHeader'
 
 interface SidebarProps {

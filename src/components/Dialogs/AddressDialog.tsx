@@ -31,7 +31,7 @@ export interface AddressData {
   isDefault: boolean
 }
 
-export interface DialogProps {
+interface DialogProps {
   open: boolean
   onClose: () => void
   onSave?: (_: AddressData) => void

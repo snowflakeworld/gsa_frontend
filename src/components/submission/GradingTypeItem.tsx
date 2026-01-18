@@ -1,7 +1,9 @@
+import { type FC } from 'react'
+
+import { Card, Stack, Typography, useColorScheme } from '@mui/material'
+
 import { useGradingTypeSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
-import { Card, Stack, Typography, useColorScheme } from '@mui/material'
-import { FC } from 'react'
 import { BpRadio, CustomIcon, IconColorType } from '../Common'
 
 interface GradingTypeItemProps {
@@ -54,7 +56,7 @@ export const GradingTypeItem: FC<GradingTypeItemProps> = ({
       }}
       onClick={handleSelect}
     >
-      <Stack flexDirection='row' alignItems='center' gap={1}>
+      <Stack direction='row' alignItems='center' gap={1}>
         <Stack width='2.25rem' height='2.25rem' alignItems='center' justifyContent='center'>
           <CustomIcon
             name={icon}

@@ -1,17 +1,18 @@
+import { memo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import { CloseRounded, MenuRounded } from '@mui/icons-material'
 import { AppBar, Box, Container, Stack, Toolbar, useColorScheme } from '@mui/material'
 import Button from '@mui/material/Button'
-import { memo, useState } from 'react'
 
 import { ColorModeButton, CustomIcon } from '@/components'
 import { Logo } from '@/components/Common/Logo'
 import { ROUTERS } from '@/configs'
 import { useDeviceType, useIsLoggedIn } from '@/hooks'
-import { useNavigate } from 'react-router-dom'
 import { MobileNav } from './MobileNav'
 import { NavList } from './NavList'
 
-const HeaderComponent = () => {
+export const MainHeader = memo(() => {
   const [menuOpened, setMenuOpened] = useState<boolean>(false)
   const { mode, systemMode } = useColorScheme()
   const { isLargeScreen, isSmallScreen } = useDeviceType()
@@ -108,6 +109,4 @@ const HeaderComponent = () => {
       )}
     </>
   )
-}
-
-export const Header = memo(HeaderComponent)
+})

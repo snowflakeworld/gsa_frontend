@@ -35,7 +35,7 @@ const TrackingCardComponent: FC<TrackingCardProps> = ({ title, description, cont
       }}
     >
       {isLargeScreen ? (
-        <Stack flexDirection='row' gap={3}>
+        <Stack direction='row' gap={3}>
           <Stack gap={3}>
             <Stack gap={3} flexGrow={1}>
               <Typography variant='caption' fontSize='1.5rem' lineHeight='2rem' fontWeight='400'>
@@ -70,7 +70,7 @@ const TrackingCardComponent: FC<TrackingCardProps> = ({ title, description, cont
           />
         </Stack>
       ) : (
-        <Stack flexDirection='column' gap={2}>
+        <Stack direction='column' gap={2}>
           <Stack gap={2}>
             <Stack gap={2}>
               <Typography variant='caption' fontSize='1.5rem' lineHeight='2rem' fontWeight='400'>
@@ -87,7 +87,7 @@ const TrackingCardComponent: FC<TrackingCardProps> = ({ title, description, cont
               </List>
             </Stack>
           </Stack>
-          <Stack gap={2} flexDirection='row'>
+          <Stack gap={2} direction='row'>
             <Stack gap={1}>
               <Typography variant='h4' fontSize='1.5rem' lineHeight='2rem'>
                 {title}

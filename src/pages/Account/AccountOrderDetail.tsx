@@ -1,7 +1,9 @@
+import { useParams } from 'react-router-dom'
+
+import { Stack, Typography } from '@mui/material'
+
 import { useDeviceType } from '@/hooks'
 import { Checkout, GradingDetails, ReviewOrders, ShippingBilling } from '@/views/CreateSubmission/ConfirmationView'
-import { Stack, Typography } from '@mui/material'
-import { useParams } from 'react-router-dom'
 
 export const AccountOrderDetailPage = () => {
   const { orderId } = useParams()
@@ -10,7 +12,7 @@ export const AccountOrderDetailPage = () => {
   return (
     <Stack gap={isLargeScreen ? 4 : 2}>
       <Typography variant='h4'>{`Order Id: ${orderId}`}</Typography>
-      <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 3 : 2} width='100%'>
+      <Stack direction={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 3 : 2} width='100%'>
         <ReviewOrders headerFlex={206} itemFlex={170} />
         <Stack gap={2} sx={{ maxWidth: isLargeScreen ? '20rem' : '100%' }}>
           <GradingDetails canEdit={false} />

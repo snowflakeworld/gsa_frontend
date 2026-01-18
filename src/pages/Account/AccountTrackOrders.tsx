@@ -1,9 +1,11 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import { Button, Stack, Typography } from '@mui/material'
+
 import { NormalTextInput } from '@/components'
 import { ROUTERS } from '@/configs'
 import { useDeviceType } from '@/hooks'
-import { Button, Stack, Typography } from '@mui/material'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 export const AccountTrackOrdersPage = () => {
   const [inputNumber, setInputNumber] = useState('')
@@ -25,7 +27,7 @@ export const AccountTrackOrdersPage = () => {
           Track your order status
         </Typography>
       </Stack>
-      <Stack flexDirection='row' sx={{ maxWidth: isLargeScreen ? '37.5rem' : '100%' }} gap={1.5} alignItems='flex-end'>
+      <Stack direction='row' sx={{ maxWidth: isLargeScreen ? '37.5rem' : '100%' }} gap={1.5} alignItems='flex-end'>
         <NormalTextInput
           label='Tracking or insurance number'
           placeHolder='ex. 123456789'

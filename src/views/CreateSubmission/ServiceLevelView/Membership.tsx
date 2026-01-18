@@ -1,7 +1,9 @@
+import parse from 'html-react-parser'
+
+import { List, Stack, Typography } from '@mui/material'
+
 import { MembershipItem } from '@/components/Submission'
 import { MEMBERSHIPS } from '@/constants'
-import { List, Stack, Typography } from '@mui/material'
-import parse from 'html-react-parser'
 
 export const MemberShip = () => {
   return (

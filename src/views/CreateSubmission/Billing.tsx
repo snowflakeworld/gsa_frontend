@@ -49,7 +49,7 @@ export const Billing = () => {
             extra={{ position: 'absolute', right: '0.75rem', top: '50%', transform: 'translateY(-50%)' }}
           />
         </Box>
-        <Stack flexDirection='row' gap={1}>
+        <Stack direction='row' gap={1}>
           <TextField
             variant='filled'
             label='Expiry'

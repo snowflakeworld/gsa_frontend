@@ -1,7 +1,8 @@
+import { Divider, List, Paper, Stack, Typography } from '@mui/material'
+
 import { SummaryItem } from '@/components/Submission'
 import { SUMMARY_STATISTICS } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { Divider, List, Paper, Stack, Typography } from '@mui/material'
 
 export const Checkout = () => {
   const { isLargeScreen } = useDeviceType()

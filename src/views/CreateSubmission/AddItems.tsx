@@ -67,7 +67,7 @@ export const AddItems = () => {
           }}
         >
           <Stack gap={1}>
-            <Stack flexDirection='row'>
+            <Stack direction='row'>
               <Typography variant='caption' fontSize='0.75rem' lineHeight='100%' color='text.normal' flex={42}>
                 Items
               </Typography>

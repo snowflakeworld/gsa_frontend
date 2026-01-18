@@ -1,8 +1,10 @@
-import { gsaIconColors } from '@/theme'
+import { type FC } from 'react'
+
 import { Done } from '@mui/icons-material'
 import { Stack, Typography } from '@mui/material'
 import parse from 'html-react-parser'
-import { FC } from 'react'
+
+import { gsaIconColors } from '@/theme'
 
 interface MemberShipBonusItemProps {
   isSelected: boolean
@@ -11,7 +13,7 @@ interface MemberShipBonusItemProps {
 
 export const MembershipBonusItem: FC<MemberShipBonusItemProps> = ({ isSelected, children }) => {
   return (
-    <Stack flexDirection='row' gap={1}>
+    <Stack direction='row' gap={1}>
       <Done fontSize='small' sx={{ fill: gsaIconColors.customRed }} />
       <Typography
         variant='h6'

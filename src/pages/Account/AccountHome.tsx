@@ -1,8 +1,10 @@
-import { NormalTextInput, StyledImage } from '@/components'
-import { useDeviceType } from '@/hooks'
+import { useState } from 'react'
+
 import { CheckOutlined, DriveFileRenameOutlineOutlined } from '@mui/icons-material'
 import { Button, InputAdornment, Stack, Typography } from '@mui/material'
-import { useState } from 'react'
+
+import { NormalTextInput, StyledImage } from '@/components'
+import { useDeviceType } from '@/hooks'
 
 export const AccountHomePage = () => {
   const [editMode, setEditMode] = useState(false)
@@ -32,14 +34,14 @@ export const AccountHomePage = () => {
               borderRadius='8px'
             />
           </Stack>
-          <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 5 : 0}>
+          <Stack direction={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 5 : 0}>
             <Stack flex={1}>
               <NormalTextInput label='Customer number' placeHolder='Customer number' defaultValue='12345678' />
               <NormalTextInput label='Name' placeHolder='Name' defaultValue='irvan Wibowo' flex={1} />
             </Stack>
             <Stack flex={1}>
               <NormalTextInput label='Email' placeHolder='Email' type='email' defaultValue='irvanwibowo@gmail.com' />
-              <Stack flexDirection='row' gap={1.25}>
+              <Stack direction='row' gap={1.25}>
                 <NormalTextInput label='Phone number' placeHolder='Phone' defaultValue='769345180' flex={1}>
                   <InputAdornment position='start'>
                     <Typography variant='caption' fontSize='1rem' color='text.primary'>
@@ -57,7 +59,7 @@ export const AccountHomePage = () => {
             </Stack>
           </Stack>
         </Stack>
-        <Stack flexDirection='row' justifyContent={editMode ? 'space-between' : 'flex-end'}>
+        <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'}>
           {editMode ? (
             <Button
               variant='contained'

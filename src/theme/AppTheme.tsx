@@ -1,5 +1,6 @@
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import { FC, ReactNode, useMemo } from 'react'
+
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 
 import { customizations } from './customization'
 import { colorSchemes, typography } from './themePrimitives'

@@ -1,15 +1,15 @@
 import { Circle } from '@mui/icons-material'
 import { Stack, Typography } from '@mui/material'
-import { FC } from 'react'
+import { FC, memo } from 'react'
 
 interface StatusItemProps {
   index: number
   value: string
 }
 
-export const StatusItem: FC<StatusItemProps> = ({ index, value }) => {
+export const StatusItem: FC<StatusItemProps> = memo(({ index, value }) => {
   return (
-    <Stack flexDirection='row' gap={0.8} alignItems='center'>
+    <Stack direction='row' gap={0.8} alignItems='center'>
       {index ? (
         <Circle
           sx={{
@@ -25,4 +25,4 @@ export const StatusItem: FC<StatusItemProps> = ({ index, value }) => {
       </Typography>
     </Stack>
   )
-}
+})
