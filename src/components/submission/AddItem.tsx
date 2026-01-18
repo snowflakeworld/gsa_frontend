@@ -25,9 +25,7 @@ interface AddItemProps {
 
 export const AddItem: FC<AddItemProps> = ({ img, name }) => {
   const [cardServiceOption, setCardServiceOption] = useState<string>(ADD_ITEM_TYPES[0])
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Card
@@ -49,11 +47,11 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
             boxShadow: 'none',
             py: 1.5,
             paddingLeft: 1.5,
-            paddingRight: !isScreenSmall ? 2 : 1.5
+            paddingRight: isLargeScreen ? 2 : 1.5
           }}
         >
-          <Stack flexDirection='row' gap={1}>
-            <Stack flexDirection='row' alignItems='center' gap={1} flex={42}>
+          <Stack direction='row' gap={1}>
+            <Stack direction='row' alignItems='center' gap={1} flex={42}>
               <StyledImage
                 src={`/assets/images/${img}`}
                 width='1.875rem'
@@ -76,7 +74,7 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
                 inputProps={{ 'aria-label': 'Select Card Service' }}
                 sx={{
                   height: '2.5rem',
-                  '& .MuiSelect-select': { paddingTop: 0, paddingBottom: 0 },
+                  '& .MuiSelect-select': { py: 0 },
                   borderColor: 'divider'
                 }}
               >
@@ -117,7 +115,7 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
                   }
                 />
               </Paper>
-              {!isScreenSmall ? (
+              {isLargeScreen ? (
                 <Button variant='contained' className='button-alpha--red button--small'>
                   <CustomIcon
                     name='delete'
@@ -135,18 +133,18 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
             </Stack>
           </Stack>
         </Card>
-        <Stack gap={!isScreenSmall ? 3 : 2} px={1.5} py={1}>
-          <Stack flexDirection='row' alignItems={!isScreenSmall ? 'center' : 'flex-start'} gap={!isScreenSmall ? 3 : 2}>
+        <Stack gap={isLargeScreen ? 3 : 2} px={1.5} py={1}>
+          <Stack flexDirection='row' alignItems={isLargeScreen ? 'center' : 'flex-start'} gap={isLargeScreen ? 3 : 2}>
             <Typography
               variant='caption'
               fontSize='0.625rem'
               lineHeight='100%'
               color='text.normal'
-              paddingTop={!isScreenSmall ? 0 : 1}
+              pt={isLargeScreen ? 0 : 1}
             >
               Adv. Options:
             </Typography>
-            <Stack flexDirection={!isScreenSmall ? 'row' : 'column'} gap={!isScreenSmall ? 2 : 0.5}>
+            <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 2 : 0.5}>
               <FormControlLabel
                 control={<Checkbox size='small' name='encapsulate' />}
                 label='Encapsulate all if altered'
@@ -155,7 +153,7 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
               <FormControlLabel control={<Checkbox size='small' name='authentic' />} label='Authentic' />
             </Stack>
           </Stack>
-          {!isScreenSmall ? (
+          {isLargeScreen ? (
             <></>
           ) : (
             <Button

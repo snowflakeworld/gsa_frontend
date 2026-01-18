@@ -12,10 +12,9 @@ interface PaymentItemProps {
 
 export const PaymentItem: FC<PaymentItemProps> = ({ index, name, allowInput }) => {
   const { shippingPaymentIdx, selectIdx } = useShippingPaymentSelectContext()
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen } = useDeviceType()
 
   const isSelected = shippingPaymentIdx === index
-  const isScreenSmall = isMobile || isTablet
 
   const handleSelect = () => {
     selectIdx(index)
@@ -43,10 +42,10 @@ export const PaymentItem: FC<PaymentItemProps> = ({ index, name, allowInput }) =
     >
       <Stack flexDirection='row' alignItems='center' gap={2}>
         <Stack
-          flexDirection={!isScreenSmall ? 'row' : 'column'}
+          flexDirection={isLargeScreen ? 'row' : 'column'}
           flex={1}
-          gap={!isScreenSmall ? 2 : 1}
-          alignItems={!isScreenSmall ? 'center' : 'flex-start'}
+          gap={isLargeScreen ? 2 : 1}
+          alignItems={isLargeScreen ? 'center' : 'flex-start'}
         >
           <Typography
             variant='h6'

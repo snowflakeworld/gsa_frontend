@@ -7,9 +7,7 @@ import { MemberShip, SelectLevel } from './ServiceLevelView'
 
 export const ServiceLevel = () => {
   const { activeStep, setActiveStep } = useContext(ActiveStepContext)!
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   const handlePrev = () => {
     setActiveStep(activeStep - 1)
@@ -22,7 +20,7 @@ export const ServiceLevel = () => {
   return (
     <ServiceLevelSelectProvider>
       <MembershipSelectProvider>
-        <Stack gap={!isScreenSmall ? 5 : 3}>
+        <Stack gap={isLargeScreen ? 5 : 3}>
           <SelectLevel />
           <MemberShip />
           <StepButtonGroup onBack={handlePrev} onNext={handleNext} />

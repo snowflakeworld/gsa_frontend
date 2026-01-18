@@ -8,11 +8,9 @@ import { useNavigate } from 'react-router-dom'
 import { Checkout, GradingDetails, ReviewOrders, ShippingBilling } from './ConfirmationView'
 
 export const Confirmation = () => {
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen } = useDeviceType()
   const { activeStep, setActiveStep } = useContext(ActiveStepContext)!
   const navigate = useNavigate()
-
-  const isScreenSmall = isMobile || isTablet
 
   const handlePrev = () => {
     setActiveStep(activeStep - 1)
@@ -24,7 +22,7 @@ export const Confirmation = () => {
 
   return (
     <Stack gap={3} width='100%'>
-      <Stack flexDirection={!isScreenSmall ? 'row' : 'column'} gap={!isScreenSmall ? 3 : 2} width='100%'>
+      <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 3 : 2} width='100%'>
         <ReviewOrders />
         <Stack gap={2}>
           <GradingDetails />

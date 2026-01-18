@@ -11,15 +11,13 @@ interface GradingDetailsProps {
 
 export const GradingDetails: FC<GradingDetailsProps> = ({ canEdit = true }) => {
   const { mode } = useColorScheme()
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Paper
       sx={{
-        width: !isScreenSmall ? 400 : '100%',
-        maxWidth: !isScreenSmall ? 400 : '100%',
+        width: isLargeScreen ? 400 : '100%',
+        maxWidth: isLargeScreen ? 400 : '100%',
         display: 'block',
         border: '1px solid',
         borderColor: 'divider',

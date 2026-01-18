@@ -27,9 +27,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
   declValue,
   itemFlex = 329
 }) => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   const statusList = []
   if (encapsulate) statusList.push('Encapsulate')
@@ -50,8 +48,8 @@ export const ReviewItem: FC<ReviewItemProps> = ({
           margin='0'
         />
         <Stack
-          flexDirection={!isScreenSmall ? 'row' : 'column'}
-          alignItems={!isScreenSmall ? 'center' : 'normal'}
+          flexDirection={isLargeScreen ? 'row' : 'column'}
+          alignItems={isLargeScreen ? 'center' : 'normal'}
           gap={1}
           flex={1}
         >
@@ -80,7 +78,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
             </List>
           </Stack>
           <Stack flex={140} flexDirection='row' justifyContent='space-between' alignItems='center'>
-            {!isScreenSmall ? (
+            {isLargeScreen ? (
               <></>
             ) : (
               <Typography
@@ -117,7 +115,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
             </Typography>
           </Stack>
           <Stack flex={62} flexDirection='row' justifyContent='space-between' alignItems='center'>
-            {!isScreenSmall ? (
+            {isLargeScreen ? (
               <></>
             ) : (
               <Typography variant='caption' fontWeight={500} fontSize='0.625rem' lineHeight='100%' color='text.normal'>

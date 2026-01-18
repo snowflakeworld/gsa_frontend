@@ -5,16 +5,14 @@ import { useParams } from 'react-router-dom'
 
 export const AccountOrderDetailPage = () => {
   const { orderId } = useParams()
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
-    <Stack gap={!isScreenSmall ? 4 : 2}>
+    <Stack gap={isLargeScreen ? 4 : 2}>
       <Typography variant='h4'>{`Order Id: ${orderId}`}</Typography>
-      <Stack flexDirection={!isScreenSmall ? 'row' : 'column'} gap={!isScreenSmall ? 3 : 2} width='100%'>
+      <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 3 : 2} width='100%'>
         <ReviewOrders headerFlex={206} itemFlex={170} />
-        <Stack gap={2} sx={{ maxWidth: !isScreenSmall ? '20rem' : '100%' }}>
+        <Stack gap={2} sx={{ maxWidth: isLargeScreen ? '20rem' : '100%' }}>
           <GradingDetails canEdit={false} />
           <ShippingBilling canEdit={false} />
           <Checkout />

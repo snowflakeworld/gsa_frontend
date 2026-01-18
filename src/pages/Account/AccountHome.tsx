@@ -6,13 +6,11 @@ import { useState } from 'react'
 
 export const AccountHomePage = () => {
   const [editMode, setEditMode] = useState(false)
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
-    <Stack gap={!isScreenSmall ? 4 : 2}>
-      <Stack gap={!isScreenSmall ? 1.5 : 1}>
+    <Stack gap={isLargeScreen ? 4 : 2}>
+      <Stack gap={isLargeScreen ? 1.5 : 1}>
         <Typography variant='h4'>My Account</Typography>
         <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
           Personalize your account
@@ -20,7 +18,7 @@ export const AccountHomePage = () => {
       </Stack>
       <Stack gap={1}>
         <Stack>
-          <Stack gap={1.5} py={!isScreenSmall ? 1.5 : 0}>
+          <Stack gap={1.5} py={isLargeScreen ? 1.5 : 0}>
             <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
               Profile picture
             </Typography>
@@ -34,7 +32,7 @@ export const AccountHomePage = () => {
               borderRadius='8px'
             />
           </Stack>
-          <Stack flexDirection={!isScreenSmall ? 'row' : 'column'} gap={!isScreenSmall ? 5 : 0}>
+          <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 5 : 0}>
             <Stack flex={1}>
               <NormalTextInput label='Customer number' placeHolder='Customer number' defaultValue='12345678' />
               <NormalTextInput label='Name' placeHolder='Name' defaultValue='irvan Wibowo' flex={1} />
@@ -53,7 +51,7 @@ export const AccountHomePage = () => {
                   label='Country'
                   placeHolder='Country'
                   defaultValue='USA'
-                  width={!isScreenSmall ? '10rem' : '6.25rem'}
+                  width={isLargeScreen ? '10rem' : '6.25rem'}
                 />
               </Stack>
             </Stack>

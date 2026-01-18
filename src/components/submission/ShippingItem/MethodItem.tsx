@@ -13,10 +13,9 @@ interface MethodItemProps {
 
 export const MethodItem: FC<MethodItemProps> = ({ index, icon, name, price }) => {
   const { shippingMethodIdx, selectIdx } = useShippingMethodSelectContext()
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen } = useDeviceType()
 
   const isSelected = shippingMethodIdx === index
-  const isScreenSmall = isMobile || isTablet
 
   const handleSelect = () => {
     selectIdx(index)
@@ -52,7 +51,7 @@ export const MethodItem: FC<MethodItemProps> = ({ index, icon, name, price }) =>
           />
           <BpRadio checked={isSelected} onClick={handleSelect} />
         </Stack>
-        <Stack flexDirection={!isScreenSmall ? 'row' : 'column'} gap={0.5}>
+        <Stack flexDirection={isLargeScreen ? 'row' : 'column'} gap={0.5}>
           <Typography
             flexGrow={1}
             variant='h6'

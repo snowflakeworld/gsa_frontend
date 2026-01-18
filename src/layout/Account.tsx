@@ -11,9 +11,7 @@ const DRAWER_WIDTH = 320
 
 export const AccountLayout = () => {
   const [drawerOpen, setDrawerOpen] = useState(false)
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   const toggleDrawer = () => setDrawerOpen(state => !state)
   const closeDrawer = () => setDrawerOpen(false)
@@ -24,19 +22,19 @@ export const AccountLayout = () => {
       <Suspense fallback={<CircularProgress />}>
         <Box
           sx={{
-            height: !isScreenSmall ? 'calc(100vh - 126px)' : 'calc(100vh - 72px)',
+            height: isLargeScreen ? 'calc(100vh - 126px)' : 'calc(100vh - 72px)',
             mt: '72px',
-            ml: !isScreenSmall ? '320px' : 0
+            ml: isLargeScreen ? '320px' : 0
           }}
           onClick={closeDrawer}
         >
-          <Box maxWidth={ACCOUNT_CONTENT_MAX_WIDTH} px={!isScreenSmall ? 4 : 2.5} py={!isScreenSmall ? 6.25 : 2.5}>
+          <Box maxWidth={ACCOUNT_CONTENT_MAX_WIDTH} px={isLargeScreen ? 4 : 2.5} py={isLargeScreen ? 6.25 : 2.5}>
             <Outlet />
           </Box>
         </Box>
       </Suspense>
-      {!isScreenSmall ? <Footer isLandingPage={false} /> : <></>}
-      {!isScreenSmall ? (
+      {isLargeScreen && <Footer isLandingPage={false} />}
+      {isLargeScreen ? (
         <Box
           component='nav'
           sx={{

@@ -4,12 +4,10 @@ import { useDeviceType } from '@/hooks'
 import { Grid } from '@mui/material'
 
 export const AddressList = () => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
-    <Grid container spacing={!isScreenSmall ? 2 : 1}>
+    <Grid container spacing={isLargeScreen ? 2 : 1}>
       {DELIVERY_ADDRESSES.map((item, index) => (
         <Grid key={index} size={{ xs: 12, md: 6 }}>
           <AddressItem {...item} />

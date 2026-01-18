@@ -5,13 +5,11 @@ import { DriveFileRenameOutlineOutlined } from '@mui/icons-material'
 import { Button, Stack, Typography } from '@mui/material'
 
 export const AccountMembershipPage = () => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
-    <Stack gap={!isScreenSmall ? 4 : 2}>
-      <Stack gap={!isScreenSmall ? 1.5 : 1}>
+    <Stack gap={isLargeScreen ? 4 : 2}>
+      <Stack gap={isLargeScreen ? 1.5 : 1}>
         <Typography variant='h4'>Membership</Typography>
         <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
           Check your membership information
@@ -19,9 +17,9 @@ export const AccountMembershipPage = () => {
       </Stack>
       <Stack gap={3}>
         <Stack
-          flexDirection={!isScreenSmall ? 'row' : 'column'}
+          flexDirection={isLargeScreen ? 'row' : 'column'}
           gap={3}
-          alignItems={!isScreenSmall ? 'center' : 'normal'}
+          alignItems={isLargeScreen ? 'center' : 'normal'}
         >
           <Stack flex={560} gap={1.5}>
             <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
@@ -44,7 +42,7 @@ export const AccountMembershipPage = () => {
               {...BILLING_ITEMS[0]}
               flex={1}
               showMainSelect={false}
-              minHeight={!isScreenSmall ? '8.125rem' : '0'}
+              minHeight={isLargeScreen ? '8.125rem' : '0'}
             />
           </Stack>
         </Stack>

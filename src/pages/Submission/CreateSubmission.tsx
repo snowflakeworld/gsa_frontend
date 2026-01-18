@@ -45,27 +45,25 @@ const ActiveStepComponent: FC<ActiveStepComponentProps> = ({ step }) => {
 
 export const CreateSubmissionPage = () => {
   const [activeStep, setActiveStep] = useState<number>(0)
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen } = useDeviceType()
   useEffect(() => {
     return () => {
       dispatch(updateGrading({ gradingIdx: -1 }))
     }
   }, [])
 
-  const isScreenSmall = isMobile || isTablet
-
   return (
     <ActiveStepContext.Provider value={{ activeStep, setActiveStep }}>
-      <Stack sx={{ minHeight: !isScreenSmall ? 'calc(100vh - 125px)' : 'calc(100vh - 162px)' }} mt={{ xs: 9, md: 9 }}>
+      <Stack sx={{ minHeight: isLargeScreen ? 'calc(100vh - 125px)' : 'calc(100vh - 162px)' }} mt={{ xs: 9, md: 9 }}>
         <StepBar />
         <Container sx={{ py: { xs: 3, md: 3 } }}>
           <Stack
-            flexDirection={!isScreenSmall ? 'row' : 'column'}
-            gap={!isScreenSmall ? 4 : 3}
+            flexDirection={isLargeScreen ? 'row' : 'column'}
+            gap={isLargeScreen ? 4 : 3}
             maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH}
             m='auto'
           >
-            <Stack flexGrow={1} gap={!isScreenSmall && activeStep === STEPS.length - 1 ? 4 : 3}>
+            <Stack flexGrow={1} gap={isLargeScreen && activeStep === STEPS.length - 1 ? 4 : 3}>
               <Typography variant='h4' textAlign={activeStep === STEPS.length - 1 ? 'center' : 'left'}>
                 {activeStep !== STEPS.length - 1 ? 'Create Submission' : 'Review Order'}
               </Typography>

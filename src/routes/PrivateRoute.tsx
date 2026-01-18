@@ -1,7 +1,8 @@
-import { routers } from '@/configs'
-import { useIsLoggedIn } from '@/hooks'
 import { FC, ReactNode, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+
+import { routers } from '@/configs'
+import { useIsLoggedIn } from '@/hooks'
 
 interface PrivateRouteProps {
   children: ReactNode

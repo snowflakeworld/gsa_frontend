@@ -6,19 +6,17 @@ import { useDeviceType } from '@/hooks'
 import { ServiceCard } from './Service'
 
 const AuthServiceSection = () => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Container>
-      <Stack gap={!isScreenSmall ? 12.5 : 6.25} maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH} m='auto'>
+      <Stack gap={isLargeScreen ? 12.5 : 6.25} maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH} m='auto'>
         <Stack gap={1.5}>
           <Typography variant='h2' textAlign='center'>
             Authentication & Grading Services
           </Typography>
           <Typography
-            width={!isScreenSmall ? '75%' : '100%'}
+            width={isLargeScreen ? '75%' : '100%'}
             variant='subtitle2'
             textAlign='center'
             alignSelf={'center'}
@@ -33,11 +31,11 @@ const AuthServiceSection = () => {
             grabCursor={true}
             centeredSlides={false}
             slidesPerView={'auto'}
-            spaceBetween={!isScreenSmall ? 32 : 16}
+            spaceBetween={isLargeScreen ? 32 : 16}
           >
             {SERVICE_CONTENTS.map((val, idx: number) => (
               <SwiperSlide key={idx}>
-                <Box sx={{ width: !isScreenSmall ? 320 : 260 }}>
+                <Box sx={{ width: isLargeScreen ? 320 : 260 }}>
                   <ServiceCard {...val} />
                 </Box>
               </SwiperSlide>

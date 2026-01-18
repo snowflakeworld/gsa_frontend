@@ -7,24 +7,22 @@ import { Box, Button, Container, Divider, Stack, Typography } from '@mui/materia
 import { useContext } from 'react'
 
 export const StepBar = () => {
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen } = useDeviceType()
   const { activeStep } = useContext(ActiveStepContext)!
-
-  const isScreenSmall = isMobile || isTablet
 
   return (
     <>
       <Stack bgcolor='background.header' borderBottom='1px solid' borderColor='divider' position='sticky'>
         <Container sx={{ py: { xs: 2, md: 2.5 } }}>
           <Stack
-            flexDirection={!isScreenSmall ? 'row' : 'column'}
+            flexDirection={isLargeScreen ? 'row' : 'column'}
             justifyContent='space-between'
             gap={2}
             alignItems='center'
             maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH}
             m='auto'
           >
-            <Stack width={!isScreenSmall ? 700 : '100%'} flexDirection='row' alignItems='center'>
+            <Stack width={isLargeScreen ? 700 : '100%'} flexDirection='row' alignItems='center'>
               {STEPS.map((value, index) => (
                 <Box key={index}>
                   <StepChip
@@ -44,7 +42,7 @@ export const StepBar = () => {
             </Stack>
 
             <Stack flexDirection='row' gap={2} alignItems='center'>
-              {!isScreenSmall && (
+              {isLargeScreen && (
                 <Typography variant='body2' color='text.normal'>
                   Auto-saved
                 </Typography>

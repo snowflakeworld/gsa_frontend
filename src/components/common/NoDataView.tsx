@@ -14,9 +14,7 @@ interface NoDataViewProps {
 
 export const NoDataView: FC<NoDataViewProps> = ({ type, size = 'medium', children }) => {
   const { mode } = useColorScheme()
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   let imgName = undefined
 
@@ -50,7 +48,7 @@ export const NoDataView: FC<NoDataViewProps> = ({ type, size = 'medium', childre
       <StyledImage
         src={`/assets/images/${imgName}`}
         width='auto'
-        height={!isScreenSmall ? imgSize : '3.125rem'}
+        height={isLargeScreen ? imgSize : '3.125rem'}
         alt='Empty Image'
         loading='lazy'
       />

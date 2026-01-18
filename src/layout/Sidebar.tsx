@@ -48,10 +48,8 @@ const MENU_ITEMS = [
 export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined }) => {
   const [curIdx, setCurIdx] = useState(0)
   const navigate = useNavigate()
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen, isSmallScreen } = useDeviceType()
   const logout = useLogout()
-
-  const isScreenSmall = isMobile || isTablet
 
   const handleItemClick = (idx: number) => {
     setCurIdx(idx)
@@ -68,8 +66,8 @@ export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined
   }
 
   return (
-    <Stack sx={{ width: width && '100%', px: !isScreenSmall ? 5 : 2.5, py: !isScreenSmall ? 6.25 : 2.5 }} gap={1.5}>
-      {isScreenSmall ? <SidebarHeader onClose={handleClose} /> : <></>}
+    <Stack sx={{ width: width && '100%', px: isLargeScreen ? 5 : 2.5, py: isLargeScreen ? 6.25 : 2.5 }} gap={1.5}>
+      {isSmallScreen ? <SidebarHeader onClose={handleClose} /> : <></>}
       <List sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, py: 0 }}>
         {MENU_ITEMS.map((item, index) => (
           <ListItemButton

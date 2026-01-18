@@ -49,9 +49,7 @@ const defaultAddress: AddressData = {
 export const AddressDialog: FC<DialogProps> = ({ open, onClose, onSave }) => {
   const [form, setForm] = useState<AddressData>(defaultAddress)
   const { mode } = useColorScheme()
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   const handleChange =
     (key: keyof AddressData) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | any) => {
@@ -102,7 +100,7 @@ export const AddressDialog: FC<DialogProps> = ({ open, onClose, onSave }) => {
         sx={{
           position: 'relative',
           borderRadius: 3,
-          p: !isScreenSmall ? 4 : 3,
+          p: isLargeScreen ? 4 : 3,
           bgcolor: 'background.dialog'
         }}
       >
@@ -112,7 +110,7 @@ export const AddressDialog: FC<DialogProps> = ({ open, onClose, onSave }) => {
             p: 0,
             fontSize: 18,
             fontWeight: 600,
-            mb: !isScreenSmall ? 3 : 2
+            mb: isLargeScreen ? 3 : 2
           }}
         >
           Add new address

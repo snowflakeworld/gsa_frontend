@@ -11,8 +11,7 @@ interface StepChipProps {
 }
 
 const StepChipComponent: FC<StepChipProps> = ({ idx, title, status = 'initial' }) => {
-  const { isMobile, isTablet } = useDeviceType()
-  const isScreenSmall = isMobile || isTablet
+  const { isSmallScreen } = useDeviceType()
 
   let backgroundColor = 'chip.background.primary'
   let borderColor = 'chip.border.primary'
@@ -36,6 +35,7 @@ const StepChipComponent: FC<StepChipProps> = ({ idx, title, status = 'initial' }
       avatarTextColor = 'chip.avatar.text.secondary'
       break
     case 'completed':
+    default:
       backgroundColor = 'chip.background.secondary'
       borderColor = 'chip.border.tertiary'
       textColor = 'chip.text.tertiary'
@@ -44,7 +44,7 @@ const StepChipComponent: FC<StepChipProps> = ({ idx, title, status = 'initial' }
       break
   }
 
-  return isScreenSmall && status !== 'active' ? (
+  return isSmallScreen && status !== 'active' ? (
     <Chip
       avatar={<Avatar>{idx + 1}</Avatar>}
       variant='filled'

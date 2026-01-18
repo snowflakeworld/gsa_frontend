@@ -4,9 +4,7 @@ import { useDeviceType } from '@/hooks'
 import { Card, List, Stack, Typography } from '@mui/material'
 
 export const SelectLevel = () => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Stack gap={3}>
@@ -18,7 +16,7 @@ export const SelectLevel = () => {
       </Stack>
 
       <Stack gap={1}>
-        {!isScreenSmall ? (
+        {isLargeScreen ? (
           <Card
             sx={{
               borderRadius: 2,
@@ -73,7 +71,7 @@ export const SelectLevel = () => {
         )}
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, py: 0 }}>
           {SERVICE_LEVELS.map((item, index) =>
-            !isScreenSmall ? (
+            isLargeScreen ? (
               <HorizontalItem key={item.title} index={index} {...item} />
             ) : (
               <VerticalItem key={index} index={index} {...item} />

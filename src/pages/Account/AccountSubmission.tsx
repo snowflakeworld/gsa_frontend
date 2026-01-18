@@ -7,21 +7,19 @@ import { useNavigate } from 'react-router-dom'
 
 export const AccountSubmissionPage = () => {
   const navigate = useNavigate()
-  const { isMobile, isTablet } = useDeviceType()
+  const { isLargeScreen } = useDeviceType()
 
   const handleCreate = () => {
     navigate(routers.CreateSubmission)
   }
 
-  const isScreenSmall = isMobile || isTablet
-
   return (
-    <Stack gap={!isScreenSmall ? 4 : 3}>
+    <Stack gap={isLargeScreen ? 4 : 3}>
       <Stack flexDirection='row' gap={2} justifyContent='space-between' alignItems='center'>
         <Typography variant='h4'>My Submission</Typography>
         <Button
           variant='contained'
-          sx={{ gap: 1, width: !isScreenSmall ? 'auto' : '2.5rem', px: !isScreenSmall ? 2 : 0 }}
+          sx={{ gap: 1, width: isLargeScreen ? 'auto' : '2.5rem', px: isLargeScreen ? 2 : 0 }}
           startIcon={
             <CustomIcon
               name='add'
@@ -35,10 +33,10 @@ export const AccountSubmissionPage = () => {
           className='button--red button--small'
           onClick={handleCreate}
         >
-          {!isScreenSmall ? 'Create New Submission' : ''}
+          {isLargeScreen ? 'Create New Submission' : ''}
         </Button>
       </Stack>
-      <Stack gap={!isScreenSmall ? 3.75 : 3} flexDirection={!isScreenSmall ? 'row' : 'column'}>
+      <Stack gap={isLargeScreen ? 3.75 : 3} flexDirection={isLargeScreen ? 'row' : 'column'}>
         <Recent />
         <Progress />
       </Stack>

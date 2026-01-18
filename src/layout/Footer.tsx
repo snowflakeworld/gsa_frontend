@@ -11,9 +11,7 @@ interface FooterProps {
 }
 
 export const Footer: FC<FooterProps> = ({ isLandingPage = true }) => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Box sx={{ backgroundColor: isLandingPage ? 'background.footer' : 'background.header', zIndex: 2 }}>
@@ -21,18 +19,18 @@ export const Footer: FC<FooterProps> = ({ isLandingPage = true }) => {
       <Container className='py-none' sx={{ px: { xs: 2.5, lg: 18.75 } }}>
         {isLandingPage && (
           <Stack
-            direction={!isScreenSmall ? 'row' : 'column'}
+            direction={isLargeScreen ? 'row' : 'column'}
             sx={{ py: { xs: 2.5, lg: 6.25 } }}
             justifyContent='space-between'
             gap={2}
           >
-            <Stack direction='column' gap={3} width={!isScreenSmall ? 352 : '100%'}>
+            <Stack direction='column' gap={3} width={isLargeScreen ? 352 : '100%'}>
               <Logo place='footer' />
               <Typography
                 color='textSecondary'
                 width='100%'
                 sx={{ fontSize: '0.875rem' }}
-                textAlign={!isScreenSmall ? 'inherit' : 'center'}
+                textAlign={isLargeScreen ? 'inherit' : 'center'}
               >
                 Grading Specialists Authority (GSA) & GSA/DNA are divisions of Collectors Holdings, Inc.
               </Typography>
@@ -43,21 +41,21 @@ export const Footer: FC<FooterProps> = ({ isLandingPage = true }) => {
           </Stack>
         )}
         <Stack
-          direction={!isScreenSmall ? 'row' : 'column-reverse'}
+          direction={isLargeScreen ? 'row' : 'column-reverse'}
           sx={{ py: 2 }}
           justifyContent='space-between'
           gap={2}
         >
-          <Typography color='textNormal' sx={{ fontSize: '0.875rem' }} textAlign={!isScreenSmall ? 'left' : 'center'}>
+          <Typography color='textNormal' sx={{ fontSize: '0.875rem' }} textAlign={isLargeScreen ? 'left' : 'center'}>
             © 2024 GSA, Inc. All rights reserved
           </Typography>
           <Stack
             direction='row'
             useFlexGap
-            gap={!isScreenSmall ? 3 : 2}
+            gap={isLargeScreen ? 3 : 2}
             justifyContent='center'
             alignItems='center'
-            sx={!isScreenSmall ? {} : { flexWrap: 'wrap' }}
+            sx={isLargeScreen ? {} : { flexWrap: 'wrap' }}
           >
             {FOOTER_LINK_SUB.map((link: LinkContent, idx: number) => (
               <Link className='footer-link__sub' key={idx} href={link.path} noWrap>

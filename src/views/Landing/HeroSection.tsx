@@ -9,8 +9,7 @@ import { HeroDetails, HeroSwiper, PaginationBullets, ScrollButton } from './Hero
 const HeroSection = () => {
   const { mode } = useColorScheme()
 
-  const { isMobile, isTablet } = useDeviceType()
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   const swiperRef = useRef<SwiperType | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -55,7 +54,7 @@ const HeroSection = () => {
                 theme={mode as 'dark' | 'light'}
               />
 
-              {!isScreenSmall && <ScrollButton />}
+              {isLargeScreen && <ScrollButton />}
             </Stack>
             <HeroSwiper swiperRef={swiperRef} onSlideChange={setCurrentIndex} />
           </Stack>

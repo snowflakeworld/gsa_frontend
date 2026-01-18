@@ -6,9 +6,7 @@ import { useDeviceType } from '@/hooks'
 import { SpecialServiceCard } from './SpecialService'
 
 const SpecServiceSection = () => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Container>
@@ -18,7 +16,7 @@ const SpecServiceSection = () => {
           <Typography variant='h2' textAlign='left'>
             Specialized Grading Services
           </Typography>
-          <Typography width={!isScreenSmall ? '60%' : '100%'} variant='subtitle2' textAlign='left'>
+          <Typography width={isLargeScreen ? '60%' : '100%'} variant='subtitle2' textAlign='left'>
             Hobby love is won with each closing auction and final offer. Enlist free real-time pricing data to time the
             market and curate in-the-moment.
           </Typography>

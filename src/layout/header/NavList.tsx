@@ -6,18 +6,16 @@ import { HEADER_NAV_LINKS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 
 const NavListComponent = ({ ...props }) => {
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Stack
       overflow='auto'
-      direction={!isScreenSmall ? 'row' : 'column'}
+      direction={isLargeScreen ? 'row' : 'column'}
       gap={3}
       ml={{ xs: 3, sm: 0 }}
-      mt={!isScreenSmall ? 0 : 3}
-      mb={!isScreenSmall ? 0 : 3}
+      mt={isLargeScreen ? 0 : 3}
+      mb={isLargeScreen ? 0 : 3}
       {...props}
     >
       {HEADER_NAV_LINKS.map(nav => (

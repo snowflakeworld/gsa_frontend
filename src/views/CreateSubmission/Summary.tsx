@@ -16,25 +16,23 @@ const inputStyle = {
 
 export const Summary = () => {
   const { mode } = useColorScheme()
-  const { isMobile, isTablet } = useDeviceType()
-
-  const isScreenSmall = isMobile || isTablet
+  const { isLargeScreen } = useDeviceType()
 
   return (
     <Stack gap={2}>
       <Paper
         sx={{
-          width: !isScreenSmall ? 400 : '100%',
-          maxWidth: !isScreenSmall ? 400 : '100%',
+          width: isLargeScreen ? 400 : '100%',
+          maxWidth: isLargeScreen ? 400 : '100%',
           display: 'block',
           border: '1px solid',
           borderColor: 'divider',
           backgroundColor: 'background.cardItem',
           boxShadow: 'none',
-          padding: !isScreenSmall ? 3 : 2
+          padding: isLargeScreen ? 3 : 2
         }}
       >
-        <Stack gap={!isScreenSmall ? 2 : 1}>
+        <Stack gap={isLargeScreen ? 2 : 1}>
           <Typography variant='h5'>Summary</Typography>
           <NoDataView type='order'>Order summary will shown here</NoDataView>
 
