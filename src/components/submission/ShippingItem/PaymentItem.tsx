@@ -3,7 +3,7 @@ import { type FC } from 'react'
 import { Card, InputBase, Paper, Stack, Typography } from '@mui/material'
 
 import { BpRadio } from '@/components/Common'
-import { useDeviceType, useShippingPaymentSelectContext } from '@/hooks'
+import { useDeviceType, useShippingSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
 
 interface PaymentItemProps {
@@ -13,13 +13,13 @@ interface PaymentItemProps {
 }
 
 export const PaymentItem: FC<PaymentItemProps> = ({ index, name, allowInput }) => {
-  const { shippingPaymentIdx, selectIdx } = useShippingPaymentSelectContext()
+  const { shippingPaymentIdx, selectPaymentIdx } = useShippingSelectContext()
   const { isLargeScreen } = useDeviceType()
 
   const isSelected = shippingPaymentIdx === index
 
   const handleSelect = () => {
-    selectIdx(index)
+    selectPaymentIdx(index)
   }
 
   return (

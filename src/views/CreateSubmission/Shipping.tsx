@@ -1,5 +1,6 @@
 import { StepButtonGroup } from '@/components/Submission'
-import { ShippingAddressSelectProvider, ShippingMethodSelectProvider, ShippingPaymentSelectProvider } from '@/hooks'
+import { ShippingSelectProvider } from '@/context'
+import {} from '@/hooks'
 import { ActiveStepContext } from '@/pages'
 import { Stack, Typography } from '@mui/material'
 import { useContext } from 'react'
@@ -17,23 +18,19 @@ export const Shipping = () => {
   }
 
   return (
-    <ShippingAddressSelectProvider>
-      <ShippingMethodSelectProvider>
-        <ShippingPaymentSelectProvider>
-          <Stack gap={3}>
-            <Stack gap={0.5}>
-              <Typography variant='h5'>Return Shipping</Typography>
-              <Typography variant='caption' color='text.normal' fontSize='0.875rem' lineHeight='100%'>
-                Complete your submission by providing shipment
-              </Typography>
-            </Stack>
-            <Address />
-            <Method />
-            <Payment />
-            <StepButtonGroup onBack={handlePrev} onNext={handleNext} nextTitle='Proceed to Checkout' />
-          </Stack>
-        </ShippingPaymentSelectProvider>
-      </ShippingMethodSelectProvider>
-    </ShippingAddressSelectProvider>
+    <ShippingSelectProvider>
+      <Stack gap={3}>
+        <Stack gap={0.5}>
+          <Typography variant='h5'>Return Shipping</Typography>
+          <Typography variant='caption' color='text.normal' fontSize='0.875rem' lineHeight='100%'>
+            Complete your submission by providing shipment
+          </Typography>
+        </Stack>
+        <Address />
+        <Method />
+        <Payment />
+        <StepButtonGroup onBack={handlePrev} onNext={handleNext} nextTitle='Proceed to Checkout' />
+      </Stack>
+    </ShippingSelectProvider>
   )
 }

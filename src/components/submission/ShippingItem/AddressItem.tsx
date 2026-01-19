@@ -4,7 +4,7 @@ import { Circle } from '@mui/icons-material'
 import { Card, Stack, Typography } from '@mui/material'
 
 import { BpRadio } from '@/components/Common'
-import { useDeviceType, useShippingAddressSelectContext } from '@/hooks'
+import { useDeviceType, useShippingSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
 
 interface AddressItemProps {
@@ -15,13 +15,13 @@ interface AddressItemProps {
 }
 
 export const AddressItem: FC<AddressItemProps> = ({ index, address, city, contact }) => {
-  const { shippingAddressIdx, selectIdx } = useShippingAddressSelectContext()
+  const { shippingAddressIdx, selectAddressIdx } = useShippingSelectContext()
   const { isLargeScreen } = useDeviceType()
 
   const isSelected = shippingAddressIdx === index
 
   const handleSelect = () => {
-    selectIdx(index)
+    selectAddressIdx(index)
   }
 
   return (
