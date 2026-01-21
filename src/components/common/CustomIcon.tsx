@@ -1,42 +1,42 @@
-import { type FC, memo } from 'react'
+import { type FC, lazy, memo } from 'react'
 
 import { SvgIcon } from '@mui/material'
 
 import { gsaIconColors } from '@/theme/themePrimitives'
 
-import EmptyItemDark from '&/assets/images/empty-item-dark.svg'
-import EmptyItemLight from '&/assets/images/empty-item-light.svg'
-import EmptyOrderDark from '&/assets/images/empty-order-dark.svg'
-import EmptyOrderLight from '&/assets/images/empty-order-light.svg'
-import EmptyProgressDark from '&/assets/images/empty-progress-dark.svg'
-import EmptyProgressLight from '&/assets/images/empty-progress-light.svg'
-import Add from '&/assets/images/icons/add.svg'
-import BulkSubmission from '&/assets/images/icons/bulk-submission.svg'
-import Chain from '&/assets/images/icons/chain.svg'
-import ChevronDownOutline from '&/assets/images/icons/chevron-down-outline.svg'
-import Close from '&/assets/images/icons/close.svg'
-import Delete from '&/assets/images/icons/delete.svg'
-import DetailGrading from '&/assets/images/icons/detail-grading.svg'
-import Detail from '&/assets/images/icons/detail.svg'
-import Edit from '&/assets/images/icons/edit.svg'
-import Eye from '&/assets/images/icons/eye.svg'
-import Menu from '&/assets/images/icons/menu.svg'
-import MoonIcon from '&/assets/images/icons/moon.svg'
-import PersonCircle from '&/assets/images/icons/person-circle.svg'
-import SecurePackaging from '&/assets/images/icons/secure-packaging.svg'
-import StarBig from '&/assets/images/icons/star-big.svg'
-import StarSmall from '&/assets/images/icons/star-small.svg'
-import SubmissionGradingComic from '&/assets/images/icons/submission-grading-comic.svg'
-import SubmissionGradingStandard from '&/assets/images/icons/submission-grading-standard.svg'
-import SubmissionGradingTcg from '&/assets/images/icons/submission-grading-tcg.svg'
-import SubmissionGradingTopps from '&/assets/images/icons/submission-grading-topps.svg'
-import Submit from '&/assets/images/icons/submit.svg'
-import SunIcon from '&/assets/images/icons/sun.svg'
-import TwoStars from '&/assets/images/icons/two-stars.svg'
-import Uv from '&/assets/images/icons/uv.svg'
-import VerifiedIcon from '&/assets/images/icons/verified.svg'
-import LogoIcon from '&/assets/images/logo.svg'
-import SMarkIcon from '&/assets/images/smark.svg'
+const Add = lazy(() => import('&/assets/images/icons/add.svg'))
+const EmptyProgressLight = lazy(() => import('&/assets/images/empty-progress-light.svg'))
+const EmptyProgressDark = lazy(() => import('&/assets/images/empty-progress-dark.svg'))
+const EmptyOrderLight = lazy(() => import('&/assets/images/empty-order-light.svg'))
+const EmptyOrderDark = lazy(() => import('&/assets/images/empty-order-dark.svg'))
+const EmptyItemLight = lazy(() => import('&/assets/images/empty-item-light.svg'))
+const EmptyItemDark = lazy(() => import('&/assets/images/empty-item-dark.svg'))
+const LogoIcon = lazy(() => import('&/assets/images/logo.svg'))
+const SMarkIcon = lazy(() => import('&/assets/images/smark.svg'))
+const BulkSubmission = lazy(() => import('&/assets/images/icons/bulk-submission.svg'))
+const Chain = lazy(() => import('&/assets/images/icons/chain.svg'))
+const ChevronDownOutline = lazy(() => import('&/assets/images/icons/chevron-down-outline.svg'))
+const Close = lazy(() => import('&/assets/images/icons/close.svg'))
+const Delete = lazy(() => import('&/assets/images/icons/delete.svg'))
+const DetailGrading = lazy(() => import('&/assets/images/icons/detail-grading.svg'))
+const Detail = lazy(() => import('&/assets/images/icons/detail.svg'))
+const Edit = lazy(() => import('&/assets/images/icons/edit.svg'))
+const Eye = lazy(() => import('&/assets/images/icons/eye.svg'))
+const Menu = lazy(() => import('&/assets/images/icons/menu.svg'))
+const MoonIcon = lazy(() => import('&/assets/images/icons/moon.svg'))
+const PersonCircle = lazy(() => import('&/assets/images/icons/person-circle.svg'))
+const SecurePackaging = lazy(() => import('&/assets/images/icons/secure-packaging.svg'))
+const StarBig = lazy(() => import('&/assets/images/icons/star-big.svg'))
+const StarSmall = lazy(() => import('&/assets/images/icons/star-small.svg'))
+const SubmissionGradingComic = lazy(() => import('&/assets/images/icons/submission-grading-comic.svg'))
+const SubmissionGradingStandard = lazy(() => import('&/assets/images/icons/submission-grading-standard.svg'))
+const SubmissionGradingTcg = lazy(() => import('&/assets/images/icons/submission-grading-tcg.svg'))
+const SubmissionGradingTopps = lazy(() => import('&/assets/images/icons/submission-grading-topps.svg'))
+const Submit = lazy(() => import('&/assets/images/icons/submit.svg'))
+const SunIcon = lazy(() => import('&/assets/images/icons/sun.svg'))
+const TwoStars = lazy(() => import('&/assets/images/icons/two-stars.svg'))
+const Uv = lazy(() => import('&/assets/images/icons/uv.svg'))
+const VerifiedIcon = lazy(() => import('&/assets/images/icons/verified.svg'))
 
 export const ICONS_MAP = {
   add: Add,
@@ -80,7 +80,7 @@ export type IconColor = keyof typeof gsaIconColors
 
 export type IconColorType = 'fill' | 'stroke'
 
-export interface CustomIconProps {
+interface CustomIconProps {
   name: IconType
   position?: string
   width?: number | string

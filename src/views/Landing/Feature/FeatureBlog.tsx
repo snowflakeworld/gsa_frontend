@@ -1,7 +1,7 @@
 import { Card, CardContent, Grid, Stack, Typography, useColorScheme } from '@mui/material'
 import { type FC, memo } from 'react'
 
-import { CustomIcon, IconType } from '@/components'
+import { CustomIcon, type IconType } from '@/components'
 import { useDeviceType } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
 

@@ -5,7 +5,7 @@ import { CustomIcon } from '@/components'
 export const ScrollButton = () => {
   const handleClick = () => {
     window.scrollTo({
-      top: window.scrollY + 3000,
+      top: window.scrollY + 10000,
       left: 0,
       behavior: 'smooth'
     })

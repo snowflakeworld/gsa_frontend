@@ -4,7 +4,7 @@ import { Card, Stack, Typography, useColorScheme } from '@mui/material'
 
 import { useCreateSubmissionSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
-import { BpRadio, CustomIcon, IconColorType } from '../Common'
+import { BpRadio, CustomIcon, type IconColorType } from '../Common'
 
 interface GradingTypeItemProps {
   index: number
