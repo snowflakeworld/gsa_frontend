@@ -24,7 +24,7 @@ const NewsSection = () => {
         </Stack>
         <Grid container spacing={{ xs: 2, md: 3 }}>
           {NEWS_ITEMS.map((news, idx) => (
-            <Grid key={idx} size={{ xs: 12, md: 6 }}>
+            <Grid key={'news-card-' + idx} size={{ xs: 12, md: 6 }}>
               <NewsCard {...news} />
             </Grid>
           ))}

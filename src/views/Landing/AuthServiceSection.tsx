@@ -34,7 +34,7 @@ const AuthServiceSection = () => {
             spaceBetween={isLargeScreen ? 32 : 16}
           >
             {SERVICE_CONTENTS.map((val, idx: number) => (
-              <SwiperSlide key={idx}>
+              <SwiperSlide key={'swiper-' + idx}>
                 <Box sx={{ width: isLargeScreen ? 320 : 260 }}>
                   <ServiceCard {...val} />
                 </Box>

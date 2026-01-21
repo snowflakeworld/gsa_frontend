@@ -22,7 +22,7 @@ export const Address = () => {
         <Stack gap={1}>
           <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, py: 0 }}>
             {SHIPPING_ADDRESSES.map((address, index) => (
-              <AddressItem key={index} index={index} {...address} />
+              <AddressItem key={'address-' + index} index={index} {...address} />
             ))}
           </List>
           <Button

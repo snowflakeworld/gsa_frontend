@@ -31,7 +31,7 @@ const TrackingSection = () => {
           </Stack>
           <Stack gap={{ xs: 2, md: 3 }} flexGrow={1}>
             {TRACKING_VALUES.map((item, index) => (
-              <TrackingCard key={index} {...item} />
+              <TrackingCard key={'tracking-card-' + index} {...item} />
             ))}
           </Stack>
         </Stack>

@@ -13,7 +13,7 @@ const FeatureSection = () => {
 
         <Grid container spacing={5}>
           {FEATURE_CONTENTS.map((blog, idx: number) => (
-            <FeatureBlog key={idx} {...blog} />
+            <FeatureBlog key={'feature-blog-' + idx} {...blog} />
           ))}
         </Grid>
       </Stack>

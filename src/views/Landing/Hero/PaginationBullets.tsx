@@ -17,7 +17,7 @@ export const PaginationBullets: FC<PaginationBulletsProps> = ({ total, currentIn
     <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'initial' }, mt: 2, gap: 0.625 }}>
       {Array.from({ length: total }).map((_, i) => (
         <Box
-          key={'bullet_' + i}
+          key={'bullet-' + i}
           onClick={() => onSelect(i)}
           sx={{
             width: i === currentIndex ? 48 : 8,

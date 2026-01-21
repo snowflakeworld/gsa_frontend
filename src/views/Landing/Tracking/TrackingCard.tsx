@@ -44,9 +44,9 @@ const TrackingCardComponent: FC<TrackingCardProps> = ({ title, description, cont
               <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, width: '100%' }}>
                 {items.map((item, index) =>
                   itemDisplayMode === 'horizontal' ? (
-                    <PriceItemHoriz key={index} {...item} />
+                    <PriceItemHoriz key={'price-' + index} {...item} />
                   ) : (
-                    <PriceItemVert key={index} {...item} />
+                    <PriceItemVert key={'price-' + index} {...item} />
                   )
                 )}
               </List>
@@ -79,9 +79,9 @@ const TrackingCardComponent: FC<TrackingCardProps> = ({ title, description, cont
               <List sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                 {items.map((item, index) =>
                   itemDisplayMode === 'horizontal' ? (
-                    <PriceItemHoriz key={index} {...item} />
+                    <PriceItemHoriz key={'price-' + index} {...item} />
                   ) : (
-                    <PriceItemVert key={index} {...item} />
+                    <PriceItemVert key={'price-' + index} {...item} />
                   )
                 )}
               </List>

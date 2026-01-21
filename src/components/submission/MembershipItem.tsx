@@ -77,7 +77,7 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
             {items
               .filter((_, index) => index < leftItemListCount)
               .map((val, index) => (
-                <MembershipBonusItem key={index} isSelected={isSelected}>
+                <MembershipBonusItem key={'membership-bonus-' + index} isSelected={isSelected}>
                   {val}
                 </MembershipBonusItem>
               ))}
@@ -87,7 +87,7 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
               {items
                 .filter((_, index) => index >= leftItemListCount)
                 .map((val, index) => (
-                  <MembershipBonusItem key={index} isSelected={isSelected}>
+                  <MembershipBonusItem key={'membership-bonus-' + index} isSelected={isSelected}>
                     {val}
                   </MembershipBonusItem>
                 ))}

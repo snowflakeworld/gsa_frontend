@@ -9,7 +9,7 @@ export const Method = () => {
       <Typography variant='h6'>Select Shipping Method</Typography>
       <List sx={{ display: 'flex', flexDirection: 'row', gap: 1, py: 0 }}>
         {SHIPPING_METHODS.map((method, index) => (
-          <MethodItem key={index} index={index} {...method} />
+          <MethodItem key={'method-' + index} index={index} {...method} />
         ))}
       </List>
     </Stack>

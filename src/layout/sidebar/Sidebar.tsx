@@ -73,7 +73,7 @@ export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined
       <List sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, py: 0 }}>
         {MENU_ITEMS.map((item, index) => (
           <ListItemButton
-            key={item.id}
+            key={'sidebar-' + item.id}
             selected={curIdx === index}
             onClick={() => handleItemClick(index)}
             sx={{ borderRadius: 1, gap: 2 }}

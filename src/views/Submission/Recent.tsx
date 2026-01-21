@@ -20,7 +20,7 @@ export const Recent = () => {
       {recentCount && (
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           {MY_RECENT_SUBMISSION.map((item, index) => (
-            <MyRecentItem key={index} {...item} />
+            <MyRecentItem key={'my-recent-' + index} {...item} />
           ))}
         </List>
       )}

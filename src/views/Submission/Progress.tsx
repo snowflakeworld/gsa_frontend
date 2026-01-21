@@ -20,7 +20,7 @@ export const Progress = () => {
       {progressCount && (
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           {MY_PROGRESS_SUBMISSION.map((item, index) => (
-            <MyProgressItem key={index} {...item} />
+            <MyProgressItem key={'my-progress-' + index} {...item} />
           ))}
         </List>
       )}

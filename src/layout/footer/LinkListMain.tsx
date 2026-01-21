@@ -28,7 +28,7 @@ export const LinkListMain: FC<FooterLinkProps> = memo((props: FooterLinkProps) =
 
       <Stack gap={1.5} direction='column'>
         {FOOTER_LINK_MAIN[type].map((link: LinkContent, idx: number) => (
-          <Link className='footer-link__main' key={idx} href={link.path}>
+          <Link className='footer-link__main' key={'footer-link-' + idx} href={link.path}>
             {link.title}
           </Link>
         ))}
