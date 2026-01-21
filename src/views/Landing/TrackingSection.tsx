@@ -1,6 +1,8 @@
+import { Box, Container, Stack, Typography } from '@mui/material'
+
 import { LANDING_FEATURE_GRID_MAX_WIDTH, TRACKING_VALUES } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { Box, Container, Stack, Typography } from '@mui/material'
+
 import { TrackingCard } from './Tracking'
 
 const TrackingSection = () => {

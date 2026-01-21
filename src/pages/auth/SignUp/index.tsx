@@ -10,7 +10,7 @@ import * as yup from 'yup'
 import { Logo } from '@/components/Common'
 import { ROUTERS } from '@/configs'
 import { dispatch, login } from '@/store'
-import { CreateInfo } from '@/types'
+import { type CreateInfo } from '@/types'
 
 const defaultValues = {
   firstName: '',

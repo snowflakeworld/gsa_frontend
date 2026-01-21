@@ -1,6 +1,7 @@
 import { Container, Grid, Stack, Typography } from '@mui/material'
 
 import { FEATURE_CONTENTS, LANDING_FEATURE_GRID_MAX_WIDTH } from '@/constants'
+
 import { FeatureBlog } from './Feature'
 
 const FeatureSection = () => {

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { SubmissionState } from '@/types'
+import { type SubmissionState } from '@/types'
 
 const initialState: SubmissionState = {
   gradingIdx: -1,

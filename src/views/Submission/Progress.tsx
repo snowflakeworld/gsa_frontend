@@ -1,7 +1,8 @@
+import { List, Stack, Typography } from '@mui/material'
+
 import { NoDataPaper } from '@/components'
 import { MyProgressItem } from '@/components/Submission'
 import { MY_PROGRESS_SUBMISSION } from '@/constants'
-import { List, Stack, Typography } from '@mui/material'
 
 export const Progress = () => {
   // const progressCount = undefined

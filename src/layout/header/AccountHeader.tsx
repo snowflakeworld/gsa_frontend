@@ -1,4 +1,4 @@
-import { FC, memo } from 'react'
+import { type FC, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { MenuRounded } from '@mui/icons-material'

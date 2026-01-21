@@ -1,8 +1,10 @@
+import { type FC, memo } from 'react'
+
+import { Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material'
+
 import { StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks'
 import { gsaShadows } from '@/theme'
-import { Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material'
-import { FC, memo } from 'react'
 
 interface SpecialServiceCardProps {
   title: string

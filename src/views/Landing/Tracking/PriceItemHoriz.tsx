@@ -1,5 +1,6 @@
+import { type FC, memo } from 'react'
+
 import { Stack, Typography } from '@mui/material'
-import { FC, memo } from 'react'
 
 interface ItemProps {
   content: string
@@ -9,15 +10,7 @@ interface ItemProps {
 
 const PriceItemHorizComponent: FC<ItemProps> = ({ content, status, highlight = false }) => {
   return (
-    <Stack
-      bgcolor='background.paper'
-      gap={1}
-      px={2}
-      py={0.5}
-      borderRadius={125}
-      direction={'row'}
-      alignItems='center'
-    >
+    <Stack bgcolor='background.paper' gap={1} px={2} py={0.5} borderRadius={125} direction={'row'} alignItems='center'>
       <Typography
         variant='caption'
         fontSize='1.25rem'

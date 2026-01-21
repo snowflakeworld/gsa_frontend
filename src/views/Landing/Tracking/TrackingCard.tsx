@@ -1,8 +1,11 @@
+import { type FC, memo } from 'react'
+
+import { Card, List, Stack, Typography } from '@mui/material'
+
 import { StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks'
 import { gsaShadows } from '@/theme'
-import { Card, List, Stack, Typography } from '@mui/material'
-import { FC, memo } from 'react'
+
 import { PriceItemHoriz } from './PriceItemHoriz'
 import { PriceItemVert } from './PriceItemVert'
 
