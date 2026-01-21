@@ -25,7 +25,7 @@ export const ShippingBilling: FC<ShippingBillingProps> = ({ canEdit = true }) =>
         borderColor: 'divider',
         backgroundColor: 'background.cardItem',
         boxShadow: 'none',
-        padding: 2
+        p: 2
       }}
     >
       <Stack gap={1}>

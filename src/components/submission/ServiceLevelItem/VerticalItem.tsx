@@ -33,8 +33,8 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
         backgroundColor: isSelected ? gsaColors.background.red.alpha : 'background.card',
         boxShadow: gsaShadows.xs,
         gap: 1,
-        paddingLeft: 1,
-        paddingRight: 2,
+        pl: 1,
+        pr: 2,
         py: 1.5,
         '&:hover': {
           backgroundColor: isSelected ? gsaColors.background.red.alphaMedium : 'background.overlay'
@@ -57,12 +57,7 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
             >
               ServiceLevel
             </Typography>
-            <Typography
-              variant='h6'
-              fontSize='0.75rem'
-              lineHeight='1.25rem'
-              {...(isSelected ? { color: 'text.red' } : {})}
-            >
+            <Typography variant='h6' fontSize='0.75rem' lineHeight='1.25rem' {...(isSelected && { color: 'text.red' })}>
               {title}
             </Typography>
           </Stack>
@@ -77,12 +72,7 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
             >
               Min card
             </Typography>
-            <Typography
-              variant='h6'
-              fontSize='0.75rem'
-              lineHeight='1.25rem'
-              {...(isSelected ? { color: 'text.red' } : {})}
-            >
+            <Typography variant='h6' fontSize='0.75rem' lineHeight='1.25rem' {...(isSelected && { color: 'text.red' })}>
               {minCards}
             </Typography>
           </Stack>
@@ -97,12 +87,7 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
             >
               Turnaround
             </Typography>
-            <Typography
-              variant='h6'
-              fontSize='0.75rem'
-              lineHeight='1.25rem'
-              {...(isSelected ? { color: 'text.red' } : {})}
-            >
+            <Typography variant='h6' fontSize='0.75rem' lineHeight='1.25rem' {...(isSelected && { color: 'text.red' })}>
               {turnaround}
             </Typography>
           </Stack>
@@ -117,12 +102,7 @@ export const VerticalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, 
             >
               Price
             </Typography>
-            <Typography
-              variant='h6'
-              fontSize='0.75rem'
-              lineHeight='1.25rem'
-              {...(isSelected ? { color: 'text.red' } : {})}
-            >
+            <Typography variant='h6' fontSize='0.75rem' lineHeight='1.25rem' {...(isSelected && { color: 'text.red' })}>
               {price}
             </Typography>
           </Stack>

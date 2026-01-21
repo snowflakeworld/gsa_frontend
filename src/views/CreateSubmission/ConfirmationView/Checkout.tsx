@@ -17,7 +17,7 @@ export const Checkout = () => {
         borderColor: 'divider',
         backgroundColor: 'background.cardItem',
         boxShadow: 'none',
-        padding: 2
+        p: 2
       }}
     >
       <Stack gap={1}>

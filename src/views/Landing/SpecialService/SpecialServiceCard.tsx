@@ -33,7 +33,7 @@ const SpecialServiceCardComponent: FC<SpecialServiceCardProps> = ({ title, conte
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            paddingTop: 5,
+            pt: 5,
             backgroundImage: gradient,
             maxHeight: isLargeScreen ? 368 : 328,
             zIndex: 0,
@@ -54,7 +54,7 @@ const SpecialServiceCardComponent: FC<SpecialServiceCardProps> = ({ title, conte
             display: 'flex',
             flexDirection: 'column',
             gap: 3,
-            padding: isLargeScreen ? 4 : 3,
+            p: isLargeScreen ? 4 : 3,
             backgroundColor: 'background.card',
             zIndex: 1
           }}

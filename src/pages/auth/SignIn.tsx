@@ -10,8 +10,8 @@ import * as yup from 'yup'
 
 import { Logo } from '@/components/Common'
 import { ROUTERS } from '@/configs'
+import { StepContext } from '@/context/SignStep'
 import { Email } from '@/types'
-import { StepContext } from '..'
 
 const defaultValues = {
   email: ''

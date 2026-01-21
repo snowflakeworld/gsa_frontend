@@ -5,7 +5,8 @@ import { Box, Container, Divider, Link, Stack, Typography } from '@mui/material'
 import { Logo } from '@/components/Common'
 import { FOOTER_LINK_SUB, FOOTER_LINK_TYPES } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { LinkContent, LinkListMain, LinkType } from './LinkListMain'
+
+import { type LinkContent, type LinkType, LinkListMain } from './LinkListMain'
 
 interface FooterProps {
   isLandingPage?: boolean
@@ -16,7 +17,7 @@ export const Footer: FC<FooterProps> = ({ isLandingPage = true }) => {
 
   return (
     <Box sx={{ backgroundColor: isLandingPage ? 'background.footer' : 'background.header', zIndex: 2 }}>
-      {isLandingPage ? <></> : <Divider />}
+      {!isLandingPage && <Divider />}
       <Container className='py-none' sx={{ px: { xs: 2.5, lg: 18.75 } }}>
         {isLandingPage && (
           <Stack
@@ -56,7 +57,7 @@ export const Footer: FC<FooterProps> = ({ isLandingPage = true }) => {
             gap={isLargeScreen ? 3 : 2}
             justifyContent='center'
             alignItems='center'
-            sx={isLargeScreen ? {} : { flexWrap: 'wrap' }}
+            sx={{ ...(!isLargeScreen && { flexWrap: 'wrap' }) }}
           >
             {FOOTER_LINK_SUB.map((link: LinkContent, idx: number) => (
               <Link className='footer-link__sub' key={'footer-link-sub-' + idx} href={link.path} noWrap>

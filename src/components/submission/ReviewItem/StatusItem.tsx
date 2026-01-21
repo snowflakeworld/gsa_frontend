@@ -10,15 +10,13 @@ interface StatusItemProps {
 export const StatusItem: FC<StatusItemProps> = memo(({ index, value }) => {
   return (
     <Stack direction='row' gap={0.8} alignItems='center'>
-      {index ? (
+      {!!index && (
         <Circle
           sx={{
             fontSize: '0.2rem',
             color: 'text.normal'
           }}
         />
-      ) : (
-        <></>
       )}
       <Typography variant='caption' fontWeight={500} fontSize='0.625rem' lineHeight='100%' color='text.normal'>
         {value}

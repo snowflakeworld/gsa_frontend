@@ -1,17 +1,12 @@
-import { createContext, useState } from 'react'
+import { useState } from 'react'
 
 import { Box, Card, Container, Stack } from '@mui/material'
 
+import { StepContext } from '@/context/SignStep'
 import { useDeviceType } from '@/hooks'
+
 import { SignIn } from './SignIn'
 import { SignUp } from './SignUp'
-
-interface StepContextProps {
-  step: number
-  setStep: (_: number) => void
-}
-
-export const StepContext = createContext<StepContextProps | null>(null)
 
 const Sign = () => {
   const [step, setStep] = useState<number>(0)
@@ -24,7 +19,7 @@ const Sign = () => {
         minHeight: '100vh'
       }}
     >
-      <Container sx={{ height: '100vh', paddingTop: 10, paddingBottom: 0 }}>
+      <Container sx={{ height: '100vh', pt: 10, pb: 0 }}>
         <Stack width='100%' height='100%'>
           <Card
             sx={{
@@ -33,8 +28,8 @@ const Sign = () => {
               border: 'none',
               backgroundColor: 'background.card',
               boxShadow: 'none',
-              padding: { xs: 3, md: 4 },
-              margin: 'auto'
+              p: { xs: 3, md: 4 },
+              m: 'auto'
             }}
           >
             <StepContext.Provider value={{ step, setStep }}>

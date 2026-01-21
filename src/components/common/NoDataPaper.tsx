@@ -47,7 +47,7 @@ export const NoDataPaper: FC<NoDataPaperProps> = ({ type, size = 'medium', child
         p: 3
       }}
     >
-      <Stack margin='auto' gap={3} justifyContent='center' alignItems='center'>
+      <Stack m='auto' gap={3} justifyContent='center' alignItems='center'>
         <StyledImage
           src={`/assets/images/${imgName}`}
           width='auto'

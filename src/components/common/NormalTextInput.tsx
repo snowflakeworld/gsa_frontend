@@ -35,7 +35,7 @@ export const NormalTextInput: FC<NormalTextInputProps> = ({
   }
 
   return (
-    <Stack gap={1.5} py={1.5} {...(flex ? { flex: flex } : {})} {...(width ? { width: width } : {})}>
+    <Stack gap={1.5} py={1.5} sx={{ ...(flex && { flex }), ...(width && { width }) }}>
       <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
         {label}
       </Typography>
@@ -53,7 +53,7 @@ export const NormalTextInput: FC<NormalTextInputProps> = ({
         }}
       >
         <InputBase
-          sx={{ width: '100%', paddingLeft: 2.5, paddingRight: 2, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
+          sx={{ width: '100%', pl: 2.5, pr: 2, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
           placeholder={placeHolder}
           value={editable ? value : defaultValue}
           type={type}

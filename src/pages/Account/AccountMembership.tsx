@@ -43,7 +43,7 @@ const AccountMembershipPage = () => {
             />
           </Stack>
         </Stack>
-        <Stack direction='row' justifyContent='space-between' paddingTop={1}>
+        <Stack direction='row' justifyContent='space-between' pt={1}>
           <Button variant='contained' sx={{ gap: 1, width: 'auto', px: 4 }} className='button--primary button--small'>
             Back
           </Button>

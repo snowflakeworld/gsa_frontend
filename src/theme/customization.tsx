@@ -71,7 +71,7 @@ export const customizations: Components<Theme> = {
         color: gsaColors.text.primary.light,
         boxShadow: 'none',
         transition: 'all 0.5s ease',
-        padding: 1.25,
+        p: 1.25,
         '&:hover': {
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
@@ -259,7 +259,7 @@ export const customizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         color: gsaColors.text.normal,
-        padding: '4px',
+        p: '4px',
         '&.Mui-checked': {
           color: gsaColors.text.red // Global checked color
         },

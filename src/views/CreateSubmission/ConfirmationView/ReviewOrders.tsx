@@ -27,7 +27,7 @@ export const ReviewOrders: FC<ReviewOrdersProps> = ({ headerFlex = 366, itemFlex
         borderColor: 'divider',
         backgroundColor: 'background.cardItem',
         boxShadow: 'none',
-        padding: 2
+        p: 2
       }}
     >
       <Stack gap={isLargeScreen ? 2 : 1}>

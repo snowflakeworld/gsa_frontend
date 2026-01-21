@@ -20,7 +20,7 @@ export const MembershipBonusItem: FC<MemberShipBonusItemProps> = ({ isSelected, 
         fontWeight={400}
         fontSize='0.75rem'
         lineHeight='1rem'
-        {...(isSelected ? { color: 'text.red' } : {})}
+        {...(isSelected && { color: 'text.red' })}
       >
         {parse(children)}
       </Typography>

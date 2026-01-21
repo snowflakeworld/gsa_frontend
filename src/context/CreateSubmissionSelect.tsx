@@ -1,3 +1,5 @@
+import { createContext, FC, ReactNode } from 'react'
+
 import {
   dispatch,
   updateGrading,
@@ -8,7 +10,6 @@ import {
   updateShippingPayment,
   useSelector
 } from '@/store'
-import { createContext, FC, ReactNode } from 'react'
 
 const selectCreateSubmissionValue = () => {
   const { shippingAddressIdx, shippingMethodIdx, shippingPaymentIdx, membershipIdx, serviceLevelIdx, gradingIdx } =
@@ -34,7 +35,7 @@ const selectCreateSubmissionValue = () => {
     dispatch(updateServiceLevel({ serviceLevelIdx: idx }))
   }
 
-  const selectGradingIdix = (idx: number) => {
+  const selectGradingIdx = (idx: number) => {
     dispatch(updateGrading({ gradingIdx: idx }))
   }
 
@@ -50,7 +51,7 @@ const selectCreateSubmissionValue = () => {
     selectPaymentIdx,
     selectMembershipIdx,
     selectServiceLevelIdx,
-    selectGradingIdix
+    selectGradingIdx
   }
 }
 

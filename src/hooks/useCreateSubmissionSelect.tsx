@@ -1,5 +1,6 @@
-import { CreateSubmissionSelectContext } from '@/context'
 import { useContext } from 'react'
+
+import { CreateSubmissionSelectContext } from '@/context'
 
 export const useCreateSubmissionSelectContext = () => {
   const context = useContext(CreateSubmissionSelectContext)

@@ -22,7 +22,7 @@ const HeroSection = () => {
   }
 
   return (
-    <Box position='relative' sx={{ width: '100%', minHeight: '100vh', paddingTop: 10 }}>
+    <Box position='relative' sx={{ width: '100%', minHeight: '100vh', pt: 10 }}>
       <Box
         component='img'
         src='/assets/images/decorator.svg'
@@ -46,7 +46,7 @@ const HeroSection = () => {
               direction={isLargeScreen ? 'column' : 'column-reverse'}
               gap={isLargeScreen ? 10 : 3}
               position='relative'
-              paddingBottom={isLargeScreen ? 13.75 : 0}
+              pb={isLargeScreen ? 13.75 : 0}
             >
               <HeroDetails currentIndex={currentIndex} />
               <PaginationBullets

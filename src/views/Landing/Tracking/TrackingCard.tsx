@@ -34,7 +34,7 @@ const TrackingCardComponent: FC<TrackingCardProps> = ({ title, description, cont
         borderColor: 'divider',
         backgroundColor: 'background.card',
         boxShadow: `${gsaShadows.card}`,
-        padding: isLargeScreen ? 4 : 3
+        p: isLargeScreen ? 4 : 3
       }}
     >
       {isLargeScreen ? (

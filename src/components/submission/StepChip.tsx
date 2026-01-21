@@ -60,13 +60,12 @@ const StepChipComponent: FC<StepChipProps> = ({ idx, title, status = 'initial' }
         '& .MuiChip-avatar': {
           width: 18,
           height: 18,
-          margin: 0,
+          m: 0,
           backgroundColor: avatarBackgroundColor,
           color: avatarTextColor
         },
         '& .MuiChip-label': {
-          paddingLeft: 0, // remove label padding
-          paddingRight: 0
+          px: 0 // remove label padding
         }
       }}
     />

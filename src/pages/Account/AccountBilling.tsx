@@ -27,7 +27,7 @@ const AccountBillingPage = () => {
             </Grid>
           ))}
         </Grid>
-        <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'} paddingTop={1}>
+        <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'} pt={1}>
           {editMode ? (
             <Button
               variant='contained'

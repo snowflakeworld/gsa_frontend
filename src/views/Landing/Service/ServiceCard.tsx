@@ -29,7 +29,7 @@ const ServiceCardComponent: FC<ServiceCardProps> = ({ title, button, img, rotate
       }}
     >
       <CardContent
-        sx={{ display: 'flex', flexDirection: 'column', gap: isLargeScreen ? 3 : 2, padding: isLargeScreen ? 4 : 3 }}
+        sx={{ display: 'flex', flexDirection: 'column', gap: isLargeScreen ? 3 : 2, p: isLargeScreen ? 4 : 3 }}
       >
         <Typography variant='h4' textAlign='center' alignContent='center' minHeight={isLargeScreen ? 80 : 64}>
           {title}
@@ -38,7 +38,7 @@ const ServiceCardComponent: FC<ServiceCardProps> = ({ title, button, img, rotate
           {button}
         </Button>
       </CardContent>
-      <CardMedia sx={{ rotate: rotate, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 2 }}>
+      <CardMedia sx={{ rotate, display: 'flex', justifyContent: 'center', alignItems: 'center', mt: 2 }}>
         <StyledImage
           src={`/assets/images/cards/${img}`}
           width={isLargeScreen ? 210 : 140}

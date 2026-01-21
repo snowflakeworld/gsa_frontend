@@ -55,7 +55,7 @@ export const NormalPasswordInput: FC<NormalPasswordInputProps> = ({
         }}
       >
         <InputBase
-          sx={{ width: '100%', paddingLeft: 2.5, paddingRight: 2, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
+          sx={{ width: '100%', pl: 2.5, pr: 2, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
           placeholder={placeHolder}
           value={editable ? password : defaultValue}
           type={showPassword ? 'text' : type}
