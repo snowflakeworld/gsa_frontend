@@ -10,7 +10,7 @@ export const AddressList = () => {
   return (
     <Grid container spacing={isLargeScreen ? 2 : 1}>
       {DELIVERY_ADDRESSES.map((item, index) => (
-        <Grid key={index} size={{ xs: 12, md: 6 }}>
+        <Grid key={'address-' + index} size={{ xs: 12, md: 6 }}>
           <AddressItem {...item} />
         </Grid>
       ))}

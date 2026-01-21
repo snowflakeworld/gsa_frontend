@@ -58,7 +58,7 @@ export const HeroSwiper: FC<HeroSwiperProps> = ({ swiperRef, onSlideChange }) =>
         autoplay={{ delay: 2500, waitForTransition: true }}
       >
         {HERO_CARDS.map((src, idx) => (
-          <SwiperSlide key={idx}>
+          <SwiperSlide key={'swiper-' + idx}>
             <StyledImage
               className='hero-slider-img'
               src={`/assets/images/cards/${src}`}

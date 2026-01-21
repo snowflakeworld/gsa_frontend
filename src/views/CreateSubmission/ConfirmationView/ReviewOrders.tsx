@@ -104,7 +104,7 @@ export const ReviewOrders: FC<ReviewOrdersProps> = ({ headerFlex = 366, itemFlex
           )}
           <List sx={{ display: 'flex', flexDirection: 'column', py: 0 }}>
             {REVIEW_ITEMS.map((item, index) => (
-              <ReviewItem key={index} index={index} {...item} itemFlex={itemFlex} />
+              <ReviewItem key={'review-' + index} index={index} {...item} itemFlex={itemFlex} />
             ))}
           </List>
         </Stack>

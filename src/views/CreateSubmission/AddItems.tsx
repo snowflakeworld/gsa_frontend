@@ -87,7 +87,7 @@ export const AddItems = () => {
 
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, py: 0 }}>
           {ADD_ITEMS.map((item, index) => (
-            <AddItem key={index} {...item} />
+            <AddItem key={'address-' + index} {...item} />
           ))}
         </List>
 

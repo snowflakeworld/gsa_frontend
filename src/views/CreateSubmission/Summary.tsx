@@ -39,7 +39,7 @@ export const Summary = () => {
 
           <List sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, py: 0 }}>
             {SUMMARY_BASE_INFO.map((item, index) => (
-              <SummaryItem key={index} {...item} />
+              <SummaryItem key={'summary-' + index} {...item} />
             ))}
           </List>
 
@@ -49,7 +49,7 @@ export const Summary = () => {
             <Typography variant='h6'>Shipping & Billing</Typography>
             <List sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, py: 0 }}>
               {SUMMARY_SHIPPING_BILLING.map((item, index) => (
-                <SummaryItem key={index} {...item} />
+                <SummaryItem key={'summary-' + index} {...item} />
               ))}
             </List>
           </Stack>
@@ -88,7 +88,7 @@ export const Summary = () => {
 
           <List sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, py: 0 }}>
             {SUMMARY_STATISTICS.map((item, index) => (
-              <SummaryItem key={index} {...item} />
+              <SummaryItem key={'summary-' + index} {...item} />
             ))}
           </List>
 

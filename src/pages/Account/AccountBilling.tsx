@@ -22,7 +22,7 @@ export const AccountBillingPage = () => {
       <Stack gap={1}>
         <Grid container spacing={isLargeScreen ? 2 : 1}>
           {BILLING_ITEMS.map((item, index) => (
-            <Grid key={index} size={isLargeScreen ? 6 : 12}>
+            <Grid key={'billing-' + index} size={isLargeScreen ? 6 : 12}>
               <BillingItem {...item} />
             </Grid>
           ))}

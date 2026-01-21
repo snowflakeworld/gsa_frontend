@@ -37,7 +37,7 @@ export const Footer: FC<FooterProps> = ({ isLandingPage = true }) => {
               </Typography>
             </Stack>
             {FOOTER_LINK_TYPES.map((type, idx) => (
-              <LinkListMain key={idx} type={type as LinkType} />
+              <LinkListMain key={'footer-link-' + idx} type={type as LinkType} />
             ))}
           </Stack>
         )}
@@ -59,7 +59,7 @@ export const Footer: FC<FooterProps> = ({ isLandingPage = true }) => {
             sx={isLargeScreen ? {} : { flexWrap: 'wrap' }}
           >
             {FOOTER_LINK_SUB.map((link: LinkContent, idx: number) => (
-              <Link className='footer-link__sub' key={idx} href={link.path} noWrap>
+              <Link className='footer-link__sub' key={'footer-link-sub-' + idx} href={link.path} noWrap>
                 {link.title}
               </Link>
             ))}

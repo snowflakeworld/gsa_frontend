@@ -24,7 +24,7 @@ const SpecServiceSection = () => {
 
         <Grid container spacing={4}>
           {SPECIAL_SERVICES.map((props, idx: number) => (
-            <SpecialServiceCard key={idx} {...props} />
+            <SpecialServiceCard key={'special-service-card-' + idx} {...props} />
           ))}
         </Grid>
       </Stack>

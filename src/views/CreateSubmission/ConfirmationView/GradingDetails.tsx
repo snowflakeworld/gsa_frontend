@@ -49,7 +49,7 @@ export const GradingDetails: FC<GradingDetailsProps> = ({ canEdit = true }) => {
         </Stack>
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, py: 0 }}>
           {SUMMARY_BASE_INFO.map((item, index) => (
-            <SummaryItem key={index} {...item} />
+            <SummaryItem key={'summary-' + index} {...item} />
           ))}
         </List>
       </Stack>

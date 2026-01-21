@@ -74,7 +74,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
               {statusList
                 .filter((_, index) => index < 2)
                 .map((item, index) => (
-                  <StatusItem key={index} index={index} value={item} />
+                  <StatusItem key={'status-item-' + index} index={index} value={item} />
                 ))}
             </List>
           </Stack>

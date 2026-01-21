@@ -17,7 +17,7 @@ export const MemberShip = () => {
 
       <List sx={{ display: 'flex', flexDirection: 'column', gap: 3.5, py: 0 }}>
         {MEMBERSHIPS.map((item, index) => (
-          <MembershipItem key={index} index={index} {...item} />
+          <MembershipItem key={'membership-' + index} index={index} {...item} />
         ))}
       </List>
 

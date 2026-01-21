@@ -26,7 +26,7 @@ export const Checkout = () => {
         </Typography>
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, py: 0 }}>
           {SUMMARY_STATISTICS.map((item, index) => (
-            <SummaryItem key={index} {...item} />
+            <SummaryItem key={'summary-' + index} {...item} />
           ))}
         </List>
         <Divider />

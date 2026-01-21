@@ -49,7 +49,7 @@ export const ShippingBilling: FC<ShippingBillingProps> = ({ canEdit = true }) =>
         </Stack>
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, py: 0 }}>
           {SUMMARY_SHIPPING_BILLING.map((item, index) => (
-            <SummaryItem key={index} {...item} />
+            <SummaryItem key={'summary-' + index} {...item} />
           ))}
         </List>
       </Stack>

@@ -75,7 +75,7 @@ export const SelectLevel = () => {
             isLargeScreen ? (
               <HorizontalItem key={item.title} index={index} {...item} />
             ) : (
-              <VerticalItem key={index} index={index} {...item} />
+              <VerticalItem key={item.title} index={index} {...item} />
             )
           )}
         </List>
