@@ -3,7 +3,7 @@ import { type FC } from 'react'
 import { Card, Stack, Typography } from '@mui/material'
 
 import { BpRadio } from '@/components/Common'
-import { useServiceLevelSelectContext } from '@/hooks'
+import { useCreateSubmissionSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
 
 interface ServiceLevelItemPros {
@@ -16,12 +16,12 @@ interface ServiceLevelItemPros {
 }
 
 export const HorizontalItem: FC<ServiceLevelItemPros> = ({ index, title, comment, minCards, turnaround, price }) => {
-  const { serviceLevelIdx, selectIdx } = useServiceLevelSelectContext()
+  const { serviceLevelIdx, selectServiceLevelIdx } = useCreateSubmissionSelectContext()
 
   const isSelected = serviceLevelIdx === index
 
   const handleSelect = () => {
-    selectIdx(index)
+    selectServiceLevelIdx(index)
   }
 
   return (

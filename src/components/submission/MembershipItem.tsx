@@ -2,7 +2,7 @@ import { type FC } from 'react'
 
 import { Button, Card, List, Stack, Typography, useColorScheme } from '@mui/material'
 
-import { useDeviceType, useMembershipSelectContext } from '@/hooks'
+import { useCreateSubmissionSelectContext, useDeviceType } from '@/hooks'
 import { gsaColors } from '@/theme'
 import { MembershipBonusItem } from './MembershipBonusItem'
 
@@ -17,12 +17,12 @@ interface MembershipItemPros {
 export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, items, isFree }) => {
   const { mode } = useColorScheme()
   const { isLargeScreen } = useDeviceType()
-  const { membershipIdx, selectIdx } = useMembershipSelectContext()
+  const { membershipIdx, selectMembershipIdx } = useCreateSubmissionSelectContext()
 
   const isSelected = membershipIdx === index
 
   const handleSelect = () => {
-    selectIdx(index)
+    selectMembershipIdx(index)
   }
 
   const leftItemListCount = items.length < 4 ? items.length : Math.floor((items.length + 1) / 2)

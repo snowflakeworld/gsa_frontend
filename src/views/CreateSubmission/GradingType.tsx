@@ -1,6 +1,5 @@
 import { GradingTypeItem, StepButtonGroup } from '@/components/Submission'
 import { GRADING_TYPES } from '@/constants'
-import { GradingTypeSelectProvider } from '@/hooks'
 import { ActiveStepContext } from '@/pages'
 import { Stack, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
@@ -25,13 +24,11 @@ export const GradingType = () => {
           Select the item type that you are submitting to order
         </Typography>
       </Stack>
-      <GradingTypeSelectProvider>
-        <Stack gap={1}>
-          {GRADING_TYPES.map((type, index) => (
-            <GradingTypeItem key={type.title} index={index} onSelect={handleItemSelect} {...type} />
-          ))}
-        </Stack>
-      </GradingTypeSelectProvider>
+      <Stack gap={1}>
+        {GRADING_TYPES.map((type, index) => (
+          <GradingTypeItem key={type.title} index={index} onSelect={handleItemSelect} {...type} />
+        ))}
+      </Stack>
       <StepButtonGroup backVisible={false} nextEnabled={itemSelected} onNext={handleNext} />
     </Stack>
   )

@@ -2,7 +2,7 @@ import { type FC } from 'react'
 
 import { Card, Stack, Typography, useColorScheme } from '@mui/material'
 
-import { useGradingTypeSelectContext } from '@/hooks'
+import { useCreateSubmissionSelectContext } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
 import { BpRadio, CustomIcon, IconColorType } from '../Common'
 
@@ -28,12 +28,12 @@ export const GradingTypeItem: FC<GradingTypeItemProps> = ({
   onSelect
 }) => {
   const { mode } = useColorScheme()
-  const { gradingIdx, selectIdx } = useGradingTypeSelectContext()
+  const { gradingIdx, selectGradingIdix } = useCreateSubmissionSelectContext()
 
   const isSelected = gradingIdx === index
 
   const handleSelect = () => {
-    selectIdx(index)
+    selectGradingIdix(index)
     onSelect()
   }
 

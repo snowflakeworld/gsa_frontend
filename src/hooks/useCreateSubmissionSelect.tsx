@@ -1,8 +1,8 @@
-import { ShippingSelectContext } from '@/context'
+import { CreateSubmissionSelectContext } from '@/context'
 import { useContext } from 'react'
 
-export const useShippingSelectContext = () => {
-  const context = useContext(ShippingSelectContext)
+export const useCreateSubmissionSelectContext = () => {
+  const context = useContext(CreateSubmissionSelectContext)
 
   if (!context) throw new Error('useShippingAddressSelectContext must be used within a ShippingAddressSelectProvider')
 

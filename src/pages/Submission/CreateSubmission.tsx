@@ -6,6 +6,7 @@ import { LANDING_FEATURE_GRID_MAX_WIDTH, STEPS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { dispatch, updateGrading } from '@/store'
 
+import { CreateSubmissionSelectProvider } from '@/context'
 import {
   AddItems,
   Billing,
@@ -57,25 +58,27 @@ export const CreateSubmissionPage = () => {
 
   return (
     <ActiveStepContext.Provider value={{ activeStep, setActiveStep }}>
-      <Stack sx={{ minHeight: isLargeScreen ? 'calc(100vh - 125px)' : 'calc(100vh - 162px)' }} mt={{ xs: 9, md: 9 }}>
-        <StepBar />
-        <Container sx={{ py: { xs: 3, md: 3 } }}>
-          <Stack
-            direction={isLargeScreen ? 'row' : 'column'}
-            gap={isLargeScreen ? 4 : 3}
-            maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH}
-            m='auto'
-          >
-            <Stack flexGrow={1} gap={isLargeScreen && activeStep === STEPS.length - 1 ? 4 : 3}>
-              <Typography variant='h4' textAlign={activeStep === STEPS.length - 1 ? 'center' : 'left'}>
-                {activeStep !== STEPS.length - 1 ? 'Create Submission' : 'Review Order'}
-              </Typography>
-              <ActiveStepComponent step={activeStep} />
+      <CreateSubmissionSelectProvider>
+        <Stack sx={{ minHeight: isLargeScreen ? 'calc(100vh - 125px)' : 'calc(100vh - 162px)' }} mt={{ xs: 9, md: 9 }}>
+          <StepBar />
+          <Container sx={{ py: { xs: 3, md: 3 } }}>
+            <Stack
+              direction={isLargeScreen ? 'row' : 'column'}
+              gap={isLargeScreen ? 4 : 3}
+              maxWidth={LANDING_FEATURE_GRID_MAX_WIDTH}
+              m='auto'
+            >
+              <Stack flexGrow={1} gap={isLargeScreen && activeStep === STEPS.length - 1 ? 4 : 3}>
+                <Typography variant='h4' textAlign={activeStep === STEPS.length - 1 ? 'center' : 'left'}>
+                  {activeStep !== STEPS.length - 1 ? 'Create Submission' : 'Review Order'}
+                </Typography>
+                <ActiveStepComponent step={activeStep} />
+              </Stack>
+              {activeStep === STEPS.length - 1 ? <></> : <Summary />}
             </Stack>
-            {activeStep === STEPS.length - 1 ? <></> : <Summary />}
-          </Stack>
-        </Container>
-      </Stack>
+          </Container>
+        </Stack>
+      </CreateSubmissionSelectProvider>
     </ActiveStepContext.Provider>
   )
 }
