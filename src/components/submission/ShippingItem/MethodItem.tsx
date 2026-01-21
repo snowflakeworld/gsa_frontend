@@ -3,7 +3,7 @@ import { type FC } from 'react'
 import { Card, Stack, Typography } from '@mui/material'
 
 import { BpRadio, StyledImage } from '@/components/Common'
-import { useDeviceType, useShippingSelectContext } from '@/hooks'
+import { useCreateSubmissionSelectContext, useDeviceType } from '@/hooks'
 import { gsaColors, gsaShadows } from '@/theme'
 
 interface MethodItemProps {
@@ -14,7 +14,7 @@ interface MethodItemProps {
 }
 
 export const MethodItem: FC<MethodItemProps> = ({ index, icon, name, price }) => {
-  const { shippingMethodIdx, selectMethodIdx } = useShippingSelectContext()
+  const { shippingMethodIdx, selectMethodIdx } = useCreateSubmissionSelectContext()
   const { isLargeScreen } = useDeviceType()
 
   const isSelected = shippingMethodIdx === index
