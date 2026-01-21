@@ -11,11 +11,13 @@ interface PaginationBulletsProps {
 }
 
 export const PaginationBullets: FC<PaginationBulletsProps> = ({ total, currentIndex, onSelect, theme }) => {
+  const iconFillColor = theme === 'dark' ? gsaIconColors.starModeDark : gsaIconColors.starModeLight
+
   return (
     <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'initial' }, mt: 2, gap: 0.625 }}>
       {Array.from({ length: total }).map((_, i) => (
         <Box
-          key={i}
+          key={'bullet_' + i}
           onClick={() => onSelect(i)}
           sx={{
             width: i === currentIndex ? 48 : 8,
@@ -23,12 +25,7 @@ export const PaginationBullets: FC<PaginationBulletsProps> = ({ total, currentIn
             borderRadius: 2,
             cursor: 'pointer',
             transition: 'width 0.3s, background-color 0.3s ease',
-            backgroundColor:
-              i === currentIndex
-                ? gsaIconColors.customRed
-                : theme === 'dark'
-                  ? gsaIconColors.starModeDark
-                  : gsaIconColors.starModeLight
+            backgroundColor: i === currentIndex ? gsaIconColors.customRed : iconFillColor
           }}
         />
       ))}
