@@ -30,7 +30,7 @@ export const Summary = () => {
           borderColor: 'divider',
           backgroundColor: 'background.cardItem',
           boxShadow: 'none',
-          padding: isLargeScreen ? 3 : 2
+          p: isLargeScreen ? 3 : 2
         }}
       >
         <Stack gap={isLargeScreen ? 2 : 1}>

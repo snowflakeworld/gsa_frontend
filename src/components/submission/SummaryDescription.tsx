@@ -17,7 +17,7 @@ export const SummaryDescription = () => {
         borderColor: 'divider',
         backgroundColor: 'table.header.background',
         boxShadow: 'none',
-        padding: 1
+        p: 1
       }}
     >
       <Stack direction='row' padding={1} gap={1}>

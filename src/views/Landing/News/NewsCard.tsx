@@ -24,7 +24,7 @@ const NewsCardComponent: FC<NewsCardProps> = ({ title, date, img }) => {
         borderColor: 'divider',
         backgroundColor: 'background.card',
         boxShadow: `${gsaShadows.card}`,
-        padding: 2
+        p: 2
       }}
     >
       <Stack gap={{ xs: 2, md: 3 }} alignItems='center'>

@@ -28,12 +28,12 @@ export const GradingTypeItem: FC<GradingTypeItemProps> = ({
   onSelect
 }) => {
   const { mode } = useColorScheme()
-  const { gradingIdx, selectGradingIdix } = useCreateSubmissionSelectContext()
+  const { gradingIdx, selectGradingIdx } = useCreateSubmissionSelectContext()
 
   const isSelected = gradingIdx === index
 
   const handleSelect = () => {
-    selectGradingIdix(index)
+    selectGradingIdx(index)
     onSelect()
   }
 
@@ -46,8 +46,8 @@ export const GradingTypeItem: FC<GradingTypeItemProps> = ({
         backgroundColor: isSelected ? gsaColors.background.red.alpha : 'background.card',
         boxShadow: gsaShadows.xs,
         gap: 1,
-        paddingLeft: 1,
-        paddingRight: 2,
+        pl: 1,
+        pr: 2,
         py: 1.5,
         '&:hover': {
           backgroundColor: isSelected ? gsaColors.background.red.alphaMedium : 'background.overlay'
@@ -60,7 +60,7 @@ export const GradingTypeItem: FC<GradingTypeItemProps> = ({
         <Stack width='2.25rem' height='2.25rem' alignItems='center' justifyContent='center'>
           <CustomIcon
             name={icon}
-            {...(!isSelected ? { color: mode === 'dark' ? 'secondary' : 'dark' } : { color: 'tertiary' })}
+            {...(isSelected ? { color: 'tertiary' } : { color: mode === 'dark' ? 'secondary' : 'dark' })}
             colorMode={colorMode as IconColorType}
             width='1rem'
             height='1rem'
@@ -69,12 +69,7 @@ export const GradingTypeItem: FC<GradingTypeItemProps> = ({
           />
         </Stack>
         <Stack gap={0.25} flexGrow={1}>
-          <Typography
-            variant='h6'
-            fontSize='0.875rem'
-            lineHeight='1.25rem'
-            {...(isSelected ? { color: 'text.red' } : {})}
-          >
+          <Typography variant='h6' fontSize='0.875rem' lineHeight='1.25rem' {...(isSelected && { color: 'text.red' })}>
             {title}
           </Typography>
           <Typography
@@ -87,7 +82,7 @@ export const GradingTypeItem: FC<GradingTypeItemProps> = ({
             {content}
           </Typography>
         </Stack>
-        <BpRadio checked={index === gradingIdx ? true : false} onClick={handleSelect} />
+        <BpRadio checked={index === gradingIdx} onClick={handleSelect} />
       </Stack>
     </Card>
   )

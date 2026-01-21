@@ -59,7 +59,7 @@ export const MethodItem: FC<MethodItemProps> = ({ index, icon, name, price }) =>
             variant='h6'
             fontSize='0.875rem'
             lineHeight='1.25rem'
-            {...(isSelected ? { color: 'text.red' } : {})}
+            {...(isSelected && { color: 'text.red' })}
           >
             {name}
           </Typography>

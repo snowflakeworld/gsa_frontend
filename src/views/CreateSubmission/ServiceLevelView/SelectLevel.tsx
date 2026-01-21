@@ -17,7 +17,7 @@ export const SelectLevel = () => {
       </Stack>
 
       <Stack gap={1}>
-        {isLargeScreen ? (
+        {isLargeScreen && (
           <Card
             sx={{
               borderRadius: 2,
@@ -29,7 +29,7 @@ export const SelectLevel = () => {
               py: 0.5
             }}
           >
-            <Stack gap={1} sx={{ paddingLeft: 3, paddingRight: 1 }}>
+            <Stack gap={1} sx={{ pl: 3, pr: 1 }}>
               <Stack direction='row'>
                 <Typography variant='caption' fontSize='0.75rem' lineHeight='100%' color='text.normal' flex={278}>
                   Service Level
@@ -67,8 +67,6 @@ export const SelectLevel = () => {
               </Stack>
             </Stack>
           </Card>
-        ) : (
-          <></>
         )}
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 1, py: 0 }}>
           {SERVICE_LEVELS.map((item, index) =>

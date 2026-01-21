@@ -19,7 +19,7 @@ const CertSection = () => {
           elevation={1}
           sx={{
             borderRadius: 3,
-            padding: isLargeScreen ? 4 : 3,
+            p: isLargeScreen ? 4 : 3,
             gap: isLargeScreen ? 3 : 2,
             backgroundColor: mode === 'dark' ? 'background.red' : 'background.deep'
           }}

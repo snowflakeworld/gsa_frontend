@@ -33,8 +33,8 @@ export const HorizontalItem: FC<ServiceLevelItemPros> = ({ index, title, comment
         backgroundColor: isSelected ? gsaColors.background.red.alpha : 'background.card',
         boxShadow: gsaShadows.xs,
         gap: 1,
-        paddingLeft: 1,
-        paddingRight: 2,
+        pl: 1,
+        pr: 2,
         py: 1.5,
         '&:hover': {
           backgroundColor: isSelected ? gsaColors.background.red.alphaMedium : 'background.overlay'
@@ -44,14 +44,9 @@ export const HorizontalItem: FC<ServiceLevelItemPros> = ({ index, title, comment
       onClick={handleSelect}
     >
       <Stack direction='row' alignItems='center' gap={1}>
-        <BpRadio checked={index === serviceLevelIdx ? true : false} onClick={handleSelect} />
+        <BpRadio checked={index === serviceLevelIdx} onClick={handleSelect} />
         <Stack gap={0.25} flex={258}>
-          <Typography
-            variant='h6'
-            fontSize='0.875rem'
-            lineHeight='1.25rem'
-            {...(isSelected ? { color: 'text.red' } : {})}
-          >
+          <Typography variant='h6' fontSize='0.875rem' lineHeight='1.25rem' {...(isSelected && { color: 'text.red' })}>
             {title}
           </Typography>
           <Typography
@@ -68,7 +63,7 @@ export const HorizontalItem: FC<ServiceLevelItemPros> = ({ index, title, comment
           variant='h6'
           fontSize='0.875rem'
           lineHeight='1.25rem'
-          {...(isSelected ? { color: 'text.red' } : {})}
+          {...(isSelected && { color: 'text.red' })}
           flex={100}
           textAlign='center'
         >
@@ -78,7 +73,7 @@ export const HorizontalItem: FC<ServiceLevelItemPros> = ({ index, title, comment
           variant='h6'
           fontSize='0.875rem'
           lineHeight='1.25rem'
-          {...(isSelected ? { color: 'text.red' } : {})}
+          {...(isSelected && { color: 'text.red' })}
           flex={100}
           textAlign='center'
         >
@@ -88,7 +83,7 @@ export const HorizontalItem: FC<ServiceLevelItemPros> = ({ index, title, comment
           variant='h6'
           fontSize='0.875rem'
           lineHeight='1.25rem'
-          {...(isSelected ? { color: 'text.red' } : {})}
+          {...(isSelected && { color: 'text.red' })}
           flex={60}
           textAlign='center'
         >

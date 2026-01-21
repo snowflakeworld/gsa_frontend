@@ -31,8 +31,8 @@ export const PaymentItem: FC<PaymentItemProps> = ({ index, name, allowInput }) =
         backgroundColor: isSelected ? gsaColors.background.red.alpha : 'background.card',
         boxShadow: gsaShadows.xs,
         gap: 1,
-        paddingLeft: 2,
-        paddingRight: 1,
+        pl: 2,
+        pr: 1,
         py: 1.5,
         '&:hover': {
           backgroundColor: isSelected ? gsaColors.background.red.alphaMedium : 'background.overlay'
@@ -53,7 +53,7 @@ export const PaymentItem: FC<PaymentItemProps> = ({ index, name, allowInput }) =
             variant='h6'
             fontSize='0.875rem'
             lineHeight='1.25rem'
-            {...(isSelected ? { color: 'text.red' } : {})}
+            {...(isSelected && { color: 'text.red' })}
             flexGrow={1}
           >
             {name}
@@ -74,7 +74,7 @@ export const PaymentItem: FC<PaymentItemProps> = ({ index, name, allowInput }) =
               }}
             >
               <InputBase
-                sx={{ width: '100%', padding: 1, fontSize: '0.75rem' }}
+                sx={{ width: '100%', p: 1, fontSize: '0.75rem' }}
                 placeholder='Input account number'
                 inputProps={{ 'aria-label': 'Input account number' }}
               />
@@ -84,7 +84,7 @@ export const PaymentItem: FC<PaymentItemProps> = ({ index, name, allowInput }) =
           )}
         </Stack>
 
-        <BpRadio checked={isSelected ? true : false} onClick={handleSelect} />
+        <BpRadio checked={isSelected} onClick={handleSelect} />
       </Stack>
     </Card>
   )

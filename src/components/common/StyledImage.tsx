@@ -15,9 +15,9 @@ export const StyledImage = styled('img')<StyledImageProps>(
     ...{
       width: width ? width : 'auto',
       height: height ? height : 'auto',
-      margin: margin,
-      border: border,
-      borderRadius: borderRadius,
+      margin,
+      border,
+      borderRadius,
       objectFit: 'cover'
     },
     ...extra

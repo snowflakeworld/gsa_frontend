@@ -22,7 +22,7 @@ export const MyProgressItem: FC<MyProgressItemProps> = ({ count, date, level }) 
         borderColor: 'divider',
         backgroundColor: 'background.cardItem',
         boxShadow: `${gsaShadows.card}`,
-        padding: 2
+        p: 2
       }}
     >
       <Stack direction='row' gap={2} alignItems='center'>

@@ -54,8 +54,8 @@ const AdditionalCardComponent: FC<AdditionalCardProps> = ({
           boxShadow: `${gsaShadows.card}`,
           gap: 4,
           px: 5,
-          paddingTop: 7.5,
-          paddingBottom: 5,
+          pt: 7.5,
+          pb: 5,
           minHeight: { xs: 'auto', md: '20rem' }
         }}
       >

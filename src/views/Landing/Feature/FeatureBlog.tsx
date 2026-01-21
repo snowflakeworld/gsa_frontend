@@ -23,7 +23,7 @@ const FeatureBlogComponent: FC<FeatureBlogProps> = ({ icon, title, content }) =>
         sx={{
           height: { xs: 'auto', md: '100%' },
           borderRadius: 2.25,
-          padding: 5,
+          p: 5,
           border: `1px solid ${resolvedMode === 'dark' ? 'transparent' : gsaColors.border.normal.light}`,
           backgroundColor: 'background.card',
           boxShadow: `${gsaShadows.card}`
@@ -32,8 +32,8 @@ const FeatureBlogComponent: FC<FeatureBlogProps> = ({ icon, title, content }) =>
         <CardContent
           sx={{
             height: '100%',
-            padding: 0,
-            '&:last-child': { paddingBottom: 0 }
+            p: 0,
+            '&:last-child': { pb: 0 }
           }}
         >
           <Stack gap={4}>

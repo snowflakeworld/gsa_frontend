@@ -26,7 +26,7 @@ export const MyMembershipItem: FC<MyMembershipItemProps> = ({ title, status, dur
         borderColor: 'divider',
         backgroundColor: 'background.cardItem',
         boxShadow: `${gsaShadows.card}`,
-        padding: 2
+        p: 2
       }}
     >
       <Stack gap={2} direction='row'>

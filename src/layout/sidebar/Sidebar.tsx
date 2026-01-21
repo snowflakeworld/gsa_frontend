@@ -69,7 +69,7 @@ export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined
 
   return (
     <Stack sx={{ width: width && '100%', px: isLargeScreen ? 5 : 2.5, py: isLargeScreen ? 6.25 : 2.5 }} gap={1.5}>
-      {isSmallScreen ? <SidebarHeader onClose={handleClose} /> : <></>}
+      {isSmallScreen && <SidebarHeader onClose={handleClose} />}
       <List sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, py: 0 }}>
         {MENU_ITEMS.map((item, index) => (
           <ListItemButton

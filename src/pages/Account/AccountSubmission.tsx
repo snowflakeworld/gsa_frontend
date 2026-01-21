@@ -5,6 +5,7 @@ import { Button, Stack, Typography } from '@mui/material'
 import { CustomIcon } from '@/components'
 import { ROUTERS } from '@/configs'
 import { useDeviceType } from '@/hooks'
+
 import { Progress, Recent } from '@/views/Submission'
 
 const AccountSubmissionPage = () => {

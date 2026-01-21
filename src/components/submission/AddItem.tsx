@@ -48,8 +48,8 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
             backgroundColor: 'background.cardItem',
             boxShadow: 'none',
             py: 1.5,
-            paddingLeft: 1.5,
-            paddingRight: isLargeScreen ? 2 : 1.5
+            pl: 1.5,
+            pr: isLargeScreen ? 2 : 1.5
           }}
         >
           <Stack direction='row' gap={1}>
@@ -105,7 +105,7 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
                 }}
               >
                 <InputBase
-                  sx={{ ml: 1, flex: 1, paddingRight: 1 }}
+                  sx={{ ml: 1, flex: 1, pr: 1 }}
                   placeholder='0'
                   inputProps={{ 'aria-label': '0' }}
                   startAdornment={
@@ -155,9 +155,7 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
               <FormControlLabel control={<Checkbox size='small' name='authentic' />} label='Authentic' />
             </Stack>
           </Stack>
-          {isLargeScreen ? (
-            <></>
-          ) : (
+          {!isLargeScreen && (
             <Button
               variant='contained'
               className='button-alpha--red'

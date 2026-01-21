@@ -74,7 +74,7 @@ const CreateSubmissionPage = () => {
                 </Typography>
                 <ActiveStepComponent step={activeStep} />
               </Stack>
-              {activeStep === STEPS.length - 1 ? <></> : <Summary />}
+              {activeStep !== STEPS.length - 1 && <Summary />}
             </Stack>
           </Container>
         </Stack>

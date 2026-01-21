@@ -36,7 +36,7 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
         borderColor: isSelected ? 'border.red' : 'border.card',
         backgroundColor: isSelected ? gsaColors.background.red.alpha : 'background.card',
         boxShadow: 'none',
-        padding: 4,
+        p: 4,
         '&:hover': {
           backgroundColor: isSelected ? gsaColors.background.red.alphaMedium : 'background.overlay'
         },
@@ -51,13 +51,13 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
           </Typography>
           <Stack direction='row'>
             {!isNaN(Number(policy)) ? (
-              <Typography variant='h6' {...(isSelected ? { color: 'text.red' } : {})} alignContent='flex-start'>
+              <Typography variant='h6' {...(isSelected && { color: 'text.red' })} alignContent='flex-start'>
                 $
               </Typography>
             ) : (
               <></>
             )}
-            <Typography variant='h5' fontSize='2rem' lineHeight='2rem' {...(isSelected ? { color: 'text.red' } : {})}>
+            <Typography variant='h5' fontSize='2rem' lineHeight='2rem' {...(isSelected && { color: 'text.red' })}>
               {policy}
             </Typography>
             <Typography
