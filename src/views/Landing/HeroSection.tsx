@@ -33,18 +33,18 @@ const HeroSection = () => {
         <Stack>
           <Stack
             width='100%'
-            direction={{ xs: 'column-reverse', md: 'row' }}
+            direction={isLargeScreen ? 'row' : 'column-reverse'}
             alignItems='center'
             justifyContent='center'
-            gap={{ xs: 2, md: 12.5 }}
-            py={{ xs: 3, lg: 0 }}
+            gap={isLargeScreen ? 12.5 : 2}
+            py={isLargeScreen ? 0 : 3}
           >
             <Stack
               maxWidth={550}
-              direction={{ xs: 'column-reverse', md: 'column' }}
-              gap={{ xs: 3, md: 10 }}
+              direction={isLargeScreen ? 'column' : 'column-reverse'}
+              gap={isLargeScreen ? 10 : 3}
               position='relative'
-              paddingBottom={{ xs: 0, md: 13.75 }}
+              paddingBottom={isLargeScreen ? 13.75 : 0}
             >
               <HeroDetails currentIndex={currentIndex} />
               <PaginationBullets
