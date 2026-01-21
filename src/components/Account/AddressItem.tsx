@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { type FC } from 'react'
 
 import { Circle } from '@mui/icons-material'
 import { Button, Card, Stack, Typography, useColorScheme } from '@mui/material'

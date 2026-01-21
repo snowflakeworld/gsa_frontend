@@ -1,7 +1,8 @@
+import { Box, Button, Container, InputBase, Paper, Stack, Typography, useColorScheme } from '@mui/material'
+
 import { CustomIcon } from '@/components'
 import { LANDING_FEATURE_GRID_MAX_WIDTH } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { Box, Button, Container, InputBase, Paper, Stack, Typography, useColorScheme } from '@mui/material'
 
 const CertSection = () => {
   const { isLargeScreen } = useDeviceType()

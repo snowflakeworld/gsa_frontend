@@ -1,8 +1,10 @@
+import { type FC, memo } from 'react'
+
+import { Card, Stack, Typography } from '@mui/material'
+
 import { StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks'
 import { gsaShadows } from '@/theme'
-import { Card, Stack, Typography } from '@mui/material'
-import { FC, memo } from 'react'
 
 interface NewsCardProps {
   title: string

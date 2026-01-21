@@ -1,12 +1,14 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+import { Provider } from 'react-redux'
+
 import { AccountLayout, MainLayout } from '@/layout'
 import { DashboardLayout } from '@/layout/Content/Dashboard'
 import { store } from '@/store'
-import { Provider } from 'react-redux'
+import PrivateRoute from './PrivateRoute'
+
 import { AccountRoutes } from './Account'
 import { MainRoutes } from './Main'
-import PrivateRoute from './PrivateRoute'
 import { SubmissionRoutes } from './Submission'
 
 const routes = createBrowserRouter([

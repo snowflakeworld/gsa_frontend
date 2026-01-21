@@ -1,6 +1,8 @@
+import { Button, Container, Grid, Stack, Typography } from '@mui/material'
+
 import { NEWS_ITEMS } from '@/constants'
 import { LANDING_FEATURE_GRID_MAX_WIDTH } from '@/constants/numeric'
-import { Button, Container, Grid, Stack, Typography } from '@mui/material'
+
 import { NewsCard } from './News'
 
 const NewsSection = () => {

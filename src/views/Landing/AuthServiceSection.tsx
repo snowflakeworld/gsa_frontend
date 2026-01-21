@@ -1,8 +1,10 @@
-import { Box, Container, Stack, Typography } from '@mui/material'
 import { Swiper, SwiperSlide } from 'swiper/react'
+
+import { Box, Container, Stack, Typography } from '@mui/material'
 
 import { LANDING_FEATURE_GRID_MAX_WIDTH, SERVICE_CONTENTS } from '@/constants'
 import { useDeviceType } from '@/hooks'
+
 import { ServiceCard } from './Service'
 
 const AuthServiceSection = () => {

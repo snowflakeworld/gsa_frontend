@@ -8,7 +8,7 @@ import { LANDING_FEATURE_GRID_MAX_WIDTH } from '@/constants'
 import { useDeviceType } from '@/hooks'
 import { Progress, Recent } from '@/views/Submission'
 
-export const MySubmissionPage = () => {
+const MySubmissionPage = () => {
   const navigate = useNavigate()
   const { isLargeScreen } = useDeviceType()
 
@@ -50,3 +50,5 @@ export const MySubmissionPage = () => {
     </Stack>
   )
 }
+
+export default MySubmissionPage

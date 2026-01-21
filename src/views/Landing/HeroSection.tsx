@@ -1,9 +1,11 @@
-import { Box, Container, Stack, useColorScheme } from '@mui/material'
 import { useRef, useState } from 'react'
 import { Swiper as SwiperType } from 'swiper/types'
 
+import { Box, Container, Stack, useColorScheme } from '@mui/material'
+
 import { HERO_CARDS } from '@/constants'
 import { useDeviceType } from '@/hooks'
+
 import { HeroDetails, HeroSwiper, PaginationBullets, ScrollButton } from './Hero'
 
 const HeroSection = () => {

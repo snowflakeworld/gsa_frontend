@@ -7,7 +7,7 @@ import { ROUTERS } from '@/configs'
 import { useDeviceType } from '@/hooks'
 import { Progress, Recent } from '@/views/Submission'
 
-export const AccountSubmissionPage = () => {
+const AccountSubmissionPage = () => {
   const navigate = useNavigate()
   const { isLargeScreen } = useDeviceType()
 
@@ -45,3 +45,5 @@ export const AccountSubmissionPage = () => {
     </Stack>
   )
 }
+
+export default AccountSubmissionPage

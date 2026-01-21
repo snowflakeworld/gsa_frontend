@@ -1,7 +1,7 @@
 import { CustomIcon } from '@/components'
 import { gsaIconColors, gsaShadows } from '@/theme'
 import { Box, Card, Stack, Typography } from '@mui/material'
-import { FC, memo } from 'react'
+import { type FC, memo } from 'react'
 
 interface AdditionalCardProps {
   title: string

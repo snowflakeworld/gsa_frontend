@@ -1,7 +1,8 @@
+import { List, Stack, Typography } from '@mui/material'
+
 import { NoDataPaper } from '@/components'
 import { MyRecentItem } from '@/components/Submission'
 import { MY_RECENT_SUBMISSION } from '@/constants'
-import { List, Stack, Typography } from '@mui/material'
 
 export const Recent = () => {
   // const recentCount = undefined

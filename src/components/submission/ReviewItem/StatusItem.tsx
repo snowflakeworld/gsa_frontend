@@ -1,6 +1,6 @@
 import { Circle } from '@mui/icons-material'
 import { Stack, Typography } from '@mui/material'
-import { FC, memo } from 'react'
+import { type FC, memo } from 'react'
 
 interface StatusItemProps {
   index: number

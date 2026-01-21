@@ -1,4 +1,4 @@
-import { Email, User } from './user'
+import { type Email, type User } from './user'
 
 export interface AuthState {
   isLoggedIn: boolean

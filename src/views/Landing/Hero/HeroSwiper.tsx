@@ -1,5 +1,5 @@
 import { Box, Stack, useColorScheme } from '@mui/material'
-import { FC, useEffect } from 'react'
+import { type FC, useEffect } from 'react'
 import { Autoplay, EffectCoverflow } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Swiper as SwiperType } from 'swiper/types'

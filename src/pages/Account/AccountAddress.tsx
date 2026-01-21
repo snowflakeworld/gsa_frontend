@@ -6,7 +6,7 @@ import { Button, Stack, Typography } from '@mui/material'
 import { useDeviceType } from '@/hooks'
 import { AddressEdit, AddressList } from '@/views/Account'
 
-export const AccountAddressPage: FC = () => {
+const AccountAddressPage: FC = () => {
   const [editMode, setEditMode] = useState(false)
   const { isLargeScreen } = useDeviceType()
 
@@ -47,3 +47,5 @@ export const AccountAddressPage: FC = () => {
     </Stack>
   )
 }
+
+export default AccountAddressPage
