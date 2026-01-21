@@ -44,7 +44,7 @@ export const BillingItem: FC<BillingItemProps> = ({
       }}
     >
       <Stack width='100%' my='auto'>
-        <Stack direction='row' gap={0.25} alignItems='center' sx={{ my: 'auto' }}>
+        <Stack direction='row' gap={0.25} alignItems='center' my='auto'>
           <Stack flexGrow={1} gap={0.25}>
             <StyledImage
               src={`/assets/images/${img}`}
@@ -62,30 +62,25 @@ export const BillingItem: FC<BillingItemProps> = ({
             </Typography>
           </Stack>
           <Stack direction='row' gap={1.25} alignItems='center'>
-            {isMain ? (
-              showMainSelect ? (
+            {showMainSelect &&
+              (isMain ? (
                 <RedChip size='small'>Main Address</RedChip>
               ) : (
-                <></>
-              )
-            ) : showMainSelect ? (
-              <Typography
-                variant='caption'
-                fontWeight={400}
-                fontSize='0.75rem'
-                lineHeight='1rem'
-                sx={{
-                  color: gsaColors.text.red,
-                  textDecoration: 'underline',
-                  cursor: 'pointer',
-                  '&:hover': { color: gsaColors.text.redAlpha }
-                }}
-              >
-                Set as main address
-              </Typography>
-            ) : (
-              <></>
-            )}
+                <Typography
+                  variant='caption'
+                  fontWeight={400}
+                  fontSize='0.75rem'
+                  lineHeight='1rem'
+                  sx={{
+                    color: gsaColors.text.red,
+                    textDecoration: 'underline',
+                    cursor: 'pointer',
+                    '&:hover': { color: gsaColors.text.redAlpha }
+                  }}
+                >
+                  Set as main address
+                </Typography>
+              ))}
             <Button variant='contained' className='button--tiny'>
               <CustomIcon
                 name='edit'
