@@ -6,7 +6,7 @@ import { Button, InputAdornment, Stack, Typography } from '@mui/material'
 import { NormalTextInput, StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks'
 
-export const AccountHomePage = () => {
+const AccountHomePage = () => {
   const [editMode, setEditMode] = useState(false)
   const { isLargeScreen } = useDeviceType()
 
@@ -88,3 +88,5 @@ export const AccountHomePage = () => {
     </Stack>
   )
 }
+
+export default AccountHomePage

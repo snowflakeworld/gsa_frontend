@@ -6,7 +6,7 @@ import { Button, Stack, Typography } from '@mui/material'
 import { NormalPasswordInput, NormalTextInput } from '@/components'
 import { useDeviceType } from '@/hooks'
 
-export const AccountSecurityPage = () => {
+const AccountSecurityPage = () => {
   const { isLargeScreen } = useDeviceType()
   const [editMode, setEditMode] = useState(false)
 
@@ -67,3 +67,5 @@ export const AccountSecurityPage = () => {
     </Stack>
   )
 }
+
+export default AccountSecurityPage

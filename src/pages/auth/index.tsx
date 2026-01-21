@@ -13,7 +13,7 @@ interface StepContextProps {
 
 export const StepContext = createContext<StepContextProps | null>(null)
 
-export const Sign = () => {
+const Sign = () => {
   const [step, setStep] = useState<number>(0)
   const { isMobile } = useDeviceType()
 
@@ -46,3 +46,5 @@ export const Sign = () => {
     </Box>
   )
 }
+
+export default Sign

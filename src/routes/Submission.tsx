@@ -1,5 +1,9 @@
+import { lazy } from 'react'
+
 import { ROUTERS } from '@/configs'
-import { CreateSubmissionPage, MySubmissionPage } from '@/pages'
+
+const MySubmissionPage = lazy(() => import('@/pages/Submission/MySubmission'))
+const CreateSubmissionPage = lazy(() => import('@/pages/Submission/CreateSubmission'))
 
 export const SubmissionRoutes = [
   { path: ROUTERS.Submission, element: <MySubmissionPage /> },

@@ -7,7 +7,7 @@ import { NormalTextInput } from '@/components'
 import { ROUTERS } from '@/configs'
 import { useDeviceType } from '@/hooks'
 
-export const AccountTrackOrdersPage = () => {
+const AccountTrackOrdersPage = () => {
   const [inputNumber, setInputNumber] = useState('')
   const { isLargeScreen } = useDeviceType()
   const navigate = useNavigate()
@@ -47,3 +47,5 @@ export const AccountTrackOrdersPage = () => {
     </Stack>
   )
 }
+
+export default AccountTrackOrdersPage

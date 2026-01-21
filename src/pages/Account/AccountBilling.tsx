@@ -7,7 +7,7 @@ import { BillingItem } from '@/components/Account'
 import { BILLING_ITEMS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 
-export const AccountBillingPage = () => {
+const AccountBillingPage = () => {
   const [editMode, setEditMode] = useState(false)
   const { isLargeScreen } = useDeviceType()
 
@@ -54,3 +54,5 @@ export const AccountBillingPage = () => {
     </Stack>
   )
 }
+
+export default AccountBillingPage

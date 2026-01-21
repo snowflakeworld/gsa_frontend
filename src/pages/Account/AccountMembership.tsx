@@ -5,7 +5,7 @@ import { BillingItem, MyMembershipItem } from '@/components/Account'
 import { BILLING_ITEMS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 
-export const AccountMembershipPage = () => {
+const AccountMembershipPage = () => {
   const { isLargeScreen } = useDeviceType()
 
   return (
@@ -17,11 +17,7 @@ export const AccountMembershipPage = () => {
         </Typography>
       </Stack>
       <Stack gap={3}>
-        <Stack
-          direction={isLargeScreen ? 'row' : 'column'}
-          gap={3}
-          alignItems={isLargeScreen ? 'center' : 'normal'}
-        >
+        <Stack direction={isLargeScreen ? 'row' : 'column'} gap={3} alignItems={isLargeScreen ? 'center' : 'normal'}>
           <Stack flex={560} gap={1.5}>
             <Typography variant='caption' lineHeight='1.25rem' color='text.normal'>
               Membership information
@@ -64,3 +60,5 @@ export const AccountMembershipPage = () => {
     </Stack>
   )
 }
+
+export default AccountMembershipPage

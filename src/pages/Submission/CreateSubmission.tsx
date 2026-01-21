@@ -47,7 +47,7 @@ const ActiveStepComponent: FC<ActiveStepComponentProps> = ({ step }) => {
   }
 }
 
-export const CreateSubmissionPage = () => {
+const CreateSubmissionPage = () => {
   const [activeStep, setActiveStep] = useState<number>(0)
   const { isLargeScreen } = useDeviceType()
   useEffect(() => {
@@ -82,3 +82,5 @@ export const CreateSubmissionPage = () => {
     </ActiveStepContext.Provider>
   )
 }
+
+export default CreateSubmissionPage

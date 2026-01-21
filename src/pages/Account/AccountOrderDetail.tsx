@@ -5,7 +5,7 @@ import { Stack, Typography } from '@mui/material'
 import { useDeviceType } from '@/hooks'
 import { Checkout, GradingDetails, ReviewOrders, ShippingBilling } from '@/views/CreateSubmission/ConfirmationView'
 
-export const AccountOrderDetailPage = () => {
+const AccountOrderDetailPage = () => {
   const { orderId } = useParams()
   const { isLargeScreen } = useDeviceType()
 
@@ -23,3 +23,5 @@ export const AccountOrderDetailPage = () => {
     </Stack>
   )
 }
+
+export default AccountOrderDetailPage
