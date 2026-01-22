@@ -25,7 +25,7 @@ export const NormalTextInput: FC<NormalTextInputProps> = ({
   children = undefined,
   listener = undefined
 }) => {
-  const [value, setValue] = useState(defaultValue)
+  const [value, setValue] = useState<string>(defaultValue)
 
   const handleChange = (val: string) => {
     if (editable) {

@@ -22,8 +22,8 @@ export const NormalPasswordInput: FC<NormalPasswordInputProps> = ({
   flex = 0,
   width = undefined
 }) => {
-  const [password, setPassword] = useState(defaultValue)
-  const [showPassword, setShowPassword] = useState(false)
+  const [password, setPassword] = useState<string>(defaultValue)
+  const [showPassword, setShowPassword] = useState<boolean>(false)
 
   const handleChange = (val: string) => {
     if (editable) setPassword(val)

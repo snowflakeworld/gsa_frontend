@@ -8,7 +8,7 @@ import { useDeviceType } from '@/hooks'
 
 const AccountSecurityPage = () => {
   const { isLargeScreen } = useDeviceType()
-  const [editMode, setEditMode] = useState(false)
+  const [editMode, setEditMode] = useState<boolean>(false)
 
   return (
     <Stack gap={isLargeScreen ? 4 : 2}>

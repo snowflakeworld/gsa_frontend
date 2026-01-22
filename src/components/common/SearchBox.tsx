@@ -11,7 +11,7 @@ interface SearchBoxProps {
 }
 
 export const SearchBox: FC<SearchBoxProps> = ({ placeHolder, handleSubmit }) => {
-  const [inputText, setInputText] = useState('')
+  const [inputText, setInputText] = useState<string>('')
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputText(e.currentTarget.value)

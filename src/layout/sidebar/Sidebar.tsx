@@ -48,7 +48,7 @@ const MENU_ITEMS = [
 ]
 
 export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined }) => {
-  const [curIdx, setCurIdx] = useState(0)
+  const [curIdx, setCurIdx] = useState<number>(0)
   const navigate = useNavigate()
   const { isLargeScreen, isSmallScreen } = useDeviceType()
   const logout = useLogout()
