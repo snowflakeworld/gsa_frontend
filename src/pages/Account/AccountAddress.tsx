@@ -7,7 +7,7 @@ import { useDeviceType } from '@/hooks'
 import { AddressEdit, AddressList } from '@/views/Account'
 
 const AccountAddressPage: FC = () => {
-  const [editMode, setEditMode] = useState(false)
+  const [editMode, setEditMode] = useState<boolean>(false)
   const { isLargeScreen } = useDeviceType()
 
   return (

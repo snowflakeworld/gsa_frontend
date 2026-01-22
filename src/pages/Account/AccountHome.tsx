@@ -7,7 +7,7 @@ import { NormalTextInput, StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks'
 
 const AccountHomePage = () => {
-  const [editMode, setEditMode] = useState(false)
+  const [editMode, setEditMode] = useState<boolean>(false)
   const { isLargeScreen } = useDeviceType()
 
   return (

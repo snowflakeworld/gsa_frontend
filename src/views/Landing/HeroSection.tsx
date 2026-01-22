@@ -14,7 +14,7 @@ const HeroSection = () => {
   const { isLargeScreen } = useDeviceType()
 
   const swiperRef = useRef<SwiperType | null>(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
 
   const handleSelect = (index: number) => {
     swiperRef.current?.slideTo(index)

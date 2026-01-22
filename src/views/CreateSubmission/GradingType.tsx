@@ -5,7 +5,7 @@ import { Stack, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
 
 export const GradingType = () => {
-  const [itemSelected, setItemSelected] = useState(false)
+  const [itemSelected, setItemSelected] = useState<boolean>(false)
   const { activeStep, setActiveStep } = useContext(ActiveStepContext)!
 
   const handleNext = () => {

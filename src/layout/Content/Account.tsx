@@ -13,7 +13,7 @@ import { Sidebar } from '../Sidebar'
 const DRAWER_WIDTH = 320
 
 export const AccountLayout = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false)
+  const [drawerOpen, setDrawerOpen] = useState<boolean>(false)
   const { isLargeScreen } = useDeviceType()
 
   const toggleDrawer = () => setDrawerOpen(state => !state)

@@ -8,7 +8,7 @@ import { ROUTERS } from '@/configs'
 import { useDeviceType } from '@/hooks'
 
 const AccountTrackOrdersPage = () => {
-  const [inputNumber, setInputNumber] = useState('')
+  const [inputNumber, setInputNumber] = useState<string>('')
   const { isLargeScreen } = useDeviceType()
   const navigate = useNavigate()
 

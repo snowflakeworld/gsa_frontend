@@ -8,7 +8,7 @@ import { AddressItem } from '@/components/Submission/ShippingItem'
 import { SHIPPING_ADDRESSES } from '@/constants'
 
 export const Address = () => {
-  const [openDialog, setOpenDialog] = useState(false)
+  const [openDialog, setOpenDialog] = useState<boolean>(false)
   const [savedAddress, setSavedAddress] = useState<AddressData | null>(null)
 
   const handleSave = (address: AddressData) => {

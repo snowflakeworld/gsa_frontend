@@ -8,7 +8,7 @@ import { BILLING_ITEMS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 
 const AccountBillingPage = () => {
-  const [editMode, setEditMode] = useState(false)
+  const [editMode, setEditMode] = useState<boolean>(false)
   const { isLargeScreen } = useDeviceType()
 
   return (
