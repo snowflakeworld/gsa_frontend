@@ -12,3 +12,12 @@ export interface CreateInfo extends Email {
   password: string
   confirmPassword: string
 }
+
+export interface CheckEmailRes {
+  status: boolean
+}
+
+export interface SignInRes {
+  user: User
+  token: string
+}
