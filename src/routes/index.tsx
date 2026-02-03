@@ -7,6 +7,7 @@ import { DashboardLayout } from '@/layout/Content/Dashboard'
 import { store } from '@/store'
 import PrivateRoute from './PrivateRoute'
 
+import { ThemedToastContainer } from '@/components/Common/ThemeToastContainer'
 import { AccountRoutes } from './Account'
 import { MainRoutes } from './Main'
 import { SubmissionRoutes } from './Submission'
@@ -41,6 +42,7 @@ const AppRouter = () => {
   return (
     <Provider store={store}>
       <RouterProvider router={routes} />
+      <ThemedToastContainer />
     </Provider>
   )
 }
