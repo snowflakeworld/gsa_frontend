@@ -14,6 +14,7 @@ export const ScrollButton = () => {
   return (
     <Button
       variant='text'
+      className='text-normal-color'
       sx={{ gap: 1, position: 'absolute', left: -16, bottom: -30, px: 1 }}
       onClick={handleClick}
       startIcon={

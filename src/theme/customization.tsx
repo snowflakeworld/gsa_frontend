@@ -196,14 +196,17 @@ export const customizations: Components<Theme> = {
 
       text: ({ theme }) => ({
         border: 'none',
-        color: gsaColors.text.normal,
+        color: gsaColors.text.primary.light,
+        '&.text-normal-color': {
+          color: gsaColors.text.normal
+        },
         '&:hover': {
           color: gsaColors.text.normal,
           boxShadow: 'none'
         },
         ...theme.applyStyles('dark', {
           border: 'none',
-          color: gsaColors.text.normal,
+          color: gsaColors.text.primary.dark,
           '&:hover': {}
         })
       }),
