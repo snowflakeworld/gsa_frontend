@@ -21,6 +21,7 @@
     "@qpokychuk/sf-pro-display": "^1.0.2",
     "@reduxjs/toolkit": "^2.11.1",
     "axios": "^1.13.2",
+    "blueimp-md5": "^2.19.0",
     "gsap": "^3.14.1",
     "html-react-parser": "^5.2.11",
     "qrcode.react": "^4.2.0",
@@ -39,6 +40,7 @@
   "devDependencies": {
     "@eslint/js": "^9.15.0",
     "@svgr/webpack": "^8.1.0",
+    "@types/blueimp-md5": "^2.18.2",
     "@types/node": "^22.10.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",

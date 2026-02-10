@@ -9,10 +9,12 @@ export interface Email {
   email: string
 }
 
+export interface Password {
+  password: string
+}
+
 export interface EmailUserName extends Email {
   username: string
 }
 
-export interface EmailPassword extends Email {
-  password: string
-}
+export type EmailPassword = Email & Password

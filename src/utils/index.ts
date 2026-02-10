@@ -1,3 +1,4 @@
+import md5 from 'blueimp-md5'
 import { toast } from 'react-toastify'
 
 /**
@@ -14,4 +15,18 @@ export const handleError = (err: unknown, defaultMessage?: string) => {
   } else {
     toast.update(message, { ...toastOptions, render: message })
   }
+}
+
+export const showToast = (message: string, type: 'success' | 'error' | 'info' | 'warning' = 'info') => {
+  const toastOptions = { hideProgressBar: true, toastId: message }
+
+  if (!toast.isActive(message)) {
+    toast[type](message, toastOptions)
+  } else {
+    toast.update(message, { ...toastOptions, render: message })
+  }
+}
+
+export const hashPassword = (password: string): string => {
+  return md5(password)
 }

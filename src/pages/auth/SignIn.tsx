@@ -13,17 +13,20 @@ import { ROUTERS } from '@/configs'
 import { StepContext } from '@/context/SignStep'
 import { checkEmail, signIn } from '@/services'
 import { dispatch, login } from '@/store'
-import { EmailPassword } from '@/types'
-import { handleError } from '@/utils'
+import { type Email, type Password } from '@/types'
+import { handleError, hashPassword, showToast } from '@/utils'
 
 const defaultValues = {
   email: '',
   password: ''
 }
 
-const schema = yup.object().shape({
-  email: yup.string().required('form.email-required').email('form.email-invalid'),
-  password: yup.string().default('')
+const emailSchema = yup.object().shape({
+  email: yup.string().required('form.email-required').email('form.email-invalid')
+})
+
+const passwordSchema = yup.object().shape({
+  password: yup.string().required('form.password-required').min(6, 'form.password-min')
 })
 
 export const SignIn = () => {
@@ -31,29 +34,50 @@ export const SignIn = () => {
   const { setStep } = useContext(StepContext)!
   const [emailChecked, setEmailChecked] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
 
-  const { control, handleSubmit } = useForm<EmailPassword>({
+  const { control: emailControl, handleSubmit: handleEmailSubmit } = useForm<Email>({
     defaultValues,
     mode: 'onChange',
-    resolver: yupResolver(schema)
+    resolver: yupResolver(emailSchema)
+  })
+
+  const { control: passwordControl, handleSubmit: handlePasswordSubmit } = useForm<Password>({
+    defaultValues,
+    mode: 'onChange',
+    resolver: yupResolver(passwordSchema)
   })
 
   const handleClose = () => {
     navigate(ROUTERS.Home)
   }
 
-  const onSubmit = async (data: EmailPassword) => {
+  const onSubmit = async (data: Email | Password) => {
+    let tmpEmail = email
+    let tmpPassword = password
+
+    if ('email' in data && !!data.email) {
+      setEmail(data.email)
+      tmpEmail = data.email
+    }
+    if ('password' in data && !!data.password) {
+      setPassword(data.password)
+      tmpPassword = data.password
+    }
+
     setLoading(true)
     try {
       if (emailChecked) {
-        // Check Email and Password
-        const result = await signIn(data)
+        const result = await signIn({ email: tmpEmail, password: hashPassword(tmpPassword) })
+        showToast('Login successful!', 'success')
+        console.log(result)
         dispatch(login(result))
         navigate(ROUTERS.Home)
       } else {
-        // Check Email
-        const result = await checkEmail({ email: data.email })
+        const result = await checkEmail({ email: tmpEmail })
         if (!result?.status) {
+          showToast('Email not found. Please sign up first.', 'info')
           setStep(1)
         } else {
           setEmailChecked(true)
@@ -67,7 +91,11 @@ export const SignIn = () => {
   }
 
   return (
-    <Stack component='form' gap={{ xs: 3, md: 4 }} onSubmit={handleSubmit(onSubmit)}>
+    <Stack
+      component='form'
+      gap={{ xs: 3, md: 4 }}
+      onSubmit={emailChecked ? handlePasswordSubmit(onSubmit) : handleEmailSubmit(onSubmit)}
+    >
       <Stack position='relative' gap={1.2} alignItems='center'>
         <Typography variant='h5' fontSize='1rem' lineHeight='1rem'>
           {emailChecked ? 'Enter Password' : 'Welcome To'}
@@ -95,7 +123,7 @@ export const SignIn = () => {
       <FormControl sx={{ display: emailChecked ? 'none' : 'inline-flex' }}>
         <Controller
           name='email'
-          control={control}
+          control={emailControl}
           render={({ field, fieldState: { error } }) => (
             <TextField
               variant='filled'
@@ -113,7 +141,7 @@ export const SignIn = () => {
       <FormControl sx={{ display: emailChecked ? 'inline-flex' : 'none' }}>
         <Controller
           name='password'
-          control={control}
+          control={passwordControl}
           render={({ field, fieldState: { error } }) => (
             <TextField
               variant='filled'

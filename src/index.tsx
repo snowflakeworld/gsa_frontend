@@ -19,7 +19,7 @@ root.render(
   <StrictMode>
     <StyledEngineProvider injectFirst>
       <AppTheme>
-        <App />
+          <App />
       </AppTheme>
     </StyledEngineProvider>
   </StrictMode>
