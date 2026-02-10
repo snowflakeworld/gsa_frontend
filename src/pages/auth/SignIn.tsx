@@ -71,7 +71,6 @@ export const SignIn = () => {
       if (emailChecked) {
         const result = await signIn({ email: tmpEmail, password: hashPassword(tmpPassword) })
         showToast('Login successful!', 'success')
-        console.log(result)
         dispatch(login(result))
         navigate(ROUTERS.Home)
       } else {

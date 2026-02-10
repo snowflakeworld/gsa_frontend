@@ -1,4 +1,4 @@
-import { type Email, type User } from './user'
+import { EmailPassword, type Email, type User } from './user'
 
 export interface AuthState {
   isLoggedIn: boolean
@@ -13,6 +13,10 @@ export interface CreateInfo extends Email {
   confirmPassword: string
 }
 
+export interface SignUpReq extends EmailPassword {
+  name: string
+}
+
 export interface CheckEmailRes {
   status: boolean
 }
@@ -20,4 +24,13 @@ export interface CheckEmailRes {
 export interface SignInRes {
   user: User
   token: string
+}
+
+export interface SignUpRes {
+  status: boolean
+  _id: string
+  email: string
+  username: string
+  createdAt: string
+  updatedAt: string
 }

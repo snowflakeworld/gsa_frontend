@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 
@@ -9,8 +10,9 @@ import * as yup from 'yup'
 
 import { Logo } from '@/components/Common'
 import { ROUTERS } from '@/configs'
-import { dispatch, login } from '@/store'
+import { signUp } from '@/services'
 import { type CreateInfo } from '@/types'
+import { handleError, hashPassword, showToast } from '@/utils'
 
 const defaultValues = {
   firstName: '',
@@ -45,6 +47,7 @@ const schema = yup.object().shape({
 
 export const SignUp = () => {
   const navigate = useNavigate()
+  const [loading, setLoading] = useState<boolean>(false)
 
   const { control, handleSubmit } = useForm<CreateInfo>({
     defaultValues,
@@ -57,13 +60,22 @@ export const SignUp = () => {
   }
 
   const onSubmit = async (data: CreateInfo) => {
-    dispatch(
-      login({
-        user: { _id: '123123', email: data.email, username: '123123', createdAt: '123123', updatedAt: '123123' },
-        token: '123123123'
+    setLoading(true)
+
+    try {
+      const result = await signUp({
+        name: `${data.firstName} ${data.lastName}`,
+        email: data.email,
+        password: hashPassword(data.password)
       })
-    )
-    navigate(ROUTERS.Home)
+      showToast('Sign up successful!', 'success')
+      console.log(result)
+      navigate(ROUTERS.Home)
+    } catch (error) {
+      handleError(error)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -179,7 +191,14 @@ export const SignUp = () => {
           )}
         />
       </FormControl>
-      <Button type='submit' variant='contained' sx={{ width: '100%', gap: 2, px: 3 }} className='button--red'>
+      <Button
+        type='submit'
+        variant='contained'
+        sx={{ width: '100%', gap: 2, px: 3 }}
+        className='button--red'
+        loading={loading}
+        loadingPosition='start'
+      >
         Sign Up
       </Button>
     </Stack>
