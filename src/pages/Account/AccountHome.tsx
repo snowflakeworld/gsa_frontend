@@ -60,7 +60,7 @@ const AccountHomePage = () => {
           </Stack>
         </Stack>
         <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'}>
-          {editMode ? (
+          {editMode && (
             <Button
               variant='contained'
               sx={{ gap: 1, width: 'auto', px: 4 }}
@@ -69,8 +69,6 @@ const AccountHomePage = () => {
             >
               Back
             </Button>
-          ) : (
-            <></>
           )}
           <Button
             variant='contained'

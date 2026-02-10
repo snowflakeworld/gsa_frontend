@@ -37,7 +37,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
 
   return (
     <Stack>
-      {index ? <Divider /> : <></>}
+      {!!index && <Divider />}
       <Stack direction='row' gap={1} py={1} alignItems='center'>
         <StyledImage
           src={`/assets/images/${img}`}
@@ -79,9 +79,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
             </List>
           </Stack>
           <Stack flex={140} direction='row' justifyContent='space-between' alignItems='center'>
-            {isLargeScreen ? (
-              <></>
-            ) : (
+            {!isLargeScreen && (
               <Typography
                 variant='caption'
                 fontWeight={500}
@@ -116,9 +114,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({
             </Typography>
           </Stack>
           <Stack flex={62} direction='row' justifyContent='space-between' alignItems='center'>
-            {isLargeScreen ? (
-              <></>
-            ) : (
+            {!isLargeScreen && (
               <Typography variant='caption' fontWeight={500} fontSize='0.625rem' lineHeight='100%' color='text.normal'>
                 Decl. Value
               </Typography>

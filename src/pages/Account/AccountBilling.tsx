@@ -28,7 +28,7 @@ const AccountBillingPage = () => {
           ))}
         </Grid>
         <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'} pt={1}>
-          {editMode ? (
+          {editMode && (
             <Button
               variant='contained'
               sx={{ gap: 1, width: 'auto', px: 4 }}
@@ -37,8 +37,6 @@ const AccountBillingPage = () => {
             >
               Back
             </Button>
-          ) : (
-            <></>
           )}
           <Button
             variant='contained'

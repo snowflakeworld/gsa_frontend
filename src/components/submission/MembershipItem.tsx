@@ -50,12 +50,10 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
             {type}
           </Typography>
           <Stack direction='row'>
-            {!isNaN(Number(policy)) ? (
+            {!isNaN(Number(policy)) && (
               <Typography variant='h6' {...(isSelected && { color: 'text.red' })} alignContent='flex-start'>
                 $
               </Typography>
-            ) : (
-              <></>
             )}
             <Typography variant='h5' fontSize='2rem' lineHeight='2rem' {...(isSelected && { color: 'text.red' })}>
               {policy}
@@ -82,7 +80,7 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
                 </MembershipBonusItem>
               ))}
           </List>
-          {rightItemListCount ? (
+          {!!rightItemListCount && (
             <List sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, py: 0 }}>
               {items
                 .filter((_, index) => index >= leftItemListCount)
@@ -92,8 +90,6 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
                   </MembershipBonusItem>
                 ))}
             </List>
-          ) : (
-            <></>
           )}
         </Stack>
 

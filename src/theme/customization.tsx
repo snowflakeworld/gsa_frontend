@@ -71,7 +71,7 @@ export const customizations: Components<Theme> = {
         color: gsaColors.text.primary.light,
         boxShadow: 'none',
         transition: 'all 0.5s ease',
-        p: 1.25,
+        padding: '8px',
         '&:hover': {
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',

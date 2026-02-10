@@ -30,16 +30,14 @@ const AccountSecurityPage = () => {
           />
           <Stack flex={1} visibility='hidden'></Stack>
         </Stack>
-        {editMode ? (
+        {editMode && (
           <Stack direction={isLargeScreen ? 'row' : 'column'} gap={isLargeScreen ? 5 : 0}>
             <NormalPasswordInput label='New Password' placeHolder='Password' defaultValue={'1231231'} flex={1} />
             <NormalPasswordInput label='Confirm Password' placeHolder='Confirm' defaultValue={'1231231'} flex={1} />
           </Stack>
-        ) : (
-          <></>
         )}
         <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'}>
-          {editMode ? (
+          {editMode && (
             <Button
               variant='contained'
               sx={{ gap: 1, width: 'auto', px: 4 }}
@@ -48,8 +46,6 @@ const AccountSecurityPage = () => {
             >
               Back
             </Button>
-          ) : (
-            <></>
           )}
           <Button
             variant='contained'

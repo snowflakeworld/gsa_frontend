@@ -21,7 +21,7 @@ const AccountAddressPage: FC = () => {
       <Stack gap={1}>
         {editMode ? <AddressEdit /> : <AddressList />}
         <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'} pt={1}>
-          {editMode ? (
+          {editMode && (
             <Button
               variant='contained'
               sx={{ gap: 1, width: 'auto', px: 4 }}
@@ -30,8 +30,6 @@ const AccountAddressPage: FC = () => {
             >
               Back
             </Button>
-          ) : (
-            <></>
           )}
           <Button
             variant='contained'

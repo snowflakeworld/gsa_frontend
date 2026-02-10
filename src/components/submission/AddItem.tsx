@@ -117,7 +117,7 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
                   }
                 />
               </Paper>
-              {isLargeScreen ? (
+              {isLargeScreen && (
                 <Button variant='contained' className='button-alpha--red button--small'>
                   <CustomIcon
                     name='delete'
@@ -129,8 +129,6 @@ export const AddItem: FC<AddItemProps> = ({ img, name }) => {
                     color='tertiary'
                   />
                 </Button>
-              ) : (
-                <></>
               )}
             </Stack>
           </Stack>

@@ -48,7 +48,7 @@ export const ReviewOrders: FC<ReviewOrdersProps> = ({ headerFlex = 366, itemFlex
           </Button>
         </Stack>
         <Stack>
-          {isLargeScreen ? (
+          {isLargeScreen && (
             <Stack>
               <Stack direction='row' gap={1}>
                 <Typography
@@ -99,8 +99,6 @@ export const ReviewOrders: FC<ReviewOrdersProps> = ({ headerFlex = 366, itemFlex
               </Stack>
               <Divider />
             </Stack>
-          ) : (
-            <></>
           )}
           <List sx={{ display: 'flex', flexDirection: 'column', py: 0 }}>
             {REVIEW_ITEMS.map((item, index) => (

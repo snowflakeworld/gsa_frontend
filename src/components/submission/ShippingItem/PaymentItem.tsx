@@ -58,7 +58,7 @@ export const PaymentItem: FC<PaymentItemProps> = ({ index, name, allowInput }) =
           >
             {name}
           </Typography>
-          {allowInput ? (
+          {allowInput && (
             <Paper
               component='form'
               sx={{
@@ -79,8 +79,6 @@ export const PaymentItem: FC<PaymentItemProps> = ({ index, name, allowInput }) =
                 inputProps={{ 'aria-label': 'Input account number' }}
               />
             </Paper>
-          ) : (
-            <></>
           )}
         </Stack>
 
