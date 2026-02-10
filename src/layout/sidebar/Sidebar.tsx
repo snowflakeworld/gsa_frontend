@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react'
+import { type FC, useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import {
@@ -14,7 +14,8 @@ import {
 import { Divider, List, ListItemButton, ListItemText, Stack } from '@mui/material'
 
 import { ROUTERS } from '@/configs'
-import { useDeviceType, useLogout } from '@/hooks'
+import { useDeviceType, useDialogs, useLogout } from '@/hooks'
+import { showToast } from '@/utils'
 import { SidebarHeader } from './SidebarHeader'
 
 interface SidebarProps {
@@ -52,20 +53,34 @@ export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined
   const navigate = useNavigate()
   const { isLargeScreen, isSmallScreen } = useDeviceType()
   const logout = useLogout()
+  const dialogs = useDialogs()
 
-  const handleItemClick = (idx: number) => {
-    setCurIdx(idx)
-    navigate(MENU_ITEMS[idx].path)
-  }
+  const handleItemClick = useCallback(
+    (idx: number) => {
+      setCurIdx(idx)
+      navigate(MENU_ITEMS[idx].path)
+    },
+    [navigate]
+  )
 
-  const handleLogout = () => {
+  const handleLogout = useCallback(async () => {
+    const confirmed = await dialogs.confirm('Are you sure you want to log out?', {
+      title: 'Confirm Logout',
+      severity: 'warning',
+      okText: 'Log Out',
+      cancelText: 'Cancel'
+    })
+
+    if (!confirmed) return
+
+    showToast('Successfully logged out!', 'success')
     logout()
     navigate(ROUTERS.Home)
-  }
+  }, [dialogs, navigate])
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     if (closeDrawer) closeDrawer()
-  }
+  }, [closeDrawer])
 
   return (
     <Stack sx={{ width: width && '100%', px: isLargeScreen ? 5 : 2.5, py: isLargeScreen ? 6.25 : 2.5 }} gap={1.5}>

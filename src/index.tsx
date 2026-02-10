@@ -7,6 +7,7 @@ import App from './App'
 import { AppTheme } from './theme/AppTheme'
 
 import '@qpokychuk/sf-pro-display/index.css'
+import DialogsProvider from './hooks/useDialogs/DialogsProvider'
 import './index.scss'
 
 const rootElement = document.getElementById('root')
@@ -19,7 +20,9 @@ root.render(
   <StrictMode>
     <StyledEngineProvider injectFirst>
       <AppTheme>
+        <DialogsProvider>
           <App />
+        </DialogsProvider>
       </AppTheme>
     </StyledEngineProvider>
   </StrictMode>
