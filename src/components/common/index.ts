@@ -1,3 +1,4 @@
+export * from './BonusItem'
 export * from './BpRadio'
 export * from './CustomIcon'
 export * from './Logo'

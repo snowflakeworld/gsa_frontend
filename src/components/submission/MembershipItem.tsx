@@ -4,7 +4,7 @@ import { Button, Card, List, Stack, Typography, useColorScheme } from '@mui/mate
 
 import { useCreateSubmissionSelectContext, useDeviceType } from '@/hooks'
 import { gsaColors } from '@/theme'
-import { MembershipBonusItem } from './MembershipBonusItem'
+import { BonusItem } from '../Common'
 
 interface MembershipItemPros {
   index: number
@@ -75,9 +75,9 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
             {items
               .filter((_, index) => index < leftItemListCount)
               .map((val, index) => (
-                <MembershipBonusItem key={'membership-bonus-' + index} isSelected={isSelected}>
+                <BonusItem key={'membership-bonus-' + index} isSelected={isSelected}>
                   {val}
-                </MembershipBonusItem>
+                </BonusItem>
               ))}
           </List>
           {!!rightItemListCount && (
@@ -85,9 +85,9 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, it
               {items
                 .filter((_, index) => index >= leftItemListCount)
                 .map((val, index) => (
-                  <MembershipBonusItem key={'membership-bonus-' + index} isSelected={isSelected}>
+                  <BonusItem key={'membership-bonus-' + index} isSelected={isSelected}>
                     {val}
-                  </MembershipBonusItem>
+                  </BonusItem>
                 ))}
             </List>
           )}

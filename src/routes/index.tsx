@@ -8,16 +8,15 @@ import { store } from '@/store'
 import PrivateRoute from './PrivateRoute'
 
 import { ThemedToastContainer } from '@/components/Common/ThemeToastContainer'
-import ErrorPage from '@/pages/Error'
 import { AccountRoutes } from './Account'
-import { MainRoutes } from './Main'
+import { LandingRoutes, MainRoutes } from './Main'
 import { SubmissionRoutes } from './Submission'
 
 const routes = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
-    children: [...MainRoutes]
+    children: [...LandingRoutes]
   },
   {
     path: '/',
@@ -40,7 +39,7 @@ const routes = createBrowserRouter([
   {
     path: '/',
     element: <DashboardLayout />,
-    children: [{ path: '*', element: <ErrorPage /> }]
+    children: [...MainRoutes]
   }
 ])
 

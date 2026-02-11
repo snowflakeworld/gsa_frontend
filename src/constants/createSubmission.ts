@@ -41,21 +41,24 @@ export const SERVICE_LEVELS = [
     comment: 'Ideal for  Casual collectors or large sets who prefer low-cost grading options.',
     minCards: '25 cards',
     turnaround: '30 Business',
-    price: '$5'
+    price: '$5',
+    popular: false
   },
   {
     title: 'Standard',
     comment: 'Ideal for Bulk submitters and collectors who want reliable grading at an affordable price.',
     minCards: '10 cards',
     turnaround: '5-10 Business',
-    price: '$10'
+    price: '$10',
+    popular: true
   },
   {
     title: 'Express',
     comment: 'Ideal for High-value cards, time-sensitive grading, or those who want quick results.',
     minCards: '25 cards',
     turnaround: '1 Business',
-    price: '$39.99'
+    price: '$39.99',
+    popular: false
   }
 ]
 

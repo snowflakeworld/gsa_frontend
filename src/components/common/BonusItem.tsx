@@ -6,20 +6,22 @@ import parse from 'html-react-parser'
 
 import { gsaIconColors } from '@/theme'
 
-interface MemberShipBonusItemProps {
+interface BonusItemProps {
   isSelected: boolean
   children: string
+  isNormalColor?: boolean
 }
 
-export const MembershipBonusItem: FC<MemberShipBonusItemProps> = ({ isSelected, children }) => {
+export const BonusItem: FC<BonusItemProps> = ({ isSelected, children, isNormalColor = false }) => {
   return (
     <Stack direction='row' gap={1}>
       <Done fontSize='small' sx={{ fill: gsaIconColors.customRed }} />
       <Typography
-        variant='h6'
+        variant={isNormalColor ? 'caption' : 'h6'}
         fontWeight={400}
         fontSize='0.75rem'
         lineHeight='1rem'
+        {...(isNormalColor && { color: 'text.normal' })}
         {...(isSelected && { color: 'text.red' })}
       >
         {parse(children)}

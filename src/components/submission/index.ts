@@ -1,6 +1,6 @@
 export * from './AddItem'
 export * from './GradingTypeItem'
-export * from './MembershipBonusItem'
+export * from '../Common/BonusItem'
 export * from './MembershipItem'
 export * from './MyProgressItem'
 export * from './MyRecentItem'
