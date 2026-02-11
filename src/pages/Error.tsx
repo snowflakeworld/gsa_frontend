@@ -5,7 +5,7 @@ const ErrorPage = () => {
   const { isSmallScreen } = useDeviceType()
 
   return (
-    <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' height='75vh'>
+    <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center'  height={isSmallScreen ? 'calc(100vh - 162px)' : 'calc(100vh - 125px)'} mt={{ xs: 9, md: 9 }}>
       <Typography variant={isSmallScreen ? 'h4' : 'h3'} align='center'>
         404 - Page Not Found
       </Typography>
