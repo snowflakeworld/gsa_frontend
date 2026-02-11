@@ -1,6 +1,5 @@
 import { memo } from 'react'
 
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Link, Stack } from '@mui/material'
 
 import { HEADER_NAV_LINKS } from '@/constants'
@@ -26,9 +25,9 @@ const NavListComponent = ({ ...props }) => {
           sx={{ display: 'flex', textAlign: 'center', gap: '2px', alignItems: 'center', justifyContent: 'center' }}
         >
           <span>{nav.title}</span>
-          {nav.menu && (
+          {/* {nav.menu && (
             <KeyboardArrowDownIcon className='nav-icon-header' sx={{ width: '1.125rem', height: '1.125rem' }} />
-          )}
+          )} */}
         </Link>
       ))}
     </Stack>
