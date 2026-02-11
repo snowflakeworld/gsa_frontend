@@ -42,8 +42,9 @@ export const ServiceItem: FC<ServiceItemPros> = ({
         boxShadow: 'none',
         p: 4,
         '&:hover': {
-          borderColor: 'background.red'
-        }
+          borderColor: 'border.red'
+        },
+        transition: 'border-color 0.3s ease'
       }}
     >
       <Stack gap={4}>

@@ -104,6 +104,14 @@ export const customizations: Components<Theme> = {
             backgroundColor: gsaColors.background.red.dark
           }
         },
+        '&.button--red-medium': {
+          color: 'white',
+          backgroundColor: gsaColors.background.red.alphaHalf,
+
+          '&:hover': {
+            backgroundColor: gsaColors.background.red.light
+          }
+        },
         '&.button-alpha--red': {
           color: gsaColors.text.red,
           backgroundColor: gsaColors.background.red.alpha,

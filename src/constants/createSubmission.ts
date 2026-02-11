@@ -65,6 +65,7 @@ export const SERVICE_LEVELS = [
 export const MEMBERSHIPS = [
   {
     type: 'Bronze',
+    description: 'Perfect for beginners and casual collectors.',
     policy: 'Free',
     items: [
       'Get <b>1</b> point for every $10 spent on grading*',
@@ -75,6 +76,7 @@ export const MEMBERSHIPS = [
   },
   {
     type: 'Silver',
+    description: 'Ideal for dedicated collectors looking for extra value.',
     policy: '99',
     items: [
       'Get <b>1.5</b> point for every $10 spent on grading*',
@@ -88,6 +90,7 @@ export const MEMBERSHIPS = [
   },
   {
     type: 'Gold',
+    description: 'Designed for serious collectors and professionals.',
     policy: '199',
     items: [
       'Get 2 point for every $10 spent on grading*',
