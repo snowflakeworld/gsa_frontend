@@ -29,16 +29,19 @@ export const MainRoutes = [
   {
     path: '/shop',
     element: <ShopPage />
-  },
-  {
-    path: '/search',
-    element: <SearchPage />
   }
 ]
 
-export const MyRoutes = [
+export const MyDashboardRoutes = [
   {
     path: '/membership',
     element: <MembershipPage />
+  }
+]
+
+export const MyMainRoutes = [
+  {
+    path: '/search',
+    element: <SearchPage />
   }
 ]

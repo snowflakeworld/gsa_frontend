@@ -9,7 +9,7 @@ import PrivateRoute from './PrivateRoute'
 
 import { ThemedToastContainer } from '@/components/Common/ThemeToastContainer'
 import { AccountRoutes } from './Account'
-import { LandingRoutes, MainRoutes, MyRoutes } from './Main'
+import { LandingRoutes, MainRoutes, MyDashboardRoutes, MyMainRoutes } from './Main'
 import { SubmissionRoutes } from './Submission'
 
 const routes = createBrowserRouter([
@@ -22,10 +22,19 @@ const routes = createBrowserRouter([
     path: '/',
     element: (
       <PrivateRoute>
+        <MainLayout />
+      </PrivateRoute>
+    ),
+    children: [...MyMainRoutes]
+  },
+  {
+    path: '/',
+    element: (
+      <PrivateRoute>
         <DashboardLayout />
       </PrivateRoute>
     ),
-    children: [...SubmissionRoutes, ...MyRoutes]
+    children: [...SubmissionRoutes, ...MyDashboardRoutes]
   },
   {
     path: '/',
