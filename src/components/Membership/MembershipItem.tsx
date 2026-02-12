@@ -15,6 +15,7 @@ interface MembershipItemPros {
   isFree: boolean
   period?: string
   isSelected?: boolean
+  onPay: (_: number) => void
 }
 
 export const MembershipItem: FC<MembershipItemPros> = ({
@@ -25,11 +26,14 @@ export const MembershipItem: FC<MembershipItemPros> = ({
   items,
   isFree,
   period = 'year',
-  isSelected = false
+  isSelected = false,
+  onPay
 }) => {
   const { isLargeScreen } = useDeviceType()
 
-  const handleSelect = () => {}
+  const handleSelect = () => {
+    onPay(index)
+  }
 
   return (
     <Card

@@ -454,7 +454,7 @@ export const customizations: Components<Theme> = {
   },
   MuiListItemButton: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: () => ({
         color: gsaColors.text.normal,
         '&.Mui-selected': {
           color: gsaColors.text.red,

@@ -265,7 +265,8 @@ export const colorSchemes = {
         profile: gsaColors.background.profile.light,
         secondary: gsaColors.secondary.light,
         dialog: gsaColors.background.dialog.light,
-        paperSummary: gsaColors.background.paper.light1
+        paperSummary: gsaColors.background.paper.light1,
+        input: gsaColors.background.input.light
       },
       text: {
         primary: gsaColors.text.primary.light,
@@ -348,7 +349,8 @@ export const colorSchemes = {
         profile: gsaColors.background.profile.dark,
         secondary: gsaColors.secondary.dark,
         dialog: gsaColors.background.dialog.dark,
-        paperSummary: gsaColors.background.paper.dark1
+        paperSummary: gsaColors.background.paper.dark1,
+        input: gsaColors.background.input.dark
       },
       text: {
         primary: gsaColors.text.primary.dark,

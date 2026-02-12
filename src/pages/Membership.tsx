@@ -5,18 +5,20 @@ import { Container, Grid, Stack, Typography } from '@mui/material'
 import parse from 'html-react-parser'
 
 import { RedChip, StyledToggleButton, StyledToggleButtonGroup } from '@/components'
+import { MembershipPayDialog } from '@/components/Dialogs'
 import { MembershipItem } from '@/components/Membership'
-import { LANDING_FEATURE_GRID_MAX_WIDTH, MEMBERSHIPS } from '@/constants'
+import { LANDING_FEATURE_GRID_MAX_WIDTH, MEMBERSHIP_PRICES, MEMBERSHIPS } from '@/constants'
 import { useDeviceType } from '@/hooks'
-import { getCurrentMembership } from '@/services'
-import { MembershipRes, MembershipType } from '@/types'
-
-type PeriodType = 'year' | 'month'
+import { getCurrentMembership, updateMembership } from '@/services'
+import { MembershipRes, MembershipType, MembershipTypes, PeriodType } from '@/types'
+import { showToast } from '@/utils'
 
 const Membership = () => {
   const { isLargeScreen } = useDeviceType()
   const [period, setPeriod] = useState<PeriodType>('year')
   const [membershipType, setMembershipType] = useState<MembershipType | null>(null)
+  const [newMembershipType, setNewMembershipType] = useState<MembershipType | null>(null)
+  const [openDialog, setOpenDialog] = useState<boolean>(false)
 
   useEffect(() => {
     getData()
@@ -31,6 +33,23 @@ const Membership = () => {
     if (period !== null) {
       setPeriod(period)
     }
+  }
+
+  const handleSave = async (token: string) => {
+    await updateMembership({
+      type: newMembershipType!,
+      period,
+      amount: MEMBERSHIP_PRICES[period][newMembershipType!],
+      token
+    })
+
+    showToast('Updated successfully.', 'success')
+    window.location.reload()
+  }
+
+  const handlePay = (idx: number) => {
+    setNewMembershipType(MembershipTypes[idx])
+    setOpenDialog(true)
   }
 
   return (
@@ -68,6 +87,7 @@ const Membership = () => {
                   {...item}
                   period={period}
                   isSelected={item.type.toLowerCase() === membershipType}
+                  onPay={handlePay}
                 />
               </Grid>
             ))}
@@ -84,6 +104,12 @@ const Membership = () => {
           </Stack>
         </Stack>
       </Container>
+      <MembershipPayDialog
+        open={openDialog}
+        onClose={() => setOpenDialog(false)}
+        onSave={handleSave}
+        type={newMembershipType}
+      />
     </Stack>
   )
 }
