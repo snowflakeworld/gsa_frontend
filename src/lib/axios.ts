@@ -34,6 +34,7 @@ axiosInstance.interceptors.response.use(
   error => {
     if (error.response?.status === 401) {
       dispatch(logout())
+      window.location.href = '/sign'
       throw new Error('Please login to continue')
     }
 

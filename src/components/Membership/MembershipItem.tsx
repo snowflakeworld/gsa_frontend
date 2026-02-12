@@ -14,6 +14,7 @@ interface MembershipItemPros {
   items: string[]
   isFree: boolean
   period?: string
+  isSelected?: boolean
 }
 
 export const MembershipItem: FC<MembershipItemPros> = ({
@@ -23,11 +24,10 @@ export const MembershipItem: FC<MembershipItemPros> = ({
   description,
   items,
   isFree,
-  period = 'year'
+  period = 'year',
+  isSelected = false
 }) => {
   const { isLargeScreen } = useDeviceType()
-
-  const isSelected = index === 0
 
   const handleSelect = () => {}
 

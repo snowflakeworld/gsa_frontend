@@ -1,11 +1,12 @@
 import { Suspense, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 
-import { Box, CircularProgress } from '@mui/material'
+import { Box } from '@mui/material'
 
 import { ACCOUNT_CONTENT_MAX_WIDTH } from '@/constants'
 import { useDeviceType } from '@/hooks'
 
+import LoadingScreen from '@/components/LoadingScreen'
 import { Footer } from '../Footer'
 import { AccountHeader } from '../Header'
 import { Sidebar } from '../Sidebar'
@@ -22,7 +23,7 @@ export const AccountLayout = () => {
   return (
     <Box sx={{ maxHeight: '100vh', backgroundColor: 'background.profile' }}>
       <AccountHeader onMobileMenuClick={toggleDrawer} />
-      <Suspense fallback={<CircularProgress />}>
+      <Suspense fallback={<LoadingScreen />}>
         <Box
           sx={{
             height: isLargeScreen ? 'calc(100vh - 126px)' : 'calc(100vh - 72px)',

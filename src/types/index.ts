@@ -1,4 +1,5 @@
 export * from './auth'
 export * from './entity'
+export * from './membership'
 export * from './submission'
 export * from './user'

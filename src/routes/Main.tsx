@@ -1,44 +1,44 @@
 import { lazy } from 'react'
 
 import { ROUTERS } from '@/configs'
+import LandingPage from '@/pages/Landing'
 
 // const LandingPage = import('@/pages/Landing')
-import ErrorPage from '@/pages/Error'
-import LandingPage from '@/pages/Landing'
-import Membership from '@/pages/Membership'
-import Search from '@/pages/Search'
-import Service from '@/pages/Service'
-import Shop from '@/pages/Shop'
+const ErrorPage = lazy(() => import('@/pages/Error'))
+const MembershipPage = lazy(() => import('@/pages/Membership'))
+const SearchPage = lazy(() => import('@/pages/Search'))
+const ServicePage = lazy(() => import('@/pages/Service'))
+const ShopPage = lazy(() => import('@/pages/Shop'))
 
-const Sign = lazy(() => import('@/pages/Auth'))
+const SignPage = lazy(() => import('@/pages/Auth'))
 
 export const LandingRoutes = [
   {
     path: '/',
     element: <LandingPage />
   },
-  { path: ROUTERS.SignIn, element: <Sign /> }
+  { path: ROUTERS.SignIn, element: <SignPage /> }
 ]
 
 export const MainRoutes = [
   { path: '*', element: <ErrorPage /> },
   {
     path: '/service',
-    element: <Service />
+    element: <ServicePage />
   },
   {
     path: '/shop',
-    element: <Shop />
+    element: <ShopPage />
   },
   {
     path: '/search',
-    element: <Search />
+    element: <SearchPage />
   }
 ]
 
 export const MyRoutes = [
   {
     path: '/membership',
-    element: <Membership />
+    element: <MembershipPage />
   }
 ]

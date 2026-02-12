@@ -8,13 +8,24 @@ import { RedChip, StyledToggleButton, StyledToggleButtonGroup } from '@/componen
 import { MembershipItem } from '@/components/Membership'
 import { LANDING_FEATURE_GRID_MAX_WIDTH, MEMBERSHIPS } from '@/constants'
 import { useDeviceType } from '@/hooks'
+import { getCurrentMembership } from '@/services'
+import { MembershipRes, MembershipType } from '@/types'
 
 type PeriodType = 'year' | 'month'
 
 const Membership = () => {
   const { isLargeScreen } = useDeviceType()
   const [period, setPeriod] = useState<PeriodType>('year')
-  useEffect(() => {}, [])
+  const [membershipType, setMembershipType] = useState<MembershipType | null>(null)
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  const getData = async () => {
+    const data: MembershipRes = await getCurrentMembership()
+    setMembershipType(data.type)
+  }
 
   const handleChange = (_: React.MouseEvent<HTMLElement>, period: PeriodType) => {
     if (period !== null) {
@@ -52,7 +63,12 @@ const Membership = () => {
           <Grid container spacing={2}>
             {MEMBERSHIPS.map((item, index) => (
               <Grid key={'membership-' + index} size={isLargeScreen ? 4 : 12}>
-                <MembershipItem index={index} {...item} period={period} />
+                <MembershipItem
+                  index={index}
+                  {...item}
+                  period={period}
+                  isSelected={item.type.toLowerCase() === membershipType}
+                />
               </Grid>
             ))}
           </Grid>
