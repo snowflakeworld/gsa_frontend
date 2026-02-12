@@ -27,15 +27,18 @@ export const MainRoutes = [
     element: <Service />
   },
   {
-    path: '/membership',
-    element: <Membership />
-  },
-  {
     path: '/shop',
     element: <Shop />
   },
   {
     path: '/search',
     element: <Search />
+  }
+]
+
+export const MyRoutes = [
+  {
+    path: '/membership',
+    element: <Membership />
   }
 ]

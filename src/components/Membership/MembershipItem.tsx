@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 
-import { Button, Card, List, Stack, Typography, useColorScheme } from '@mui/material'
+import { Button, Card, List, Stack, Typography } from '@mui/material'
 
 import { useDeviceType } from '@/hooks'
 import { gsaColors } from '@/theme'
@@ -13,10 +13,18 @@ interface MembershipItemPros {
   description: string
   items: string[]
   isFree: boolean
+  period?: string
 }
 
-export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, description, items, isFree }) => {
-  const { mode } = useColorScheme()
+export const MembershipItem: FC<MembershipItemPros> = ({
+  index,
+  type,
+  policy,
+  description,
+  items,
+  isFree,
+  period = 'year'
+}) => {
   const { isLargeScreen } = useDeviceType()
 
   const isSelected = index === 0
@@ -52,7 +60,7 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, de
               </Typography>
             )}
             <Typography variant='h5' fontSize='2rem' lineHeight='2rem' {...(isSelected && { color: 'text.red' })}>
-              {policy}
+              {period === 'year' ? policy : !isNaN(Number(policy)) ? Number(policy) / 10 : policy}
             </Typography>
             <Typography
               variant='caption'
@@ -61,14 +69,14 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, de
               color={isSelected ? 'text.red' : 'text.normal'}
               alignContent='flex-end'
             >
-              / year
+              {`/ ${period}`}
             </Typography>
           </Stack>
         </Stack>
 
         <Typography
           variant='caption'
-          color='text.normal'
+          color={isSelected ? 'text.red' : 'text.normal'}
           fontWeight={400}
           fontSize='0.875rem'
           lineHeight='1rem'
@@ -78,7 +86,7 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, de
         </Typography>
 
         <Button
-          variant={isSelected && mode === 'dark' ? 'outlined' : 'contained'}
+          variant='contained'
           sx={{
             height: 40,
             gap: 2,
@@ -87,7 +95,7 @@ export const MembershipItem: FC<MembershipItemPros> = ({ index, type, policy, de
           className={isSelected ? 'button--red-medium button--small' : 'button--red button--small'}
           onClick={handleSelect}
         >
-          {isSelected ? 'Selected' : isFree ? 'Your current plan' : 'Select plan'}
+          {isSelected ? 'Your current plan' : isFree ? 'Select' : 'Upgrade'}
         </Button>
 
         <List sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, py: 0 }}>

@@ -1,6 +1,6 @@
 import { type FC, ReactNode, useMemo } from 'react'
 
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
+import { createTheme, CssBaseline, ThemeProvider, useColorScheme } from '@mui/material'
 
 import { customizations } from './customization'
 import { colorSchemes, typography } from './themePrimitives'
@@ -29,7 +29,9 @@ const createAppTheme = () =>
   })
 
 export const AppTheme: FC<AppThemeProps> = ({ children }) => {
-  const theme = useMemo(() => createAppTheme(), [])
+  const { mode, systemMode } = useColorScheme()
+  const resolvedMode = (systemMode || mode) as 'light' | 'dark'
+  const theme = useMemo(() => createAppTheme(), [resolvedMode])
 
   return (
     <ThemeProvider defaultMode='dark' theme={theme}>

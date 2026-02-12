@@ -1,13 +1,26 @@
+import { useEffect, useState } from 'react'
+
 import { Container, Grid, Stack, Typography } from '@mui/material'
 
 import parse from 'html-react-parser'
 
+import { RedChip, StyledToggleButton, StyledToggleButtonGroup } from '@/components'
 import { MembershipItem } from '@/components/Membership'
 import { LANDING_FEATURE_GRID_MAX_WIDTH, MEMBERSHIPS } from '@/constants'
 import { useDeviceType } from '@/hooks'
 
+type PeriodType = 'year' | 'month'
+
 const Membership = () => {
   const { isLargeScreen } = useDeviceType()
+  const [period, setPeriod] = useState<PeriodType>('year')
+  useEffect(() => {}, [])
+
+  const handleChange = (_: React.MouseEvent<HTMLElement>, period: PeriodType) => {
+    if (period !== null) {
+      setPeriod(period)
+    }
+  }
 
   return (
     <Stack sx={{ minHeight: isLargeScreen ? 'calc(100vh - 125px)' : 'calc(100vh - 162px)' }} mt={{ xs: 9, md: 9 }}>
@@ -19,10 +32,27 @@ const Membership = () => {
               Get more benefits by joining membership & points program
             </Typography>
           </Stack>
+
+          <StyledToggleButtonGroup
+            value={period}
+            exclusive
+            onChange={handleChange}
+            aria-label='Period'
+            sx={{ alignSelf: 'center' }}
+          >
+            <StyledToggleButton value='year'>
+              <Stack direction='row' spacing={1} alignItems='center'>
+                <Typography variant='h6'>Yearly</Typography>
+                <RedChip size='small'>-20%</RedChip>
+              </Stack>
+            </StyledToggleButton>
+            <StyledToggleButton value='month'>Monthly</StyledToggleButton>
+          </StyledToggleButtonGroup>
+
           <Grid container spacing={2}>
             {MEMBERSHIPS.map((item, index) => (
               <Grid key={'membership-' + index} size={isLargeScreen ? 4 : 12}>
-                <MembershipItem index={index} {...item} />
+                <MembershipItem index={index} {...item} period={period} />
               </Grid>
             ))}
           </Grid>
