@@ -2,6 +2,16 @@ import { type FC, ReactNode } from 'react'
 
 import { InputBase, Paper, Stack, Typography } from '@mui/material'
 
+export type InputTypes =
+  | 'customerNumber'
+  | 'username'
+  | 'email'
+  | 'phone'
+  | 'country'
+  | 'password'
+  | 'confirmPassword'
+  | 'normal'
+
 interface NormalTextInputProps {
   label: string
   placeHolder: string
@@ -11,8 +21,8 @@ interface NormalTextInputProps {
   flex?: number
   width?: string
   children?: ReactNode | undefined
-  dataType?: 'customerNumber' | 'username' | 'email' | 'phone' | 'country'
-  listener?: (type: 'customerNumber' | 'username' | 'email' | 'phone' | 'country', __: string) => void
+  dataType?: InputTypes
+  listener?: (type: InputTypes, __: string) => void
 }
 
 export const NormalTextInput: FC<NormalTextInputProps> = ({
@@ -28,10 +38,8 @@ export const NormalTextInput: FC<NormalTextInputProps> = ({
   listener = undefined
 }) => {
   const handleChange = (val: string) => {
-    if (editable) {
-      if (listener) {
-        listener(dataType, val)
-      }
+    if (editable && listener) {
+      listener(dataType, val)
     }
   }
 

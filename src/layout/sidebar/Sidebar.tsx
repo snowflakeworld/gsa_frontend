@@ -8,8 +8,7 @@ import {
   LocalShippingOutlined,
   LocationOnOutlined,
   LockOutline,
-  LogoutOutlined,
-  PaymentOutlined
+  LogoutOutlined
 } from '@mui/icons-material'
 import { Divider, List, ListItemButton, ListItemText, Stack } from '@mui/material'
 
@@ -27,7 +26,7 @@ const MENU_ITEMS = [
   { id: 'account', label: 'My Account', icon: <AccountCircleOutlined fontSize='small' />, path: ROUTERS.Account.Home },
   { id: 'security', label: 'Security', icon: <LockOutline fontSize='small' />, path: ROUTERS.Account.Security },
   { id: 'address', label: 'Address', icon: <LocationOnOutlined fontSize='small' />, path: ROUTERS.Account.Address },
-  { id: 'billing', label: 'Billing', icon: <PaymentOutlined fontSize='small' />, path: ROUTERS.Account.Billing },
+  // { id: 'billing', label: 'Billing', icon: <PaymentOutlined fontSize='small' />, path: ROUTERS.Account.Billing },
   {
     id: 'membership',
     label: 'Membership',

@@ -1,6 +1,6 @@
 import { API_ENDPOINTS } from '@/configs'
 import apiRequest from '@/lib/axios'
-import { AccountRes, UpdateProfileReq } from '@/types'
+import { AccountRes, ChangePasswordReq, ChangePasswordRes, UpdateProfileReq } from '@/types'
 
 export const getProfile = async () => {
   return apiRequest<AccountRes>({
@@ -16,5 +16,14 @@ export const updateProfile = async (data: UpdateProfileReq) => {
     url: API_ENDPOINTS.ACCOUNT.UPDATE,
     data,
     errorMessage: 'Failed to update profile'
+  })
+}
+
+export const changePassword = async (data: ChangePasswordReq) => {
+  return apiRequest<ChangePasswordRes>({
+    method: 'PUT',
+    url: API_ENDPOINTS.ACCOUNT.CHANGE_PASSWORD,
+    data,
+    errorMessage: 'Failed to change password'
   })
 }

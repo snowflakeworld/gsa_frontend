@@ -24,6 +24,7 @@ export const API_ENDPOINTS = {
   ACCOUNT: {
     PROFILE: 'user/profile',
     UPDATE: 'user/update',
-    UPLOAD_AVATAR: 'user/upload-avatar'
+    UPLOAD_AVATAR: 'user/upload-avatar',
+    CHANGE_PASSWORD: 'user/change-password'
   }
 }

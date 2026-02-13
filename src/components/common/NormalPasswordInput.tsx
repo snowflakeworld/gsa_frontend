@@ -11,6 +11,7 @@ interface NormalPasswordInputProps {
   defaultValue?: string
   flex?: number
   width?: string
+  listener?: (_: string) => void
 }
 
 export const NormalPasswordInput: FC<NormalPasswordInputProps> = ({
@@ -20,13 +21,13 @@ export const NormalPasswordInput: FC<NormalPasswordInputProps> = ({
   editable = true,
   defaultValue = '',
   flex = 0,
-  width = undefined
+  width = undefined,
+  listener = undefined
 }) => {
-  const [password, setPassword] = useState<string>(defaultValue)
   const [showPassword, setShowPassword] = useState<boolean>(false)
 
   const handleChange = (val: string) => {
-    if (editable) setPassword(val)
+    if (editable && listener) listener(val)
   }
 
   return (
@@ -57,7 +58,7 @@ export const NormalPasswordInput: FC<NormalPasswordInputProps> = ({
         <InputBase
           sx={{ width: '100%', pl: 2.5, pr: 2, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
           placeholder={placeHolder}
-          value={editable ? password : defaultValue}
+          value={defaultValue}
           type={showPassword ? 'text' : type}
           endAdornment={
             <InputAdornment position='end'>

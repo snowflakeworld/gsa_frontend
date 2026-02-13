@@ -3,14 +3,12 @@ import { useEffect, useState } from 'react'
 import { CheckOutlined, DriveFileRenameOutlineOutlined, UploadFile } from '@mui/icons-material'
 import { Button, InputAdornment, Stack, Typography } from '@mui/material'
 
-import { NormalTextInput, StyledImage } from '@/components'
+import { InputTypes, NormalTextInput, StyledImage } from '@/components'
 import { useDeviceType } from '@/hooks'
 import { getProfile, updateProfile } from '@/services'
 import { uploadAvatar } from '@/services/fileUploadService'
 import { AccountRes } from '@/types'
 import { handleError, showToast } from '@/utils'
-
-type CustomerInfoType = 'customerNumber' | 'username' | 'email' | 'phone' | 'country'
 
 const AccountHomePage = () => {
   const [editMode, setEditMode] = useState<boolean>(false)
@@ -39,7 +37,7 @@ const AccountHomePage = () => {
     setCountry(profileData.country)
   }
 
-  const handleDataChange = (type: CustomerInfoType, value: string) => {
+  const handleDataChange = (type: InputTypes, value: string) => {
     switch (type) {
       case 'customerNumber':
         setCustomerNumber(value)

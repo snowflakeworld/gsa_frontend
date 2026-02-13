@@ -37,3 +37,11 @@ export interface UpdateProfileReq {
   country: string
   avatar: string | null
 }
+
+export interface ChangePasswordReq {
+  newPassword: string
+}
+
+export interface ChangePasswordRes {
+  status: boolean
+}
