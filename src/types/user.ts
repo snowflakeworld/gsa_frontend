@@ -41,7 +41,3 @@ export interface UpdateProfileReq {
 export interface ChangePasswordReq {
   newPassword: string
 }
-
-export interface ChangePasswordRes {
-  status: boolean
-}

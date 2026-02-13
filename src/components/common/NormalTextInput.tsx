@@ -11,6 +11,10 @@ export type InputTypes =
   | 'password'
   | 'confirmPassword'
   | 'normal'
+  | 'street'
+  | 'state'
+  | 'city'
+  | 'code'
 
 interface NormalTextInputProps {
   label: string

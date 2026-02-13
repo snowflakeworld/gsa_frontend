@@ -1,14 +1,33 @@
-import { type FC, useState } from 'react'
+import { type FC, useRef, useState } from 'react'
 
 import { AddOutlined, CheckOutlined } from '@mui/icons-material'
 import { Button, Stack, Typography } from '@mui/material'
 
 import { useDeviceType } from '@/hooks'
-import { AddressEdit, AddressList } from '@/views/Account'
+import { AddressEdit, AddressEditRef, AddressList } from '@/views/Account'
 
 const AccountAddressPage: FC = () => {
   const [editMode, setEditMode] = useState<boolean>(false)
   const { isLargeScreen } = useDeviceType()
+
+  const childRef = useRef<AddressEditRef>(null)
+
+  const handleBack = () => {
+    setEditMode(false)
+  }
+
+  const handleMode = async () => {
+    if (editMode) {
+      if (childRef.current) {
+        const resp = await childRef.current.handleSave()
+
+        if (!resp) {
+          return
+        }
+      }
+    }
+    setEditMode(prev => !prev)
+  }
 
   return (
     <Stack gap={isLargeScreen ? 4 : 2}>
@@ -19,14 +38,14 @@ const AccountAddressPage: FC = () => {
         </Typography>
       </Stack>
       <Stack gap={1}>
-        {editMode ? <AddressEdit /> : <AddressList />}
+        {editMode ? <AddressEdit ref={childRef} /> : <AddressList />}
         <Stack direction='row' justifyContent={editMode ? 'space-between' : 'flex-end'} pt={1}>
           {editMode && (
             <Button
               variant='contained'
               sx={{ gap: 1, width: 'auto', px: 4 }}
               className='button--primary button--small'
-              onClick={() => setEditMode(false)}
+              onClick={handleBack}
             >
               Back
             </Button>
@@ -36,7 +55,7 @@ const AccountAddressPage: FC = () => {
             sx={{ gap: 1, width: 'auto', px: 2 }}
             startIcon={editMode ? <CheckOutlined fontSize='small' /> : <AddOutlined fontSize='small' />}
             className='button--red button--small'
-            onClick={() => setEditMode(state => !state)}
+            onClick={handleMode}
           >
             {editMode ? 'Save changes' : 'Add New Address'}
           </Button>

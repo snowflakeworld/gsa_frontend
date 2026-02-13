@@ -4,16 +4,10 @@ import { Circle } from '@mui/icons-material'
 import { Button, Card, Stack, Typography, useColorScheme } from '@mui/material'
 
 import { gsaColors, gsaShadows } from '@/theme'
-import { CustomIcon, RedChip } from '../Common'
+import { AddressRes } from '@/types'
+import { CustomIcon } from '../Common'
 
-interface AddressItemProps {
-  address: string
-  city: string
-  contact: string
-  isMain: boolean
-}
-
-export const AddressItem: FC<AddressItemProps> = ({ address, city, contact, isMain }) => {
+export const AddressItem: FC<AddressRes> = ({ country, state, city, street, code, phone }) => {
   const { mode } = useColorScheme()
 
   return (
@@ -42,7 +36,7 @@ export const AddressItem: FC<AddressItemProps> = ({ address, city, contact, isMa
               overflow: 'hidden'
             }}
           >
-            {address}
+            {street}
           </Typography>
           <Typography
             variant='caption'
@@ -58,7 +52,7 @@ export const AddressItem: FC<AddressItemProps> = ({ address, city, contact, isMa
               overflow: 'hidden'
             }}
           >
-            {city}
+            {`${city}, ${state}, ${country} - ${code}`}
           </Typography>
           <Stack direction='row' gap={0.5} alignItems='center'>
             <Circle
@@ -82,10 +76,10 @@ export const AddressItem: FC<AddressItemProps> = ({ address, city, contact, isMa
                 overflow: 'hidden'
               }}
             >
-              {contact}
+              {phone}
             </Typography>
           </Stack>
-          {isMain ? (
+          {/* {isMain ? (
             <RedChip size='small'>Main Address</RedChip>
           ) : (
             <Typography
@@ -102,10 +96,10 @@ export const AddressItem: FC<AddressItemProps> = ({ address, city, contact, isMa
             >
               Set as main address
             </Typography>
-          )}
+          )} */}
         </Stack>
         <Stack direction='row' gap={1.25}>
-          <Button variant='contained' className='button--tiny'>
+          {/* <Button variant='contained' className='button--tiny'>
             <CustomIcon
               name='edit'
               colorMode='fill'
@@ -115,7 +109,7 @@ export const AddressItem: FC<AddressItemProps> = ({ address, city, contact, isMa
               viewBoxHeight={12}
               color={mode === 'dark' ? 'secondary' : 'prime'}
             />
-          </Button>
+          </Button> */}
           <Button variant='contained' className='button-alpha--red button--tiny'>
             <CustomIcon
               name='delete'

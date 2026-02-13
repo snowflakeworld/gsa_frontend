@@ -17,10 +17,6 @@ export interface SignUpReq extends EmailPassword {
   name: string
 }
 
-export interface CheckEmailRes {
-  status: boolean
-}
-
 export interface SignInRes {
   user: User
   token: string
