@@ -18,3 +18,22 @@ export interface EmailUserName extends Email {
 }
 
 export type EmailPassword = Email & Password
+
+export interface AccountRes extends User {
+  uid: string
+  role: string
+  phone: string
+  country: string
+  avatar: string
+}
+
+export interface UpdateAvatarRes {
+  avatar: string
+}
+
+export interface UpdateProfileReq {
+  username: string
+  phone: string
+  country: string
+  avatar: string | null
+}

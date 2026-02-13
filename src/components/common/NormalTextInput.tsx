@@ -1,4 +1,4 @@
-import { type FC, ReactNode, useState } from 'react'
+import { type FC, ReactNode } from 'react'
 
 import { InputBase, Paper, Stack, Typography } from '@mui/material'
 
@@ -11,7 +11,8 @@ interface NormalTextInputProps {
   flex?: number
   width?: string
   children?: ReactNode | undefined
-  listener?: (_: string) => void
+  dataType?: 'customerNumber' | 'username' | 'email' | 'phone' | 'country'
+  listener?: (type: 'customerNumber' | 'username' | 'email' | 'phone' | 'country', __: string) => void
 }
 
 export const NormalTextInput: FC<NormalTextInputProps> = ({
@@ -23,14 +24,14 @@ export const NormalTextInput: FC<NormalTextInputProps> = ({
   flex = 0,
   width = undefined,
   children = undefined,
+  dataType = 'customerNumber',
   listener = undefined
 }) => {
-  const [value, setValue] = useState<string>(defaultValue)
-
   const handleChange = (val: string) => {
     if (editable) {
-      setValue(val)
-      if (listener) listener(val)
+      if (listener) {
+        listener(dataType, val)
+      }
     }
   }
 
@@ -55,10 +56,12 @@ export const NormalTextInput: FC<NormalTextInputProps> = ({
         <InputBase
           sx={{ width: '100%', pl: 2.5, pr: 2, py: 1.5, fontSize: '1rem', fontWeight: 500 }}
           placeholder={placeHolder}
-          value={editable ? value : defaultValue}
+          value={defaultValue}
           type={type}
           onChange={e => handleChange(e.target.value)}
           startAdornment={children}
+          autoFocus={false}
+          readOnly={!editable}
         />
       </Paper>
     </Stack>

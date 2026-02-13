@@ -20,5 +20,10 @@ export const API_ENDPOINTS = {
   MEMBERSHIP: {
     CURRENT: 'membership/current',
     UPDATE: 'membership/update'
+  },
+  ACCOUNT: {
+    PROFILE: 'user/profile',
+    UPDATE: 'user/update',
+    UPLOAD_AVATAR: 'user/upload-avatar'
   }
 }

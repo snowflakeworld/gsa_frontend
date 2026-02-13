@@ -1,4 +1,4 @@
-import { type FC, useCallback, useState } from 'react'
+import { type FC, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import {
@@ -49,7 +49,6 @@ const MENU_ITEMS = [
 ]
 
 export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined }) => {
-  const [curIdx, setCurIdx] = useState<number>(0)
   const navigate = useNavigate()
   const { isLargeScreen, isSmallScreen } = useDeviceType()
   const logout = useLogout()
@@ -57,7 +56,6 @@ export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined
 
   const handleItemClick = useCallback(
     (idx: number) => {
-      setCurIdx(idx)
       navigate(MENU_ITEMS[idx].path)
     },
     [navigate]
@@ -89,7 +87,7 @@ export const Sidebar: FC<SidebarProps> = ({ width = 320, closeDrawer = undefined
         {MENU_ITEMS.map((item, index) => (
           <ListItemButton
             key={'sidebar-' + item.id}
-            selected={curIdx === index}
+            selected={window.location.pathname === item.path}
             onClick={() => handleItemClick(index)}
             sx={{ borderRadius: 1, gap: 2 }}
           >
