@@ -30,3 +30,7 @@ export const showToast = (message: string, type: 'success' | 'error' | 'info' | 
 export const hashPassword = (password: string): string => {
   return md5(password)
 }
+
+export const capitalizeString = (text: string): string => {
+  return text.charAt(0).toUpperCase() + (text.length > 0 ? text.slice(1) : '')
+}
